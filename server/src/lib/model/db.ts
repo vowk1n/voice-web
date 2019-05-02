@@ -202,9 +202,9 @@ export default class DB {
         SET is_valid = (
           SELECT
             CASE
-              WHEN upvotes_count >= 2 AND upvotes_count > downvotes_count
+              WHEN upvotes_count > 0 AND upvotes_count > downvotes_count
                 THEN TRUE
-              WHEN downvotes_count >= 2 AND downvotes_count > upvotes_count
+              WHEN downvotes_count > 0 AND downvotes_count > upvotes_count
                 THEN FALSE
               ELSE NULL
               END
