@@ -1,0 +1,11 @@
+{
+  "name": "cv-scripts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.449.0",
+    "command-line-args": "^5.1.1",
+    "node-xlsx": "^0.14.1",
+    "uuid": "^3.3.2"
+  }
+}
