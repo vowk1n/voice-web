@@ -1,12 +1,14 @@
 ## General
 
+yes-receive-emails = Да, шаљите ми е-поруке. Желим да останем обавештен о пројекту Common Voice.
 stayintouch = У Mozilla-и градимо заједницу око гласовне технологије. Желимо да останемо у контакту тако што ћемо вам слати вести, нове изворе података и тако што ћемо чути како користите ове податке.
 privacy-info = Обећавамо вам да ћемо пажљиво баратати са вашим подацима. Прочитајте о томе више у нашем <privacyLink>обавештењу о приватности</privacyLink>.
+return-to-cv = Назад на Common Voice
 email-input =
     .label = Е-адреса
 submit-form-action = Пошаљи
 loading = Учитавам…
-audio-loading-error = Извињавамо се! Обрађујемо аудио датотеке, покушајте поново нешто касније.
+email-opt-in-info = Желео бих да примим е-поруке које садрже подсетнике о циљевима, ажурирања напретка и билтене о пројекту Common Voice.
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -24,8 +26,6 @@ de = Немачки
 el = Грчки
 en = Енглески
 es = Шпански
-es-AR = Шпански (Аргентина)
-es-CL = Шпански (Чиле)
 fr = Француски
 fy-NL = Фризијски
 ga-IE = Ирски
@@ -82,16 +82,33 @@ back-top = Назад на врх
 
 ## Home Page
 
+home-title = Пројекат Common Voice је Mozilla-ина иницијатива за подучавање машина о начину говора стварних људи.
 home-cta = Проговорите, допринесите овде!
 wall-of-text-start = Глас је природан и људски. Зато смо одушевљени са стварањем употребљиве гласовне технологије за наше машине. Али да бисмо створили гласовне системе, потребна је огромна количина гласовних података.
+wall-of-text-more-mobile = Већина података коју користе велика предузећа није доступна већини људи. Мислимо да то успорава иновацију. Због тога смо покренули пројекат Common Voice да бисмо учинили препознавање гласа доступно свима.
+wall-of-text-second = Већина података које користе велике компаније није доступна већини људи. Мислимо да то гуши иновацију. Због тога смо покренули Common Voice, пројекат који ће помоћи да препознавање гласа буде отворено и доступно свима.
 show-wall-of-text = Сазнајте више
 help-us-title = Помозите нам са провером реченица!
 help-us-explain = Притисните дугме за пуштање, послушајте и кажите нам да ли је реченица испод изговорена правилно?
 vote-yes = Да
 vote-no = Не
+listen-paragraph = Потврђивање донираних исечака једнако је важно за мисију Common Voice. Послушајте и помозите нам да створимо квалитетне отворене гласовне податке.
 
-## Shortcuts
+## Account Benefits
 
+
+## What's public
+
+
+## Speak & Listen Shortcuts
+
+
+## Listen Shortcuts
+
+
+## Speak Shortcuts
+
+request-language-text = Још не видите ваш језик у пројекту Common Voice?
 request-language-button = Затражи језик
 
 ## ProjectStatus
@@ -111,13 +128,8 @@ english = Енглески
 
 ## ProfileForm
 
-profile-form-cancel = Изађи из формулара
-profile-form-delete = Обриши профил
 profile-form-username =
     .label = Корисничко име
-profile-form-language =
-    .label = Језик
-profile-form-more-languages = Више језика стиже ускоро!
 profile-form-accent =
     .label = Нагласак
 profile-form-age =
@@ -126,22 +138,24 @@ profile-form-gender =
     .label = Пол
 profile-form-submit-save = Сачувај
 profile-form-submit-saved = Сачувано
-profile-keep-data = Задржи податке
-profile-delete-data = Обриши податке
 male = Мушки
 female = Женски
 # Gender
 other = Друго
 why-profile-title = Зашто профил?
 edit-profile = Уреди профил
-profile-create = Направи профил
 profile-create-success = Профил је успешно направљен!
 profile-close = Затвори
 
 ## FAQ
 
+faq-what-cv-q = Шта је Common Voice?
+faq-how-get-q = Како могу да добијем Common Voice податке?
 
-## Profile
+## ABOUT US
+
+
+## Glossary
 
 
 ## NotFound
@@ -150,12 +164,11 @@ profile-close = Затвори
 ## Data
 
 license-mixed = Помешано
-
-## Record Page
-
-record-platform-not-supported = Нажалост, ваша платформа није тренутно подржана.
 terms-agree = Слажем се
 terms-disagree = Не слажем се
+
+## New Datasets Page
+
 
 ## Download Modal
 
@@ -164,7 +177,6 @@ download-no = Не хвала
 ## Contact Modal
 
 contact-title = Формулар за контакт
-contact-cancel = Откажи
 contact-form-name =
     .label = Име
 contact-form-message =
@@ -174,7 +186,6 @@ contact-required = *обавезно
 ## Request Language Modal
 
 request-language-title = Захтев за језик
-request-language-cancel = Напусти формулар
 request-language-form-language =
     .label = Језик
 request-language-success-title = Захтев за новим језиком предат, хвала вам.
@@ -189,3 +200,18 @@ language-speakers = Говорници
 language-total-progress = Укупно
 language-search-input =
     .placeholder = Претрага
+language-speakers = Говорници
+
+## New Contribution
+
+record-platform-not-supported = Нажалост, ваша платформа није тренутно подржана.
+
+## Goals
+
+
+## Dashboard
+
+
+## Profile Delete
+
+profile-form-delete = Обриши профил

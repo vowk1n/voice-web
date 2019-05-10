@@ -8,8 +8,10 @@ email-input =
     .label = Adreça electrònica
 submit-form-action = Envia
 loading = S'està carregant…
+email-opt-in-info = M'agradaria rebre correus electrònics com ara recordatoris d’objectius, actualitzacions del meu progrés i butlletins de notícies sobre el Common Voice.
 email-opt-in-privacy = En optar per rebre correus electrònics, accepteu que Mozilla gestioni aquesta informació en els termes descrits en la seva <privacyLink>política de privadesa</privacyLink>.
 indicates-required = * Indica un camp necessari
+not-available-abbreviation = N/D
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -123,6 +125,7 @@ speak = Parla
 speak-now = Parleu ara
 datasets = Conjunts de dades
 languages = Llengües
+about = Qui som
 profile = Perfil
 help = Ajuda
 contact = Contacte
@@ -290,8 +293,6 @@ profile-explanation = Un perfil permet fer el seguiment del vostre progrés i aj
 thanks-for-account = Gràcies per confirmar el compte. Ara crearem el vostre perfil.
 why-demographic = Per què és important?
 why-demographic-explanation = Les dades d'usuari anònimes com l'edat, el sexe i l'accent ajuden a millorar les dades d'àudio utilitzades per entrenar la precisió dels motors de reconeixement de veu. Les dades que envieu no estaran mai associades amb cap nom d'usuari ni adreça electrònica, i podeu triar si voleu que el vostre nom d'usuari sigui públic o anònim.
-keep-me-posted =
-    .label = Vull rebre actualitzacions i estar al dia de les novetats del Common Voice.
 accept-privacy = Accepto que gestioneu aquesta informació en els termes descrits en la <privacyLink>política de privadesa</privacyLink> de Mozilla
 login-identity = Identitat d'inici de sessió
 login-signup = Inici de sessió / Registre
@@ -311,6 +312,7 @@ connect-gravatar = Connecta amb Gravatar
 gravatar_not_found = No s'ha trobat cap Gravatar per a la vostra adreça electrònica
 file_too_large = El fitxer seleccionat és massa gran
 manage-subscriptions = Gestiona les subscripcions
+manage-email-subscriptions = Gestiona les subscripcions per correu electrònic
 email-already-used = Aquesta adreça electrònica ja s'usa per a un altre compte
 add-language = Afegeix una llengua
 change-email-setings = Canvieu la vostra adreça electrònica a la secció Identitat d'inici de sessió dels paràmetres
@@ -355,6 +357,19 @@ faq-is-account-public-q = La informació del meu compte és pública?
 faq-how-privacy-q = Com assegureu l'anonimat i la privadesa de les persones que han donat la veu?
 faq-how-privacy-a = La informació d'identificació personal se suprimeix de tots els talls de veu del conjunt de dades. Si un col·laborador proporciona dades demogràfiques en el seu perfil, aquesta informació s'anonimitza en el talls de veu abans d'incloure'ls en el conjunt de dades disponible per baixar, i aquesta informació no és mai pública en la seva pàgina de perfil.
 faq-what-determine-identity-q = Què vol dir que no puc «determinar la identitat» dels parlants en el conjunt de dades del Common Voice?
+faq-what-is-cv = Què és el Common Voice?
+faq-using-cv = Ús del Common Voice
+
+## ABOUT US
+
+about-title = Per què Common Voice?
+about-dataset = Conjunt de dades del Common Voice
+about-get-involved = Col·laboreu-hi
+about-nav-why-common-voice = Per què?
+about-nav-how-it-works = Com?
+about-nav-get-involved = Col·laboreu-hi
+mycroft-title = Mycroft Ai
+mycroft-subtitle = Intel·ligència artificial
 
 ## Glossary
 

@@ -15,6 +15,8 @@ import {
 } from '../../ui/icons';
 import { Button } from '../../ui/ui';
 
+import './get-involved.css';
+
 const GetInvolved: React.ComponentType = () => {
   return (
     <>
@@ -24,12 +26,14 @@ const GetInvolved: React.ComponentType = () => {
         alt="Wave"
       />
 
-      <Button className="become-a-partner" rounded onClick={() => {}}>
-        <Localized id="about-become-a-partner">
-          <span />
-        </Localized>
-        <ArrowLeft />
-      </Button>
+      {/*<div className="become-partner">
+        <ContactLink>
+          <Localized id="about-become-a-partner">
+            <span />
+          </Localized>
+          <ArrowLeft />
+        </ContactLink>
+      </div>*/}
 
       <div className="robot-section">
         <img src={require('./images/robot-footer.svg')} alt="Robot" />

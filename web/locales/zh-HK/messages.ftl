@@ -10,6 +10,7 @@ submit-form-action = 提交
 loading = 載入中…
 email-opt-in-privacy = 如果同意接收電郵，就代表您同意 Mozilla 依照<privacyLink>隱私權保護政策</privacyLink>當中描述嘅方法處理呢啲資訊。
 indicates-required = * 表示必填欄位
+not-available-abbreviation = 不適用
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -66,6 +67,7 @@ kab = 卡拜爾文
 kk = 哈薩克文
 ko = 韓文
 kpv = 科米-齊良文
+ku = 庫爾德文
 kw = 康和文
 ky = 吉爾吉斯文
 lt = 立陶宛文
@@ -118,6 +120,7 @@ speak = 說話
 speak-now = 現在開始說話
 datasets = 數據集
 languages = 所有語言
+about = 關於我們
 profile = 個人檔案
 help = 說明
 contact = 聯絡我們
@@ -241,6 +244,8 @@ profile-form-username =
     .label = 使用者名稱
 profile-form-native-language =
     .label = 母語
+profile-form-additional-language =
+    .label = 其他語言
 profile-form-accent =
     .label = 口音
 profile-form-age =
@@ -273,8 +278,6 @@ profile-explanation = 使用您的個人檔案可以保留您的進展，並幫�
 thanks-for-account = 多謝您確認您的帳戶, 現在讓我們建立您的個人資料。
 why-demographic = 點解咁重要？
 why-demographic-explanation = 已匿名化的使用者資料，如年齡、性別、腔調等，可幫助我們改善用來訓練語音識別引擎的語音資料。您的帳號與電郵不會與您提交的數據相關，您也可以決定公開您的帳號或保持匿名。
-keep-me-posted =
-    .label = 我想收到 Common Voice 的最新消息。
 accept-privacy = 我同意你依照 Mozilla 的<privacyLink>私隱保護政策</privacyLink>中描述的方式處理這些資料
 login-identity = 登入身分
 login-signup = 登入 / 註冊
@@ -294,8 +297,10 @@ connect-gravatar = 連結到 Gravatar
 gravatar_not_found = 找不到您電郵所屬的 Gravatar
 file_too_large = 選擇的檔案太大
 manage-subscriptions = 管理訂閱
+manage-email-subscriptions = 電郵訂閱管理
 email-already-used = 電子郵件地址已被使用
 add-language = 增加語言
+change-email-setings = 請到「設定」内的「登入身分」修改電郵地址
 
 ## FAQ
 
@@ -304,7 +309,42 @@ faq-what-cv-q = Common Voice 係咩嘢？
 faq-why-important-q = 點解咁重要？
 faq-how-get-q = 我怎樣可以取得 Common Voice 的數據？
 faq-why-mission-q = 為什麼 Common Voice 係 Mozilla 使命的一部分？
+faq-what-cv-and-deepspeech-q = Common Voice 跟 Deep Speech 有何不同？
+faq-do-want-native-q = 我並非母語人士，而且講話有點口音，你們仍想要我的聲音嗎？
+faq-do-want-native-a = 當然，我們特別想要您的聲音！Common Voice 的其中一個目標是盡可能收集各種口音，讓語音識別服務能適用於每一個人。這代表非母語人士的貢獻尤其重要。
+faq-why-different-speakers-q = 為什麼你們需要這麼多會說各種語言的人？
 faq-why-my-lang-q = 點解還沒有我的語言？
+faq-what-quality-q = 錄音品質要到甚麼等級，才能用於數據集中？
+faq-why-10k-hours-q = 為什麼每種語言都有一萬小時的錄音驗證目標？
+faq-how-calc-hours-q = Common Voice 如何計算時數？
+faq-why-account-q = 我點解應該去註冊帳戶？
+faq-is-account-public-q = 我的帳戶資料是公開的嗎？
+faq-what-is-cv = Common Voice 是甚麼？
+faq-using-cv = 使用 Common Voice
+faq-search-for-answers =
+    .label = 搜尋解答
+
+## ABOUT US
+
+about-title = 點解會有 Common Voice？
+how-does-it-work-title = 原理是甚麼？
+about-speak = 講話
+about-listen-queue = 聆聽隊列
+about-listen = 聆聽
+about-is-it-valid = 片段正確嗎？
+about-yes-votes = ≥ 2 張「正確」票
+about-no-votes = ≥ 2 張「不正確」票
+about-no-votes-text = 若使用者投下不正確票，錄音片段就會回到隊列重新排隊。若被退回第二次，片段就會就會被丟進回收桶。
+about-dataset = Common Voice 數據集
+about-clip-graveyard = 片段回收桶
+about-partners = 合作夥伴
+about-become-a-partner = 成為合作夥伴
+about-get-involved = 參與我們
+about-nav-how-it-works = 點做？
+about-nav-partners = 合作夥伴
+about-nav-get-involved = 參與我們
+mycroft-title = Mycroft Ai
+mycroft-subtitle = 人工智能
 
 ## Glossary
 
@@ -378,6 +418,7 @@ data-other-ted-description = TED-LIUM 語料庫是從 TED 網站上的講座對�
 data-other-voxforge-description = VoxForge 的成立，是用來收集被抄寫的對話內容，給自由與開放源碼的語音辨識引擎使用。
 data-other-tatoeba-description = Tatoeba 是一套用於語言學習的大型數據庫，當中包含了各種句子、翻譯、以及錄音。這個下載項目包含了其社群所錄下的英語語音。
 go-discourse = 前往 Discourse
+missing-language = 沒在數據集中看到您的語言？請到語言頁面要求新增語言。
 go-languages-page = 前往語言版面
 ready-to-validate = 準備好幫手驗證句子了嗎？
 more = 更多
@@ -499,12 +540,15 @@ validations =
 
 your-languages = 您的語言
 toward-next-goal = 距離下一個目標
+clips-you-recorded = 您錄製的片段
 clips-you-validated = 您驗證的錄音
-todays-validated-progress = 今日 Common Voice 驗證錄音嘅進度
+todays-recorded-progress = 今日 Common Voice 錄音片段的進度
+todays-validated-progress = 今日 Common Voice 驗證片段的進度
 stats = 統計
 you = 您
 everyone = 所有人
 contribution-activity = 貢獻記錄
+top-contributors = 貢獻者排行榜
 recorded-clips = 錄音
 validated-clips = 已被驗證的錄音
 total-approved = 總批准數

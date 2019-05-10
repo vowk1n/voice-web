@@ -372,6 +372,7 @@ faq-what-determine-identity-a =
     
     Tutte le registrazioni nel set di dati vengono anonimizzate. Scaricando il dataset acconsenti a rinunciare a ogni tentativo di determinare l’identità dei donatori di voce. Ciò significa che non devi collegare le informazioni nel dataset alle informazioni personali di un collaboratore. Tuttavia, è possibile utilizzare il set di dati per addestrare il software di riconoscimento vocale, di riconoscimento del soggetto parlante o altre applicazioni, o anche correlare le informazioni nel dataset ad altre informazioni sempre presenti nello stesso dataset.
 faq-what-is-cv = Che cos’è Common Voice?
+faq-using-cv = Uso di Common Voice
 faq-description = Common Voice è parte di un’iniziativa Mozilla per insegnare alle macchine come le persone parlano nella vita reale.
 faq-search-for-answers =
     .label = Ricerca per risposte
@@ -380,9 +381,13 @@ faq-search-for-answers =
 
 about-title = Perché Common Voice?
 about-subtitle = Common Voice è parte di un’iniziativa Mozilla per insegnare alle macchine come la gente parla nella vita reale. In aggiunta al dataset di Common Voice, stiamo costruendo un motore di riconoscimento vocale open source chiamato Deep Speech.
+about-header-description = Entrambi i progetti rientrano nella nostra missione di colmare il divario nel settore del riconoscimento vocale digitale. Le tecnologie di riconoscimento vocale conferiscono una dimensione umana ai nostri dispositivi, ma gli sviluppatori hanno bisogno di un’enorme quantità di dati vocali per crearle. Attualmente, la maggior parte di questi dati è costosa e proprietaria. Vogliamo rendere i dati vocali disponibili liberamente e pubblicamente e assicurarci che questi dati rispecchino la diversità delle persone reali. Insieme possiamo rendere il riconoscimento vocale migliore per tutti.
 how-does-it-work-title = Come funziona
+how-does-it-work-text = Stiamo realizzando un dataset vocale open source attraverso il crowdsourcing. Dona la tua voce, convalida le registrazioni inviate da altre persone, rendi il dataset migliore per tutti.
 about-speak = Parla
+about-speak-text = I collaboratori leggono e registrano un breve testo tratto da una banca dati di frasi donate.
 about-listen-queue = Coda di ascolto
+about-listen-queue-text = Le registrazioni vengono caricate e inserite in una coda di clip pronti per l’ascolto.
 about-listen = Ascolta
 about-listen-text = Gli utenti convalidano l’accuratezza delle registrazioni donate, controllando che la frase sia stata letta correttamente.
 about-is-it-valid = La registrazione è valida?
@@ -390,7 +395,11 @@ about-is-it-valid-text = Una registrazione vocale è contrassegnata come “vali
 about-yes-votes = ≥ 2 voti Sì
 about-yes-votes-text = Per essere inclusa nel dataset di Common Voice, una registrazione vocale deve essere validata da due utenti diversi.
 about-no-votes = ≥ 2 voti No
+about-no-votes-text = Quando un utente boccia una registrazione, essa torna nella Coda. Se bocciata una seconda volta, viene trasferita nel Cimitero delle registrazioni.
 about-dataset = Dataset di Common Voice
+about-dataset-text = Quando un utente boccia una registrazione, essa torna nella Coda. Se bocciata una seconda volta, viene trasferita nel Cimitero delle registrazioni.
+about-clip-graveyard = Cimitero delle registrazioni
+about-clip-graveyard-text = Il Cimitero delle registrazioni è costituito dalle registrazioni vocali scartate dal dataset di Common Voice; anch’esso può essere scaricato liberamente.
 about-partners = Partner
 about-become-a-partner = Diventa partner
 about-partnership = Common Voice è un progetto in collaborazione e, per creare la più grande raccolta dati vocali di dominio pubblico di sempre, dipendiamo dalla comunità di soci e collaboratori. Per il loro contributo al progetto, abbiamo il piacere di ringraziare le persone e le organizzazioni seguenti:
