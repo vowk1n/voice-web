@@ -97,13 +97,13 @@ class ContributionPage extends React.Component<Props, State> {
   componentDidUpdate() {
     this.startWaving();
 
-    const { isPlaying, isSubmitted, onReset, user } = this.props;
+    const { isPlaying, isSubmitted, onReset } = this.props;
 
     if (this.wave) {
       isPlaying ? this.wave.play() : this.wave.idle();
     }
 
-    if (isSubmitted && user.account && user.account.skip_submission_feedback) {
+    if (isSubmitted) {
       onReset();
     }
   }
