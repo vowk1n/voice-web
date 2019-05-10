@@ -1,9 +1,10 @@
+const fs = require('fs');
 const https = require('https');
 const path = require('path');
 const { PassThrough } = require('stream');
 const AWS = require('aws-sdk');
 const commandLineArgs = require('command-line-args');
-const xlsx = require('node-xlsx');
+const parse = require('csv-parse/lib/sync');
 const uuid = require('uuid/v4');
 
 // surround a string in quotes
@@ -19,12 +20,15 @@ const options = commandLineArgs([
 ]);
 
 const s3 = new AWS.S3({ params: { Bucket: 'cv-mandarin' } });
-const [sheet] = xlsx.parse(options.src);
+const lines = parse(fs.readFileSync(options.src, 'utf-8'), {
+  from_line: 2,
+  delimiter: ';',
+});
 
 const statements = [
   "SET @locale_id = (SELECT id FROM locales WHERE name = 'zh-CN')",
 ];
-for (const [id, url] of sheet.data.slice(1)) {
+for (const [id, , , sentence, url] of lines) {
   const pass = new PassThrough();
   https.get(url, { rejectUnauthorized: false }, response => {
     response.pipe(pass);
@@ -42,16 +46,22 @@ for (const [id, url] of sheet.data.slice(1)) {
   );
 
   const sentenceId = uuid();
-  const sentence = [q(sentenceId), q('wawa'), 'TRUE', '@locale_id'];
+  const sentenceData = [q(sentenceId), q(sentence), 'TRUE', '@locale_id'];
   statements.push(
     'INSERT INTO sentences (id, text, is_used, locale_id) ' +
-      `VALUES (${sentence.join(', ')})`
+      `VALUES (${sentenceData.join(', ')})`
   );
 
-  const clip = [q(id), q(fileName), q(sentenceId), q('wawa'), '@locale_id'];
+  const clipData = [
+    q(id),
+    q(fileName),
+    q(sentenceId),
+    q(sentence),
+    '@locale_id',
+  ];
   statements.push(
     'INSERT INTO clips (client_id, path, original_sentence_id, sentence, locale_id) ' +
-      `VALUES (${clip.join(', ')})`
+      `VALUES (${clipData.join(', ')})`
   );
 }
 
