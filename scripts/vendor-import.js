@@ -23,7 +23,6 @@ async function run() {
   const s3 = new AWS.S3({ params: { Bucket: 'cv-mandarin' } });
   const lines = parse(fs.readFileSync(options.src, 'utf-8'), {
     from_line: 2,
-    delimiter: ';',
   });
 
   const statements = [
@@ -31,22 +30,29 @@ async function run() {
   ];
 
   let uploads = 0;
-  for (const [id, , , sentence, url] of lines) {
+  for (const [, id, , , , , , , , , , sentence, url] of lines) {
+    if (!id) {
+      continue;
+    }
+
     if (uploads > 250) {
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
-    const pass = new PassThrough();
-    https.get(url, { rejectUnauthorized: false }, response => {
-      response.pipe(pass);
-    });
-    const fileName = id + '.mp3';
-    s3.upload({ Key: fileName, Body: pass }).send(err => {
-      uploads--;
-      if (err) {
-        console.error(err);
-        process.exit();
+    const Key = id + '.mp3';
+    s3.headObject({ Key }, async err => {
+      if (err && err.code === 'NotFound') {
+        const pass = new PassThrough();
+        https.get(url, { rejectUnauthorized: false }, response => {
+          response.pipe(pass);
+        });
+        await s3.upload({ Key, Body: pass }).promise();
+        if (err) {
+          console.error('aws upload failed', err);
+          process.exit();
+        }
       }
+      uploads--;
     });
     uploads++;
 
@@ -61,13 +67,7 @@ async function run() {
         `VALUES (${sentenceData.join(', ')})`
     );
 
-    const clipData = [
-      q(id),
-      q(fileName),
-      q(sentenceId),
-      q(sentence),
-      '@locale_id',
-    ];
+    const clipData = [q(id), q(Key), q(sentenceId), q(sentence), '@locale_id'];
     statements.push(
       'INSERT INTO clips (client_id, path, original_sentence_id, sentence, locale_id) ' +
         `VALUES (${clipData.join(', ')})`
