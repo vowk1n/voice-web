@@ -14,7 +14,7 @@ async function run() {
   const options = commandLineArgs([
     {
       name: 'src',
-      description: 'xlsx file one clip per row',
+      description: 'csv file one clip per row',
       type: String,
       defaultOption: true,
     },
@@ -30,10 +30,12 @@ async function run() {
   ];
 
   let uploads = 0;
-  for (const [, id, , , , , , , , , , sentence, url] of lines) {
+  for (let [, , , , id, , , , , , , sentence, url] of lines) {
     if (!id) {
       continue;
     }
+
+    id = 'vendor3' + id;
 
     if (uploads > 250) {
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -46,9 +48,10 @@ async function run() {
         https.get(url, { rejectUnauthorized: false }, response => {
           response.pipe(pass);
         });
-        await s3.upload({ Key, Body: pass }).promise();
-        if (err) {
-          console.error('aws upload failed', err);
+        try {
+          await s3.upload({ Key, Body: pass }).promise();
+        } catch (err) {
+          console.error('aws upload failed for', url, 'with error:', err);
           process.exit();
         }
       }
