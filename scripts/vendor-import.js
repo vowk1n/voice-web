@@ -30,12 +30,8 @@ async function run() {
   ];
 
   let uploads = 0;
-  for (let [, , , , id, , , , , , , sentence, url] of lines) {
-    if (!id) {
-      continue;
-    }
-
-    id = 'vendor3' + id;
+  for (let [, taskId, , , jobId, , workerId, , , , , sentence, url] of lines) {
+    const id = ['vendor3', taskId, jobId, workerId].join('-');
 
     if (uploads > 250) {
       await new Promise(resolve => setTimeout(resolve, 1000));
