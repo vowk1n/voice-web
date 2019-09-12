@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const fs = require('fs');
 const https = require('https');
 const path = require('path');
@@ -30,8 +31,8 @@ async function run() {
   ];
 
   let uploads = 0;
-  for (let [, taskId, , , jobId, , workerId, , , , , sentence, url] of lines) {
-    const id = ['vendor3', taskId, jobId, workerId].join('-');
+  for (let [, , , , , , , , , , , sentence, url] of lines) {
+    const id = 'vendor3-' + crypto.randomBytes(16).toString('hex');
 
     if (uploads > 250) {
       await new Promise(resolve => setTimeout(resolve, 1000));
