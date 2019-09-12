@@ -32,7 +32,7 @@ async function run() {
 
   let uploads = 0;
   for (let [, , , , , , , , , , , sentence, url] of lines) {
-    const id = 'vendor3-' + crypto.randomBytes(16).toString('hex');
+    const id = 'vendor3-' + crypto.randomBytes(10).toString('hex');
 
     if (uploads > 250) {
       await new Promise(resolve => setTimeout(resolve, 1000));
