@@ -4,9 +4,9 @@ import * as bodyParser from 'body-parser';
 import { MD5 } from 'crypto-js';
 import { NextFunction, Request, Response, Router } from 'express';
 import * as sendRequest from 'request-promise-native';
-import { UserClient as UserClientType } from 'common/user-clients';
+import { UserClient as UserClientType } from 'common';
 import { authMiddleware } from '../auth-router';
-import { getConfig } from '../config-helper';
+import { getConfig, CommonVoiceConfig } from '../config-helper';
 import Awards from './model/awards';
 import CustomGoal from './model/custom-goal';
 import getGoals from './model/goals';
@@ -18,6 +18,8 @@ import Clip from './clip';
 import Model from './model';
 import Prometheus from './prometheus';
 import { ClientParameterError } from './utility';
+import Challenge from './challenge';
+import { FeatureToken, FeatureType, features } from 'common';
 
 const Transcoder = require('stream-transcoder');
 
@@ -26,6 +28,7 @@ const PromiseRouter = require('express-promise-router');
 export default class API {
   model: Model;
   clip: Clip;
+  challenge: Challenge;
   metrics: Prometheus;
   private s3: S3;
   private bucket: Bucket;
@@ -33,6 +36,7 @@ export default class API {
   constructor(model: Model) {
     this.model = model;
     this.clip = new Clip(this.model);
+    this.challenge = new Challenge(this.model);
     this.metrics = new Prometheus();
     this.s3 = AWS.getS3();
     this.bucket = new Bucket(this.model, this.s3);
@@ -52,10 +56,7 @@ export default class API {
       this.metrics.countPrometheusRequest(request);
 
       const { registry } = this.metrics;
-      response
-        .type(registry.contentType)
-        .status(200)
-        .end(registry.metrics());
+      response.type(registry.contentType).status(200).end(registry.metrics());
     });
 
     router.use((request: Request, response: Response, next: NextFunction) => {
@@ -110,9 +111,13 @@ export default class API {
 
     router.post('/newsletter/:email', this.subscribeToNewsletter);
 
-    router.post('/:locale/downloaders/:email', this.insertDownloader);
+    router.post('/:locale/downloaders', this.insertDownloader);
 
     router.post('/reports', this.createReport);
+
+    router.use('/challenge', this.challenge.getRouter());
+
+    router.get('/feature/:locale/:feature', this.getFeatureFlag);
 
     router.use('*', (request: Request, response: Response) => {
       response.sendStatus(404);
@@ -120,6 +125,30 @@ export default class API {
 
     return router;
   }
+
+  getFeatureFlag = (
+    { params: { locale, feature } }: Request,
+    response: Response
+  ) => {
+    let featureResult = null;
+
+    try {
+      const featureToken = feature as FeatureToken;
+      const featureObj = features[featureToken];
+
+      if (
+        featureObj &&
+        (!featureObj.locales || featureObj.locales.includes(locale)) &&
+        getConfig()[featureObj.configFlag as keyof CommonVoiceConfig]
+      ) {
+        featureResult = featureObj;
+      }
+    } catch (e) {
+      console.log('error retrieving feature flag', e.message);
+    }
+
+    response.json(featureResult);
+  };
 
   getRandomSentences = async (request: Request, response: Response) => {
     const { client_id, params } = request;
@@ -164,8 +193,9 @@ export default class API {
     }
 
     const email = user.emails[0].value;
+    const enrollment = user.enrollment;
     const userClients: UserClientType[] = [
-      { email },
+      { email, enrollment },
       ...(await UserClient.findAllWithLocales({
         email,
         client_id,
@@ -174,7 +204,8 @@ export default class API {
     response.json(userClients);
   };
 
-  saveAccount = async ({ body, user }: Request, response: Response) => {
+  saveAccount = async (request: Request, response: Response) => {
+    const { body, user } = request;
     if (!user) {
       throw new ClientParameterError();
     }
@@ -197,7 +228,7 @@ export default class API {
   };
 
   subscribeToNewsletter = async (request: Request, response: Response) => {
-    const { BASKET_API_KEY, PROD } = getConfig();
+    const { BASKET_API_KEY } = getConfig();
     if (!BASKET_API_KEY) {
       response.json({});
       return;
@@ -271,6 +302,7 @@ export default class API {
     response.json(error ? { error } : {});
   };
 
+  // TODO: Check for empty or silent clips before uploading.
   saveAvatarClip = async (request: Request, response: Response) => {
     const { client_id, headers, user } = request;
 
@@ -304,10 +336,7 @@ export default class API {
           .upload({
             Bucket: getConfig().BUCKET_NAME,
             Key: clipFileName,
-            Body: transcoder
-              .audioCodec('mp3')
-              .format('mp3')
-              .stream(),
+            Body: transcoder.audioCodec('mp3').format('mp3').stream(),
           })
           .promise(),
       ]);
@@ -381,10 +410,10 @@ export default class API {
   };
 
   insertDownloader = async (
-    { client_id, params }: Request,
+    { client_id, params, body }: Request,
     response: Response
   ) => {
-    await this.model.db.insertDownloader(params.locale, params.email);
+    await this.model.db.insertDownloader(params.locale, body.email, body.dataset);
     response.json({});
   };
 

@@ -8,7 +8,9 @@ email-input =
 submit-form-action = Submit
 loading = Loading…
 email-opt-in-info = I'd like to receive emails such as goal reminders, my progress updates and newsletters about Common Voice.
-email-opt-in-privacy = By opting in to receive emails you state that you are okay with Mozilla handling this info as explained in Mozilla’s <privacyLink>Privacy Policy<privacyLink>.
+email-opt-in-info-title = Join the Common Voice mailing list
+email-opt-in-info-sub-with-challenge = Receive emails such as challenge and goal reminders, progress updates, and newsletters about Common Voice.
+email-opt-in-privacy-v2 = By opting in to receive emails you state that you are okay with Mozilla handling this info as explained in Mozilla’s <privacyLink>Privacy Policy</privacyLink>.
 indicates-required = * Indicates required field
 not-available-abbreviation = N/A
 
@@ -22,10 +24,12 @@ af = Afrikaans
 am = Amharic
 an = Aragonese
 ar = Arabic
+arn = Mapudungun
 as = Assamese
 ast = Asturian
 az = Azerbaijani
-ba = Bashkirs
+ba = Bashkir
+be = Belarusian
 bg = Bulgarian
 bn = Bengali
 br = Breton
@@ -56,10 +60,12 @@ ga-IE = Irish
 gl = Galician
 ha = Hausa
 he = Hebrew
-hi-IN = Hindi
+hi = Hindi
 hr = Croatian
 hsb = Sorbian, Upper
 hu = Hungarian
+hy-AM = Armenian
+hyw = Armenian Western
 ia = Interlingua
 id = Indonesian
 is = Icelandic
@@ -67,23 +73,28 @@ it = Italian
 izh = Izhorian
 ja = Japanese
 ka = Georgian
+kaa = Karakalpak
 kab = Kabyle
+kbd = Kabardian
 kk = Kazakh
 ko = Korean
 kpv = Komi-Zyrian
 ku = Kurdish
 kw = Cornish
 ky = Kyrgyz
+lg = Luganda
 lij = Ligurian
 lt = Lithuanian
 lv = Latvian
 mdf = Moksha
+mg = Malagasy
 mhr = Meadow Mari
 mk = Macedonian
 ml = Malayalam
 mn = Mongolian
 mrj = Hill Mari
 mt = Maltese
+my = Burmese
 myv = Erzya
 nb-NO = Norwegian Bokmål
 ne-NP = Nepali
@@ -91,6 +102,7 @@ nl = Dutch
 nn-NO = Norwegian Nynorsk
 oc = Occitan
 or = Odia
+pa-IN = Punjabi
 pl = Polish
 pt = Portuguese
 rm-sursilv = Romansh Sursilvan
@@ -100,6 +112,7 @@ ru = Russian
 rw = Kinyarwanda
 sah = Sakha
 sc = Sardinian
+scn = Sicilian
 si = Sinhala
 sk = Slovak
 sl = Slovenian
@@ -112,6 +125,7 @@ ta = Tamil
 te = Telugu
 tg = Tajik
 th = Thai
+tl = Tagalog
 tr = Turkish
 tt = Tatar
 uby = Ubykh
@@ -119,6 +133,7 @@ udm = Udmurt
 uk = Ukrainian
 ur = Urdu
 uz = Uzbek
+vec = Venetian
 vi = Vietnamese
 vot = Votic
 zh-CN = Chinese (China)
@@ -224,7 +239,7 @@ whats-public = What's Public?
 email-not-public = We will not make your email public.
 recordings-and-locale-public = The number of recordings and which languages you contribute to will be public.
 username-optin-public = You can choose to make your username public or anonymous.
-demographic-deidentified = Optionally submitted demographic data (e.g. age, sex, language, and accent) is de-identified from your submitted voice data and will never be made public on your profile.
+demographic-deidentified-clarity = Optionally submitted demographic data (e.g. age, sex, language, and accent) will never be made public on your profile, and will not be linked to your account in the dataset. Individual audio clips will be associated with demographic data for the purpose of more accurate analysis - for example, a researcher might want to target a training model to a specific demographic segment.
 username-email-not-demographic = Your username and email will not be associated with the published data.
 
 
@@ -311,6 +326,7 @@ thanks-for-account = Thanks for confirming your account, now let's build your pr
 why-demographic = Why does this matter?
 why-demographic-explanation = Anonymized user data like age, sex, and accent helps improve the audio data used to train the accuracy of speech recognition engines. Your username and email will never be associated with your submitted data, and you can choose whether to make your username public or anonymous.
 accept-privacy = I'm okay with you handling this info as you explain in Mozilla's <privacyLink>Privacy Policy</privacyLink>
+accept-privacy-title = Privacy Policy
 login-identity = Login Identity
 login-signup = Log In / Sign Up
 edit = Edit
@@ -318,7 +334,7 @@ email-subscriptions = Email Subscriptions
 download-profile = Download My Data
 contribution-experience = Contribution Experience
 skip-submission-feedback = Skip Submission Feedback
-skip-submission-description = During contribution submission feedback will be skipped after clicking 'Submit. Contribution will continue directly with the next set of 5 recordings or validations.
+skip-submission-description = During contribution submission feedback will be skipped after clicking 'Submit'. Contribution will continue directly with the next set of 5 recordings or validations.
 skip-submission-note = Note: You will still need to select between Speak or Listen to change contribution type.
 off = Off
 on = On
@@ -456,10 +472,10 @@ about-partnership = Common Voice is a collaborative project, and we're depending
 
     We would like to thank the following people and organizations for their help with the project:
 about-get-involved = Get involved
-about-get-involved-text = Want to help make Common Voice even better?
-    Great! Get in touch via email or on <discourseLink>Discourse</discourseLink>,
-    submit feedback through <githubLink>GitHub</githubLink>,
-    or join us on <slackLink>Slack</slackLink>.
+about-get-involved-text-2 = Want to help make Common Voice even better?
+    Great! Get in touch via email or <discourseLink>Discourse</discourseLink>
+    forums, submit site issues via <githubLink>GitHub</githubLink>, or join the
+    <matrixLink>Matrix</matrixLink> community chat.
 
 about-nav-why-common-voice = Why ?
 about-nav-how-it-works = How ?
@@ -485,9 +501,12 @@ sst-explanation = Speech-to-text (STT) technologies convert voice data into text
 de-identified = De-identified
 de-identified-explanation = The process by which a contributor’s profile information is obscured from their donated voice clips when packaged for download as a part of the dataset.
 
-## NotFound
-notfound-title = Not found
-notfound-content = I’m afraid I don’t know what you’re looking for.
+## Error pages
+error-title-404 = We couldn’t find that page for you
+error-content-404 = Maybe our <homepageLink>homepage</homepageLink> will help? To ask a question, please join the <matrixLink>Matrix community chat</matrixLink>, monitor site issues via <githubLink>GitHub</githubLink> or visit <discourseLink>our Discourse forums</discourseLink>.
+error-title-503 = We’re experiencing unexpected downtime
+error-content-503 = The site will be back up as soon as possible. For the latest information, please join the <matrixLink>Matrix community chat</matrixLink> or visit <githubLink>GitHub</githubLink> or <discourseLink>our Discourse forums</discourseLink> to submit and monitor site experience issues.
+error-code = Error { $code }
 
 ## Data
 data-download-button = Download Common Voice Data
@@ -505,6 +524,8 @@ data-bundle-button = Download Dataset Bundle
 data-bundle-description = Common Voice data plus all other voice datasets above.
 license = License: <licenseLink>{ $license }</licenseLink>
 license-mixed = Mixed
+data-download-singleword-title = Download the Single Word Target Segment
+data-download-singleword-callout = This is a use case driven segment containing data to power spoken digit recognition, yes / no detection, and wakeword testing data for <fxLink>Firefox Voice</fxLink>.
 
 review-terms = By using Common Voice, you agree to our <termsLink>Terms</termsLink> and <privacyLink>Privacy Notice</privacyLink>
 terms-agree = I agree
@@ -620,7 +641,10 @@ contribute = Contribute
 listen = Listen
 skip = Skip
 shortcuts = Shortcuts
-clips-with-count = <bold>{ $count }</bold> Clips
+clips-with-count-pluralized = { $count ->
+                    [one] <bold>{ $count }</bold> Clip
+                    *[other] <bold>{ $count }</bold> Clips
+}
 goal-help-recording = You've helped Common Voice reach <goalPercentage></goalPercentage> of our daily { $goalValue } recording goal!
 goal-help-validation = You've helped Common Voice reach <goalPercentage></goalPercentage> of our daily { $goalValue } validation goal!
 contribute-more =
@@ -628,9 +652,9 @@ contribute-more =
        *[other] Ready to do { $count } more?
     }
 record-cta = Start recording
-record-platform-not-supported = We’re sorry, but your platform is not currently supported.
-record-platform-not-supported-desktop = On desktop computers, you can download the latest:
-record-platform-not-supported-ios = <bold>iOS</bold> users can download our free app:
+record-platform-not-supported = We’re sorry, your platform is not currently supported.
+record-platform-not-supported-desktop = On desktop devices you can contribute by downloading…
+record-platform-not-supported-ios-non-safari = On iOS please continue with Safari to enable recording…
 record-must-allow-microphone = You must allow microphone access.
 record-no-mic-found = No microphone found.
 record-error-too-short = The recording was too short.
@@ -644,6 +668,8 @@ record-again-instruction = Great!<recordIcon></recordIcon> Record your next clip
 record-again-instruction2 = Keep it up, record again <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Last one!
 review-tooltip = Review & re-record clips here as you go
+share-clip = Share your clip
+share-common-voice = Share Common Voice
 review-instruction = Review & re-record clips if needed
 record-submit-tooltip = { $actionType } submit when ready
 clips-uploaded = Clips Uploaded
@@ -656,11 +682,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> did they accurately sp
 listen-again-instruction = Great work!<playIcon></playIcon> Listen again when you're ready
 listen-3rd-time-instruction = 2 down, keep it up!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Last one!
-nothing-to-validate = We don't have anything to validate in this language, help us fill the queue.
+listen-empty-state = We've run out of clips to validate in this language...
+speak-empty-state = We've run out of sentences to record in this language...
+speak-empty-state-cta = Contribute sentences
 record-button-label = Record your voice
 share-title-new = <bold>Help us</bold> find more voices
 keep-track-profile = Keep track of your progress with a profile
 login-to-get-started = Log in or sign up to get started
+target-segment-first-card = You’re contributing to our first target segment
+target-segment-first-banner = Help create Common Voice’s first target segment in { $locale }
+target-segment-add-voice = Add Your Voice
+target-segment-learn-more = Learn More
 
 ## Reporting
 report = Report
@@ -702,6 +734,7 @@ validations = { $count ->
 ## Dashboard
 your-languages = Your Languages
 toward-next-goal = Toward next goal
+goal-reached = Goal reached
 clips-you-recorded = Clips You've Recorded
 clips-you-validated = Clips You've Validated
 todays-recorded-progress = Today's Common Voice progress on clips recorded
@@ -724,6 +757,7 @@ show-ranking = Show my ranking
 ## Custom Goals
 get-started-goals = Get started with goals
 create-custom-goal = Create a Custom Goal
+goal-type = What kind of goal do you want to build?
 both-speak-and-listen = Both
 both-speak-and-listen-long = Both (Speak and Listen)
 daily-goal = Daily Goal
@@ -737,12 +771,29 @@ want-to-continue = Do you want to continue?
 finish-editing = Finish editing first?
 lose-changes-warning = Leaving now means you’ll lose your changes
 build-custom-goal = Build a custom goal
-help-reach-hours = Help reach { NUMBER($hours) } hours in { $language } with a personal goal
-help-reach-hours-general = Help Common Voice reach { NUMBER($hours) } hours in a language with a personal goal
+help-reach-hours-pluralized = Help reach { NUMBER($hours) ->
+[one] {$hours} hour
+*[other] {$hours} hours
+ } in { $language } with a personal goal
+help-reach-hours-general-pluralized = Help Common Voice reach { NUMBER($hours) ->
+  [one] {$hours} hour
+  *[other] {$hours} hours
+ } in a language with a personal goal
 set-a-goal = Set a goal
 cant-decide = Can't decide?
-activity-needed-calculation = { NUMBER($totalHours) } hours is achievable in just over { NUMBER($periodMonths) }
-        months if { NUMBER($people) } people record { NUMBER($clipsPerDay) } clips a day.
+activity-needed-calculation-plural = { NUMBER($totalHours) ->
+  [one] {$totalHours} hour is
+  *[other] {$totalHours} hours are
+ } achievable in just over { NUMBER($periodMonths) ->
+  [one] {$periodMonths} month
+  *[other] {$periodMonths} months
+ } if { NUMBER($people) ->
+  [one] {$people} person records
+  *[other] {$people} people record
+  } { NUMBER($clipsPerDay) ->
+  [one] {$clipsPerDay} clip
+  *[other] {$clipsPerDay} clips
+  } a day.
 how-many-per-day = Great! How many clips per day?
 how-many-a-week = Great! How many clips a week?
 which-goal-type = Do you want to Speak, Listen or both?
@@ -750,7 +801,10 @@ receiving-emails-info = You're currently set to receive emails such as goal remi
         progress updates and newsletters about Common Voice
 not-receiving-emails-info = You're currently set to <bold>NOT</bold> receive emails such as goal reminders, my
         progress updates and newsletters about Common Voice
-n-clips = { NUMBER($count) } clips
+n-clips-pluralized = { NUMBER($count) ->
+              [one] {$count} clip
+              *[other] {$count} clips
+              }
 help-share-goal = Help us find more voices, share your goal
 confirm-goal = Confirm Goal
 goal-interval-weekly = Weekly

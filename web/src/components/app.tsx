@@ -1,4 +1,3 @@
-const { LocalizationProvider } = require('fluent-react/compat');
 import * as React from 'react';
 import { Suspense } from 'react';
 import { connect, Provider } from 'react-redux';
@@ -11,19 +10,20 @@ import {
 } from 'react-router';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import { UserClient } from 'common/user-clients';
+import * as Sentry from '@sentry/browser';
+import * as FullStory from '@fullstory/browser';
+import { UserClient } from 'common';
 import store from '../stores/root';
 import URLS from '../urls';
 import {
-  isFirefoxFocus,
-  isMobileWebkit,
-  isNativeIOS,
+  isMobileSafari,
   isProduction,
   isStaging,
   replacePathLocale,
+  doNotTrack,
 } from '../utility';
 import {
-  createBundleGenerator,
+  createLocalization,
   DEFAULT_LOCALE,
   LOCALES,
   negotiateLocales,
@@ -35,7 +35,6 @@ import StateTree from '../stores/tree';
 import { Uploads } from '../stores/uploads';
 import { User } from '../stores/user';
 import Layout from './layout/layout';
-import NotificationBanner from './notification-banner/notification-banner';
 import NotificationPill from './notification-pill/notification-pill';
 import { Spinner } from './ui/ui';
 import {
@@ -44,11 +43,16 @@ import {
   LocalePropsFromState,
 } from './locale-helpers';
 import { Flags } from '../stores/flags';
+import { ReactLocalization, LocalizationProvider } from '@fluent/react';
 const rtlLocales = require('../../../locales/rtl.json');
 const ListenPage = React.lazy(() =>
   import('./pages/contribution/listen/listen')
 );
 const SpeakPage = React.lazy(() => import('./pages/contribution/speak/speak'));
+
+const SENTRY_FE_DSN =
+  'https://4a940c31e4e14d8fa6984e919a56b9fa@sentry.prod.mozaws.net/491';
+const FS_KEY = 'QDBTF';
 
 interface PropsFromState {
   api: API;
@@ -69,13 +73,13 @@ interface LocalizedPagesProps
   extends PropsFromState,
     PropsFromDispatch,
     LocalePropsFromState,
-    RouteComponentProps<any> {
+    RouteComponentProps<any, any, any> {
   userLocales: string[];
 }
 
 interface LocalizedPagesState {
   hasScrolled: boolean;
-  bundleGenerator: any;
+  l10n: ReactLocalization | null;
   uploadPercentage?: number;
 }
 
@@ -86,7 +90,7 @@ let LocalizedPage: any = class extends React.Component<
   seenAwardIds: number[] = [];
   state: LocalizedPagesState = {
     hasScrolled: false,
-    bundleGenerator: null,
+    l10n: null,
     uploadPercentage: null,
   };
 
@@ -99,14 +103,14 @@ let LocalizedPage: any = class extends React.Component<
     this.props.refreshUser();
   }
 
-  async componentWillReceiveProps(nextProps: LocalizedPagesProps) {
+  async UNSAFE_componentWillReceiveProps(nextProps: LocalizedPagesProps) {
     const { account, addNotification, api, uploads, userLocales } = nextProps;
 
     this.runUploads(uploads).catch(e => console.error(e));
 
     window.onbeforeunload =
       uploads.length > 0
-        ? e =>
+        ? (e: any) =>
             (e.returnValue =
               'Leaving the page now aborts pending uploads. Are you sure?')
         : undefined;
@@ -115,12 +119,11 @@ let LocalizedPage: any = class extends React.Component<
       await this.prepareBundleGenerator(nextProps);
     }
 
-    const award =
-      account && account.awards
-        ? account.awards.find(
-            a => !a.notification_seen_at && !this.seenAwardIds.includes(a.id)
-          )
-        : null;
+    const award = account?.awards
+      ? account.awards.find(
+          a => !a.notification_seen_at && !this.seenAwardIds.includes(a.id)
+        )
+      : null;
 
     if (award) {
       this.seenAwardIds.push(...account.awards.map(a => a.id));
@@ -129,8 +132,12 @@ let LocalizedPage: any = class extends React.Component<
           award.days_interval == 1 ? 'daily' : 'weekly'
         } goal achieved!`,
         {
-          children: 'Check out your award!',
-          to: URLS.AWARDS,
+          links: [
+            {
+              children: 'Check out your award!',
+              to: URLS.AWARDS,
+            },
+          ],
         }
       );
       await api.seenAwards('notification');
@@ -179,6 +186,7 @@ let LocalizedPage: any = class extends React.Component<
     }
 
     if (!LOCALES.includes(mainLocale)) {
+      userLocales[0] = DEFAULT_LOCALE;
       this.props.setLocale(DEFAULT_LOCALE);
       history.replace(replacePathLocale(pathname, DEFAULT_LOCALE));
     } else {
@@ -193,7 +201,7 @@ let LocalizedPage: any = class extends React.Component<
     );
 
     this.setState({
-      bundleGenerator: await createBundleGenerator(
+      l10n: await createLocalization(
         api,
         userLocales,
         this.props.messageOverwrites
@@ -209,9 +217,9 @@ let LocalizedPage: any = class extends React.Component<
 
   render() {
     const { locale, notifications, toLocaleRoute } = this.props;
-    const { bundleGenerator, uploadPercentage } = this.state;
+    const { l10n, uploadPercentage } = this.state;
 
-    if (!bundleGenerator) return null;
+    if (!l10n) return null;
 
     return (
       <div>
@@ -232,24 +240,21 @@ let LocalizedPage: any = class extends React.Component<
                 }
           }
         />
-        <LocalizationProvider bundles={bundleGenerator}>
+        <LocalizationProvider l10n={l10n}>
           <div>
             <div className="notifications">
               {notifications
                 .slice()
                 .reverse()
-                .map(notification =>
-                  notification.kind == 'pill' ? (
-                    <NotificationPill
-                      key={notification.id}
-                      {...{ notification }}
-                    />
-                  ) : (
-                    <NotificationBanner
-                      key={notification.id}
-                      {...{ notification }}
-                    />
-                  )
+                .map(
+                  notification =>
+                    notification.kind == 'pill' &&
+                    notification.type !== 'achievement' && (
+                      <NotificationPill
+                        key={notification.id}
+                        notification={notification}
+                      />
+                    )
                 )}
             </div>
 
@@ -314,19 +319,23 @@ class App extends React.Component {
   constructor(props: any, context: any) {
     super(props, context);
 
-    if (isNativeIOS()) {
-      this.bootstrapIOS();
-    }
-
-    if (isFirefoxFocus()) {
-      document.body.classList.add('focus');
-    }
-
-    if (isMobileWebkit()) {
+    if (isMobileSafari()) {
       document.body.classList.add('mobile-safari');
     }
 
     this.userLocales = negotiateLocales(navigator.languages);
+
+    Sentry.init({
+      dsn: SENTRY_FE_DSN,
+      environment: isProduction() ? 'prod' : 'stage',
+      release: process.env.GIT_COMMIT_SHA || null,
+    });
+
+    if (isProduction() && !doNotTrack()) {
+      FullStory.init({
+        orgId: FS_KEY,
+      });
+    }
   }
 
   async componentDidMount() {
@@ -338,15 +347,13 @@ class App extends React.Component {
   }
 
   async componentDidCatch(error: Error, errorInfo: any) {
-    this.setState({ error });
+    this.setState({ error }, () =>
+      history.push(`${this.userLocales[0]}/503`, {
+        prevPath: history.location.pathname,
+      })
+    );
+    if (!isProduction() && !isStaging()) return;
 
-    if (!isProduction() && !isStaging()) {
-      return;
-    }
-    const Sentry = await import('@sentry/browser');
-    Sentry.init({
-      dsn: 'https://e0ca8e37ef77492eb3ff46caeca385e5@sentry.io/1352219',
-    });
     Sentry.withScope(scope => {
       Object.keys(errorInfo).forEach(key => {
         scope.setExtra(key, errorInfo[key]);
@@ -356,28 +363,8 @@ class App extends React.Component {
     this.setState({ Sentry });
   }
 
-  /**
-   * Perform any native iOS specific operations.
-   */
-  private bootstrapIOS() {
-    document.body.classList.add('ios');
-  }
-
   render() {
-    const { error, Sentry } = this.state;
-    if (error) {
-      return (
-        <div>
-          An error occurred. Sorry!
-          <br />
-          <button onClick={() => Sentry.showReportDialog()} disabled={!Sentry}>
-            Report feedback
-          </button>
-          <br />
-          <button onClick={() => location.reload()}>Reload</button>
-        </div>
-      );
-    }
+    const userLocale = this.userLocales[0];
 
     return (
       <Suspense fallback={<Spinner />}>
@@ -390,9 +377,7 @@ class App extends React.Component {
                   exact
                   path={url || '/'}
                   render={() => (
-                    <Redirect
-                      to={'/' + this.userLocales[0] + url + location.search}
-                    />
+                    <Redirect to={`/${userLocale}${url}${location.search}`} />
                   )}
                 />
               ))}
@@ -408,9 +393,21 @@ class App extends React.Component {
                   match: {
                     params: { locale },
                   },
-                }) => (
-                  <LocalizedPage userLocales={[locale, ...this.userLocales]} />
-                )}
+                }) =>
+                  LOCALES.includes(locale) ? (
+                    <LocalizedPage
+                      userLocales={[locale, ...this.userLocales]}
+                    />
+                  ) : (
+                    <Redirect
+                      push
+                      to={{
+                        pathname: `/${userLocale}/404`,
+                        state: { prevPath: location.pathname },
+                      }}
+                    />
+                  )
+                }
               />
             </Switch>
           </Router>

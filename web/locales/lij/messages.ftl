@@ -1,13 +1,15 @@
 ## General
 
-yes-receive-emails = Sci, màndime a pòsta eletrònica. Me piaxéiva restâ informòu in sciô progètto Common Voice.
-stayintouch = Mozilla sta costroéndo 'na comunitæ de persónn-e interesæ a-e tecnologîe vocâle. A noiâtri ne piaxéiva restâ in contàtto con ti con agiornaménti, nêuve fónte de dæti, e pe conósce cómme t'adêuvi i dæti de Common Voice.
+yes-receive-emails = Sci, mandime a pòsta elettrònica. Veuggio avei de neuve do progetto Common Voice.
+stayintouch = Mozilla a l'é apreuvo a mette insemme unna comunitæ de gente interessæ a-e tecnologie da voxe. A noiatri ne piaxeiva arrestâ in contatto con ti pe contâte de misse a giorno, de neuve vivagne de dæti, e pe savei comme ti deuvi i dæti de Common Voice.
 privacy-info = Prométemmo de gestî e teu informaçioìn personæ con cûra. Lêzi de ciù inta nòstra <privacyLink>informatìva in sciâ privacy</privacyLink>.
-return-to-cv = Ritòrna a Common Voice
+return-to-cv = Vanni inderê à Common Voice
 email-input =
-    .label = Indirìsso de pòsta eletrònica
-submit-form-action = Invîa
+    .label = Addresso de pòsta elettrònica
+submit-form-action = Manda
 loading = Caregaménto...
+email-opt-in-info = Veuggio reçeive a pòstra elettrònica pe-i promemöia di obiettivi, pe-e misse à giorno in sciô mæ progresso, e pe-e newsletter in sce Common Voice.
+email-opt-in-info-title = Scrivite a-a mailing list de Common Voice
 email-opt-in-privacy = Çernéndo de riçéive a pòsta eletrònica, acètti che Mozilla utilîze ste informaçioìn cómme l'é riportòu inta <privacyLink>informatìva in sciâ privacy</privacyLink> de Mozilla.
 indicates-required = * ìndica 'n cànpo òbligatöio
 not-available-abbreviation = n.d.
@@ -28,7 +30,9 @@ ar = Àrabo
 as = Assaméize
 ast = Asturiàn
 az = Azerbaigiàn
-bg = Bùlgaro
+ba = Bashkir
+be = Ruscio gianco
+bg = Burgao
 bn = Bengaléize
 br = Bréton
 bxr = Buriàto
@@ -47,19 +51,22 @@ en = Ingléize
 eo = Esperànto
 es = Spagnòllo
 et = Èstone
-eu = Bàsco
+eu = Basco
 fa = Persiàn
+ff = Fulah
 fi = Finlandéize
 fo = Faroéize
-fr = Françéize
-fy-NL = Frisiàn
+fr = Franseise
+fy-NL = Frixan
 ga-IE = Irlandéize
 gl = Galiçiàn
 he = Ebràico
-hi-IN = Hindi
+hi = Hindi
 hr = Croâto
 hsb = Sòrabo âto
 hu = Ungheréize
+hy-AM = Ermeno
+hyw = Ermeno de Ponente
 ia = Interléngoa
 id = Indoneziàn
 is = Izlandéize
@@ -71,6 +78,7 @@ kab = Cabîlo
 kk = Kazàko
 ko = Coreàn
 kpv = Komi-Zyriàn
+ku = Curdo
 kw = Còrneco
 ky = Kirghìzo
 lij = Lìgure
@@ -79,8 +87,11 @@ lv = Lètone
 mdf = Mokša
 mhr = Màri òrientâle
 mk = Macédone
+ml = Malayalam
 mn = Móngolo
 mrj = Màri òcindentâle
+mt = Marteise
+my = Burmeise
 myv = Èrza
 nb-NO = Norvegéize Bokmål
 ne-NP = Nepaléize
@@ -89,7 +100,6 @@ nn-NO = Norvegéize Nynorsk
 oc = Òcitàn
 or = Oriya
 pl = Polàcco
-pt-BR = Portoghéize (Braxî)
 rm-sursilv = Romàncio sotoscilvàn
 ro = Roméno
 ru = Rùscio
@@ -127,6 +137,7 @@ speak = Pàrla
 speak-now = Pàrla òua
 datasets = Dataset
 languages = Léngoe
+about = Informaçioin
 profile = Profî
 help = Agiùtto
 contact = Contàtti
@@ -137,9 +148,9 @@ faq = Domànde frequénte
 content-license-text = Contegnûo disponìbile sótta <licenseLink>licénsa Creative Commons</licenseLink>
 share-title = Agiùtine a trovâ âtri donatoî de vôxe!
 share-text = Agiùtta a mostrâ a-e màchine cómme pàrlan e persónn-e in sciâ vìtta reâ: dónn-a a teu vôxe in sce { $link }
-link-copied = Colegaménto copiòu
+link-copied = Ligamme copiou
 back-top = Vànni in çìmma
-logout = Desconétite
+logout = Sciorti
 
 ## Home Page
 
@@ -152,8 +163,8 @@ wall-of-text-more-desktop =
     Contriboî l'é sénplicìscimo! Lêzi 'na frâze pe mostrâ a-e màchine cómme pàrlan e persónn-e in sciâ vìtta reâ. Verìfica e registraçioìn di âtri colaboratô pe megioâ a qualitæ da bâze de dæti.
 wall-of-text-first = A vôxe a l'é naturâle, a vôxe a l'é umanitæ. L'é pe quésto che l'idêa de creâ 'na tecnologìa vocâle utilizàbile da-e nòstre màchine ne incànta così tànto. Ma pe creâ scistêmi bazæ in scê tecnologîe vocâle, i svilupatoî àn bezéugno de 'n fràcco de registraçioìn de vôxe.
 wall-of-text-second = 'Na bónn-a pàrte di dæti uzæ de grénde aziénde a no l'é acescìbile a-a magiorànsa de persónn-e. Segóndo noiâtri, quésto o sófoca l'inovaçión. Dónca émmo creòu Common Voice, un progètto pe agiutâ a rénde o riconosciménto vocâle avèrto e acescìbile a tùtti.
-show-wall-of-text = Informaçioìn in ciù
-help-us-title = Agiùtine a convalidâ e frâze!
+show-wall-of-text = Saccine de ciù
+help-us-title = Aggiuttine à validâ e frase!
 help-us-explain = Sciàcca Riprodûxi, sénti e dìnine: l'àn dîta bèn a frâze chi de sótta?
 no-clips-to-validate = Pâ che no ghe són registraçioìn in sta léngoa. Contriboìsci registràndo quarcösa.
 vote-yes = Sci
@@ -164,25 +175,25 @@ speak-paragraph = La registraçión vocâle de frâze a l'é 'na pàrte fondamen
 speak-goal-text = Registraçioìn
 listen-subtitle = Agiùtine a convalidâ e registraçioìn
 listen-paragraph = Convalidâ e registraçioìn fæte da-i âtri l'é âtretànto inportànte pe-a misción de Common Voice. Séntile, e agiùtine a creâ 'na bâze de dæti avèrta e de qualitæ.
-listen-goal-text = Registraçioìn convalidæ
-hours-recorded = Ôe registræ
-hours-validated = Ôe validæ
-voices-online = Vôxe atoalménte in lìnia
+listen-goal-text = Registraçioin validæ
+hours-recorded = Oe registræ
+hours-validated = Oe validæ
+voices-online = Voxe in linia oua
 todays-progress = Progrèsso d'ancheu
 help-reach-goal = Agiùtine a arivâ a { $goal }
 read-terms-q = T'æ lètto e condiçioìn d'ûzo do servìçio?
 ready-to-record = T'ê prónto a donâ a teu vôxe?
-all-locales = Tùtto
+all-locales = Tutto
 today = Ancheu
 x-weeks-short =
     { $count ->
-        [one] setemànn-a
-       *[other] { $count } set.
+        [one] settemaña
+       *[other] { $count } sett.
     }
 x-months-short =
     { $count ->
-        [one] méize
-       *[other] { $count } méixi
+        [one] meise
+       *[other] { $count } meixi
     }
 x-years-short =
     { $count ->
@@ -190,7 +201,6 @@ x-years-short =
        *[other] { $count } ànni
     }
 help-make-dataset = Agiùtine a realizâ 'na bâze de dæti de âta qualitæ e pùblica
-profile-not-required = Registrâ 'n profî o no l'é òbligatöio pe colaborâ, ma o l'é incoragiòu
 sign-up-account = Regìstrite
 email-subscription-title = Scrîvite a-i agiornaménti vîa pòsta eletrònica
 
@@ -210,7 +220,6 @@ whats-public = Quæ dæti són pùblici?
 email-not-public = No rendiêmo o teu indirìsso de pòsta eletrònica pùblico.
 recordings-and-locale-public = O nùmero de registraçioìn e e léngoe a-e quæ contriboìsci saiàn pùblici.
 username-optin-public = Ti peu çèrne de rénde o teu nómme uténte pùblico ò anònimo.
-demographic-deidentified = E informaçioìn personæ fornîæ facoltativaménte (prezénpio etæ, sèsso, léngoa e acénto) són de-identificæ da-e teu registraçioìn e no saiàn réize pùbliche in sciô teu profî.
 username-email-not-demographic = O teu nómme uténte e indirìsso de pòsta eletrònica no saiàn asociæ a-i dæti pùblici.
 
 ## Speak & Listen Shortcuts
@@ -298,17 +307,22 @@ why-demographic = Perché l'é inportànte?
 why-demographic-explanation = Dæti cómme etæ, sèsso, e acénto agiùtano a megioâ i dæti òudio utilizæ pe svilupâ a precixón di motoî de riconosciménto vocâle. O teu nómme uténte e l'indirìsso de pòsta eletrònica no saiàn mâi asociæ a-i dæti spedîi, e ti poriæ çèrne se rénde o teu nómme uténte pùblico ò privòu.
 accept-privacy = Aconsénto a-o trataménto di dæti cómme l'é indicòu inta <privacyLink>informatìva in sciâ privacy</privacyLink> de Mozilla.
 login-identity = Identitæ de conesción
-login-signup = Ìntra / Regìstrite
-edit = Modìfica
+login-signup = Intra / Scrivite
+edit = Cangia
 email-subscriptions = Sotoscriçioìn a-a pòsta
 download-profile = Descàrega i mæ dæti
 contribution-experience = Esperiénsa de contribûti
-skip-submission-feedback = Sâta la spediçiòn di coménti
+skip-submission-feedback = Sata a spediçion de segnalaçioin
 skip-submission-description = Dòppo avéi sciacòu Spedìsci inta a spediçiòn do contribûto, ti pasiæ drîto drîto a-o pròscimo set de çìnque registraçioìn o convàlide, sâtàndo a richièsta de fornî coménti.
 skip-submission-note = Nòtta: saiâ in tùtti i câxi necesâio seleçionâ Pàrla ò Sénti pe modificâ o tîpo de contribûto.
-off = Dizatîva
-on = Atîva
-add-avatar-title = Azónzi 'na föto a-o teu profî
+off = Asmòrta
+on = Metti in fonçion
+retry-voice-wave-recording = PREUVA TORNA
+re-record = REGISTRA TORNA
+delete-voice = SCANCELLA
+recording-voice-wave = Registraçion
+ready-to-upload = CAREGA
+cancel-avatar-clip-recording = ANULLA
 browse-file-title = Càrega 'na föto
 browse-file = Rebéla e mòlla òpû <browseWrap>sfêuggia</browseWrap>
 connect-gravatar = Conétti con Gravatar
@@ -330,8 +344,6 @@ faq-what-cv-a =
 faq-why-important-q = Perché a l'é inportànte?
 faq-how-get-q = Cómme pòsso òtegnî i dæti de Common Voice?
 faq-how-get-a = O dataset de Common Voice o l'é disponìbile pe êse descaregòu sótta a licénsa <licenseLink>CC0 </licenseLink> da-a <datasetLink>pàgina Dataset</datasetLink>. Inta mæxima pàgina ti peu trovâ tànti âtri dataset descaregàbili publicaménte.
-faq-when-release-q = Quànde saiàn pùblicæ i dæti de Common Voice in âtre léngoe?
-faq-when-release-a = A versción moltiléngoa do dataset de Common Voice a l'é atoalménte in fâze de svilùppo e rifinitûa da-a comunitæ. Se ti veu savéi de ciù in sce cómme sostegnî 'sto progétto, pe piâxéi  <contactLink>contàtine</contactLink>. A-o moménto, a publicaçión a l'é prevìsta pe zenâ do 2019. Sucesivaménte agiorniêmo periodicaménte o dataset con nêuve léngoe e con registraçioìn vocâle cómme saiàn disponìbili. A cadénsa do agiornaménto periòdico a l'é ancón da determinâ.
 faq-why-mission-q = In che mòddo Common Voice o l'é pàrte da misción de Mozilla?
 faq-why-mission-a = A misción de Mozilla a l'é de mantegnî a Ræ avèrta e acescìbile a tùtti. Quésto inclùdde ànche ofrî òportunitæ a-i outoî de contegnûi Web atravèrso progétti cómme Common Voice. Òua che e tecnologîe vocâle no són ciù aplicaçioìn de nìccia, credémmo che doviéivan êse disponìbile pe tùtti, sénsa nisciùnn-a discriminaçión. Quésto scignìfica investî into svilùppo e into colàodo de ciù léngoe, tegnìndo cónto di divèrsci acénti e variànte demogràfiche. Common Voice a l'é 'na risòrsa pùblica disponìbile pe tùtti, e-e squàddre de Mozilla e i svilupatoî in tùtto o móndo ascì a stàn za dêuviàndo pe-i pròppi progètti.
 faq-what-cv-and-deepspeech-q = Quæ l'é a diferénsa tra Common Voice e Deep Speech?
@@ -361,6 +373,12 @@ faq-what-determine-identity-q = Cöse scignificâ che o l'é proibîo de «deter
 about-speak = Parla
 about-yes-votes = ≥ 2 voti Sci
 about-no-votes = ≥ 2 voti No
+about-nav-why-common-voice = Perché ?
+about-nav-how-it-works = Comme ?
+about-nav-partners = Partner
+about-nav-get-involved = Parteçipa
+mycroft-title = Mycroft Ai
+mycroft-subtitle = Inteligensa Artifiçiâ
 
 ## Glossary
 
@@ -408,7 +426,7 @@ review-cancel = Scancélla a spediçión
 review-keep-recordings = Consèrva e registraçioìn
 review-delete-recordings = Scancèlla e mæ registraçioìn
 
-## New Datasets Page
+## Datasets Page
 
 datasets-headline = Stémmo realizàndo 'n dataset de vôxe moltiléngoa e avèrto quæ chiónque poriâ utilizâ pe svilupâ aplicaçioìn con riconosciménto vocâle.
 language = Léngoa
@@ -450,6 +468,7 @@ ready-to-validate = T'ê prónto a convalidâ e frâze?
 more = Âtro
 close = Særa
 download = Descàrega
+dataset-version = Verscion
 
 ## Download Modal
 
@@ -488,7 +507,6 @@ language-section-launched = Òperatîve
 language-section-launched-description = Pe ste léngue o scito web a l'é stæto <localizationGlossaryLink>tradûto</localizationGlossaryLink> conpletaménte, e l'<phraseCollectionGlossaryLink>arecugéita de frâze</sentenceCollectionGlossaryLink> a l'à razónto 'na dimensción tâ da garantî suficénte materiâle da <speakLink>registrâ</ speakLink> e <listenLink>sentî</listenLink> de mòddo continoatîvo.
 languages-show-more = Móstra ciù eleménti
 languages-show-less = Móstra mêno eleménti
-language-speakers = Parlòu da
 language-meter-in-progress = Progrèsso
 language-total-progress = Totâle
 language-search-input =
@@ -498,7 +516,7 @@ localized = Localizæ
 sentences = Frâze
 total-hours = Ôe convalidæ
 
-## New Contribution
+## Contribution
 
 action-click = Clìcca
 action-tap = Sciàcca
@@ -513,7 +531,6 @@ contribute-more = T'ê prónto a fâne ancón { $count }?
 record-cta = Inàndia a registraçión
 record-platform-not-supported = A piatafórma in ûzo a no l'é atoalménte suportâ.
 record-platform-not-supported-desktop = In sce computer da scrivanîa ti peu descaregâ l'ùrtima versción:
-record-platform-not-supported-ios = I uténti de <bold>iOS</bold> pêuan descaregâ a nòstra aplicaçión de bàdda:
 record-must-allow-microphone = L'é necesâio consentî l'acesso a-o micròfono do dispoxitîvo.
 record-no-mic-found = Inposcìbile trovâ o micròfono.
 record-error-too-short = A registraçión a l'é tròppu brêve.
@@ -527,7 +544,6 @@ record-again-instruction = Benìscimo! <recordIcon></recordIcon> Regìstra a pr�
 record-again-instruction2 = Contìnoa coscì, regìstra tórna <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> L'ùrtima!
 review-tooltip = Sénti tórna e registraçioìn e, se l'é necesâio, ripêtile
-unable-speak = No pòsso parlâ in sto moménto
 review-instruction = Sénti tórna e registraçioìn e, se l'é necesâio, ripêtile
 record-submit-tooltip = { $actionType } Invîa quànde t'ê prónto
 clips-uploaded = Registraçioìn caregæ
@@ -540,9 +556,19 @@ listen-instruction = { $actionType }<playIcon></playIcon> L'àn dîta bèn a fr�
 listen-again-instruction = Òtimo travàggio! <playIcon></playIcon> Sénti tórna quànde t'ê prónto
 listen-3rd-time-instruction = Dôe fæte <playIcon></playIcon>, avànti 'n'âtra!
 listen-last-time-instruction = <playIcon></playIcon>L'ùrtima!
-nothing-to-validate = No émmo registraçioìn da convalidâ in sta léngoa, agiùtine registràndo quàrche frâze.
 record-button-label = Regìstra a teu vôxe
 share-title-new = <bold>Agiùtine</bold> a trovâ âtre vôxe
+target-segment-add-voice = Azonzi a teu voxe
+target-segment-learn-more = Atre informaçioin
+
+## Reporting
+
+report = Denunçia
+report-title = Manda 'na denucia
+report-other-comment =
+    .placeholder = Comento
+success = Operaçion ariescia
+continue = Vanni avanti
 
 ## Goals
 
@@ -572,6 +598,7 @@ clips-you-validated = Registraçioìn quæ t'æ convalidòu
 todays-recorded-progress = Progrèsso de Common Voice d'anchêu in scê registraçioìn fæte
 todays-validated-progress = O progrèsso de Common Voice d'ancheu in scê registraçioìn convalidæ
 stats = Statìstiche
+awards = Premmi
 you = Ti
 everyone = Tùtti
 contribution-activity = Contribûti
@@ -580,6 +607,16 @@ recorded-clips = Registraçioìn fæte
 validated-clips = Registraçioìn convalidæ
 total-approved = Totâle aprovòu
 overall-accuracy = Precixón conplescìva
+set-visibility = Inpòsta a mæ vixibilitæ
+
+## Custom Goals
+
+both-speak-and-listen = L'un e l'atro
+both-speak-and-listen-long = L'un e l'atro (Parla e ascolta)
+easy-difficulty = Façile
+average-difficulty = Medio
+difficult-difficulty = Difiçile
+pro-difficulty = Asperto
 
 ## Profile Delete
 
@@ -593,3 +630,7 @@ why-delete-recordings =
     
     Ti peu spiêgâne perché t'eu scancelâ e teu registraçioìn?
 profile-form-delete = Scancèlla profî
+
+## Landing
+
+profile-not-required = Registrâ 'n profî o no l'é òbligatöio pe colaborâ, ma o l'é incoragiòu

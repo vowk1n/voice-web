@@ -9,7 +9,9 @@ email-input =
 submit-form-action = 送出
 loading = 載入中…
 email-opt-in-info = 我希望收到諸如目標提醒、我的進度更新與 Common Voice 的相關電子報。
-email-opt-in-privacy = 若同意接收郵件，就代表您同意 Mozilla 依照<privacyLink>隱私權保護政策</privacyLink>當中描述的方式處理這些資訊。
+email-opt-in-info-title = 加入 Common Voice 郵件群組
+email-opt-in-info-sub-with-challenge = 訂閱諸如挑戰、目標提醒、進度更新與 Common Voice 的相關電子報。
+email-opt-in-privacy-v2 = 若同意接收郵件，就代表您同意 Mozilla 依照<privacyLink>隱私權保護政策</privacyLink>當中描述的方式處理這些資訊。
 indicates-required = * 表示必填欄位
 not-available-abbreviation = 不適用
 
@@ -26,10 +28,12 @@ af = 南非荷蘭語
 am = 阿姆哈拉語
 an = 亞拉岡語
 ar = 阿拉伯語
+arn = 馬布切語
 as = 阿薩姆語
 ast = 阿斯圖里亞斯語
 az = 亞塞拜然語
 ba = 巴什噶爾語
+be = 白俄羅斯語
 bg = 保加利亞語
 bn = 孟加拉語
 br = 布里多尼語
@@ -60,10 +64,12 @@ ga-IE = 愛爾蘭語
 gl = 加里西亞語
 ha = 豪薩語
 he = 希伯來語
-hi-IN = 印地語
+hi = 印地語
 hr = 克羅埃西亞語
 hsb = 上索布語
 hu = 匈牙利語
+hy-AM = 亞美尼亞語
+hyw = 西亞美尼亞語
 ia = 國際語
 id = 印尼語
 is = 冰島語
@@ -71,23 +77,28 @@ it = 義大利語
 izh = 伊喬里亞語
 ja = 日語
 ka = 喬治亞語
+kaa = 卡拉卡爾帕克語
 kab = 卡拜爾語
+kbd = 卡巴達語
 kk = 哈薩克語
 ko = 韓語
 kpv = 科米-齊良語
 ku = 庫德語
 kw = 康瓦爾語
 ky = 吉爾吉斯語
+lg = 盧干達語
 lij = 利古里亞語
 lt = 立陶宛語
 lv = 拉脫維亞語
 mdf = 莫克沙語
+mg = 馬拉加西語
 mhr = 草原馬里語
 mk = 馬其頓語
 ml = 馬拉亞拉姆語
 mn = 蒙古語
 mrj = 山地馬里語
 mt = 馬爾他語
+my = 緬甸語
 myv = 厄茲亞語
 nb-NO = 挪威語（Bokmål）
 ne-NP = 尼泊爾語
@@ -95,6 +106,7 @@ nl = 荷蘭語
 nn-NO = 挪威語（Nynorsk）
 oc = 奧西坦語
 or = 奧里亞語
+pa-IN = 旁遮普語
 pl = 波蘭語
 pt = 葡萄牙語
 rm-sursilv = 羅曼蘇塞瓦語
@@ -104,6 +116,7 @@ ru = 俄語
 rw = 盧安達語
 sah = 薩哈語
 sc = 薩丁尼亞語
+scn = 西西里語
 si = 僧加羅語
 sk = 斯洛伐克語
 sl = 斯洛維尼亞語
@@ -116,6 +129,7 @@ ta = 坦米爾語
 te = 泰盧固語
 tg = 塔吉克語
 th = 泰語
+tl = 塔加祿語（菲律賓）
 tr = 土耳其語
 tt = 韃靼語
 uby = 尤比克語
@@ -123,6 +137,7 @@ udm = 烏德莫特語
 uk = 烏克蘭語
 ur = 烏爾都語
 uz = 烏茲別克語
+vec = 威尼斯語
 vi = 越南語
 vot = 沃特語
 zh-CN = 華語（中國）
@@ -219,7 +234,7 @@ whats-public = 有哪些資料會公開？
 email-not-public = 我們不會公開您的 E-Mail。
 recordings-and-locale-public = 您貢獻的錄音數量，以及貢獻的語言將會是公開的。
 username-optin-public = 您可以讓使用者名稱公開或保持匿名。
-demographic-deidentified = 非必要提供的人口統計資料（例如年齡、性別、語言、口音）將會在您送出的語音資料中被去識別化，也永遠不會公開在您的資料上。
+demographic-deidentified-clarity = 選填的人口統計資料（例如年齡、性別、語言、腔調）不會在您的個人資料上公開，也不會在資料集中與您的帳號連結。每個錄音片段只會為了能做更準確的分析，而與您的人口統計資料連結。舉例來說，研究者可能想要對特定的人口分層做出更細的訓練模型。
 username-email-not-demographic = 您的使用者名稱與 E-Mail 不會跟公開發布的資料被關聯起來。
 
 ## Speak & Listen Shortcuts
@@ -305,6 +320,7 @@ thanks-for-account = 感謝您確認帳號資訊，接下來請提供您的基�
 why-demographic = 這有什麼重要的？
 why-demographic-explanation = 匿名化的使用者資料，如年齡、性別、腔調等，可幫助我們改善用來訓練語音識別引擎的語音資料。您的帳號與 E-Mail 不會與送出的資料相關聯，您也可以決定是否要公開您的帳號名稱或保持匿名。
 accept-privacy = 我同意你依照 Mozilla 的<privacyLink>隱私權保護政策</privacyLink>當中描述的方式處理這些資訊
+accept-privacy-title = 隱私權保護政策
 login-identity = 登入身分
 login-signup = 登入 / 註冊
 edit = 編輯
@@ -433,11 +449,11 @@ about-partnership =
     
     特別感謝下列人員與組織單位，協助本專案:
 about-get-involved = 參與我們
-about-get-involved-text =
+about-get-involved-text-2 =
     想要幫忙讓 Common Voice 變得更棒嗎？
-    沒問題！請寄 E-Mail 給我們，也可以到 <discourseLink>Discourse</discourseLink> 留言、
-    透過 <githubLink>GitHub</githubLink> 送出意見回饋、
-    也可以加入我們的 <slackLink>Slack</slackLink>。
+    沒問題！請寄 E-Mail 給我們，也可以到 <discourseLink>Discourse</discourseLink>
+    討論區留言、透過 <githubLink>GitHub</githubLink> 回報網站問題、
+    或是加入我們的 <matrixLink>Matrix</matrixLink> 社群聊天室。
 about-nav-why-common-voice = 為什麼？
 about-nav-how-it-works = 怎麼做？
 about-nav-partners = 夥伴
@@ -461,10 +477,13 @@ sst-explanation = 語音轉文字（STT）技術可將語音資料轉為文字�
 de-identified = 去識別化
 de-identified-explanation = 在打包下載資料集時，貢獻者的個人資料會從其所貢獻的語音片段隱藏的過程。
 
-## NotFound
+## Error pages
 
-notfound-title = 找不到
-notfound-content = 很抱歉，找不到您想找的東西。
+error-title-404 = 找不到您想要開啟的頁面
+error-content-404 = 也許從我們的<homepageLink>首頁</homepageLink>重新開始能幫到忙？若要詢問問題，可以加入<matrixLink>Matrix 社群聊天頻道</matrixLink>、關注 <githubLink>GitHub</githubLink> 上的網站問題回報，或到<discourseLink>我們的 Discourse 討論區</discourseLink>讓我們知道。
+error-title-503 = 發生了意外的停機時間
+error-content-503 = 網站將盡快恢復作業。請到我們的 <matrixLink>Matrix 社群聊天頻道</matrixLink>、<githubLink>GitHub</githubLink> 上的網站問題回報，或到 <discourseLink>Discourse 討論區</discourseLink>回報給我們，或取得最新資訊。
+error-code = 錯誤 { $code }
 
 ## Data
 
@@ -483,6 +502,8 @@ data-bundle-button = 下載資料集總組合
 data-bundle-description = Common Voice 資料，以及上面列出的所有其他語音資料集。
 license = 授權條款: <licenseLink>{ $license }</licenseLink>
 license-mixed = 混和
+data-download-singleword-title = 下載單字目標字串
+data-download-singleword-callout = 這是以使用情境為導向的字串集，當中包含用來提供 Firefox Voice 進行語音數字辨識、偵測是/否、喚醒詞等功能的測試資料。
 review-terms = 使用 Common Voice，就代表您同意我們的<termsLink>使用條款</termsLink>與<privacyLink>隱私權公告</privacyLink>
 terms-agree = 我同意
 terms-disagree = 我不同意
@@ -603,14 +624,18 @@ contribute = 參與貢獻
 listen = 聆聽
 skip = 略過
 shortcuts = 捷徑
-clips-with-count = <bold>{ $count }</bold> 段
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> 個片段
+       *[other] <bold>{ $count }</bold> 個片段
+    }
 goal-help-recording = 您已幫助 Common Voice 完成 <goalPercentage></goalPercentage> 的每日 { $goalValue } 錄音目標！
 goal-help-validation = 您已幫助 Common Voice 完成 <goalPercentage></goalPercentage> 的每日 { $goalValue } 筆驗證目標！
 contribute-more = 準備好再作 { $count } 筆了嗎？
 record-cta = 開始錄音
 record-platform-not-supported = 很抱歉，目前暫不支援您的平台。
 record-platform-not-supported-desktop = 在桌上型電腦，您可以下載最新版的:
-record-platform-not-supported-ios = <bold>iOS</bold> 使用者可下載我們的免費程式:
+record-platform-not-supported-ios-non-safari = 在 iOS 平台，請繼續前往 Safari 開啟錄音功能…
 record-must-allow-microphone = 您必須允許使用麥克風。
 record-no-mic-found = 找不到麥克風
 record-error-too-short = 錄音太短了。
@@ -624,6 +649,8 @@ record-again-instruction = 好！點擊<recordIcon></recordIcon>錄下下個片�
 record-again-instruction2 = 繼續加油，再錄一筆！<recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon>最後一筆了！
 review-tooltip = 在此確認或重錄片段
+share-clip = 分享您的錄音片段
+share-common-voice = 分享 Common Voice
 review-instruction = 確認錄音內容，有需要的話可以重錄
 record-submit-tooltip = 準備好即可{ $actionType }送出
 clips-uploaded = 已上傳片段
@@ -636,11 +663,17 @@ listen-instruction = { $actionType }<playIcon></playIcon>，聽聽他們有準�
 listen-again-instruction = 幹得好！<playIcon></playIcon>準備好就可以再聽一次
 listen-3rd-time-instruction = 完成兩筆了<playIcon></playIcon>，繼續保持！
 listen-last-time-instruction = <playIcon></playIcon>最後一筆了！
-nothing-to-validate = 我們沒有這個語言可供驗證的錄音，請幫助我們多錄一些。
+listen-empty-state = 我們已經沒有這種語言的片段可以驗證了…
+speak-empty-state = 我們已經沒有這種語言的文字可以錄音了…
+speak-empty-state-cta = 貢獻語句
 record-button-label = 錄下您的聲音
 share-title-new = <bold>請幫助我們</bold>找到更多聲音
 keep-track-profile = 註冊帳號來追蹤個人貢獻進度
 login-to-get-started = 請登入或註冊，即可開始使用
+target-segment-first-card = 您正在朝我們的第一組目標段落數貢獻錄音
+target-segment-first-banner = 幫助 Common Voice 設定 { $locale } 的第一組目標段落數
+target-segment-add-voice = 加入您的聲音
+target-segment-learn-more = 了解更多
 
 ## Reporting
 
@@ -683,6 +716,7 @@ validations =
 
 your-languages = 您的語言
 toward-next-goal = 距離下一個目標
+goal-reached = 達成目標
 clips-you-recorded = 您已錄音的片段
 clips-you-validated = 您已驗證的片段
 todays-recorded-progress = 本日 Common Voice 錄音片段進度
@@ -706,6 +740,7 @@ show-ranking = 顯示我的排名
 
 get-started-goals = 設定目標開始貢獻
 create-custom-goal = 自訂目標
+goal-type = 您想要達到怎樣的目標？
 both-speak-and-listen = 兩者
 both-speak-and-listen-long = 兩者（說與聽）
 daily-goal = 每日目標
@@ -719,17 +754,36 @@ want-to-continue = 你想要繼續嗎？
 finish-editing = 要先完成編輯嗎？
 lose-changes-warning = 現在離開將不會儲存變更
 build-custom-goal = 自訂目標
-help-reach-hours = 設定個人目標，幫助讓 { $language } 的片段達到 { NUMBER($hours) } 小時
-help-reach-hours-general = 設定個人目標，幫助讓 Common Voice 當中的語言時數達到 { NUMBER($hours) } 小時
+help-reach-hours-pluralized =
+    幫助{ $language }達到{ NUMBER($hours) ->
+       *[other] { $hours } 小時
+    }的個人目標
+help-reach-hours-general-pluralized =
+    幫助 Common Voice 的任一種語言達到{ NUMBER($hours) ->
+       *[other] { $hours } 小時
+    }的個人目標
 set-a-goal = 設定目標
 cant-decide = 無法決定嗎？
-activity-needed-calculation = 若有 { NUMBER($people) } 每天錄下 { NUMBER($clipsPerDay) } 片段，就可以在 { NUMBER($periodMonths) } 個月後達到 { NUMBER($totalHours) } 小時的目標。
+activity-needed-calculation-plural =
+    若有 { NUMBER($people) ->
+       *[other] { $people } 個人
+    }每天錄下 { NUMBER($clipsPerDay) ->
+       *[other] { $clipsPerDay } 個片段
+    }，就可以在 { NUMBER($periodMonths) ->
+       *[other] { $periodMonths } 個月
+    }內達成 { NUMBER($totalHours) ->
+       *[other] { $totalHours } 小時
+    }錄音片段的目標。
 how-many-per-day = 好的，每天要貢獻幾個片段？
 how-many-a-week = 好的，每週要貢獻幾個片段？
 which-goal-type = 想要錄音、聆聽確認，還是兩者都要？
 receiving-emails-info = 您已經設定要訂閱目標提醒、我的進度更新、Common Voice 相關最新消息的電子報。
 not-receiving-emails-info = 您目前設定<bold>不要</bold>收到諸如目標提醒、我的進度更新與 Common Voice 的相關電子報。
-n-clips = { NUMBER($count) } 片段
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } 個片段
+       *[other] { $count } 個片段
+    }
 help-share-goal = 分享您的目標，幫助我們找到更多人參與錄音
 confirm-goal = 確認目標
 goal-interval-weekly = 每週

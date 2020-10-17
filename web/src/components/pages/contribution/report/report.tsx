@@ -1,8 +1,7 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { useState } from 'react';
 import { useAPI } from '../../../../hooks/store-hooks';
-import { isProduction } from '../../../../utility';
 import Modal, { ModalProps } from '../../../modal/modal';
 import { ArrowLeft } from '../../../ui/icons';
 import { Button, Checkbox } from '../../../ui/ui';
@@ -105,7 +104,7 @@ export function ReportModal({
         rounded
         disabled={
           submitStatus == 'submitting' ||
-          otherText == '' ||
+          (otherText && otherText.trim() == '') ||
           (!Object.values(selectedReasons).some(Boolean) && otherText == null)
         }
         onClick={() => {

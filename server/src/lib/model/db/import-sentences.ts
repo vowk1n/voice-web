@@ -3,11 +3,16 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { PassThrough } from 'stream';
 import promisify from '../../../promisify';
-import { hash } from '../../clip';
+import { hashSentence } from '../../utility';
 import { redis, useRedis } from '../../redis';
 
 const CWD = process.cwd();
 const SENTENCES_FOLDER = path.resolve(CWD, 'server/data/');
+
+// for sources with sentences that are likely to have repeats across
+// locales, we want to generate a unique hash for each locale + sentence,
+// not just each sentence
+const LOCALE_HASH_SOURCES = ['singleword-benchmark'];
 
 function print(...args: any[]) {
   args.unshift('IMPORT --');
@@ -77,7 +82,9 @@ async function importLocaleSentences(
   version: number
 ) {
   await pool.query('INSERT IGNORE INTO locales (name) VALUES (?)', [locale]);
-  const [[{ localeId }]] = await pool.query(
+  const [
+    [{ localeId }],
+  ] = await pool.query(
     'SELECT id AS localeId FROM locales WHERE name = ? LIMIT 1',
     [locale]
   );
@@ -102,19 +109,20 @@ async function importLocaleSentences(
               INSERT INTO sentences
               (id, text, is_used, locale_id, source, version)
               VALUES ${sentences
-                .map(
-                  sentence =>
-                    `(${[
-                      hash(sentence),
-                      sentence,
-                      true,
-                      localeId,
-                      source,
-                      version,
-                    ]
-                      .map(v => pool.escape(v))
-                      .join(', ')})`
-                )
+                .map(sentence => {
+                  return `(${[
+                    LOCALE_HASH_SOURCES.includes(source)
+                      ? hashSentence(localeId + sentence)
+                      : hashSentence(sentence),
+                    sentence,
+                    true,
+                    localeId,
+                    source,
+                    version,
+                  ]
+                    .map(v => pool.escape(v))
+                    .join(', ')})`;
+                })
                 .join(', ')}
               ON DUPLICATE KEY UPDATE
                 source = VALUES(source),
@@ -162,6 +170,7 @@ export async function importSentences(pool: any) {
       DELETE FROM sentences
       WHERE id NOT IN (SELECT original_sentence_id FROM clips) AND
             id NOT IN (SELECT sentence_id FROM skipped_sentences) AND
+            id NOT IN (SELECT sentence_id FROM taxonomy_entries) AND
             version <> ?
     `,
     [version]
@@ -188,13 +197,10 @@ export async function importSentences(pool: any) {
   print(
     'sentences',
     JSON.stringify(
-      localeCounts.reduce(
-        (obj, { count, locale }) => {
-          obj[locale] = count;
-          return obj;
-        },
-        {} as { [locale: string]: number }
-      ),
+      localeCounts.reduce((obj, { count, locale }) => {
+        obj[locale] = count;
+        return obj;
+      }, {} as { [locale: string]: number }),
       null,
       2
     )

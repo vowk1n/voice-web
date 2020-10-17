@@ -1,4 +1,4 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { shallowEqual } from 'react-redux';
@@ -107,12 +107,12 @@ export default function HomePage() {
             <br />
 
             {showWallOfText && (
-              <React.Fragment>
+              <>
                 <Localized id="wall-of-text-more-desktop">
                   <p />
                 </Localized>
                 <br />
-              </React.Fragment>
+              </>
             )}
 
             <Localized

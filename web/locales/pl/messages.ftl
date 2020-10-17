@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Wyślij
 loading = Wczytywanie…
 email-opt-in-info = Chcę otrzymywać wiadomości e-mail, takie jak przypomnienia o celach, informacje o moim postępie oraz biuletyny na temat Common Voice.
-email-opt-in-privacy = Wybierając otrzymywanie wiadomości wyrażasz zgodę na wykorzystywanie tych danych przez Mozillę w sposób opisany w <privacyLink>zasadach ochrony prywatności<privacyLink>.
+email-opt-in-info-title = Dołącz do listy dyskusyjnej projektu Common Voice
+email-opt-in-info-sub-with-challenge = Otrzymuj wiadomości e-mail, takie jak przypomnienia o wyzwaniach i celach, informacje o postępie oraz biuletyny na temat Common Voice.
+email-opt-in-privacy-v2 = Wybierając otrzymywanie wiadomości wyrażasz zgodę na wykorzystywanie tych danych przez Mozillę w sposób opisany w <privacyLink>zasadach ochrony prywatności</privacyLink>.
 indicates-required = * wskazuje pole obowiązkowe
 not-available-abbreviation = Niedostępne
 
@@ -26,10 +28,12 @@ af = afrykanerski
 am = amharski
 an = aragoński
 ar = arabski
+arn = mapudungun
 as = asamski
 ast = asturyjski
 az = azerski
 ba = baszkirski
+be = białoruski
 bg = bułgarski
 bn = bengalski
 br = bretoński
@@ -60,10 +64,12 @@ ga-IE = irlandzki
 gl = galicyjski
 ha = hausa
 he = hebrajski
-hi-IN = hindi
+hi = hindi
 hr = chorwacki
 hsb = górnołużycki
 hu = węgierski
+hy-AM = ormiański
+hyw = zachodni ormiański
 ia = interlingua
 id = indonezyjski
 is = islandzki
@@ -71,23 +77,28 @@ it = włoski
 izh = iżorski
 ja = japoński
 ka = gruziński
+kaa = karakałpacki
 kab = kabylski
+kbd = kabardyjski
 kk = kazachski
 ko = koreański
 kpv = komi (zyriański)
 ku = kurdyjski
 kw = kornijski
 ky = kirgiski
+lg = luganda
 lij = liguryjski
 lt = litewski
 lv = łotewski
 mdf = moksza
+mg = malgaski
 mhr = maryjski łąkowy
 mk = macedoński
 ml = malajalam
 mn = mongolski
 mrj = maryjski górski
 mt = maltański
+my = birmański
 myv = erzja
 nb-NO = norweski (bokmål)
 ne-NP = nepalski
@@ -95,6 +106,7 @@ nl = holenderski
 nn-NO = norweski (nynorsk)
 oc = oksytański
 or = orija
+pa-IN = pendżabski
 pl = polski
 pt = portugalski
 rm-sursilv = retoromański (sursilvan)
@@ -104,6 +116,7 @@ ru = rosyjski
 rw = kinyarwanda
 sah = jakucki
 sc = sardyński
+scn = sycylijski
 si = syngaleski
 sk = słowacki
 sl = słoweński
@@ -116,6 +129,7 @@ ta = tamilski
 te = telugu
 tg = tadżycki
 th = tajski
+tl = tagalski
 tr = turecki
 tt = tatarski
 uby = ubyski
@@ -123,6 +137,7 @@ udm = udmurcki
 uk = ukraiński
 ur = urdu
 uz = uzbecki
+vec = wenecki
 vi = wietnamski
 vot = wotycki
 zh-CN = chiński (Chiny)
@@ -135,7 +150,7 @@ zh-TW = chiński (Tajwan)
 ## Layout
 
 speak = Nagrywaj
-speak-now = Wymów teraz
+speak-now = Mów teraz
 datasets = Zbiory danych
 languages = Języki
 about = O nas
@@ -223,7 +238,7 @@ whats-public = Co jest publiczne?
 email-not-public = Twój adres e-mail nie będzie dostępny publicznie.
 recordings-and-locale-public = Liczba nagrań i języki, w których uczestniczysz, będą publiczne.
 username-optin-public = Możesz ustawić swoją nazwę użytkownika jako publiczną lub anonimową.
-demographic-deidentified = Opcjonalnie przesłane dane demograficzne (np. wiek, płeć, język i akcent) są anonimizowane z przesłanych danych głosowych i nigdy nie zostaną upublicznione w Twoim profilu.
+demographic-deidentified-clarity = Opcjonalnie wysłane dane demograficzne (np. wiek, płeć, język i akcent) nigdy nie będą publiczne w profilu użytkownika i nie będą powiązane z kontem w zbiorze danych. Poszczególne nagrania dźwiękowe będą powiązane z danymi demograficznymi w celu dokładniejszej analizy — na przykład naukowiec może chcieć ukierunkować model szkoleniowy na konkretny segment demograficzny.
 username-email-not-demographic = Twoja nazwa użytkownika i adres e-mail nie będą powiązane z opublikowanymi danymi.
 
 ## Speak & Listen Shortcuts
@@ -311,6 +326,7 @@ thanks-for-account = Dziękujemy za potwierdzenie konta. Utworzymy teraz Twój p
 why-demographic = Dlaczego to ważne?
 why-demographic-explanation = Anonimowe dane o użytkowniku, takie jak wiek, płeć i akcent zwiększają jakość danych dźwiękowych używanych do trenowania dokładności mechanizmów rozpoznawania mowy. Twoja nazwa użytkownika i adres e-mail nigdy nie będą powiązane z przesyłanymi danymi, a także możesz ustawić, czy nazwa użytkownika ma być publiczna lub anonimowa.
 accept-privacy = Pozwalam wykorzystywać te dane w sposób opisany w <privacyLink>zasadach ochrony prywatności</privacyLink> Mozilli
+accept-privacy-title = Zasady ochrony prywatności
 login-identity = Tożsamość logowania
 login-signup = Zaloguj/zarejestruj się
 edit = Edytuj
@@ -439,10 +455,11 @@ about-partnership =
     
     Chcielibyśmy podziękować następującym osobom i organizacjom za pomoc przy projekcie:
 about-get-involved = Dołącz do nas
-about-get-involved-text =
+about-get-involved-text-2 =
     Chcesz pomóc jeszcze bardziej ulepszyć projekt Common Voice?
     Wspaniale! Skontaktuj się z nami przez e-mail lub serwis <discourseLink>Discourse</discourseLink>,
-    prześlij opinię przez <githubLink>GitHub</githubLink> lub dołącz do nas w aplikacji <slackLink>Slack</slackLink>.
+    zgłoś problem ze stroną w serwisie <githubLink>GitHub</githubLink> lub dołącz
+    do pokoju rozmów społeczności w sieci <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Dlaczego?
 about-nav-how-it-works = Jak?
 about-nav-partners = Partnerzy
@@ -468,10 +485,13 @@ sst-explanation = Technologie rozpoznawania mowy zamieniają dane głosowe na te
 de-identified = Anonimizacja
 de-identified-explanation = Proces, w wyniku którego informacje profilowe uczestnika są usuwane z przekazanych nagrań mowy podczas pakowania ich do pobrania jako część zbioru danych.
 
-## NotFound
+## Error pages
 
-notfound-title = Nie odnaleziono
-notfound-content = Obawiam się, że nie ma tutaj tego, czego szukasz.
+error-title-404 = Nie możemy znaleźć tej strony
+error-content-404 = Może znajdziesz to, czego szukasz, na naszej <homepageLink>stronie głównej</homepageLink>? Aby zadać pytanie, prosimy dołączyć do <matrixLink>pokoju rozmów społeczności w sieci Matrix</matrixLink>, obserwować rozwiązywanie błędów w serwisie <githubLink>GitHub</githubLink> lub odwiedzić <discourseLink>nasze fora Discourse</discourseLink>.
+error-title-503 = Nieoczekiwany przestój
+error-content-503 = Działanie strony zostanie przywrócone tak szybko, jak to możliwe. Najnowsze informacje można uzyskać dołączając do <matrixLink>pokoju rozmów społeczności w sieci Matrix</matrixLink>, a w serwisie <githubLink>GitHub</githubLink> lub na <discourseLink>naszych forach Discourse</discourseLink> można zgłosić i obserwować rozwiązywanie błędów strony.
+error-code = Błąd { $code }
 
 ## Data
 
@@ -490,6 +510,8 @@ data-bundle-button = Pobierz zbiór danych
 data-bundle-description = Dane Common Voice ze wszystkimi innymi zbiorami danych powyżej.
 license = Licencja: <licenseLink>{ $license }</licenseLink>
 license-mixed = Mieszana
+data-download-singleword-title = Pobierz segment docelowy dla pojedynczego słowa
+data-download-singleword-callout = To segment zawierający dane do rozpoznawania wymawianych cyfr, wykrywania tak/nie i dane testowe słowa wybudzającego dla projektu <fxLink>Firefox Voice</fxLink>.
 review-terms = Korzystając z Common Voice, zgadzasz się na <termsLink>warunki korzystania</termsLink> i <privacyLink>zasady ochrony prywatności</privacyLink>
 terms-agree = Zgadzam się
 terms-disagree = Nie zgadzam się
@@ -610,14 +632,19 @@ contribute = Nagraj
 listen = Odsłuchaj
 skip = Pomiń
 shortcuts = Skróty
-clips-with-count = Nagrania <bold>{ $count }</bold>
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> nagranie
+        [few] <bold>{ $count }</bold> nagrania
+       *[many] <bold>{ $count }</bold> nagrań
+    }
 goal-help-recording = Twój udział pomógł projektowi Common Voice osiągnąć <goalPercentage></goalPercentage> dziennego celu nagrywania ({ $goalValue })!
 goal-help-validation = Twój udział pomógł projektowi Common Voice osiągnąć <goalPercentage></goalPercentage> dziennego celu weryfikowania ({ $goalValue })!
 contribute-more = Zrobimy jeszcze { $count }?
 record-cta = Zacznij nagrywanie
-record-platform-not-supported = Przepraszamy, używana platforma nie jest obecnie obsługiwana.
+record-platform-not-supported = Przepraszamy, używany system nie jest obecnie obsługiwany.
 record-platform-not-supported-desktop = Na komputerze można pobrać najnowszą wersję:
-record-platform-not-supported-ios = Użytkownicy <bold>iOS</bold> mogą pobrać bezpłatną aplikację:
+record-platform-not-supported-ios-non-safari = W systemie iOS kontynuuj za pomocą przeglądarki Safari, aby umożliwić nagrywanie…
 record-must-allow-microphone = Musisz zezwolić na dostęp do mikrofonu.
 record-no-mic-found = Nie odnaleziono mikrofonu.
 record-error-too-short = Nagranie jest za krótkie.
@@ -631,6 +658,8 @@ record-again-instruction = Świetnie! <recordIcon></recordIcon> Nagraj następne
 record-again-instruction2 = Tak trzymaj, nagraj jeszcze raz <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Ostatnie!
 review-tooltip = Weryfikuj i ponownie nagrywaj w czasie pracy
+share-clip = Udostępnij swoje nagranie
+share-common-voice = Udostępnij projekt Common Voice
 review-instruction = Weryfikuj i ponownie nagrywaj w razie potrzeby
 record-submit-tooltip = { $actionType } „Wyślij” po ukończeniu
 clips-uploaded = Wysłano nagrania
@@ -643,11 +672,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> czy poprawnie wymówi
 listen-again-instruction = Świetna robota! <playIcon></playIcon> Odsłuchaj ponownie
 listen-3rd-time-instruction = Dwa zrobione <playIcon></playIcon>, tak trzymaj!
 listen-last-time-instruction = <playIcon></playIcon> Ostatnie!
-nothing-to-validate = Nie mamy nic do zweryfikowania w tym języku, pomóż nam wypełnić kolejkę.
+listen-empty-state = Skończyły się nagrania do sprawdzenia w tym języku…
+speak-empty-state = Skończyły się zdania do nagrania w tym języku…
+speak-empty-state-cta = Dodaj więcej zdań
 record-button-label = Nagraj swój głos
 share-title-new = <bold>Pomóż nam</bold> znaleźć więcej głosów
 keep-track-profile = Śledź swoje postępy za pomocą profilu
 login-to-get-started = Zaloguj się lub zarejestruj, aby zacząć
+target-segment-first-card = Przyczyniasz się do naszego pierwszego segmentu docelowego
+target-segment-first-banner = Pomóż utworzyć pierwszy segment docelowy projektu Common Voice w języku: { $locale }
+target-segment-add-voice = Dodaj swój głos
+target-segment-learn-more = Więcej informacji
 
 ## Reporting
 
@@ -719,6 +754,7 @@ show-ranking = Wyświetlaj moją rangę
 
 get-started-goals = Cele: pierwsze kroki
 create-custom-goal = Utwórz własny cel
+goal-type = Do jakiego celu chcesz dążyć?
 both-speak-and-listen = Oba
 both-speak-and-listen-long = Oba (nagrywanie i odsłuchiwanie)
 daily-goal = Dzienny cel
@@ -732,13 +768,38 @@ want-to-continue = Czy chcesz kontynuować?
 finish-editing = Dokończyć najpierw modyfikację?
 lose-changes-warning = Opuszczenie teraz spowoduje utratę zmian
 build-custom-goal = Utwórz własny cel
-help-reach-hours = Pomóż osiągnąć { NUMBER($hours) } godz. w tym języku ({ $language }) za pomocą osobistego celu
-help-reach-hours-general = Pomóż projektowi Common Voice osiągnąć { NUMBER($hours) } godz. w jednym z języków za pomocą osobistego celu
+help-reach-hours-pluralized =
+    Pomóż osiągnąć { NUMBER($hours) ->
+        [one] { $hours } godzinę
+        [few] { $hours } godziny
+       *[many] { $hours } godzin
+    } w tym języku ({ $language }) za pomocą osobistego celu
+help-reach-hours-general-pluralized =
+    Pomóż projektowi Common Voice osiągnąć { NUMBER($hours) ->
+        [one] { $hours } godzinę
+        [few] { $hours } godziny
+       *[many] { $hours } godzin
+    } w jednym z języków za pomocą osobistego celu
 set-a-goal = Ustal cel
 cant-decide = Nie możesz się zdecydować?
-activity-needed-calculation =
-    { NUMBER($totalHours) } godz. można osiągnąć w nieco ponad { NUMBER($periodMonths) }
-    mies., jeśli { NUMBER($people) } osób wyśle { NUMBER($clipsPerDay) } nagrań dziennie.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } godzinę
+        [few] { $totalHours } godziny
+       *[many] { $totalHours } godzin
+    } można osiągnąć w nieco ponad { NUMBER($periodMonths) ->
+        [one] { $periodMonths } miesiąc
+        [few] { $periodMonths } miesiące
+       *[many] { $periodMonths } miesięcy
+    }, jeśli { NUMBER($people) ->
+        [one] { $people } osoba
+        [few] { $people } osoby
+       *[many] { $people } osób
+    } wyśle { NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } nagranie
+        [few] { $clipsPerDay } nagrania
+       *[many] { $clipsPerDay } nagrań
+    } dziennie.
 how-many-per-day = Świetnie! Ile nagrań dziennie?
 how-many-a-week = Świetnie! Ile nagrań tygodniowo?
 which-goal-type = Czy chcesz nagrywać, odsłuchiwać czy wykonywać oba działania?
@@ -748,7 +809,12 @@ receiving-emails-info =
 not-receiving-emails-info =
     Obecnie <bold>nie</bold> otrzymujesz wiadomości e-mail, takich jak przypomnienia o celach,
     informacje o postępie oraz biuletyny na temat Common Voice
-n-clips = Nagrania: { NUMBER($count) }
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } nagranie
+        [few] { $count } nagrania
+       *[many] { $count } nagrań
+    }
 help-share-goal = Pomóż nam znaleźć więcej głosów, podziel się swoim celem
 confirm-goal = Potwierdź cel
 goal-interval-weekly = Tygodniowy

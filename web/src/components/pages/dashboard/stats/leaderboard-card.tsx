@@ -1,8 +1,8 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import { connect } from 'react-redux';
@@ -48,6 +48,7 @@ interface PropsFromState {
 }
 
 interface Props extends PropsFromState {
+  ref: { current: any };
   locale: string;
   type: 'clip' | 'vote';
 }
@@ -61,7 +62,7 @@ const FetchRow = (props: React.HTMLProps<HTMLButtonElement>) => (
 );
 
 const RateColumn = withLocalization(
-  ({ getString, value }: { value: number } & LocalizationProps) => (
+  ({ getString, value }: { value: number } & WithLocalizationProps) => (
     <div className="rate">
       <div className="exact">
         {value == null ? getString('not-available-abbreviation') : value}
@@ -127,7 +128,7 @@ class UnconnectedLeaderboard extends React.Component<Props, State> {
     );
   }
 
-  playAvatarClip = function(clipUrl: string, position: any, self: boolean) {
+  playAvatarClip = function (clipUrl: string, position: any, self: boolean) {
     const { locale } = this.props;
     trackVoiceAvatar(self ? 'self-listen' : 'listen', locale);
 
@@ -177,6 +178,7 @@ class UnconnectedLeaderboard extends React.Component<Props, State> {
       },
     };
 
+    // TODO: Render <Fetchrow>s outside of `items` to flatten the list.
     const items = rows.map((row, i) => {
       const prevPosition = i > 0 ? rows[i - 1].position : null;
       const nextPosition =
@@ -253,13 +255,13 @@ class UnconnectedLeaderboard extends React.Component<Props, State> {
           <div className="username" title={row.username}>
             {row.username || '???'}
             {row.you && (
-              <React.Fragment>
+              <>
                 {' ('}
                 <Localized id="you">
                   <span />
                 </Localized>
                 )
-              </React.Fragment>
+              </>
             )}
           </div>
           {playingClipIndex === row.position && (
@@ -284,11 +286,6 @@ class UnconnectedLeaderboard extends React.Component<Props, State> {
             )}
             {formatNumber(row.total)}
           </div>
-          <div className="valid" title={row.valid}>
-            <CheckIcon />
-            {formatNumber(row.valid)}
-          </div>
-          <RateColumn value={row.rate} />
         </li>,
         nextPosition &&
         nextPosition - 1 > row.position &&
@@ -334,7 +331,11 @@ const FilledCheckIcon = () => (
 
 const Percentage = () => <div className="percent">%</div>;
 
-export default function LeaderboardCard() {
+export default function LeaderboardCard({
+  currentLocale,
+}: {
+  currentLocale?: string;
+}) {
   const account = useAccount();
   const saveAccount = useAction(User.actions.saveAccount);
 
@@ -346,11 +347,12 @@ export default function LeaderboardCard() {
   return (
     <StatsCard
       key="leaderboard"
+      {...{ currentLocale }}
       className={'leaderboard-card ' + (showOverlay ? 'has-overlay' : '')}
       title="top-contributors"
       iconButtons={
         <div className="icon-buttons">
-          {Boolean(account.visible) && (
+          {Boolean(account?.visible) && (
             <>
               <button
                 type="button"
@@ -368,7 +370,7 @@ export default function LeaderboardCard() {
           )}
 
           <button type="button" onClick={() => setShowOverlay(true)}>
-            {account.visible ? <EyeIcon /> : <EyeOffIcon />}
+            {account?.visible ? <EyeIcon /> : <EyeOffIcon />}
             <Localized id="set-visibility">
               <span className="text" />
             </Localized>
@@ -386,8 +388,6 @@ export default function LeaderboardCard() {
                   {[
                     { Icon: MicIcon, label: 'speak-goal-text' },
                     { Icon: PlayOutlineIcon, label: 'listen-goal-text' },
-                    { Icon: FilledCheckIcon, label: 'total-approved' },
-                    { Icon: Percentage, label: 'overall-accuracy' },
                   ].map(({ Icon, label }) => (
                     <li key={label}>
                       <div className="icon">
@@ -436,14 +436,16 @@ export default function LeaderboardCard() {
                 saveAccount({ visible: event.target.checked });
               }}
             />
-            <Localized id="visibility-explainer" $minutes={20}>
+            <Localized id="visibility-explainer" vars={{ minutes: 20 }}>
               <p className="explainer" />
             </Localized>
             <div className="info">
               <InfoIcon />
               <Localized
                 id="visibility-overlay-note"
-                profileLink={<LocaleLink to={URLS.PROFILE_INFO} />}>
+                elems={{
+                  profileLink: <LocaleLink to={URLS.PROFILE_INFO} />,
+                }}>
                 <p className="note" />
               </Localized>
             </div>

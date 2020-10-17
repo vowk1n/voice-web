@@ -1,11 +1,11 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { DAILY_GOAL } from '../../../constants';
+import { DAILY_GOALS } from '../../../constants';
 import { useAccount, useAPI } from '../../../hooks/store-hooks';
 import { useTypedSelector } from '../../../stores/tree';
 import URLS from '../../../urls';
@@ -13,6 +13,7 @@ import { LocaleLink, useLocale } from '../../locale-helpers';
 import { CheckIcon, MicIcon, PlayOutlineIcon } from '../../ui/icons';
 import { Button, LinkButton, TextButton } from '../../ui/ui';
 import { SET_COUNT } from './contribution';
+import { getTrackClass } from '../../../services/tracker';
 
 import './success.css';
 
@@ -38,7 +39,7 @@ function Success({
 }: {
   type: 'speak' | 'listen';
   onReset: () => any;
-} & LocalizationProps) {
+} & WithLocalizationProps) {
   const api = useAPI();
   const account = useAccount();
 
@@ -46,8 +47,8 @@ function Success({
 
   const hasAccount = Boolean(account);
   const customGoal =
-    hasAccount && account.custom_goals.find(g => g.locale == locale);
-  const goalValue = DAILY_GOAL[type];
+    hasAccount && account.custom_goals?.find(g => g.locale == locale);
+  const goalValue = DAILY_GOALS[type][0];
 
   const killAnimation = useRef(false);
   const startedAt = useRef(null);
@@ -121,17 +122,17 @@ function Success({
       <div className="counter done">
         <CheckIcon />
         <Localized
-          id="clips-with-count"
-          bold={<b />}
-          $count={SET_COUNT + '/' + SET_COUNT}>
+          id="clips-with-count-pluralized"
+          elems={{ bold: <b /> }}
+          vars={{ count: SET_COUNT + '/' + SET_COUNT }}>
           <span className="text" />
         </Localized>
       </div>
 
       <Localized
         id={type === 'speak' ? 'goal-help-recording' : 'goal-help-validation'}
-        goalPercentage={goalPercentage}
-        $goalValue={goalValue}>
+        elems={{ goalPercentage }}
+        vars={{ goalValue }}>
         <h1 />
       </Localized>
 
@@ -148,9 +149,8 @@ function Success({
         !customGoal && (
           <div className="info-card">
             <Localized
-              id="help-reach-hours"
-              $hours={10000}
-              $language={getString(locale)}>
+              id="help-reach-hours-pluralized"
+              vars={{ hours: 10000, language: getString(locale) }}>
               <p />
             </Localized>
             <Localized id="get-started-goals">
@@ -164,14 +164,14 @@ function Success({
             <p />
           </Localized>
           <Localized id="login-signup">
-            <LinkButton rounded href="/login" />
+            <LinkButton rounded href="/login" className={getTrackClass('fs', `nudge-profile-on-succcess`)} />
           </Localized>
         </div>
       )}
 
       <ContributeMoreButton>
         {type === 'speak' ? <MicIcon /> : <PlayOutlineIcon />}
-        <Localized id="contribute-more" $count={SET_COUNT}>
+        <Localized id="contribute-more" vars={{ count: SET_COUNT }}>
           <span />
         </Localized>
       </ContributeMoreButton>

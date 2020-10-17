@@ -9,7 +9,8 @@ email-input =
 submit-form-action = Lähetä
 loading = Ladataan…
 email-opt-in-info = Haluan vastaanottaa sähköposteja, kuten muistutuksia ja päivityksiä liittyen etenemiseeni sekä Common Voice -uutiskirjeitä.
-email-opt-in-privacy = Tilaamalla uutiskirjeen hyväksyt Mozillan käsittelevän tätä tietoa Mozillan <privacyLink>tietosuojakäytännössä<privacyLink> kuvatulla tavalla.
+email-opt-in-info-title = Liity Common Voicen postituslistalle
+email-opt-in-info-sub-with-challenge = Haluan vastaanottaa sähköposteja, kuten muistutuksia ja päivityksiä liittyen etenemiseeni sekä Common Voice -uutiskirjeitä.
 indicates-required = * Pakollinen kenttä
 not-available-abbreviation = N/A
 
@@ -20,112 +21,127 @@ not-available-abbreviation = N/A
 ## Languages
 
 ab = abhaasi
-ace = Atšeh
+ace = atšeh
 ady = adyge
-af = Afrikaans
+af = afrikaans
 am = amhara
-an = Aragonia
-ar = Arabia
-as = Assami
-ast = Astuaria
-az = Azeri
-ba = Bashkiirit
-bg = Bulgaria
-bn = Bengali
-br = Bretoni
-bxr = Burjaatti
-ca = Katalaani
-cak = Kaqchikel
-cnh = Hakha Chin
-cs = Tšekki
-cv = Tšuvassi
-cy = Kymri
-da = Tanska
-de = Saksa
-dsb = Alasorbi
+an = aragonia
+ar = arabia
+arn = mapudungun
+as = assami
+ast = astuaria
+az = azeri
+ba = bashkiirit
+be = valkovenäjä
+bg = bulgaria
+bn = bengali
+br = bretoni
+bxr = burjaatti
+ca = katalaani
+cak = kaqchikel
+cnh = hakha chin
+cs = tšekki
+cv = tšuvassi
+cy = kymri
+da = tanska
+de = saksa
+dsb = alasorbi
 dv = divehi
-el = Kreikka
-en = Englanti
-eo = Esperanto
-es = Espanja
-et = Viro
-eu = Baski
-fa = Persia
-ff = Fulani
+el = kreikka
+en = englanti
+eo = esperanto
+es = espanja
+et = viro
+eu = baski
+fa = persia
+ff = fulani
 fi = suomi
-fo = Fääri
-fr = Ranska
-fy-NL = Friisi
-ga-IE = Iiri
+fo = fääri
+fr = ranska
+fy-NL = friisi
+ga-IE = iiri
 gl = galicia
-ha = Hausa
-he = Heprea
-hi-IN = Hindi
+ha = hausa
+he = heprea
+hi = hindi
 hr = kroatia
-hsb = Yläsorbi
-hu = Unkari
-ia = Interlingua
-id = Indonesia
-is = Islanti
-it = Italia
-izh = Inkeroinen
-ja = Japani
-ka = Georgia
-kab = Kabyyli
-kk = Kazakki
-ko = Korea
-kpv = Komisyrjääni
-ku = Kurdi
-kw = Korni
-ky = Kirgiisi
-lij = Liguuri
+hsb = yläsorbi
+hu = unkari
+hy-AM = armenia
+hyw = länsiarmenia
+ia = interlingua
+id = indonesia
+is = islanti
+it = italia
+izh = inkeroinen
+ja = japani
+ka = georgia
+kaa = karakalpak
+kab = kabyyli
+kbd = kabardi
+kk = kazakki
+ko = korea
+kpv = komisyrjääni
+ku = kurdi
+kw = korni
+ky = kirgiisi
+lg = ganda
+lij = liguuri
 lt = liettua
 lv = latvia
-mdf = Mokša
+mdf = mokša
+mg = malagassi
 mhr = niittymari
-mk = Makedonia
-ml = Malajalam
-mn = Mongoli
+mk = makedonia
+ml = malajalam
+mn = mongoli
 mrj = vuorimari
-myv = Ersä
-nb-NO = Norjan bokmål
-ne-NP = Nepali
-nl = Hollanti
-nn-NO = Norjan nynorsk
-oc = Oksitaani
-or = Orija
-pl = Puola
-pt-BR = Brasilianportugali
-rm-sursilv = Sursilvan retoromaani
-rm-vallader = Retoromaani (Vallader)
-ro = Romania
-ru = Venäjä
+mt = malta
+my = burma
+myv = ersä
+nb-NO = norjan bokmål
+ne-NP = nepali
+nl = hollanti
+nn-NO = norjan nynorsk
+oc = oksitaani
+or = orija
+pa-IN = punjabi
+pl = puola
+pt = portugali
+rm-sursilv = sursilvan retoromaani
+rm-vallader = retoromaani (Vallader)
+ro = romania
+ru = venäjä
 rw = ruanda
 sah = Jakuutti
-sc = Sardi
-si = Sinhala
-sk = Slovakki
-sl = Sloveeni
-sq = Albania
-sr = Serbia
-sv-SE = Ruotsi
-syr = Syyria
-ta = Tamili
-te = Telugu
-tg = Tadžikki
-th = Thai
-tr = Turkki
-tt = Tataari
+sc = sardi
+scn = sisilia
+si = sinhala
+sk = slovakki
+sl = sloveeni
+sq = albania
+sr = serbia
+sv-SE = ruotsi
+sw = swahili
+syr = syyria
+ta = tamili
+te = telugu
+tg = tadžikki
+th = thai
+tl = tagalog
+tr = turkki
+tt = tataari
 uby = ubyh
 udm = udmurtti
-uk = Ukraina
-ur = Urdu
-uz = Uzbekki
-vi = Vietnam
+uk = ukraina
+ur = urdu
+uz = uzbekki
+vec = venetsia
+vi = vietnam
 vot = vatja
-zh-CN = Kiina (Kiina)
-zh-HK = Kiina (Hong Kong)
-zh-TW = Kiina (Taiwan)
+zh-CN = kiina (Kiina)
+zh-HK = kiina (Hong Kong)
+zh-TW = kiina (Taiwan)
 
 # [/]
 
@@ -198,9 +214,9 @@ x-years-short =
        *[other] { $count } v
     }
 help-make-dataset = Auta meitä keräämään korkealaatuinen ja avoin aineisto
-profile-not-required = Profiili ei ole välttämätön osallistumiseen, mutta siitä on hyötyä
 sign-up-account = Rekisteröidy palvelun käyttäjäksi
 email-subscription-title = tilaa sähköpostipäivitykset
+email-subscription-title-new = Tilaa Common Voice -uutiskirje, tavoitemuistutukset ja edistymispäivitykset
 
 ## Account Benefits
 
@@ -218,7 +234,7 @@ whats-public = Mikä on julkista?
 email-not-public = Emme julkaise sähköpostiosoitettasi.
 recordings-and-locale-public = Tallenteiden määrä ja tieto siitä mihin kieliin olet osallistunut ovat julkisia.
 username-optin-public = Voit tehdä käyttäjätunnuksestasi joko julkisen tai nimettömän.
-demographic-deidentified = Valinnaisesti demografiset tiedot (esim. ikä, sukupuoli, kieli ja murre) muunnetaan tunnistamattomiksi lähettämistäsi tiedoista eikä niitä koskaan julkisteta profiilissasi.
+demographic-deidentified-clarity = Vapaaehtoisesti ilmoitettuja henkilötietojasi (esim. ikä, sukupuoli, kieli ja aksentti) ei koskaan julkisteta profiilissasi, eikä niitä yhdistetä tilisi kanssa. Yksittäiset äänileikkeet yhdistetään henkillötietoihin tarkempaa analysointia varten - esimerkiksi tutkija voi haluta kohdistaa koulutusmallin tiettyyn väestöryhmään.
 username-email-not-demographic = Käyttäjätunnustasi ja sähköpostiosoitettasi ei liitetä julkaistuun aineistoon.
 
 ## Speak & Listen Shortcuts
@@ -267,7 +283,7 @@ english = Englanti
 ## ProfileForm
 
 profile-form-username =
-    .label = Käyttäjänimi
+    .label = Käyttäjätunnus
 profile-form-native-language =
     .label = Äidinkieli
 profile-form-additional-language =
@@ -305,6 +321,7 @@ thanks-for-account = Kiitoksia tilin vahvistamisesta, nyt luodaan profiilisi.
 why-demographic = Mitä merkitystä tällä on?
 why-demographic-explanation = Nimettömät käyttäjätiedot, kuten ikä, sukupuoli ja murre, auttavat parantamaan puheentunnistusmoottoreiden opettamiseen käytettävää ääniaineistoa. Käyttäjänimeäsi ja sähköpostiosoitettasi ei koskaan yhdistetä lähettämääsi aineistoon ja voit valita teetkö käyttäjätunnuksesi julkiseksi tai nimettömäksi.
 accept-privacy = Hyväksyn teidän käsittelevän tätä tietoa kuten Mozillan <privacyLink>tietosuojakäytännössä</privacyLink> on selitetty.
+accept-privacy-title = Yksityisyyskäytäntö
 login-identity = Käyttäjätunnus
 login-signup = Kirjaudu / Rekisteröidy
 edit = Muokkaa
@@ -316,8 +333,21 @@ skip-submission-description = Palautteen antaminen Lähetä-painikkeen painamise
 skip-submission-note = Huomaa: Sinun täytyy silti valita Puhu tai Kuuntele vaihtaaksesi osallistumisen tapaa.
 off = Pois päältä
 on = Päällä
-add-avatar-title = Lisää profiilikuva
-add-avatar-clip = Lisää kuvake profiiliisi.
+avatar-clip-title = Anna avatarillesi ääni
+change-your-avatar-clip = Haluatko vaihtaa äänen?
+recording-in-progress = Äänen tallennus käynnissä
+avatar-clip-recorded = Avatarillasi on nyt ääni!
+record-voice-wave = ÄÄNITÄ
+retry-voice-wave-recording = YRITÄ UUDELLEEN
+re-record = NAUHOITA UUDELLEEN
+delete-voice = POISTA
+recording-voice-wave = Nauhoitus
+delete-voice-clip = tai poista ääniklippi
+ready-to-upload = LATAA
+avatar-clip-fact = On vakiintunut tieto, että lukija häiriintyy sivun luettavasta sisällöstä tarkastellessaan sen asettelua.
+recreate-voice = Luo äänitys uudelleen
+cancel-avatar-clip-recording = PERUUTA
+about-avatar-clip-recording = Lisää ääniklippi profiilikuvaasi. Muut voivat kuunnella klipin siirtämällä kursorin sen päälle.
 browse-file-title = Lataa kuvatiedosto
 browse-file = Vedä ja pudota tai <browseWrap>Selaa</BrowseWrap>
 connect-gravatar = Yhdistä Gravatariin
@@ -327,7 +357,7 @@ manage-subscriptions = Muokkaa tilauksia
 manage-email-subscriptions = Hallitse sähköpostitilauksia
 email-already-used = Sähköpostiosoite on jo käytössä toisessa tilissä
 add-language = Lisää kieli
-change-email-setings = Vaihta sähköpostiosoitteesi Asetuksissa kohdassa Käyttäjätunnus
+change-email-setings = Vaihda sähköpostiosoitteesi asetuksissa kohdassa Käyttäjätunnus
 
 ## FAQ
 
@@ -344,8 +374,8 @@ faq-why-important-a =
     Tehdäksemme puheentunnistuksesta vieläkin yleisempää, keräämme ääninäytteitä yleisimmin puhuttujen kielien lisäksi vähiten puhutuista, joihin usein ei ole saatavilla kaupallisia puheentunnistuspalveluja. Julkaisemalla monipuolisen ääniaineiston annamme kehittäjille, yrittäjille ja kokonaisille puheyhteisöille mahdollisuuden käsitellä kielten välistä kuilua itse.
 faq-how-get-q = Miten voin saada Common Voice -aineistot?
 faq-how-get-a = Common Voice -aineisto on ladattavissa <licenseLink>CC0</LicenseLink>-lisenssillä <datasetLink>aineistot-sivultamme</datasetLink>. Voit myös ladata useita muita avoimia aineistoja samalta sivulta.
-faq-when-release-q = Koska julkaisette Common Voice -aineistot muilla kielillä?
-faq-when-release-a = Yhteisö rakentaa ja siivoaa Common Voice -aineiston monikielistä versiota parhaillaan. Jos haluat saada lisätietoa projektin tukemisesta, <contactLink>ota yhteyttä meihin</contactLink>. Tavoittelemme tällä hetkellä julkaisuajankohdaksi tammikuuta 2019. Sen jälkeen päivitämme aineistoa määräajoin uusilla kielillä ja ääninäytteillä sitä mukaa kun ne ovat saatavilla. Iteratiivisten julkaisujen tahti on vielä päättämättä.
+faq-when-release2-q = Koska julkaisette Common Voice -aineistot muilla kielillä?
+faq-when-release2-a = Common Voice -aineiston monikielisessä versiossa tehdään parhaillaan yhteisön tukemaa niputtamista ja puhdistamista. Jos haluat auttaa meitä tuomaan Common Voice -sovelluksen uusille kielille, tarkista <sentenceCollectorLink>Lauseiden keräämistyökalu</sentenceCollectorLink> uusien lauseiden lisäämiseksi tietojoukkoon, ja Mozilla <pontoonLink>Pontoon</pontoonLink> verkkosivun kääntämiseen. Uusia kieliä lisätään Common Voice äänitukeen, kun 5000 hyväksyttyä lausetta on kerätty.
 faq-why-mission-q = Miksi Common Voice on osa Mozillan tehtävää?
 faq-why-mission-a = Mozilla on sitoutunut säilyttämään Internetin avoimena ja kaikkien käytettävissä. Tehdäksemme sen meidän täytyy tukea kehittäjiä Common Voicen kaltaisilla projekteilla. Puheteknologioiden käytön yleistyessä me uskomme, että niiden täytyy palvella kaikkia käyttäjiä tasavertaisesti. Tämän vuoksi meidän on panostettava puheteknologioita kehitettäessä ja testattaessa lisää kieliin sekä murteisiin. Common Voice on kaikille avoin resurssi, jota myös Mozillan omat tiimit ja kehittäjät ympäri maailmaa käyttävät omissa projekteissamme.
 faq-what-cv-and-deepspeech-q = Mitä eroa on Common Voice ja Deep Speech -projekteilla?
@@ -416,11 +446,11 @@ about-partnership =
     
     Haluaisimme kiittää seuraavia henkilöitä ja organisaatioita heidän panoksestaan hankkeen eteen:
 about-get-involved = Tule mukaan
-about-get-involved-text =
-    Haluatko tehdä Common Voice -hankeesta vielä paremman? 
-    Mahtavaa! Ota yhteyttä sähköpostilla tai <discourseLink>Discourse:n</discourseLink> kautta, 
-    lähetä palautetta <githubLink>GitHub:in</githubLink> kautta, 
-    tai liity joukoomme <slackLink>Slack:issä</slackLink>.
+about-get-involved-text-2 =
+    Haluatko tehdä Common Voice -hankkeesta vielä paremman? 
+    Mahtavaa! Ota yhteyttä sähköpostilla tai <discourseLink>Discoursen</discourseLink> kautta, 
+    lähetä palautetta sivustosta <githubLink>GitHubin</githubLink> kautta, 
+    tai liity joukkoomme <matrixLink>Matrixin</matrixLink> yhteisöchatissa.
 about-nav-why-common-voice = Miksi?
 about-nav-how-it-works = Miten?
 about-nav-partners = Partnerit
@@ -569,7 +599,6 @@ language-section-launched = Julkistettu
 language-section-launched-description = Verkkosivusto on onnistuneesti <localizationGlossaryLink>lokalisoitu</localizationGlossaryLink> näille kielille, ja <sentenceCollectionGlossaryLink>kerättyjä lauseita</sentenceCollectionGlossaryLink> on tarpeeksi <speakLink>nauhoituksen</speakLink> ja <listenLink>kuuntelun</listenLink> mahdollistamiseksi.
 languages-show-more = Lisää
 languages-show-less = Vähemmän
-language-speakers = Puhujat
 language-meter-in-progress = Edistys
 language-total-progress = Yhteensä
 language-search-input =
@@ -579,7 +608,7 @@ localized = Lokalisoitu
 sentences = Lauseet
 total-hours = Tarkastetut tunnit
 
-## New Contribution
+## Contribution
 
 action-click = Klikkaa
 action-tap = Napauta
@@ -587,7 +616,11 @@ contribute = Osallistu
 listen = Kuuntele
 skip = Ohita
 shortcuts = Oikopolut
-clips-with-count = <bold>{ $count }</bold> näytettä
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> ääninäyte
+       *[other] <bold>{ $count }</bold> ääninäytettä
+    }
 goal-help-recording = Olet auttanut Common Voice -projektia saavuttamaan <goalPercentage></goalPercentage> päivittäisestä tavoitteestamme { $goalValue } ääninäytettä!
 goal-help-validation = Olet auttanut Common Voice -projektia saavuttamaan <goalPercentage></goalPercentage> päivittäisestä tavoitteestamme { $goalValue } tarkastusta!
 contribute-more =
@@ -598,7 +631,7 @@ contribute-more =
 record-cta = Uusi äänite
 record-platform-not-supported = Olemme pahoillamme, mutta alustasi ei ole tällä hetkellä tuettu.
 record-platform-not-supported-desktop = Pöytätietokoneille voi ladata viimeisimmän:
-record-platform-not-supported-ios = <bold>iOS</bold>-käyttäjät voivat ladata ilmaisen mobiilisovelluksen:
+record-platform-not-supported-ios-non-safari = Jatka iOS-käyttöjärjestelmässä Safarin kanssa, jotta tallennus toimii…
 record-must-allow-microphone = Sinun on annettava sovellukselle lupa käyttää mikrofonia.
 record-no-mic-found = Mikrofonia ei löytynyt.
 record-error-too-short = Ääninäyte on liian lyhyt.
@@ -612,6 +645,8 @@ record-again-instruction = Loistavaa! <recordIcon></recordIcon> Äänitä seuraa
 record-again-instruction2 = Hyvää työtä, äänitä uudelleen <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Viimeinen!
 review-tooltip = Tarkasta ja uudelleenäänitä sitä mukaa kun etenet
+share-clip = Jaa leikkeesi
+share-common-voice = Jaa ilosanomaa Common Voicesta
 review-instruction = Tarkasta ja uudelleenäänitä tarvittaessa
 record-submit-tooltip = { $actionType } lähetä kun valmis
 clips-uploaded = Näytteitä ladattu
@@ -624,9 +659,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> oliko virke puhuttu t�
 listen-again-instruction = Hienoa työtä! <playIcon></playIcon> Kuuntele uudestaan, kun olet valmis
 listen-3rd-time-instruction = 2 tehty, jatka samaan malliin! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon> Viimeinen!
-nothing-to-validate = Meillä ei ole tarkistettavia näytteitä tälle kielelle, auta meitä täyttämään jono.
+listen-empty-state = Kaikki klipit tällä kielellä on tarkastettu…
+speak-empty-state = Kaikki lauseet tällä kielellä on äänitetty…
+speak-empty-state-cta = Lahjoita lauseitasi
 record-button-label = Tallenna äänesi
 share-title-new = <bold>auta meitä</bold> haalimaan lisää ääniä
+keep-track-profile = Seuraa edistymistäsi profiilin avulla
+login-to-get-started = Kirjaudu tai rekisteröidy aloittaaksesi
+target-segment-first-card = Osallistut ensimmäiseen kohdesegmenttiimme
+target-segment-first-banner = Auta luomaan Common Voicen ensimmäinen kohdesegmentti kielellä { $locale }
+target-segment-add-voice = Lisää äänesi
+target-segment-learn-more = Lue lisää
 
 ## Reporting
 
@@ -677,6 +720,7 @@ clips-you-validated = Tarkastamiasi näytteitä
 todays-recorded-progress = Tämän päivän edistyminen tallennettuja näytteitä
 todays-validated-progress = Tämän päivän edistyminen tarkastettuja näytteitä
 stats = Tilastot
+awards = Palkinnot
 you = Sinä
 everyone = Kaikki
 contribution-activity = Aktiivisuus
@@ -685,6 +729,57 @@ recorded-clips = Äänitettyjä näytteitä
 validated-clips = Tarkastettuja näytteitä
 total-approved = Hyväksytty yhteensä
 overall-accuracy = Tarkkuus yhteensä
+set-visibility = Aseta näkyvyys
+visibility-explainer = Tämä asetus ohjaa tulostaulun näkyvyyttä. Jos piilotat sen, edistymisesi on yksityistä. Tämä tarkoittaa, että kuvasi, käyttäjänimesi ja edistymisesi eivät näy tulostaululla. Huomaa, että tulostaulun päivitys vie ~ { $minutes } minuuttia muutosten täyttämiseen.
+visibility-overlay-note = Huomaa: Kun asetuksesi on "Näkyvä", tätä asetusta voidaan muuttaa <profileLink>profiilisivulta</profileLink>
+show-ranking = Näytä sijoitukseni
+
+## Custom Goals
+
+get-started-goals = Aloita tavoitteiden kanssa
+create-custom-goal = Luo mukautettu tavoite
+both-speak-and-listen = Kummatkin
+both-speak-and-listen-long = Molemmat (puhuminen ja kuunteleminen)
+daily-goal = Päivittäinen tavoite
+weekly-goal = Viikottainen tavoite
+easy-difficulty = Helppo
+average-difficulty = Keskitaso
+difficult-difficulty = Vaikea
+pro-difficulty = Ammattilaistaso
+lose-goal-progress-warning = Tavoitettasi muokkaamalla saatat menettää nykyisen edistymisen.
+want-to-continue = Haluatko jatkaa?
+finish-editing = Viimeistelläänkö muokkaaminen ensin?
+lose-changes-warning = Nyt poistumalla muutokset katoavat
+build-custom-goal = Rakenna mukautettu tavoite
+set-a-goal = Aseta tavoite
+cant-decide = Vaikeuksia päättää?
+how-many-per-day = Hienoa! Kuinka monta näytettä päivittäin?
+how-many-a-week = Hienoa! Kuinka monta näytettä viikottain?
+which-goal-type = Haluatko puhua, kuunnella vai tehdä molempia?
+receiving-emails-info = Olet valinnut, että haluat vastaanottaa sähköposteja, kuten muistutuksia ja päivityksiä liittyen etenemiseesi sekä Common Voice -uutiskirjeitä.
+not-receiving-emails-info = Olet valinnut, että <bold>ET</bold> halua vastaanottaa sähköposteja, kuten muistutuksia ja päivityksiä liittyen etenemiseesi sekä Common Voice -uutiskirjeitä.
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } ääninäyte
+       *[other] { $count } ääninäytettä
+    }
+help-share-goal = Auta meitä löytämään enemmän ääniä, jaa tavoitteesi
+confirm-goal = Vahvista tavoite
+goal-interval-weekly = Viikoittainen
+# $type is one of share-goal-type-*
+share-n-daily-contribution-goal = Jaa { $count } näytteen { $type }-päivätavoitteesi
+# $type is one of share-goal-type-*
+share-n-weekly-contribution-goal = Jaa { $count } näytteen { $type }-viikkotavoitteesi
+share-goal-type-speak = Puhuminen
+share-goal-type-listen = Kuunteleminen
+share-goal-type-both = Puhuminen ja kuunteleminen
+# LINK will be replaced with the current URL
+goal-share-text = Loin juuri oman tavoitteeni äänen lahjoitukselle #CommonVoice -sivustolle -- liity mukaan ja auta koneita ymmärtämään oikeiden ihmisten puhetta { $link }
+weekly-goal-created = Viikottainen tavoitteesi on luotu
+daily-goal-created = Päivittäinen tavoitteesi on luotu
+track-progress = Seuraa edistymistä täällä sekä tilastosivullasi.
+return-to-edit-goal = Palaa tänne muokataksesi tavoitettasi milloin tahansa.
+share-goal = Jaa tavoitteeni
 
 ## Profile Delete
 

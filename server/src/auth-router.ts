@@ -8,6 +8,7 @@ import * as session from 'express-session';
 const MySQLStore = require('express-mysql-session')(session);
 import UserClient from './lib/model/user-client';
 import DB from './lib/model/db';
+import { earnBonus } from './lib/model/achievements';
 import { getConfig } from './config-helper';
 
 const {
@@ -53,7 +54,7 @@ passport.deserializeUser((sessionUser: any, done: Function) =>
 );
 
 if (DOMAIN) {
-  Auth0Strategy.prototype.authorizationParams = function(options: any) {
+  Auth0Strategy.prototype.authorizationParams = function (options: any) {
     var options = options || {};
 
     const params: any = {};
@@ -75,8 +76,10 @@ if (DOMAIN) {
       clientSecret: CLIENT_SECRET,
       callbackURL:
         (({
-          stage: 'https://voice.allizom.org',
-          prod: 'https://voice.mozilla.org',
+          stage: 'https://commonvoice.allizom.org',
+          prod: 'https://commonvoice.mozilla.org',
+          dev: 'https://dev.voice.mozit.cloud',
+          sandbox: 'https://sandbox.voice.mozit.cloud',
         } as any)[ENVIRONMENT] || '') + CALLBACK_URL,
       scope: 'openid email',
     },
@@ -97,11 +100,16 @@ if (DOMAIN) {
 router.get(
   CALLBACK_URL,
   passport.authenticate('auth0', { failureRedirect: '/login' }),
-  async ({ user, query: { state }, session }: Request, response: Response) => {
-    const { locale, old_user, old_email, redirect } = JSON.parse(
+  async (request: Request, response: Response) => {
+    const {
+      user,
+      query: { state },
+      session,
+    } = request;
+    const { locale, old_user, old_email, redirect, enrollment } = JSON.parse(
       AES.decrypt(state, SECRET).toString(enc.Utf8)
     );
-    const basePath = locale ? '/' + locale + '/' : '/';
+    const basePath = locale ? `/${locale}/` : '/';
     if (!user) {
       response.redirect(basePath + 'login-failure');
     } else if (old_user) {
@@ -113,6 +121,39 @@ router.get(
         session.passport.user = old_user;
       }
       response.redirect('/profile/settings?success=' + success.toString());
+    } else if (enrollment?.challenge && enrollment.team) {
+      if (
+        !(await UserClient.enrollRegisteredUser(
+          user.emails[0].value,
+          enrollment.challenge,
+          enrollment.team,
+          enrollment.invite,
+          enrollment.referer
+        ))
+      ) {
+        // if the user is unregistered, pass enrollment to frontend
+        user.enrollment = enrollment;
+      } else {
+        // if the user is already registered, now he/she should be enrolled
+        // [TODO] there should be an elegant way to get the client_id here
+        const client_id = await UserClient.findClientId(user.emails[0].value);
+        await earnBonus('sign_up_first_three_days', [
+          enrollment.challenge,
+          client_id,
+        ]);
+        await earnBonus('invite_signup', [
+          client_id,
+          enrollment.invite,
+          enrollment.invite,
+          enrollment.challenge,
+        ]);
+      }
+
+      // [BUG] try refresh the challenge board, toast will show again, even though DB won't give it the same achievement again
+      response.redirect(
+        redirect ||
+          `${basePath}login-success?challenge=${enrollment.challenge}&achievement=1`
+      );
     } else {
       response.redirect(redirect || basePath + 'login-success');
     }
@@ -123,8 +164,8 @@ router.get('/login', (request: Request, response: Response) => {
   const { headers, user, query } = request;
   let locale = '';
   if (headers.referer) {
-    const pathParts = parseURL(headers.referer).pathname.split('/');
-    locale = pathParts[1] || '';
+    const pathParts = parseURL(headers.referer).pathname?.split('/');
+    locale = pathParts?.[1] || '';
   }
   passport.authenticate('auth0', {
     state: AES.encrypt(
@@ -137,6 +178,12 @@ router.get('/login', (request: Request, response: Response) => {
             }
           : {}),
         redirect: query.redirect || null,
+        enrollment: {
+          challenge: query.challenge || null,
+          team: query.team || null,
+          invite: query.invite || null,
+          referer: query.referer || null,
+        },
       }),
       SECRET
     ).toString(),
@@ -170,7 +217,7 @@ export async function authMiddleware(
   const [authType, credentials] = (request.header('Authorization') || '').split(
     ' '
   );
-  if (authType == 'Basic') {
+  if (authType === 'Basic') {
     const [client_id, auth_token] = Buffer.from(credentials, 'base64')
       .toString()
       .split(':');

@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Cyflwyno
 loading = Llwytho…
 email-opt-in-info = Hoffwn dderbyn e-byst sy'n cynnwys atgoffwr targed, diweddariad ar fy nghynydd a newyddlen am Common Voice.
-email-opt-in-privacy = Drwy ddewis derbyn e-byst rydych yn datgan eich bod yn fodlon gyda Mozilla'n trin y manylion hyn fel sy'n cael ei esbonio ym <privacyLink>Mholisi Preifatrwydd<privacyLink> Mozilla.
+email-opt-in-info-title = Ymunwch â rhestr e-bost Common Voice
+email-opt-in-info-sub-with-challenge = Derbyn e-byst sy'n cynnwys atgoffwr her a tharged , diweddariad ar fy nghynydd a newyddlen am Common Voice.
+email-opt-in-privacy-v2 = Drwy ddewis derbyn e-byst rydych yn datgan eich bod yn fodlon gyda Mozilla'n trin y manylion hyn fel sy'n cael ei esbonio ym <privacyLink>Mholisi Preifatrwydd<privacyLink> Mozilla.
 indicates-required = Mae * yn dynodi maes angenrheidiol
 not-available-abbreviation = Dim Ar Gael
 
@@ -26,10 +28,12 @@ af = Afrikaans
 am = Amharig
 an = Aragoneg
 ar = Arabeg
+arn = Mapudungun
 as = Asameg
 ast = Asturieg
 az = Aserbaijaneg
 ba = Bashkirs
+be = Belarusieg
 bg = Bwlgareg
 bn = Bengaleg
 br = Llydaweg
@@ -60,10 +64,12 @@ ga-IE = Gwyddeleg
 gl = Galisieg
 ha = Hausa
 he = Hebraeg
-hi-IN = Hindi
+hi = Hindi
 hr = Croatieg
 hsb = Sorbeg Uwch
 hu = Hwngareg
+hy-AM = Armeneg
+hyw = Armeneg Gorllewninol
 ia = Interlingua
 id = Indoneseg
 is = Eislandeg
@@ -71,23 +77,28 @@ it = Eidaleg
 izh = Izhorieg
 ja = Japanëeg
 ka = Georgeg
+kaa = Karakalpak
 kab = Kabyle
+kbd = Kabardieg
 kk = Casac
 ko = Corëeg
 kpv = Komi-Zyrian
 ku = Cwrdeg
 kw = Cernyweg
 ky = Kyrgyz
+lg = Luganda
 lij = Ligurieg
 lt = Lithiuanieg
 lv = Latfieg
 mdf = Moksha
+mg = Malagaseg
 mhr = Mari Dwyreiniol
 mk = Macedoneg
 ml = Malayalam
 mn = Mongolieg
 mrj = Mari Gorllewinol
 mt = Malteg
+my = Byrmaneg
 myv = Erzya
 nb-NO = Bokmål Norwyeg
 ne-NP = Nepaleg
@@ -95,6 +106,7 @@ nl = Iseldireg
 nn-NO = Norwyeg Nynorsk
 oc = Occitaneg
 or = Odia
+pa-IN = Punjabi
 pl = Pwyleg
 pt = Portiwgaleg
 rm-sursilv = Romansh Sursilvan
@@ -104,6 +116,7 @@ ru = Rwsieg
 rw = Kinyarwanda
 sah = Sakha
 sc = Sardinieg
+scn = Sisilieg
 si = Sinhala
 sk = Slofaceg
 sl = Slofeneg
@@ -116,6 +129,7 @@ ta = Tamil
 te = Telugu
 tg = Tajik
 th = Thai
+tl = Tagalog
 tr = Twrceg
 tt = Tartareg
 uby = Ubykh
@@ -123,6 +137,7 @@ udm = Udmurt
 uk = Wcraneg
 ur = Urdu
 uz = Wsbeceg
+vec = Venetieg
 vi = Fietnameg
 vot = Votig
 zh-CN = Tsieinëeg (Tsiena)
@@ -234,7 +249,7 @@ whats-public = Beth sy'n Gyhoeddus?
 email-not-public = Fyddwn ni ddim yn gwneud eich e-bost yn gyhoeddus.
 recordings-and-locale-public = Bydd y nifer o recordiadau a pha ieithoedd rydych yn cyfrannu atyn nhw yn gyhoeddus.
 username-optin-public = Gallwch ddewis gwneud eich enw defnyddiwr yn gyhoeddus neu'n anhysbys.
-demographic-deidentified = Bydd data demograffig rydych wedi dewis ei gyflwyno (e.e. oed, rhyw, iaith ac acen) yn cael ei ddadadnabod o'ch data llais rydych wedi ei gyflwyno ac ni fydd yn cael ei wneud yn gyhoeddus ar eich proffil.
+demographic-deidentified-clarity = Fydd data demograffig sy'n cael ei gynnig o ran dewis (e.e. oedran, rhyw, iaith, ac acen) byth yn cael ei gyhoeddi ar eich proffil, a fyddan nhw ddim yn gysylltiedig â'ch cyfrif yn y set ddata. Bydd clipiau sain unigol yn gysylltiedig â data demograffig at ddibenion dadansoddiad mwy cywir - er enghraifft, efallai y bydd ymchwilydd eisiau targedu model hyfforddi at segment demograffig penodol.
 username-email-not-demographic = Ni fydd eich enw defnyddiwr na'ch e-bost yn cael ei gysylltu â'r data sy'n cael ei gyhoeddi.
 
 ## Speak & Listen Shortcuts
@@ -325,6 +340,7 @@ thanks-for-account = Diolch am gadarnhau eich cyfrif, nawr ymlaen i greu eich pr
 why-demographic = Pam fod hyn o bwys?
 why-demographic-explanation = Mae data defnyddwyr dienw fel oed, rhyw ac acen yn helpu i wella'r data sain sy'n cael ei ddefnyddio i hyfforddi cywirdeb peiriannau adnabod llais. Ni fydd eich enw defnyddiwr ac e-bost yn cael ei gysylltu â'r data rydych wedi ei gyflwyno a gallwch ddewis os ydych am wneud eich enw defnyddiwr yn hysbys neu beidio.
 accept-privacy = Rwy'n hapus gyda chi'n defnyddio'r wybodaeth yma fel rydych yn ei esbonio ym <privacyLink>Mholisi Preifatrwydd Mozilla</privacyLink>
+accept-privacy-title = Polisi Preifatrwydd
 login-identity = Enw Mewngofnodi
 login-signup = Mewngofnodi / Cofrestru
 edit = Golygu
@@ -452,11 +468,11 @@ about-partnership =
     
     Hoffem ddiolch i'r bobl a'r sefydliadau canlynol am eu cymorth gyda'r prosiect:
 about-get-involved = Ymunwch
-about-get-involved-text =
-    Eisiau helpu i wneud Common Voice hyd yn oed yn well?
+about-get-involved-text-2 =
+    Eisiau helpu i wneud Common Voice well fyth?
     Gwych! Cysylltwch trwy e-bost neu ar <discourseLink>Discource</discourseLink>,
-    cyflwyno adborth trwy <githubLink>GitHub</githubLink>,
-    neu ymunwch â ni ar <slackLink>Slack</slackLink>.
+    cyflwynwch adborth trwy <githubLink>GitHub</githubLink>, neu ymuno â ni
+    ar lwyfan sgwrsio cymdeithasol <matrixLink>Matrix</matrixLink>
 about-nav-why-common-voice = Pam ?
 about-nav-how-it-works = Sut ?
 about-nav-partners = Partneriaid
@@ -482,10 +498,13 @@ sst-explanation = Mae technolegau llais-i-destun (STT) yn trosi data llais yn de
 de-identified = Dadadnabod
 de-identified-explanation = Y broses o sut mae manylion proffil cyfrannwr yn cael ei guddio oddi wrth eu clipiau llais pan gaiff ei becynnu i'w lwytho i lawr fel rhan o'r set ddata.
 
-## NotFound
+## Error pages
 
-notfound-title = Heb ganfod
-notfound-content = Mae'n ddrwg gen i, dwi ddim yn gwybod beth rydych yn chwilio amdano.
+error-title-404 = Nid oedd modd i ni ddod o hyd i'r dudalen honno i chi
+error-content-404 = Efallai y bydd ein <homepageLink>tudalen cartref</homepageLink> yn gallu eich helpu? I ofyn cwestiwn, ymunwch â'n sgwrs gymunedol yn <matrixLink>Matrix</matrixLink>, monitro materion gwefan trwy <githubLink>GitHub</githubLink> neu ewch i'n <discourseLink>fforymau Discours</discourseLink>.
+error-title-503 = Rydym yn profi toriad darpariaeth annisgwyl
+error-content-503 = Bydd y wefan yn ôl at ei gilydd cyn gynted â phosibl. Am y wybodaeth ddiweddaraf, ymunwch â'n  sgwrs gymunedol yn <matrixLink>Matrix</matrixLink> neu ewch i <githubLink>GitHub</githubLink> neu'n <discourseLink>fforymau Discourse</discourseLink> i gyflwyno a monitro materion profiad gwefan.
+error-code = Gwall { $code }
 
 ## Data
 
@@ -504,6 +523,8 @@ data-bundle-button = Llwytho Pecyn Set Ddata i Lawr
 data-bundle-description = Common Voice ynghyd â'r holl setiau data llais uchod.
 license = Trwydded: <licenseLink>{ $license }</licenseLink>
 license-mixed = Cymysg
+data-download-singleword-title = Llwytho'r Segment Targed Un Gair i Lawr
+data-download-singleword-callout = Mae hwn yn segment sy'n cael ei yrru gan achos defnydd yn cynnwys data i bweru adnabod digidau sy'n cael eu llefaru, canfod ie/na, a data profi gair deffro ar gyfer <fxLink>Firefox Voice</fxLink>.
 review-terms = Drwy ddefnyddio Common Vice rydych yn cytuno i'n <termsLink>Amodau</termsLink> a'n <privacyLink>Hysbysiadau Preifatrwydd</privacyLink>
 terms-agree = Rwy'n cytuno
 terms-disagree = Nid wyf yn cytuno
@@ -624,14 +645,22 @@ contribute = Cyfrannu
 listen = Gwrando
 skip = Hepgor
 shortcuts = Llwybrau Byr
-clips-with-count = <bold>{ $count }</bold> Clip
+clips-with-count-pluralized =
+    { $count ->
+        [zero] <bold>{ $count }</bold> Clip
+        [one] <bold>{ $count }</bold> Clip
+        [two] <bold>{ $count }</bold> Glip
+        [few] <bold>{ $count }</bold> Clip
+        [many] <bold>{ $count }</bold> Chlip
+       *[other] <bold>{ $count }</bold> Clip
+    }
 goal-help-recording = Rydych wedi cynorthwyo Common Voice i gyrraedd <goalPercentage></goalPercentage> o { $goalValue }, ein targed recordio dyddiol!
 goal-help-validation = Rydych wedi cynorthwyo Common Voice i gyrraedd <goalPercentage></goalPercentage> o { $goalValue }, ein targed dilysu dyddiol!
 contribute-more = Barod i wneud { $count } yn rhagor?
 record-cta = Cychwyn recordio
 record-platform-not-supported = Ymddiheuriadau ond nid yw eich platfform yn cael ei gynnal ar hyn o bryd.
 record-platform-not-supported-desktop = Ar gyfrifiaduron bwrdd gwaith, gallwch lwytho i lawr y diweddaraf:
-record-platform-not-supported-ios = Gall defnyddwyr <bold>iOS</bold> lwytho i lawr ein ap am ddim:
+record-platform-not-supported-ios-non-safari = Ar iOS parhewch gyda Safari i alluogi recordio…
 record-must-allow-microphone = Rhaid i chi ganiatáu mynediad i'r meicroffon.
 record-no-mic-found = Heb ganfod meicroffon.
 record-error-too-short = Roedd y recordiad yn rhy fyr.
@@ -645,6 +674,8 @@ record-again-instruction = Gwych! <recordIcon></recordIcon> Recordiwch eich clip
 record-again-instruction2 = Daliwch ati, recordiwch eto <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Yr un olaf!
 review-tooltip = Adolygu ac ail recordio clipiau yma wrth fynd
+share-clip = Rhannwch eich clip
+share-common-voice = Rhannu Common Voice
 review-instruction = Adolygu ac ail recordio clipiau os oes angen
 record-submit-tooltip = { $actionType } cyflwyno pan yn barod
 clips-uploaded = Clipiau Wedi'u Llwytho
@@ -657,11 +688,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> os ydyn nhw wedi yngan
 listen-again-instruction = Da iawn! <playIcon> </playIcon> Gwrandewch eto pan fyddwch yn barod
 listen-3rd-time-instruction = 2 i lawr <playIcon> </playIcon> , daliwch ati!
 listen-last-time-instruction = <playIcon> </playIcon> Yr un olaf!
-nothing-to-validate = Nid oes gennym unrhyw beth i ddilysu'r iaith hon, helpwch ni i lanw'r ciw
-record-button-label = Recordio eich llais
+listen-empty-state = Does dim rhagor o glipiau i'w dilysu yn yr iaith hon...
+speak-empty-state = Does dim rhagor o frawddegau i'w recordio yn yr iaith hon...
+speak-empty-state-cta = Cyfrannu brawddegau
+record-button-label = Recordiwch eich llais
 share-title-new = <bold>Helpwch ni</bold> i ganfod rhagor o leisiau
 keep-track-profile = Cadwch olwg ar eich cynnydd gyda phroffil
 login-to-get-started = Mewngofnodiwch neu gofrestru i ddechrau arni
+target-segment-first-card = Rydych yn cyfrannu tuag at ein segment targed cyntaf
+target-segment-first-banner = Helpwch i greu segment targed cyntaf Common Voice yn { $locale }
+target-segment-add-voice = Ychwanegwch Eich Llais
+target-segment-learn-more = Dysgu Rhagor
 
 ## Reporting
 
@@ -719,6 +756,7 @@ validations =
 
 your-languages = Eich Ieithoedd
 toward-next-goal = Ymlaen i'r targed nesaf
+goal-reached = Wedi cyrraedd fy nharged
 clips-you-recorded = Clipiau Rydych Wedi'u Recordio
 clips-you-validated = Clipiau Rydych Wedi'u Dilysu
 todays-recorded-progress = Cynnydd Common Voice heddiw ar glipiau wedi'u recordio
@@ -741,7 +779,8 @@ show-ranking = Dangoswch fy safle
 ## Custom Goals
 
 get-started-goals = Cychwyn gyda thargedau
-create-custom-goal = Creu Targed Cyfaddas
+create-custom-goal = Creu Targed Personol
+goal-type = Pa fath o darged ydych chi am ei osod?
 both-speak-and-listen = Y Ddau
 both-speak-and-listen-long = Y Ddau (Siarad a Gwrando)
 daily-goal = Targed Dyddiol
@@ -754,18 +793,71 @@ lose-goal-progress-warning = Drwy olygu eich targed, efallai byddwch yn colli ei
 want-to-continue = Hoffech chi barhau?
 finish-editing = Gorffen golygu yn gyntaf?
 lose-changes-warning = Bydd gadael nawr yn golygu eich bod yn colli eich newidiadau
-build-custom-goal = Creu targed cyfaddas
-help-reach-hours = Helpwch i gyrraedd { NUMBER($hours) } awr { $language } gyda tharged personol
-help-reach-hours-general = Helpwch  Common Voice i gyrraedd { NUMBER($hours) } awr mewn iaith gyda tharged personol
+build-custom-goal = Adeiladu targed personol
+help-reach-hours-pluralized =
+    Helpu i gyrraedd { NUMBER($hours) ->
+        [zero] { $hours } awr
+        [one] { $hours } awr
+        [two] { $hours } awr
+        [few] { $hours } awr
+        [many] { $hours } awr
+       *[other] { $hours } awr
+    } { $language } gyda tharged personol
+help-reach-hours-general-pluralized =
+    Helpu i gyrraedd { NUMBER($hours) ->
+        [zero] { $hours } awr
+        [one] { $hours } awr
+        [two] { $hours } awr
+        [few] { $hours } awr
+        [many] { $hours } awr
+       *[other] { $hours } awr
+    } mewn iaith gyda tharged personol
 set-a-goal = Gosod targed
 cant-decide = Methu penderfynu?
-activity-needed-calculation = Mae { NUMBER($totalHours) } awr yn gyraeddadwy ymhen { NUMBER($periodMonths) } mis os fydd { NUMBER($people) } o bobl yn recordio { NUMBER($clipsPerDay) } clip y dydd.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [zero] { $totalHours } awr
+        [one] { $totalHours } awr
+        [two] { $totalHours } awr
+        [few] { $totalHours } awr
+        [many] { $totalHours } awr
+       *[other] { $totalHours } awr
+    } yn bosib mewn ychydig dros { NUMBER($periodMonths) ->
+        [zero] { $periodMonths } mis
+        [one] { $periodMonths } mis
+        [two] { $periodMonths } fis
+        [few] { $periodMonths } mis
+        [many] { $periodMonths } mis
+       *[other] { $periodMonths } mis
+    } os fydd { NUMBER($people) ->
+        [zero] { $people } person
+        [one] { $people } person
+        [two] { $people } berson
+        [few] { $people } person
+        [many] { $people } pherson
+       *[other] { $people } person
+    } yn recordio { NUMBER($clipsPerDay) ->
+        [zero] { $clipsPerDay } clip
+        [one] { $clipsPerDay } clip
+        [two] { $clipsPerDay } glip
+        [few] { $clipsPerDay } clip
+        [many] { $clipsPerDay } chlip
+       *[other] { $clipsPerDay } clip
+    } bob dydd.
 how-many-per-day = Gwych! Sawl clip y dydd?
 how-many-a-week = Gwych! Sawl clip yr wythnos?
 which-goal-type = Hoffech chi Siarad, Gwrando neu'r ddau?
 receiving-emails-info = Ar hyn o bryd rydych wedi trefnu i dderbyn negeseuon e-bost i'ch atgoffa am eich targed, diweddariadau cynnydd a chylchlythyron am Common Voice
 not-receiving-emails-info = Ar hyn o bryd, rydych wedi eich gosod i <bold>BEIDIO</bold> â derbyn e-byst i atgoffa am dargedau, diweddariadau cynnydd a newyddlenni am Common Voice
-n-clips = { NUMBER($count) } clip
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [zero] { $count } clip
+        [one] { $count } clip
+        [two] { $count } glip
+        [few] { $count } clip
+        [many] { $count } chlip
+       *[other] { $count } clip
+    }
 help-share-goal = Helpwch ni i ddenu rhagor o leisiau, rhannwch eich targed
 confirm-goal = Cadarnhau'r Targed
 goal-interval-weekly = Wythnosol

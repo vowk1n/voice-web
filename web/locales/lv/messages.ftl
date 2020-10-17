@@ -110,6 +110,7 @@ sl = Slovēņu
 sq = Albāņu
 sr = Serbu
 sv-SE = Zviedru
+sw = Svahili
 syr = Sīriešu
 ta = Tamilu
 te = Telugu
@@ -316,22 +317,19 @@ login-identity = Pieteikšanās identitāte
 login-signup = Ielogoties / Reģistrēties
 edit = Rediģēt
 email-subscriptions = Jaunumu abonēšana epastā
-download-profile = Lejupielādēt manu datus
+download-profile = Lejupielādēt manus datus
 contribution-experience = Piedalīšanās pieredze
 skip-submission-feedback = Izlaist atsauksmes
 skip-submission-description = Iesnieguma iesniegšanas laikā atgriezeniskā saite tiks izlaista pēc noklikšķināšanas uz 'Iesniegt'. Ieguldījums tiks turpināts tieši ar nākamo 5 ierakstiem vai apstiprinājumiem.
 skip-submission-note = Piezīme: mainot ieguldījuma veidu, jums būs jāizvēlas ierakstīt vai klausīties.
 off = Izslēgts
 on = Ieslēgts
-add-avatar-title = Pievieno savam profilam avatāru
 avatar-clip-title = Piešķiriet savam avataram balsi
-create-voice-wave = Izveidojiet balss vilni
 recording-voice-wave = ierakstīšana
 ready-to-upload = Augšupielādēt
 avatar-clip-fact = Tas ir sen zināms fakts, ka lasītājs, lasot lapas izkārtojumu, novērš uzmanību no lasāmā lapas satura.
 recreate-voice = Atjaunojiet balss vilni
 cancel-avatar-clip-recording = Atcelt
-about-avatar-clip = Izveidojiet pielāgotu balss vilni, lai iepazīstinātu ar sevi. Citi lietotāji varēs turēt kursoru uz jūsu klipu un noklausīties to.
 browse-file-title = Augšupielādējiet attēlu
 browse-file = Velciet un nometiet vai <browseWrap> Pārlūkojiet </browseWrap>
 connect-gravatar = Savienoties ar Gravatar
@@ -434,11 +432,6 @@ about-partnership =
     
     Mēs vēlētos pateikties šādiem cilvēkiem un organizācijām par viņu palīdzību projektā:
 about-get-involved = Iesaistieties
-about-get-involved-text =
-    Vēlaties palīdzēt uzlabot kopējo balss kvalitāti?
-    Lieliski! Sazinieties pa e-pastu vai <discourseLink>Discourse</discourseLink>,
-    iesniedziet atsauksmes, izmantojot <githubLink>GitHub</githubLink>,
-    vai pievienojieties mums <slackLink>Slack</slackLink>.
 about-nav-why-common-voice = Kāpēc?
 about-nav-how-it-works = Kā?
 about-nav-partners = Partneri
@@ -644,7 +637,6 @@ listen-instruction = { $actionType } <playIcon> </playIcon> vai viņi precīzi i
 listen-again-instruction = Lieliski paveikts darbs! <playIcon> </playIcon> Klausieties vēlreiz, kad esat gatavs
 listen-3rd-time-instruction = 2 pabeigti, tā tik turi! <playIcon> </playIcon>
 listen-last-time-instruction = <playIcon> </playIcon> Pēdējais!
-nothing-to-validate = Mums nav nekas, kas jāapstiprina šajā valodā, palīdziet mums aizpildīt rindu.
 record-button-label = Ierakstiet savu balsi
 share-title-new = <bold> Palīdziet mums </bold> atrast vairāk balsu
 keep-track-profile = Sekojiet līdzi progresam, izmantojot profilu

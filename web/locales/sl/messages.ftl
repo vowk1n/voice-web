@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Pošlji
 loading = Nalaganje …
 email-opt-in-info = Želim prejemati e-poštna sporočila, kot so opomniki za cilje, posodobitve napredka in novice projekta Common Voice.
-email-opt-in-privacy = S potrditvijo prejemanja e-pošte soglašate z ravnanjem s temi podatki, kot je razloženo v Mozillini <privacyLink>politiki zasebnosti<privacyLink>.
+email-opt-in-info-title = Pridružite se e-poštnemu seznamu Common Voice
+email-opt-in-info-sub-with-challenge = Prejemajte e-poštna sporočila, kot so opomniki na izzive in cilje, posodobitve napredka in novice projekta Common Voice.
+email-opt-in-privacy-v2 = S potrditvijo prejemanja e-pošte soglašate z ravnanjem s temi podatki, kot je razloženo v Mozillini <privacyLink>politiki zasebnosti</privacyLink>.
 indicates-required = * Zahtevano polje
 not-available-abbreviation = Ni na voljo
 
@@ -26,10 +28,12 @@ af = afrikanščina
 am = amharščina
 an = aragonščina
 ar = arabščina
+arn = mapudungunščina
 as = asamščina
 ast = asturijščina
 az = azerbajdžanščina
 ba = baškirščina
+be = beloruščina
 bg = bolgarščina
 bn = bengalščina
 br = bretonščina
@@ -60,10 +64,12 @@ ga-IE = irščina
 gl = galicijščina
 ha = havščina
 he = hebrejščina
-hi-IN = hindujščina
+hi = hindujščina
 hr = hrvaščina
 hsb = gornja lužiška srbščina
 hu = madžarščina
+hy-AM = armenščina
+hyw = zahodna armenščina
 ia = interlingva
 id = indonezijščina
 is = islandščina
@@ -71,23 +77,28 @@ it = italijanščina
 izh = ingrijščina
 ja = japonščina
 ka = gruzinščina
+kaa = karakalpaščina
 kab = kabilščina
+kbd = kabardščina
 kk = kazaščina
 ko = korejščina
 kpv = komijščina
 ku = kurdščina
 kw = kornijščina
 ky = kirgiščina
+lg = lugandščina
 lij = ligurščina
 lt = litovščina
 lv = latvijščina
 mdf = mokša
+mg = malagaščina
 mhr = vzhodna marijščina
 mk = makedonščina
 ml = malajalamščina
 mn = mongolščina
 mrj = zahodna marijščina
 mt = malteščina
+my = burmanščina
 myv = erzjanščina
 nb-NO = norveščina (bokmål)
 ne-NP = nepalščina
@@ -95,6 +106,7 @@ nl = nizozemščina
 nn-NO = norveščina (nynorsk)
 oc = okcitanščina
 or = odijščina
+pa-IN = pandžabščina
 pl = poljščina
 pt = portugalščina
 rm-sursilv = retoromanščina (sursilvan)
@@ -104,6 +116,7 @@ ru = ruščina
 rw = ruandščina
 sah = jakutščina
 sc = sardinščina
+scn = sicilijanščina
 si = sinhalščina
 sk = slovaščina
 sl = slovenščina
@@ -116,6 +129,7 @@ ta = tamilščina
 te = teluščina
 tg = tadžiščina
 th = tajščina
+tl = tagaloščina
 tr = turščina
 tt = tatarščina
 uby = ubiščina
@@ -123,6 +137,7 @@ udm = udmurtščina
 uk = ukrajinščina
 ur = urdujščina
 uz = uzbeščina
+vec = beneščina
 vi = vietnamščina
 vot = votščina
 zh-CN = kitajščina (Kitajska)
@@ -231,7 +246,6 @@ whats-public = Kaj je javno?
 email-not-public = Vašega e-poštnega naslova ne bomo javno objavili.
 recordings-and-locale-public = Število posnetkov in jeziki, pri katerih sodelujete, bodo javni.
 username-optin-public = Svoje uporabniško ime lahko nastavite kot javno ali anonimno.
-demographic-deidentified = Po želji dodani demografski podatki (npr. starost, spol, jezik in naglas) so iz vaših poslanih glasovnih podatkov odstranjeni in jih v vašem profilu ne bomo nikoli javno objavili.
 username-email-not-demographic = Vaše uporabniško ime in e-poštni naslov ne bosta povezana z objavljenimi podatki.
 
 ## Speak & Listen Shortcuts
@@ -320,6 +334,7 @@ thanks-for-account = Hvala za potrditev računa, zdaj pa se lotimo ustvarjanja v
 why-demographic = Zakaj je to pomembno?
 why-demographic-explanation = Anonimni uporabniški podatki, kot so starost, spol in naglas, izboljšajo glasovne podatke, ki se uporabljajo za zagotavljanje natančnosti sistemov za prepoznavanje govora. Vaše uporabniško ime in e-pošta ne bosta nikoli povezana z vašimi posredovanimi podatki, zato lahko izberete, ali bo vaše uporabniško ime javno ali anonimno.
 accept-privacy = Strinjam se z ravnanjem s temi podatki, kot je razloženo v Mozillini <privacyLink>politiki zasebnosti</privacyLink>
+accept-privacy-title = Politika zasebnosti
 login-identity = Identiteta prijave
 login-signup = Prijava / Registracija
 edit = Uredi
@@ -332,10 +347,19 @@ skip-submission-note = Opomba: za spremembo vrste prispevka boste še vedno mora
 off = Izklopljeno
 on = Vklopljeno
 avatar-clip-title = Dodajte glas svojemu avatarju
+change-your-avatar-clip = Želite spremeniti glasovni posnetek?
+recording-in-progress = Glasovno snemanje v teku
+avatar-clip-recorded = Vaš avatar zdaj vključuje glasovni posnetek!
+record-voice-wave = POSNEMI SVOJ GLAS
+retry-voice-wave-recording = POSKUSI ZNOVA
+re-record = ZNOVA POSNEMI
 delete-voice = IZBRIŠI
 recording-voice-wave = Snemanje
+delete-voice-clip = ali izbriši posnetek
 ready-to-upload = Naloži
+recreate-voice = Ponovno ustvari posnetek
 cancel-avatar-clip-recording = Prekliči
+about-avatar-clip-recording = Ustvarite glasovni posnetek kot del avatarja svojega profila. Drugi se bodo lahko z miško pomaknili na vaš posnetek in ga poslušali.
 browse-file-title = Naložite slikovno datoteko
 browse-file = Povlecite in spustite ali <browseWrap>prebrskajte</browseWrap>
 connect-gravatar = Poveži z Gravatarjem
@@ -416,12 +440,16 @@ about-clip-graveyard = Pokopališče posnetkov
 about-clip-graveyard-text = Pokopališče posnetkov sestavljajo glasovni posnetki, ki niso bili vključeni v nabor podatkov Common Voice. Tako kot nabor podatkov, je tudi pokopališče posnetkov na voljo za prenos.
 about-partners = Partnerji
 about-become-a-partner = Postanite partner
+about-partnership =
+    Common Voice je skupni projekt, pri katerem s pomočjo naše skupnosti partnerjev in sodelavcev ustvarjamo največji odprtokodni nabor podatkov doslej.
+    
+    Za pomoč pri projektu se zahvaljujemo naslednjim posameznikom in organizacijam:
 about-get-involved = Pridružite se
-about-get-involved-text =
+about-get-involved-text-2 =
     Želite izboljšati Common Voice?
-    Odlično! Pridružite se nam po e-pošti ali na <discourseLink>forumu Discourse</discourseLink>,
-    pošljite povratne informacije na <githubLink>Githubu</githubLink>
-    ali se nam pridružite na <slackLink>kanalu Slack</slackLink>.
+    Odlično! Oglasite se nam po e-pošti ali na <discourseLink>forumu Discourse</discourseLink>,
+    pošljite povratne informacije na <githubLink>GitHubu</githubLink>
+    ali se nam pridružite na <matrixLink>kanalu Matrix</matrixLink>.
 about-nav-why-common-voice = Zakaj?
 about-nav-how-it-works = Kako?
 about-nav-partners = Partnerji
@@ -447,10 +475,10 @@ sst-explanation = Tehnologija govora v besedilo (STT), pretvarja glasovne podatk
 de-identified = Prikrivanje
 de-identified-explanation = Postopek, s katerim so podatki o profilu avtorja prikriti iz njegovih poslanih glasovnih posnetkov, ko so ti pripravljeni za prenos kot del nabora podatkov.
 
-## NotFound
+## Error pages
 
-notfound-title = Ni zadetkov
-notfound-content = Na žalost tega, kar iščete, ne najdemo.
+error-content-404 = Morda vam lahko pomaga naša <homepageLink>domača stran</homepageLink>? Če želite postaviti vprašanje, se pridružite <matrixLink>klepetu skupnosti na Matrixu</matrixLink>, spremljajte težave na <githubLink>GitHubu</githubLink> ali obiščite <discourseLink>naš forum Discourse</discourseLink>.
+error-code = Napaka { $code }
 
 ## Data
 
@@ -469,6 +497,7 @@ data-bundle-button = Prenesi nabor podatkov
 data-bundle-description = Podatki Common Voice in vsi zgornji govorni nabori podatkov.
 license = Licenca: <licenseLink>{ $license }</licenseLink>
 license-mixed = Mešana
+data-download-singleword-title = Prenesite enobesedni ciljni segment
 review-terms = Z uporabo Common Voice se strinjate z našimi <termsLink>pogoji</termsLink> in z <privacyLink>obvestilom o zasebnosti</privacyLink>
 terms-agree = Strinjam se
 terms-disagree = Ne strinjam se
@@ -589,7 +618,13 @@ contribute = Prispevaj
 listen = Poslušaj
 skip = Preskoči
 shortcuts = Bližnjice
-clips-with-count = <bold>{ $count }</bold> posnetkov
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> posnetek
+        [two] <bold>{ $count }</bold> posnetka
+        [few] <bold>{ $count }</bold> posnetki
+       *[other] <bold>{ $count }</bold> posnetkov
+    }
 goal-help-recording = Projektu Common Voice ste pomagali doseči <goalPercentage></goalPercentage> od našega dnevnega cilja, ki znaša { $goalValue } posnetkov.
 goal-help-validation = Projektu Common Voice ste pomagali doseči <goalPercentage></goalPercentage> od našega dnevnega cilja, ki znaša { $goalValue } preverjenih posnetkov.
 contribute-more =
@@ -602,7 +637,7 @@ contribute-more =
 record-cta = Začni snemati
 record-platform-not-supported = Žal nam je, vendar vaše platforme trenutno ne podpiramo.
 record-platform-not-supported-desktop = Na namiznih in prenosnih računalnikih lahko prenesete najnovejše:
-record-platform-not-supported-ios = Uporabniki <bold>iOS</bold> lahko prenesejo našo brezplačno aplikacijo:
+record-platform-not-supported-ios-non-safari = V sistemu iOS nadaljujte s Safarijem, da omogočite snemanje …
 record-must-allow-microphone = Dovoliti morate dostop do mikrofona.
 record-no-mic-found = Ni najdenega mikrofona.
 record-error-too-short = Posnetek je prekratek.
@@ -616,6 +651,8 @@ record-again-instruction = Odlično! <recordIcon></recordIcon> Posnemite nasledn
 record-again-instruction2 = Odlično napredujete, začnite ponovno snemati <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Zadnji!
 review-tooltip = Tukaj lahko pregledate posnetke in jih ponovno posnamete.
+share-clip = Delite svoj posnetek
+share-common-voice = Delite Common Voice
 review-instruction = Če je potrebno, lahko posnetke pregledate in ponovno posnamete
 record-submit-tooltip = { $actionType } Pošlji, ko ste pripravljeni
 clips-uploaded = Posnetki naloženi
@@ -628,11 +665,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> ali je bil stavek pra
 listen-again-instruction = Odlično opravljeno!<playIcon></playIcon> Poslušajte znova, ko boste pripravljeni.
 listen-3rd-time-instruction = 2 sta pod streho, kar tako naprej! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon> Še zadnji!
-nothing-to-validate = Trenutno ni ničesar za preveriti v tem jeziku. Pomagaj nam zapolniti čakalno vrsto.
+listen-empty-state = Zmanjkalo nam je posnetkov za potrditev v tem jeziku ...
+speak-empty-state = Zmanjkalo nam je stavkov za snemanje v tem jeziku ...
+speak-empty-state-cta = Prispevajte stavke
 record-button-label = Posnemite svoj glas
 share-title-new = <bold>Pomagajte nam</bold> najti več glasov
 keep-track-profile = S profilom spremljajte svoj napredek
 login-to-get-started = Za začetek se prijavite ali registrirajte
+target-segment-first-card = Prispevate v naš prvi ciljni segment
+target-segment-first-banner = Pomagajte ustvariti prvi ciljni segment Common Voice v jeziku { $locale }
+target-segment-add-voice = Dodajte svoj glas
+target-segment-learn-more = Več o tem
 
 ## Reporting
 
@@ -707,6 +750,7 @@ show-ranking = Pokaži mojo uvrstitev
 
 get-started-goals = Začnite s cilji
 create-custom-goal = Ustvari cilj po meri
+goal-type = Kakšen cilj želite ustvariti?
 both-speak-and-listen = Oboje
 both-speak-and-listen-long = Oboje (govori in poslušaj)
 daily-goal = Dnevni cilj
@@ -720,11 +764,22 @@ want-to-continue = Želite nadaljevati?
 finish-editing = Želite najprej dokončati urejanje?
 lose-changes-warning = Če zapustite zdaj, boste izgubili spremembe
 build-custom-goal = Sestavite cilj po meri
-help-reach-hours = Pomagajte doseči { NUMBER($hours) } ur v jeziku { $language } z osebnim ciljem
-help-reach-hours-general = Pomagajte projektu Common Voice doseči { NUMBER($hours) } ur v jeziku z osebnim ciljem
+help-reach-hours-pluralized =
+    Pomagajte doseči { NUMBER($hours) ->
+        [one] { $hours } uro
+        [two] { $hours } uri
+        [few] { $hours } ure
+       *[other] { $hours } ur
+    } v jeziku { $language } z osebnim ciljem
+help-reach-hours-general-pluralized =
+    Pomagajte projektu Common Voice doseči { NUMBER($hours) ->
+        [one] { $hours } uro
+        [two] { $hours } uri
+        [few] { $hours } ure
+       *[other] { $hours } ur
+    } v jeziku z osebnim ciljem
 set-a-goal = Zastavite cilj
 cant-decide = Se ne morete odločiti?
-activity-needed-calculation = { NUMBER($totalHours) } ur je dosegljivih v nekaj več kot { NUMBER($periodMonths) } mesecih, če { NUMBER($people) } ljudi posname { NUMBER($clipsPerDay) } posnetkov na dan.
 how-many-per-day = Odlično! Koliko posnetkov na dan?
 how-many-a-week = Odlično! Koliko posnetkov na teden?
 which-goal-type = Želite govoriti, poslušati ali oboje?
@@ -732,7 +787,13 @@ receiving-emails-info =
     Trenutno prejemate e-poštna sporočila, kot so opomniki za cilje, 
     posodobitve napredka in novice projekta Common Voice
 not-receiving-emails-info = Trenutno <bold>NE</bold> prejemate e-poštnih sporočil, kot so opomniki za cilje, posodobitve napredka in novice projekta Common Voice.
-n-clips = { NUMBER($count) } posnetkov
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } posnetek
+        [two] { $count } posnetka
+        [few] { $count } posnetki
+       *[other] { $count } posnetkov
+    }
 help-share-goal = Pomagajte nam najti več glasov, delite svoj cilj
 confirm-goal = Potrdi cilj
 goal-interval-weekly = Tedensko
@@ -742,6 +803,7 @@ share-n-daily-contribution-goal = Delite svoj dnevni cilj { $count } posnetkov z
 share-n-weekly-contribution-goal = Delite svoj tedenski cilj { $count } posnetkov za { $type }
 share-goal-type-speak = Govori
 share-goal-type-listen = Poslušanje
+share-goal-type-both = Govorjenje in poslušanje
 # LINK will be replaced with the current URL
 goal-share-text = Pravkar sem ustvaril osebni cilj za prispevanje k projektu #CommonVoice – pridružite se mi in pomagajmo naučiti stroje, kako govorijo resnični ljudje { $link }
 weekly-goal-created = Vaš tedenski cilj je bil ustvarjen
@@ -765,6 +827,8 @@ profile-form-delete = Izbriši profil
 
 ## Landing
 
+welcome-staff = Dobrodošli sodelavci { $company }!
 help-contribute = Pomagate lahko ustvariti raznolik, odprtokodni nabor podatkov, tako da ustvarite profil Common Voice in prispevate svoj glas.
+login-company = Prijava / Registracija z e-poštnim naslovom { $company }
 profile-not-required = Profil za sodelovanje ni obvezen, je pa priporočljiv
 read-more-about = Preberite več na naši strani O nas

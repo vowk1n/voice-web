@@ -1,15 +1,11 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import {
-  BaseLanguage,
-  InProgressLanguage,
-  LaunchedLanguage,
-} from 'common/language-stats';
+import { BaseLanguage, InProgressLanguage, LaunchedLanguage } from 'common';
 import API from '../../../services/api';
 import { NATIVE_NAMES } from '../../../services/localization';
 import { trackLanguages } from '../../../services/tracker';
@@ -26,7 +22,7 @@ interface PropsFromState {
   locale: Locale.State;
 }
 
-interface Props extends PropsFromState, LocalizationProps {}
+interface Props extends PropsFromState, WithLocalizationProps {}
 
 type LanguageSection = 'in-progress' | 'launched';
 
@@ -101,14 +97,6 @@ class LanguagesPage extends React.PureComponent<Props, State> {
         }
         if (l2.locale === locale) {
           return 1;
-        }
-
-        // English comes last
-        if (l1.locale === 'en') {
-          return 1;
-        }
-        if (l2.locale === 'en') {
-          return -1;
         }
 
         // Browser locales are prioritized as well
@@ -187,12 +175,10 @@ class LanguagesPage extends React.PureComponent<Props, State> {
     function filterLanguages<T>(languages: T[]): T[] {
       return query
         ? languages.filter(({ locale }: any) => {
-            const q = query.toLowerCase();
+            const q = query.toLowerCase().trim();
             return (
               locale.includes(q) ||
-              getString(locale)
-                .toLowerCase()
-                .includes(q) ||
+              getString(locale).toLowerCase().includes(q) ||
               (NATIVE_NAMES[locale] || '').toLowerCase().includes(q)
             );
           })
@@ -235,7 +221,7 @@ class LanguagesPage extends React.PureComponent<Props, State> {
       query,
     } = this.state;
 
-    const descriptionProps = {
+    const descriptionElems = {
       localizationGlossaryLink: <StyledLink to={URLS.FAQ + '#localization'} />,
       sentenceCollectionGlossaryLink: (
         <StyledLink to={URLS.FAQ + '#sentence-collection'} />
@@ -336,7 +322,7 @@ class LanguagesPage extends React.PureComponent<Props, State> {
 
             <Localized
               id="language-section-launched-description"
-              {...descriptionProps}>
+              elems={descriptionElems}>
               <p />
             </Localized>
             <ul>
@@ -380,7 +366,7 @@ class LanguagesPage extends React.PureComponent<Props, State> {
 
             <Localized
               id="language-section-in-progress-new-description"
-              {...descriptionProps}>
+              elems={descriptionElems}>
               <p />
             </Localized>
             <ul>

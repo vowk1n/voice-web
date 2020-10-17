@@ -1,7 +1,7 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { useState } from 'react';
-import { CustomGoalParams } from 'common/goals';
+import { CustomGoalParams } from 'common';
 import { useAccount, useAction, useAPI } from '../../../../hooks/store-hooks';
 import { User } from '../../../../stores/user';
 import Modal from '../../../modal/modal';
@@ -119,7 +119,7 @@ function CompletedFields({
           <Radio key={stateKey} checked disabled>
             <Localized
               {...(stateKey == 'amount'
-                ? { id: 'n-clips', $count: value }
+                ? { id: 'n-clips-pluralized', vars: { count: value } }
                 : {
                     id:
                       stateKey == 'type' && value == 'both'
@@ -178,7 +178,7 @@ function CurrentFields({
             }>
             {currentStateKey == 'amount' ? (
               <>
-                <Localized id="n-clips" $count={value}>
+                <Localized id="n-clips-pluralized" vars={{ count: value }}>
                   <span />
                 </Localized>
                 <Localized id={labelId}>
@@ -205,8 +205,8 @@ export default function CustomGoal({
   const { history, location } = useRouter();
   const api = useAPI();
   const account = useAccount();
-  const { custom_goals, email } = account;
-  const customGoal = custom_goals.find(g => g.locale == dashboardLocale);
+  const { custom_goals, email } = account || {};
+  const customGoal = custom_goals?.find(g => g.locale == dashboardLocale);
   const refreshUser = useAction(User.actions.refresh);
   const saveAccount = useAction(User.actions.saveAccount);
 
@@ -241,13 +241,19 @@ export default function CustomGoal({
   const Step = steps[stepIndex];
 
   const states: any = {
-    daysInterval: [['daily-goal', 1], ['weekly-goal', 7]],
-    amount: [['easy', 15], ['average', 30], ['difficult', 45], ['pro', 60]].map(
-      ([labelId, value]) => [
-        labelId + '-difficulty',
-        (state.daysInterval || 0) * (value as number),
-      ]
-    ),
+    daysInterval: [
+      ['daily-goal', 1],
+      ['weekly-goal', 7],
+    ],
+    amount: [
+      ['easy', 15],
+      ['average', 30],
+      ['difficult', 45],
+      ['pro', 60],
+    ].map(([labelId, value]) => [
+      labelId + '-difficulty',
+      (state.daysInterval || 0) * (value as number),
+    ]),
     type: [
       ['speak', 'speak'],
       ['listen', 'listen'],

@@ -1,21 +1,22 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useRef } from 'react';
 import { trackSharing } from '../../services/tracker';
 import { Notifications } from '../../stores/notifications';
 import { FontIcon } from '../ui/icons';
 import { useLocale } from '../locale-helpers';
+import URLS from '../../urls';
 
 import './share-buttons.css';
 import { useAction } from '../../hooks/store-hooks';
 
-const SHARE_URL = 'https://voice.mozilla.org/';
+const SHARE_URL = URLS.HTTP_ROOT;
 
-interface Props extends LocalizationProps {
+interface Props extends WithLocalizationProps {
   shareTextId?: string;
 }
 
@@ -30,7 +31,7 @@ function ShareButtons({ getString, shareTextId }: Props) {
   const shareURLInputRef = useRef(null);
 
   return (
-    <React.Fragment>
+    <>
       <button
         id="link-copy"
         className="share-button"
@@ -40,12 +41,12 @@ function ShareButtons({ getString, shareTextId }: Props) {
           trackSharing('link', locale);
 
           addNotification(
-            <React.Fragment>
+            <>
               <FontIcon type="link" className="icon" />{' '}
               <Localized id="link-copied">
                 <span />
               </Localized>
-            </React.Fragment>
+            </>
           );
         }}>
         <input type="text" readOnly value={SHARE_URL} ref={shareURLInputRef} />
@@ -70,7 +71,7 @@ function ShareButtons({ getString, shareTextId }: Props) {
         onClick={() => trackSharing('twitter', locale)}>
         <FontIcon type="twitter" />
       </a>
-    </React.Fragment>
+    </>
   );
 }
 

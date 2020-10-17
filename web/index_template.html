@@ -21,29 +21,28 @@
       property="og:description"
       content="Common Voice is a project to help make voice recognition open to everyone. Now you can donate your voice to help us build an open-source voice database that anyone can use to make innovative apps for devices and the web."
     />
-    <meta property="og:url" content="https://voice.mozilla.org/" />
+    <meta property="og:url" content="https://commonvoice.mozilla.org/" />
     <meta
       property="og:image"
-      content="https://voice.mozilla.org/img/cv-social-1024x512.jpg"
+      content="https://commonvoice.mozilla.org/img/cv-social-1024x512.jpg"
     />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
     <meta
       property="og:image"
-      content="https://voice.mozilla.org/img/cv-social-1024x512@2x.jpg"
+      content="https://commonvoice.mozilla.org/img/cv-social-1024x512@2x.jpg"
     />
     <meta property="og:image:width" content="2048" />
     <meta property="og:image:height" content="1024" />
     <meta
       property="og:image"
-      content="https://voice.mozilla.org/img/cv-social-1024x512@3x.jpg"
+      content="https://commonvoice.mozilla.org/img/cv-social-1024x512@3x.jpg"
     />
     <meta property="og:image:width" content="3072" />
     <meta property="og:image:height" content="1536" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@mozilla" />
     <meta name="twitter:creator" content="@mikehenrty" />
-    <meta name="apple-itunes-app" content="app-id=1240588326" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
       rel="stylesheet"
@@ -52,11 +51,16 @@
       href="https://fonts.googleapis.com/css?family=Zilla+Slab:400,600"
       rel="stylesheet"
     />
+    <link
+      rel="apple-touch-icon"
+      href="https://voice.mozilla.org/img/voice-touch-icon.png"
+    />
     <!--
       Note: this inline script is allowed through CSP using a hash. To change this, you must also modify the hash
     -->
+    <!-- prettier-ignore -->
     <script>
-      if (window.location.origin !== 'https://voice.mozilla.org') {
+      if (window.location.origin !== 'https://commonvoice.mozilla.org') {
         console.log('disabling analytics on non production');
         window.ga = function() {};
       } else if (
@@ -92,29 +96,7 @@
     </script>
   </head>
   <body>
+    <noscript>Please enable JavaScript to run this app</noscript>
     <div id="root"></div>
-    <div id="error" style="display: none;">
-      <h1>We’re sorry, but your platform is not currently supported.</h1>
-      <p>On desktop computers, you can download the latest:</p>
-      <ul>
-        <li>
-          <a target="_blank" href="https://www.firefox.com/"> Firefox </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://www.google.com/chrome"> Chrome </a>
-        </li>
-      </ul>
-    </div>
-    <script>
-      var errorContainer = document.getElementById('error');
-      if (document.querySelector('#root').children.length === 0) {
-        errorContainer.style.display = 'block';
-      }
-      window.onerror = function(e) {
-        if (e === 'Syntax error') {
-          errorContainer.style.display = 'block';
-        }
-      };
-    </script>
   </body>
 </html>

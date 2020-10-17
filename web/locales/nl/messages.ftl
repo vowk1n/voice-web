@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Indienen
 loading = Laden…
 email-opt-in-info = Ik wil graag e-mailberichten zoals herinneringen aan doelstellingen, mijn voortgangsupdates en nieuwsbrieven over Common Voice ontvangen.
-email-opt-in-privacy = Door u in te schrijven voor het ontvangen van e-mailberichten, verklaart u dat u akkoord gaat met het verwerken van deze informatie door Mozilla in overeenstemming met Mozilla’s <privacyLink>Privacybeleid<privacyLink>.
+email-opt-in-info-title = Meld u aan voor de Common Voice-mailinglijst
+email-opt-in-info-sub-with-challenge = Ontvang e-mailberichten zoals herinneringen aan uitdagingen en doelstellingen, voortgangsupdates en nieuwsbrieven over Common Voice.
+email-opt-in-privacy-v2 = Door u in te schrijven voor het ontvangen van e-mailberichten, verklaart u dat u akkoord gaat met het verwerken van deze informatie door Mozilla in overeenstemming met Mozilla’s <privacyLink>Privacybeleid</privacyLink>.
 indicates-required = * Geeft verplicht veld aan
 not-available-abbreviation = NB
 
@@ -26,10 +28,12 @@ af = Afrikaans
 am = Amhaars
 an = Aragonees
 ar = Arabisch
+arn = Mapudungun
 as = Assamees
 ast = Asturisch
 az = Azeri
 ba = Basjkiers
+be = Wit-Russisch
 bg = Bulgaars
 bn = Bengaals
 br = Bretons
@@ -60,10 +64,12 @@ ga-IE = Iers
 gl = Galicisch
 ha = Hausa
 he = Hebreeuws
-hi-IN = Hindi
+hi = Hindi
 hr = Kroatisch
 hsb = Oppersorbisch
 hu = Hongaars
+hy-AM = Armeens
+hyw = West-Armeens
 ia = Interlingua
 id = Indonesisch
 is = IJslands
@@ -71,23 +77,28 @@ it = Italiaans
 izh = Izjorisch
 ja = Japans
 ka = Georgisch
+kaa = Karakalpaks
 kab = Kabylisch
+kbd = Kabardisch
 kk = Kazachs
 ko = Koreaans
 kpv = Zurjeens
 ku = Koerdisch
 kw = Cornish
 ky = Kirgizisch
+lg = Luganda
 lij = Ligurisch
 lt = Litouws
 lv = Lets
 mdf = Moksja
+mg = Plateaumalagasi
 mhr = Weide-Mari
 mk = Macedonisch
 ml = Malayalam
 mn = Mongools
 mrj = Berg-Mari
 mt = Maltees
+my = Burmees
 myv = Erzja
 nb-NO = Noors Bokmål
 ne-NP = Nepalees
@@ -95,6 +106,7 @@ nl = Nederlands
 nn-NO = Noors Nynorsk
 oc = Occitaans
 or = Odia
+pa-IN = Punjabi
 pl = Pools
 pt = Portugees
 rm-sursilv = Reto-Romaans Surselvisch
@@ -104,6 +116,7 @@ ru = Russisch
 rw = Kinyarwanda
 sah = Jakoets
 sc = Sardijns
+scn = Siciliaans
 si = Singalees
 sk = Slowaaks
 sl = Sloveens
@@ -116,6 +129,7 @@ ta = Tamil
 te = Telugu
 tg = Tadzjieks
 th = Thai
+tl = Tagalog
 tr = Turks
 tt = Tataars
 uby = Oebychs
@@ -123,6 +137,7 @@ udm = Oedmoerts
 uk = Oekraïens
 ur = Urdu
 uz = Oezbeeks
+vec = Venetiaans
 vi = Vietnamees
 vot = Wotisch
 zh-CN = Chinees (China)
@@ -220,7 +235,7 @@ whats-public = Wat is openbaar?
 email-not-public = We maken uw e-mailadres niet openbaar.
 recordings-and-locale-public = Het aantal opnamen en de talen waaraan u bijdraagt zijn openbaar.
 username-optin-public = U kunt kiezen of uw gebruikersnaam openbaar of anoniem is.
-demographic-deidentified = Optioneel ingediende demografische gegevens (bv. leeftijd, geslacht, taal en accent) worden anoniem gemaakt ten opzichte van uw ingediende spraakgegevens en zullen nooit openbaar worden gemaakt op uw profiel.
+demographic-deidentified-clarity = Optioneel ingediende demografische gegevens (b.v. leeftijd, geslacht, taal en accent) worden nooit openbaar gemaakt op uw profiel en worden niet gekoppeld aan uw account in de gegevensset. Afzonderlijke geluidsopnamen worden gekoppeld aan demografische gegevens voor een nauwkeurigere analyse – een onderzoeker kan bijvoorbeeld een trainingsmodel op een specifiek demografisch segment richten.
 username-email-not-demographic = Uw gebruikersnaam en e-mailadres zullen niet met de gepubliceerde gegevens worden gekoppeld.
 
 ## Speak & Listen Shortcuts
@@ -307,6 +322,7 @@ thanks-for-account = Bedankt voor het bevestigen van uw account, nu gaan we uw p
 why-demographic = Waarom is dit belangrijk?
 why-demographic-explanation = Anonieme gebruikersgegevens zoals leeftijd, geslacht en accent helpen de audiogegevens die voor het trainen van de nauwkeurigheid van spraakherkenningsengines worden gebruikt te verbeteren. Uw gebruikersnaam en e-mailadres zullen nooit met uw ingediende gegevens worden gekoppeld, en u kunt ervoor kiezen uw gebruikersnaam openbaar of anoniem te maken.
 accept-privacy = Ik ga akkoord met hoe u met deze gegevens omgaat, zoals uitgelegd in Mozilla’s <privacyLink>Privacybeleid</privacyLink>
+accept-privacy-title = Privacybeleid
 login-identity = Aanmeldingsidentiteit
 login-signup = Aanmelden / Registreren
 edit = Bewerken
@@ -435,11 +451,11 @@ about-partnership =
     
     We willen de volgende mensen en organisaties bedanken voor hun hulp bij het project:
 about-get-involved = Meedoen
-about-get-involved-text =
-    Wilt u Common Voice nog beter helpen maken?
-    Geweldig! Neem contact op via e-mail of op <discourseLink>Discourse</discourseLink>,
-    geef feedback via <githubLink>GitHub</githubLink>,
-    of doe mee op <slackLink>Slack </slackLink>.
+about-get-involved-text-2 =
+    Wilt u helpen Common Voice nog beter te maken?
+    Geweldig! Neem contact op via e-mail of <discourseLink>Discourse</discourseLink>-
+    forums, meld problemen met de website via <githubLink>GitHub</githubLink>, of doe
+    mee met de gemeenschapschat op <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Waarom?
 about-nav-how-it-works = Hoe?
 about-nav-partners = Partners
@@ -465,10 +481,13 @@ sst-explanation = Spraak-naar-tekst (STT)-technologieën zetten spraakgegevens o
 de-identified = Anoniem gemaakt
 de-identified-explanation = Het proces waarbij de profielgegevens van een bijdrager worden gescheiden van gedoneerde spraakfragmenten wanneer deze als onderdeel van de gegevensset worden verpakt voor downloaden.
 
-## NotFound
+## Error pages
 
-notfound-title = Niet gevonden
-notfound-content = Ik ben bang dat ik niet weet wat u zoekt.
+error-title-404 = We kunnen deze pagina niet voor u vinden
+error-content-404 = Misschien helpt onze <homepageLink>startpagina</homepageLink>? Als u een vraag wilt stellen, kunt u lid worden van de <matrixLink>Matrix-gemeenschap-chat</matrixLink>, siteproblemen volgen via <githubLink>GitHub</githubLink> of bezoek <discourseLink>onze Discourse-forums</discourseLink>.
+error-title-503 = We ondervinden momenteel een onverwachte onderbreking
+error-content-503 = De site zal zo snel mogelijk worden hersteld. Neem voor de meest recente informatie deel aan de <matrixLink>Matrix-gemeenschap-chat</matrixLink> of bezoek <githubLink>GitHub</githubLink> of <discourseLink>onze Discourse-forums</discourseLink> om problemen met de website te melden en te volgen.
+error-code = Fout { $code }
 
 ## Data
 
@@ -487,6 +506,8 @@ data-bundle-button = Gegevenssetbundel downloaden
 data-bundle-description = Common Voice-gegevens plus alle overige bovenstaande gegevenssets.
 license = Licentie: <licenseLink>{ $license }</licenseLink>
 license-mixed = Gemengd
+data-download-singleword-title = Het enkel-woord-doelsegment downloaden
+data-download-singleword-callout = Dit is een segment dat zich richt op een gebruikscasus, waarin gegevens zitten die herkenning van gesproken cijfers, detectie van ja/nee en wekwoord-testgegevens voor <fxLink>Firefox Voice</fxLink> ondersteunen.
 review-terms = Door gebruik te maken van Common Voice, gaat u akkoord met onze <termsLink>Voorwaarden</termsLink> en <privacyLink>Privacyverklaring</privacyLink>
 terms-agree = Ik ga akkoord
 terms-disagree = Ik ga niet akkoord
@@ -607,14 +628,18 @@ contribute = Bijdragen
 listen = Luisteren
 skip = Overslaan
 shortcuts = Sneltoetsen
-clips-with-count = <bold>{ $count }</bold> fragmenten
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> fragment
+       *[other] <bold>{ $count }</bold> fragmenten
+    }
 goal-help-recording = U hebt Common Voice geholpen <goalPercentage></goalPercentage> van het dagelijkse doel van { $goalValue } opnamen te bereiken!
 goal-help-validation = U hebt Common Voice geholpen <goalPercentage></goalPercentage> van het dagelijkse doel van { $goalValue } validaties te bereiken!
 contribute-more = Klaar om er nog { $count } te doen?
 record-cta = Opname starten
 record-platform-not-supported = Sorry, maar uw platform wordt nog niet ondersteund.
 record-platform-not-supported-desktop = Op desktopcomputers kunt u de meest recente downloaden:
-record-platform-not-supported-ios = <bold>iOS</bold>-gebruikers kunnen onze gratis app downloaden:
+record-platform-not-supported-ios-non-safari = Ga op iOS door met Safari om opnemen in te schakelen…
 record-must-allow-microphone = U dient toegang tot uw microfoon te geven.
 record-no-mic-found = Geen microfoon gevonden.
 record-error-too-short = De opname was te kort.
@@ -628,6 +653,8 @@ record-again-instruction = Geweldig! <recordIcon></recordIcon> Neem uw volgende 
 record-again-instruction2 = Ga zo door, neem nog een keer op <recordIcon></recordIcon>
 record-last-instruction = <checkIcon></checkIcon> De laatste!
 review-tooltip = Beoordeel en neem nogmaals fragmenten op als u wilt
+share-clip = Uw opname delen
+share-common-voice = Common Voice delen
 review-instruction = Beoordeel fragmenten en neem ze zo nodig opnieuw op
 record-submit-tooltip = { $actionType } Indienen wanneer gereed
 clips-uploaded = Fragmenten geüpload
@@ -640,11 +667,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> - is de zin duidelijk
 listen-again-instruction = Goed werk! <playIcon></playIcon> Luister opnieuw wanneer u klaar bent
 listen-3rd-time-instruction = 2 gedaan, ga zo door! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon> De laatste!
-nothing-to-validate = Er is niets in deze taal te valideren; help ons de rij te vullen.
+listen-empty-state = We hebben in deze taal geen te valideren fragmenten meer...
+speak-empty-state = We hebben in deze taal geen op te nemen zinnen meer...
+speak-empty-state-cta = Zinnen bijdragen
 record-button-label = Uw stem opnemen
 share-title-new = <bold>Help ons</bold> meer stemmen te vinden
 keep-track-profile = Houd uw voortgang bij met een profiel
 login-to-get-started = Meld u aan of registreer om te beginnen
+target-segment-first-card = U draagt bij aan ons eerste doelsegment
+target-segment-first-banner = Help bij het maken van het eerste doelsegment in het { $locale } van Common Voice
+target-segment-add-voice = Uw stem toevoegen
+target-segment-learn-more = Meer info
 
 ## Reporting
 
@@ -713,6 +746,7 @@ show-ranking = Mijn ranglijst tonen
 
 get-started-goals = Beginnen met doelstellingen
 create-custom-goal = Een aangepaste doelstelling maken
+goal-type = Welk doel wilt u bouwen?
 both-speak-and-listen = Beide
 both-speak-and-listen-long = Beide (spreken en luisteren)
 daily-goal = Dagelijks doel
@@ -726,11 +760,32 @@ want-to-continue = Wilt u doorgaan?
 finish-editing = Eerst bewerking voltooien?
 lose-changes-warning = Door nu af te sluiten verliest u uw wijzigingen
 build-custom-goal = Een aangepast doel bouwen
-help-reach-hours = Help mee { NUMBER($hours) } uren in het { $language } te bereiken met een persoonlijke doelstelling
-help-reach-hours-general = Help met een persoonlijke doelstelling Common Voice { NUMBER($hours) } uren in een taal te bereiken
+help-reach-hours-pluralized =
+    Help mee{ NUMBER($hours) ->
+        [one] { $hours } uur
+       *[other] { $hours } uur
+    }in het { $language } te bereiken met een persoonlijke doelstelling
+help-reach-hours-general-pluralized =
+    Help Common Voice{ NUMBER($hours) ->
+        [one] { $hours } uur
+       *[other] { $hours } uur
+    }in een taal te bereiken met een persoonlijke doelstelling
 set-a-goal = Een doel stellen
 cant-decide = Kunt u geen besluit nemen?
-activity-needed-calculation = { NUMBER($totalHours) } is bereikbaar in iets meer dan { NUMBER($periodMonths) } maanden als { NUMBER($people) } personen { NUMBER($clipsPerDay) } fragmenten per dag opnemen.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } uur
+       *[other] { $totalHours } uur
+    }is bereikbaar in iets meer dan{ NUMBER($periodMonths) ->
+        [one] { $periodMonths } maand
+       *[other] { $periodMonths } maanden
+    }als{ NUMBER($people) ->
+        [one] { $people } persoon
+       *[other] { $people } personen
+    }{ NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } fragment
+       *[other] { $clipsPerDay } fragmenten
+    }per dag opnemen
 how-many-per-day = Geweldig! Hoeveel fragmenten per dag?
 how-many-a-week = Geweldig! Hoeveel fragmenten per week?
 which-goal-type = Wilt u spreken, luisteren of allebei?
@@ -740,7 +795,11 @@ receiving-emails-info =
 not-receiving-emails-info =
     Er is momenteel ingesteld dat u <bold>GEEN</bold> e-mailberichten zoals herinneringen aan doelen,
     updates over uw voortgang en nieuwsbrieven over Common Voice ontvangt
-n-clips = { NUMBER($count) } fragmenten
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } fragment
+       *[other] { $count } fragmenten
+    }
 help-share-goal = Help ons meer stemmen te vinden, deel uw doel
 confirm-goal = Doel bevestigen
 goal-interval-weekly = Wekelijks

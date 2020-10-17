@@ -8,7 +8,12 @@ email-input =
     .label = Mailadresse
 submit-form-action = Indsend
 loading = Indlæser…
+email-opt-in-info = Jeg vil gerne modtage mails såsom påmindelser om mål, opdateringer om mine fremskridt og nyhedsbreve om Common Voice.
+email-opt-in-info-title = Meld dig til mailinglisten for Common Voice
+email-opt-in-info-sub-with-challenge = Modtag mails med påmindelser om udfordringer og mål, opdateringer om fremskridt samt nyhedsbreve om Common Voice.
+email-opt-in-privacy-v2 = Ved at tilmelde dig nyhedsbreve accepterer du, at Mozilla håndterer disse oplysninger som forklaret i Mozillas <privacyLink>privatlivspolitik</privacyLink>.
 indicates-required = * Betyder at feltet skal udfyldes
+not-available-abbreviation = Ikke tilgængelig
 
 # Don't rename the following section, its contents are auto-inserted based on the name (see scripts/pontoon-languages-to-ftl.js)
 # [Languages]
@@ -23,9 +28,12 @@ af = Afrikaans
 am = Amharisk
 an = Aragonsk
 ar = Arabisk
+arn = Mapudungun
 as = Assamesisk
 ast = Asturisk
 az = Aserbajdsjansk
+ba = Bashkirsk
+be = Hviderussisk
 bg = Bulgarsk
 bn = Bengalsk
 br = Bretonsk
@@ -47,17 +55,21 @@ es = Spansk
 et = Estisk
 eu = Baskisk
 fa = Persisk
+ff = Fulah
 fi = Finsk
 fo = Færøsk
 fr = Fransk
 fy-NL = Frisisk
 ga-IE = Irsk
 gl = Galicisk
+ha = Hausa
 he = Hebraisk
-hi-IN = Hindi
+hi = Hindi
 hr = Kroatisk
 hsb = Øvresorbisk
 hu = Ungarnsk
+hy-AM = Armensk
+hyw = Vestarmensk
 ia = Interlingua
 id = Indonesisk
 is = Islandsk
@@ -65,20 +77,28 @@ it = Italiensk
 izh = Izhorian
 ja = Japansk
 ka = Georgisk
+kaa = Karakalpakisk
 kab = Kabylisk
+kbd = Kabardian
 kk = Kasakhisk
 ko = Koreansk
 kpv = Komi
+ku = Kurdisk
 kw = Cornisk
 ky = Kirgisisk
+lg = Ganda
 lij = Ligurisk
 lt = Litauisk
 lv = Lettisk
 mdf = Moksha
+mg = Malagassisk
 mhr = Meadow Mari
 mk = Makedonsk
+ml = Malayalam
 mn = Mongolsk
 mrj = Hill Mari
+mt = Maltesisk
+my = Burmesisk
 myv = Erzya
 nb-NO = Bokmål
 ne-NP = Nepalesisk
@@ -86,23 +106,30 @@ nl = Nederlandsk
 nn-NO = Nynorsk
 oc = Occitansk
 or = Oriya
+pa-IN = Punjabisk
 pl = Polsk
-pt-BR = Portugisisk (Brasilien)
+pt = Portugisisk
 rm-sursilv = Rætoromansk sursilvansk
+rm-vallader = Rætoromansk Lavengadinsk
 ro = Rumænsk
 ru = Russisk
 rw = Kinyarwanda
 sah = Yakut
 sc = Sardisk
+scn = Siciliansk
+si = Singalesisk
 sk = Slovakisk
 sl = Slovensk
 sq = Albansk
 sr = Serbisk
 sv-SE = Svensk
+sw = Swahili
+syr = Syrisk
 ta = Tamil
 te = Telugu
 tg = Tadsjikisk
 th = Thai
+tl = Tagalog
 tr = Tyrkisk
 tt = Tatarisk
 uby = Ubykh
@@ -110,6 +137,7 @@ udm = Udmurt
 uk = Ukrainsk
 ur = Urdu
 uz = Usbekisk
+vec = Venetiansk
 vi = Vietnamesisk
 vot = Votisk
 zh-CN = Kinesisk (Kina)
@@ -125,14 +153,15 @@ speak = Tal
 speak-now = Tal nu
 datasets = Datasæt
 languages = Sprog
+about = Om
 profile = Profil
 help = Hjælp
 contact = Kontakt
 privacy = Privatliv
 terms = Vilkår
 cookies = Cookies
-faq = Ofte stillede spørgsmål
-content-license-text = Indhold tilgængeligt under <licenseLink>Creative Commons-licens</licenseLink>
+faq = FAQ
+content-license-text = Indhold tilgængeligt under en <licenseLink>Creative Commons-licens</licenseLink>
 share-title = Hjælp os med at finde andre, der kan bidrage med deres stemme!
 share-text = Hjælp med at lære maskiner, hvordan mennesker taler - bidrag med din stemme på { $link }
 link-copied = Link kopieret
@@ -156,6 +185,7 @@ vote-yes = Ja
 vote-no = Nej
 toggle-play-tooltip = Tryk på { shortcut-play-toggle } for at starte eller stoppe afspilningen
 speak-subtitle = Donér din stemme
+speak-paragraph = Optagelse af stemmeklip er en vigtig del af opbygningen af vores åbne datasæt. Mange vil sige at det også er den sjoveste del.
 speak-goal-text = Klip optaget
 listen-subtitle = Hjælp os med at validere stemmer
 listen-paragraph = Validering af donerede klip er mindst lige så vigtigt for Common Voice-missionen. Lyt til et klip og hjælp os med at skabe kvalitets open source stemme-data.
@@ -185,18 +215,27 @@ x-years-short =
        *[other] { $count } år
     }
 help-make-dataset = Hjælp os med at opbygge et offentligt og åbent datasæt af høj kvalitet.
-profile-not-required = Det er ikke påkrævet at have en profil for at bidrage, men vil gøre det nemmere
 sign-up-account = Opret en konto
 email-subscription-title = Tilmeld dig nyheder via mail
+email-subscription-title-new = Tilmeld dig nyhedsbreve fra Common Voice, påmindelser om mål og opdateringer om fremskridt
 
 ## Account Benefits
 
 benefits = Fordele
+rich-data = Gør dine indsendte data så informationsrige som muligt ved at indgive anonyme, demografiske data. Vi anonymiserer alle demografiske data, inden de offentliggøres.
 improve-audio = Informationerne på din profil forbedrer de lyddata, der bruges til træning af talegenkendelse.
+keep-track = Hold styr på dine fremskridt og mål på tværs af flere sprog.
+compare-progress = Se dine fremskridt sammenlignet med andre bidragsydere over hele verden.
+view-goals = Sammenhold dine fremskridt med dine personlige mål - og projektets overordnede mål.
+join-newsletter = Du kan eventuelt melde dig til vores mailliste for at få opdateringer og ny info om projektet.
 
 ## What's public
 
 whats-public = Hvad er offentligt?
+email-not-public = Vi offentliggør ikke din mailadresse.
+recordings-and-locale-public = Antallet af optagelser og hvilke sprog du bidrager til vil være offentligt.
+username-optin-public = Du kan vælge at gøre dit brugernavn offentligt eller anonymt.
+demographic-deidentified-clarity = Valgfrit indsendte demografiske data (fx alder, køn, sprog og accent) vil aldrig blive offentliggjort på din profil eller blive sammenkædet med din profil i datasættet. Enkelte stemmeklip bliver tilknyttet med demografiske data for at gøre mere nøjagtige analyser mulige - til eksempel, når en forsker ønsker at rette en træningsmodel mod et bestemt demografisk segment.
 username-email-not-demographic = Dit brugernavn og din mailadresse vil ikke blive forbundet med de offentliggjorte data.
 
 ## Speak & Listen Shortcuts
@@ -256,8 +295,10 @@ profile-form-age =
     .label = Alder
 profile-form-gender =
     .label = Køn
+leaderboard-visibility =
+    .label = Synlighed på leaderboard
 hidden = Skjult
-visible = Synligt
+visible = Synlig
 native-language =
     .label = Modersmål
 profile-form-submit-save = Gem
@@ -281,59 +322,132 @@ thanks-for-account = Tak fordi du bekræftede din konto, lad os nu udfylde din p
 why-demographic = Hvorfor er dette vigtigt?
 why-demographic-explanation = Anonymiserede brugerdata som alder, køn og accent hjælper med at forbedre de lyddata, der bruges til at træne nøjagtigheden af talegenkendelses-motorer. Dit brugernavn og din mailadresse vil aldrig blive forbundet med dine indsendte data, og du kan vælge, om du vil gøre dit brugernavn offentligt eller anonymt.
 accept-privacy = Det er helt fint, at I håndterer disse oplysninger som beskrevet i Mozillas <privacyLink>privatlivspolitik</privacyLink>
+accept-privacy-title = Privatlivspolitik
 login-identity = Login-identitet
 login-signup = Log ind / Opret dig
 edit = Rediger
 email-subscriptions = Mail-abonnementer
 download-profile = Hent mine data
 contribution-experience = Bidragserfaring
+skip-submission-feedback = Spring feedback over
+skip-submission-description = Ved indsendelse af bidrag ignoreres feedback efter at have klikket på "Send". Bidrag fortsætter direkte med det næste sæt af 5 optagelser eller valideringer.
 skip-submission-note = Bemærk: Du skal stadig vælge mellem Tal eller Lyt for at ændre bidragstype.
 off = Fra
 on = Til
-add-avatar-title = Tilføj en avatar til din profil
+avatar-clip-title = Giv din avatar en stemme
+change-your-avatar-clip = Vil du gerne ændre dit lydklip?
+recording-in-progress = Lydoptagelse er i gang
+avatar-clip-recorded = Dit avatar inkludere nu et lydklip!
+record-voice-wave = OPTAG DIN STEMME
+retry-voice-wave-recording = PRØV IGEN
+re-record = OPTAG IGEN
+delete-voice = SLET
+recording-voice-wave = Optagelse
+delete-voice-clip = eller slet lydklip
+ready-to-upload = Upload
+cancel-avatar-clip-recording = Annuller
+about-avatar-clip-recording = Optag et stemmeklip som en del af din profil-avatar. Andre kan holde musen over avataren og lytte til din optagelse.
 browse-file-title = Upload en billedfil
 browse-file = Træk og slip eller <browseWrap>gennemse</browseWrap>
 connect-gravatar = Forbind med Gravatar
 gravatar_not_found = Ingen gravatar fundet for din mailadresse
 file_too_large = Den valgte fil er for stor
 manage-subscriptions = Håndter abonnementer
+manage-email-subscriptions = Administrer dine mail-abonnementer
 email-already-used = Mailadressen bruges allerede af en anden konto
 add-language = Tilføj sprog
+change-email-setings = Skift din mailadresse via Indstillinger under Login-identitet
 
 ## FAQ
 
 faq-title = Ofte stillede spørgsmål
 faq-what-cv-q = Hvad er Common Voice?
+faq-what-cv-a =
+    Stemmegenkendelsesteknologi revolutionerer måden, vi interagerer med computere på. Men de nuværende systemer er dyre og proprietære. Common Voice er en del af Mozillas initiativ til at gøre stemmegenkendelsesteknologier bedre og mere tilgængelige for alle. Common Voice er en stor, global database med donerede stemmer, der gør det muligt for alle hurtigt og nemt at træne stemmestyrede programmer på potentielt set set alle sprog.
+    
+    Vi samler ikke kun donerede stemmer på de mest talte sprog, men også på mindre udbredte sprog. Adgangen til et alsidigt datasæt af stemmer vil give udviklere, iværksættere og samfund mulighed for at udvikle nye produkter, uanset hvor stort et sprog, det handler om. Udover datasættet bag Common Voice  opbygger vi også en open source-talegenkendelse kaldet Deep Speech.
 faq-why-important-q = Hvorfor er det vigtigt?
 faq-how-get-q = Hvordan får jeg fat i data fra Common Voice?
 faq-how-get-a = Datasættet fra Common Voice kan hentes under <licenseLink>CC0</licenseLink>-licensen på vores <datasetLink>side med datasæt</datasetLink>. Du kan også hente flere andre offentligt tilgængelige datasæt fra samme side.
-faq-when-release-q = Hvornår planlægger I at udgive data fra Common Voice på andre sprog?
+faq-when-release2-q = Hvornår udgiver I Common Voice-data på andre sprog?
 faq-why-mission-q = Hvorfor er Common Voice en del af Mozillas mission?
 faq-what-cv-and-deepspeech-q = Hvad er forskellen mellem Common Voice og Deep Speech?
+faq-what-cv-and-deepspeech-a = Datasættet fra Common Voice supplerer Mozillas open source-talegenkendelse Deep Speech. Den første version af Deep Speech blev udgivet i november 2017 og er siden blevet udviklet yderligere. I kombination med datasættet fra Common Voice mener vi, at denne open source-stemmegenkendelsesteknologi bør være tilgængelig for alle. Det er vores håb, at disse teknologier gør det muligt for udviklere at skabe en sand overflod af innovative produkter og tjenester.
 faq-is-goal-assistant-q = Er målet med Common Voice at opbygge en stemmeassistent?
-faq-do-want-native-q = { $lang } er ikke mit modersmål, og jeg taler med accent. Vil I stadig gerne have, at jeg bidrager med min stemme?
-faq-why-different-speakers-q = Hvorfor har i brug for så mange forskellige stemmer per sprog?
+faq-do-want-native-q = Dansk er ikke mit modersmål, og jeg taler med accent. Vil I stadig gerne have, at jeg bidrager med min stemme?
+faq-do-want-native-a = Ja, vi vil især gerne have din stemme! En del af formålet med Common Voice er at indsamle så mange forskellige accenter som muligt, så stemmegenkendelsen fungerer lige så godt for alle. Det betyder, at bidrag fra folk med andet- eller fremmedsprog er vigtige.
+faq-why-different-speakers-q = Hvorfor har I brug for så mange forskellige stemmer per sprog?
+faq-why-different-speakers-a =
+    De fleste databaser med stemmedata har en overrepræsentation af bestemte demografier, hvilket resulterer i en overvægt af data fra <articleLink>mænd og middelklassen</articleLink>. Underrepræsenterede accenter og dialekter er typisk forbundet med grupper af mennesker, der allerede er marginaliserede. Mange computere har svært ved at forstå kvindestemmer. 
+    Derfor vil vi have variation i vores stemme-database!
 faq-why-my-lang-q = Hvorfor er mit sprog her ikke?
 faq-what-quality-q = Hvilken lydkvalitet er nødvendig for at et stemmeklip kan bruges i datasættet?
+faq-why-10k-hours-q = Hvorfor er 10.000 timers validerede stemmeoptagelser målet for alle sprog?
+faq-why-10k-hours-a = Dette er cirka det antal timer, som det kræver at træne et velfungerende tale-til-tekst-system.
 faq-how-calc-hours-q = Hvordan bliver timerne udregnet af Common Voice?
 faq-how-calc-hours-a = Vi beregner timerne ved at estimere den gennemsnitlige længde af hver optagelse, og ganger det antal med det samlede antal optagelser på tværs af alle sprog.
+faq-where-src-from-2-q = Hvor kommer teksten fra?
+faq-where-src-from-2-a =
+    Sætningerne består af originale sætninger fra vores frivillige bidragsydere, samt dialog fra gamle filmmanuskripter, der ikke er underlagt ophavsrettigheder. Fx filmen <italic>Det er herligt at leve</ italic>.
+    
+    Du kan se vores sætninger i denne <githubLink> mappe på GitHub  </ githubLink>.
+faq-why-not-ask-read-q = Hvorfor beder I ikke folk om at læse op fra bøger eller Wikipedia-artikler på forskellige sprog?
 faq-why-not-ask-read-a = For at gøre datasættet fra Common Voice så nyttigt som muligt, har vi besluttet kun at tillade tekst, der er tilgængeligt under en Creative Commons (CC0) licens. Brugen af CC0-standarden betyder, at det er sværere at finde og indsamle tekst, men tillader at alle kan bruge datasættet uden brugsbegrænsninger eller tilladelse fra Mozilla. I sidste ende ønsker vi at gøre det flersprogede datasæt så nyttigt som muligt for alle, herunder forskere, universiteter, iværksættere, regeringer, sociale formål og hobbyfolk.
 faq-why-account-q = Hvorfor skal jeg oprette en konto?
 faq-is-account-public-q = Er mine kontooplysninger offentlige?
 faq-how-privacy-q = Hvordan sikrer I anonymitet og privatliv for de mennesker, der har doneret deres stemme?
+faq-what-is-cv = Hvad er Common Voice?
+faq-using-cv = Brug af Common Voice
+faq-description = Common Voice er en del af Mozillas initiativ til at hjælpe maskiner med at forstå, hvordan mennesker taler.
+faq-search-for-answers =
+    .label = Søg efter svar
 
 ## ABOUT US
 
+about-title = Hvorfor Common Voice?
+about-subtitle = Common Voice er en del af Mozillas initiativ, der skal hjælpe maskiner med at forstå, hvordan mennesker snakker i virkeligheden. Udover Common Voice-datasættet bygger vi også en open source-tjeneste til talegenkendelse ved navn Deep Speech.
+about-header-description =
+    Begge projekter er en del af vores forsøg på at gøre digital tale-teknologi mere tilgængeligt. Teknologi, der kan genkende stemmer, giver vores computere og telefoner en mere menneskelig dimension - men udviklerne bag teknologierne har brug for enorme mængder stemmedata for at kunne bygge dem. I øjeblikket er hovedparten af disse data både dyre og underlagt ophavsret.
+    Vi vil gøre stemmedata offentligt tilgængelige - gratis. Data skal repræsentere, hvor forskellige folk faktisk er. Sammen kan vi gøre stemmegenkendelse bedre for alle.
+how-does-it-work-title = Hvordan fungerer det?
+about-speak = Tal
+about-listen-queue = Lytte-kø
+about-listen = Lyt
+about-is-it-valid = Er klippet gyldigt?
+about-yes-votes = ≥ 2 ja-stemmer
+about-yes-votes-text = For at blive optaget i Common Voice-datasættet skal et klip være valideret af to forskellige brugere.
+about-no-votes = ≥ 2 nej-stemmer
+about-dataset-new = Common Voice-datasæt
+about-dataset-new-text = Common Voice-datasættet indeholder hundredtusindvis af stemme-optagelser, der hjælper udviklere med at bygge teknologi til stemmegenkendelse.
+about-clip-graveyard = Optagelses-kirkegården
+about-partners = Partnere
+about-become-a-partner = Bliv partner
+about-get-involved = Bliv involveret
+about-nav-why-common-voice = Hvorfor?
+about-nav-how-it-works = Hvordan?
+about-nav-partners = Partnere
+about-nav-get-involved = Bliv involveret
+mycroft-title = Mycroft Ai
+mycroft-subtitle = Kunstig intelligens
+mycroft-description =
+    Mycroft er verdens første open source-assistent.
+    Mycroft kan afvikles alle steder - på en computer, i en bil eller på en Raspberry Pi.
+mycroft-secondary-description = Dette er open source-software, der frit kan ændres, udvides og forbedres. Mycroft kan bruges til alt fra forskningsprojekter til store software-produkter.
 
 ## Glossary
 
 glossary = Ordliste
 localization = Oversættelse
+sentence-collection = Indsamling af sætninger
+hours-recorded-explanation = Antallet af stemmeoptagelser i timer, vi har samlet indtil videre.
+hours-validated-explanation = Antallet af stemmeoptagelser i timer, der er blevet valideret af 2 ud af 3 brugere med en "Ja"-stemme. Disse markerer fremgangen mod det overordnede mål på 10.000 timer.
+sst = Tale-til-tekst (speech-to-text, STT)
+de-identified = Anonymiseret
 
-## NotFound
+## Error pages
 
-notfound-title = Ikke fundet
-notfound-content = Jeg er bange for, at jeg ikke ved, hvad du leder efter.
+error-title-404 = Den side kunne vi ikke finde.
+error-code = Fejl { $code }
 
 ## Data
 
@@ -352,6 +466,7 @@ data-bundle-button = Hent datasæt-samling
 data-bundle-description = Data fra Common Voice samt alle andre stemme-datasæt ovenfor.
 license = Licens: <licenseLink>{ $license }</licenseLink>
 license-mixed = Blandet
+data-download-singleword-title = Hent målsegmentet med enkelte ord
 review-terms = Ved brug af Common Voice accepterer du vores <termsLink>Vilkår</termsLink> og <privacyLink>Privatlivspolitik</privacyLink>
 terms-agree = Jeg accepterer
 terms-disagree = Jeg accepterer ikke
@@ -364,32 +479,59 @@ review-cancel = Afbryd indsendelsen
 review-keep-recordings = Behold optagelserne
 review-delete-recordings = Slet mine optagelser
 
-## New Datasets Page
+## Datasets Page
 
+datasets-headline = Vi bygger et open source-datasæt af stemmer på mange forskellige sprog, som alle kan bruge til at træne taleaktiverede programmer.
+datasets-positioning =
+    Vi mener, at store, offentligt tilgængelige stemme-datasæt vil give grobund for innovation og sund kommerciel konkurrence indenfor stemmeteknologier baseret på maskinlæring.
+    
+    Common Voice-datasættet på flere sprog er allerede verdens største open source-samling af stemme-data af sin slags - men det er ikke det eneste.
+    
+    På denne side finder du en oversigt over andre open source-samlinger af stemme-datasæt, og - i takt med at Common Voice vokser - en oversigt over vores udgivelser og opdateringer.
 language = Sprog
 # File size in gigabytes
 size = Størrelse
+validated-hr-total = Validerede timer i alt
+overall-hr-total = Samlede timer i alt
 cv-license = Licens
 audio-format = Lydformat
 number-of-voices = Antal stemmer
+splits = Fordeling
 email-to-download = Indtast mailadresse for at hente
+why-email = <b>Hvorfor en mailadresse?</ b> Vi har muligvis brug for at kontakte dig i fremtiden om ændringer i datasættet. En mailadresse giver os mulighed for dette.
 confirm-size = Du er parat til at hente <b>{ $size }</b>
 size-gigabyte = GB
 size-megabyte = MB
+confirm-no-identify = Du bekræfter hermed, at du ikke vil forsøge at identificere individer med Common Voice-datasættet.
 download-language = Hent { $language }
 validated-hours = Validerede timer
 recorded-hours = Indspillede timer
+whats-inside = Hvad består datasættet fra Common Voice af?
+dataset-description-hours =
+    Hver post i datasættet består af en unik MP3-fil og en tilhørende tekstfil. Mange af de <b>{ $total }</b> optagede timer i datasættet inkluderer desuden demografisk metadata som alder, køn og accent, hvilket kan hjælpe til at gøre stemmegenkendelses-tjenester mere nøjagtige.
+    
+    Data sættet består lige nu af <b>{ $valid }</b> validerede timer på <b>{ $languages }</b> sprog - og vi tilføjer hele tiden nye stemmer og nye sprog. Besøg <languagesLink>Oversigten over sprog</languagesLink> for at anmode om et nyt sprog eller at komme i gang med at bidrage til projektet.
+want-dataset-update = Vil du opdateres, når vi frigiver en ny version af datasættet fra Common Voice? Abonnér på vores nyhedsbrev.
 subscribe = Abonnér
 get-started-speech = Kom godt i gang med talegenkendelse
+other-datasets = Andre stemme-datasæt
+feedback-q = Har du feedback?
+deepspeech-info = Datasættet fra Common Voice supplerer Deep Speech, en open source-tjeneste til stemmegenkendelse fra Mozilla, som du kan bruge til at bygge software, der gør brug af stemmegenkendelse. Få <githubLink>overblik over projektet på Github</githubLink> eller deltag i <discourseLink>diskussionen om Deepspeech på Discourse</discourseLink> for at komme godt i gang.
+common-voice-info-new = Har du spørgsmål om Common Voice? Ideer til forbedringer eller feedback om et specifikt sprog? Deltag i vores <discourseLink>Discourse-forum</discourseLink> og fortæl os det.
 data-other-librispeech-description = LibriSpeech er et korpus af cirka 1000 timers engelsk tale (optaget ved 16Khz), der stammer fra lydbøger fra LibriVox-projektet.
 data-other-ted-name = TED-LIUM korpus
 data-other-ted-description = TED-LIUM korpus er lavet på baggrund af taler og deres transskriptioner fra TED's websted.
 data-other-voxforge-description = VoxForge blev startet for at indsamle transskriberet tale til brug for frie og open source talegenkendelses-systemer.
 data-other-tatoeba-description = Tatoeba er en stor database af sætninger, oversættelser og indtalt lyd til brug for sprogindlæring. Denne filhentning indeholder indtalt engelsk optaget af fællesskabet bag Tatoeba.
+your-feedback = Har du ideer til, hvordan vi kan forbedre datasættet fra Common Voice? Fortæl os det på Discourse
 go-discourse = Gå til Discourse
+missing-language = Kan du ikke se dit sprog i datasættet? Gå til vores sprogside for at anmode om et sprog.
+go-languages-page = Gå til sprogsiden
+ready-to-validate = Klar til at hjælpe med at validere sætninger?
 more = Mere
 close = Luk
 download = Hent
+dataset-version = Version
 
 ## Download Modal
 
@@ -417,6 +559,8 @@ request-language-form-language =
     .label = Sprog
 request-language-success-title = Din anmodning om et nyt sprog er modtaget. Tak!
 request-language-success-content = Vi kontakter dig snart med oplysninger om, hvordan du tilføjer dit sprog til Common Voice.
+select-language = Vælg et sprog...
+other-language = Andet sprog
 
 ## Languages Overview
 
@@ -424,7 +568,6 @@ language-section-in-progress = I gang
 language-section-launched = Startet
 languages-show-more = Se flere
 languages-show-less = Se mindre
-language-speakers = Talere
 language-meter-in-progress = Status
 language-total-progress = I alt
 language-search-input =
@@ -434,7 +577,7 @@ localized = Oversat
 sentences = Sætninger
 total-hours = Validerede timer
 
-## New Contribution
+## Contribution
 
 action-click = Klik på
 action-tap = Tryk på
@@ -442,14 +585,13 @@ contribute = Bidrag
 listen = Lyt
 skip = Spring over
 shortcuts = Genveje
-clips-with-count = <bold>{ $count }</bold> optagelser
 goal-help-recording = Du har hjulpet Common Voice med at nå <goalPercentage></goalPercentage> af vores daglige { $goalValue } mål for indspilninger!
 goal-help-validation = Du har hjulpet Common Voice med at nå <goalPercentage></goalPercentage> af vores daglige { $goalValue } mål for validering!
 contribute-more = Klar til at lave { $count } mere?
 record-cta = Start optagelse
 record-platform-not-supported = Vi beklager, men din platform er i øjeblikket ikke understøttet.
 record-platform-not-supported-desktop = Til computere kan du hente den seneste version:
-record-platform-not-supported-ios = <bold>iOS</bold>-brugere kan hente vores gratis app:
+record-platform-not-supported-ios-non-safari = Hvis du er på iOS skal du bruge Safari for at optage…
 record-must-allow-microphone = Du skal tillade mikrofon-adgang.
 record-no-mic-found = Ingen mikrofon fundet.
 record-error-too-short = Optagelsen var for kort.
@@ -463,7 +605,8 @@ record-again-instruction = Fremragende! <recordIcon></recordIcon> Optag dit næs
 record-again-instruction2 = Fortsæt det gode arbejde, optag igen <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Den sidste!
 review-tooltip = Godkend og optag klip her efterhånden
-unable-speak = Ikke mulighed for at tale lige nu
+share-clip = Del dit klip
+share-common-voice = Del Common Voice
 review-instruction = Godkend og optag klip igen hvis nødvendigt
 record-submit-tooltip = { $actionType } indsend når du er klar
 clips-uploaded = Optagelser uploaded
@@ -476,9 +619,31 @@ listen-instruction = { $actionType } <playIcon></playIcon> udtalte de sætningen
 listen-again-instruction = Godt arbejde! <playIcon></playIcon> Lyt igen når du er klar
 listen-3rd-time-instruction = 2 overstået <playIcon></playIcon>, fortsæt det gode arbejde!
 listen-last-time-instruction = <playIcon></playIcon>Den sidste!
-nothing-to-validate = Vi har ikke noget klar til at validere på dette sprog. Hjælp os med at fylde køen op!
+listen-empty-state = Der er ikke flere klip at validere på dette sprog...
+speak-empty-state = Der er ikke flere sætninger at optage på dette sprog...
+speak-empty-state-cta = Bidrag med sætninger
 record-button-label = Optag din stemme
 share-title-new = <bold>Hjælp os</bold> med at finde flere stemmer
+keep-track-profile = Hold styr på dine fremskridt med en profil
+login-to-get-started = Log ind eller tilmeld dig for at komme i gang
+target-segment-first-card = Du bidrager til vores første målsegment
+target-segment-first-banner = Vær med til at lave det første målsegment til Common Voice på { $locale }
+target-segment-add-voice = Tilføj din stemme
+target-segment-learn-more = Læs mere
+
+## Reporting
+
+report-ask = Hvilke problemer oplever du med denne sætning?
+report-offensive-language = Stødende sprogbrug
+report-offensive-language-detail = Sætningen har respektløst eller stødende sprog.
+report-different-language = Andet sprog
+report-different-language-detail = Det er skrevet på et andet sprog end det, jeg taler.
+report-difficult-pronounce = Svær at udtale
+report-difficult-pronounce-detail = Det indeholder ord eller sætninger, der er svære at læse eller udtale.
+report-offensive-speech-detail = Klippet har respektløst eller stødende sprog.
+report-other-comment =
+    .placeholder = Kommentar
+continue = Fortsæt
 
 ## Goals
 
@@ -503,15 +668,95 @@ validations =
 
 your-languages = Dine sprog
 toward-next-goal = Til næste mål
+clips-you-recorded = Klip, du har optaget
+clips-you-validated = Klip, du har valideret
 stats = Statistik
 you = Dig
 everyone = Alle
 contribution-activity = Bidragsaktivitet
 recorded-clips = Optagede klip
 validated-clips = Validerede klip
+total-approved = Godkendt i alt
+set-visibility = Indstil min synlighed
+visibility-explainer = Denne indstilling styrer, om du er synlig på vores leaderboard. Når "skjult" er valgt, så vil dine fremskridt kun være synlige for dig selv. Det betyder, at dit billede, brugernavn og fremskridt ikke vil være synligt på leaderboardet. Bemærk at det tager { $minutes } minutter før ændringer vises på leaderboardet.
+visibility-overlay-note = Bemærk: Når indstillingen "synlig" er valgt, så kan den ændres på din <profileLink>profilside</profileLink>
+show-ranking = Vis min placering
+
+## Custom Goals
+
+get-started-goals = Kom i gang med mål
+create-custom-goal = Sæt dig dit eget mål
+goal-type = Hvilken slags mål vil du oprette?
+both-speak-and-listen = Begge
+both-speak-and-listen-long = Begge (tale og lytte)
+daily-goal = Dagligt mål
+weekly-goal = Ugentlig mål
+easy-difficulty = Let
+average-difficulty = Middel
+difficult-difficulty = Svært
+pro-difficulty = Pro
+want-to-continue = Vil du fortsætte?
+finish-editing = Færdiggør redigering først?
+build-custom-goal = Opret et brugerdefineret mål
+help-reach-hours-general-pluralized =
+    Hjælp Common Voice med at opnå{ NUMBER($hours) ->
+        [one] { $hours } time
+       *[other] { $hours } timer
+    }på et sprog med et personligt mål
+set-a-goal = Sæt et mål
+cant-decide = Kan du ikke beslutte dig?
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } time
+       *[other] { $totalHours } timer
+    }kan opnås på bare lidt mere end{ NUMBER($periodMonths) ->
+        [one] { $periodMonths } måned
+       *[other] { $periodMonths } måneder
+    }hvis{ NUMBER($people) ->
+        [one] { $people } person
+       *[other] { $people } personer
+    }optager{ NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } klip
+       *[other] { $clipsPerDay } klip
+    }om dagen.
+how-many-per-day = Godt! Hvor mange klip pr. dag?
+how-many-a-week = Godt! Hvor mange klip pr. uge?
+which-goal-type = Vil du tale, lytte eller begge dele?
+receiving-emails-info =
+    Du er i øjeblikket tilmeldt nyhedsbreve med påmindelser om mål, opdateringer
+    om dine fremskridt, og nyheder om Common Voice.
+not-receiving-emails-info =
+    Du er i øjeblikket<bold>IKKE</bold> tilmeldt nyhedsbreve med påmindelser om mål, opdateringer
+    om dine fremskridt, og nyheder om Common Voice.
+help-share-goal = Del dit mål, og hjælp os med at finde flere stemmer
+confirm-goal = Bekræft mål
+share-goal-type-speak = Taler
+share-goal-type-listen = Lytter
+share-goal-type-both = Taler og lytter
+# LINK will be replaced with the current URL
+goal-share-text = Jeg har lige sat mig et personligt mål for stemmebidrag til #CommonVoice -- vær med og hjælpe med at lære maskiner, hvordan rigtige mennesker taler { $link }
+weekly-goal-created = Dit ugentlige mål er oprettet
+daily-goal-created = Dit daglige mål er oprettet
+track-progress = Følg dit fremskridt her og på din statistikside.
+return-to-edit-goal = Vend tilbage hertil for at ændre dit mål senere.
+share-goal = Del mit mål
 
 ## Profile Delete
 
+delete-q = Vil du gerne have dine stemmeoptagelser slettet, eller foretrækker du at beholde dem i Common Voice-datasættet?
 keep = Behold
 remove = Fjern
+keep-info = Dine anonyme stemmeoptagelser forbliver i Common Voice-datasættet. Når du har slettet din profil, kan du ikke længere sende en anmodning om at fjerne dine optagelser fra datasættet
+remove-info = Vi vil gennemgå din anmodning om at fjerne dine stemmeoptagelser fra datasættet. Hvis din anmodning bliver godkendt, kontakter vi dem, der har downloadet datasættet, og beder om, at de også fjerner dine stemmeoptagelser.
+why-delete-recordings =
+    Optagelser fra Common Voice bruges af akademikere, små virksomheder og andre, der interesserer sig for talegenkendelse til at træne og udvide offentligt tilgængelige ressourcer som fx talemodeller.
+    
+    Kan du fortælle os, hvorfor du vil have dine optagelser slettet?
 profile-form-delete = Slet profil
+
+## Landing
+
+welcome-staff = Velkommen til medarbejdere fra { $firma }!
+help-contribute = Du kan hjælpe med at bygge et mangfoldigt open source-datasæt ved at oprette en Common Voice-profil og bidrage med din stemme.
+login-company = Log ind / Tilmeld dig med en mailadresse fra { $company }
+profile-not-required = Det er ikke påkrævet at have en profil for at bidrage, men vil gøre det nemmere

@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Elküldés
 loading = Betöltés…
 email-opt-in-info = Szeretnék e-maileket kapni, köztük cél emlékeztetőket, előrehaladási híreket és a Common Voice hírlevelét.
-email-opt-in-privacy = Azzal hogy az e-mailek fogadását kéri, kijelenti hogy beleegyezik abba, hogy a Mozilla az <privacyLink>adatvédelmi irányelvekben<privacyLink> leírt módon kezelje ezeket az adatokat.
+email-opt-in-info-title = Csatlakozzon a Common Voice levelezőlistához
+email-opt-in-info-sub-with-challenge = Kapjon e-maileket, köztük kihívásokat, cél emlékeztetőket, előrehaladási híreket és a Common Voice hírlevelét.
+email-opt-in-privacy-v2 = Azzal, hogy az e-mailek fogadását kéri, beleegyezik abba, hogy a Mozilla az <privacyLink>adatvédelmi irányelvekben</privacyLink> leírt módon kezelje ezeket az adatokat.
 indicates-required = * Kötelező mezőt jelez
 not-available-abbreviation = Nincs
 
@@ -26,10 +28,12 @@ af = Afrikaans
 am = Amhara
 an = Aragóniai
 ar = Arab
+arn = Mapucse
 as = Asszámi
 ast = Asztúriai
 az = Azeri
 ba = Baskír
+be = Belorusz
 bg = Bolgár
 bn = Bengáli
 br = Breton
@@ -60,10 +64,12 @@ ga-IE = Ír
 gl = Galícia
 ha = Hausza
 he = Héber
-hi-IN = Hindi
+hi = Hindi
 hr = Horvát
 hsb = Szorb, felső
 hu = Magyar
+hy-AM = Örmény
+hyw = Nyugati-örmény
 ia = Interlingva
 id = Indonéz
 is = Izlandi
@@ -71,23 +77,28 @@ it = Olasz
 izh = Izsór
 ja = Japán
 ka = Grúz
+kaa = Karakalpak
 kab = Kabil
+kbd = Kabardi
 kk = Kazak
 ko = Koreai
 kpv = Komi-zürjén
 ku = Kurd
 kw = Cornwalli
 ky = Kirgiz
+lg = Luganda
 lij = Ligur
 lt = Litván
 lv = Lett
 mdf = Moksa
+mg = Malgas
 mhr = Mezei mari
 mk = Macedón
 ml = Malajálam
 mn = Mongol
 mrj = Hegyi mari
 mt = Máltai
+my = Burmai
 myv = Erza
 nb-NO = Norvég bokmål
 ne-NP = Nepáli
@@ -95,6 +106,7 @@ nl = Holland
 nn-NO = Norvég nynorsk
 oc = Okcitán
 or = Orija
+pa-IN = Pandzsábi
 pl = Lengyel
 pt = Portugál
 rm-sursilv = Romans sursilvan
@@ -104,6 +116,7 @@ ru = Orosz
 rw = Ruandai
 sah = Szaha
 sc = Szárd
+scn = Szicíliai
 si = Szingaléz
 sk = Szlovák
 sl = Szlovén
@@ -116,6 +129,7 @@ ta = Tamil
 te = Telugu
 tg = Tádzsik
 th = Thai
+tl = Tagalog
 tr = Török
 tt = Tatár
 uby = Ubih
@@ -123,6 +137,7 @@ udm = Udmurt
 uk = Ukrán
 ur = Urdu
 uz = Üzbég
+vec = Velencei
 vi = Vietnámi
 vot = Vót
 zh-CN = Kínai (Kína)
@@ -226,7 +241,7 @@ whats-public = Mi nyilvános?
 email-not-public = Nem fogjuk nyilvánossá tenni az e-mail címét.
 recordings-and-locale-public = A felvételei száma, és a nyelvek amikben Ön közreműködik, nyilvánosak lesznek.
 username-optin-public = Kiválaszthatja, hogy a felhasználó neve nyilvános vagy privát legyen.
-demographic-deidentified = A benyújtott demográfiai adatok (pl. kor, nem, nyelv és akcentus), hangadatokból nem azonosíthatóak, és soha nem lesznek nyilvánosak a profilján.
+demographic-deidentified-clarity = Az opcionálisan benyújtott demográfiai adatok (például életkor, nem, nyelv és akcentus) sosem lesznek közzétéve a profilján, és nem lesznek összekapcsolva a fiókjával az adatkészletben. Az egyes hangklipeket a pontosabb elemzés céljából össze lesznek kapcsolva a demográfiai adatokkal – például egy kutató egy konkrét demográfiai szegmensre akarhat betanítani egy modellt.
 username-email-not-demographic = A felhasználóneve és az e-mail címe nem lesz társítva a közzétett adatokkal.
 
 ## Speak & Listen Shortcuts
@@ -313,6 +328,7 @@ thanks-for-account = Köszönjük, hogy megerősítette a fiókját, most állí
 why-demographic = Miért számít ez?
 why-demographic-explanation = Az anonimizált felhasználói adatok, mint az életkor, nem és akcentus segít jobbá tenni a hangadatokat, melyek a hangfelismerő motorok pontosságának tanítására használhatóak. A felhasználónév és a jelszó sosem lesz hozzákapcsolva a beküldött adatokhoz, és megadhatja azt is, hogy a felhasználóneve nyilvános vagy anonim legyen.
 accept-privacy = Beleegyezem, hogy a Mozilla <privacyLink>Adatvédelmi irányelveiben</privacyLink> leírtak szerint kezeljék az adataimat
+accept-privacy-title = Adatvédelmi irányelvek
 login-identity = Bejelentkezési azonosító
 login-signup = Bejelentkezés / Regisztráció
 edit = Szerkesztés
@@ -438,11 +454,11 @@ about-partnership =
     
     A következő emberek és szervezetek segítségét szeretnénk megköszönni:
 about-get-involved = Csatlakozzon
-about-get-involved-text =
+about-get-involved-text-2 =
     Szeretné még jobbá tenni a Common Voice-ot?
-    Nagyszerű! Lépjen velünk kapcsolatba e-mailben vagy a <discourseLink>Discourse-on</discourseLink>,
-    küldjön visszajelzést a <githubLink>GitHubon</githubLink>,
-    vagy csatlakozzon hozzánk a <slackLink>Slacken</slackLink>.
+    Nagyszerű! Lépjen velünk kapcsolatba e-mailben vagy a <discourseLink>Discourse</discourseLink>
+    fórumon, küldjön be hibákat <githubLink>GitHubon</githubLink>,
+    vagy csatlakozzon a <matrixLink>Matrix</matrixLink> közösségi csevegéshez.
 about-nav-why-common-voice = Miért?
 about-nav-how-it-works = Hogyan?
 about-nav-partners = Partnerek
@@ -468,10 +484,13 @@ sst-explanation = A beszédből szöveggé alakítási (STT) technológiák szö
 de-identified = Azonosítás visszavonva
 de-identified-explanation = Az a folyamat, amellyel a közreműködő profilinformációi elrejtésre kerülnek a felajánlott hangklipekben, ha az adatkészlet részeként letöltésre kerülnek.
 
-## NotFound
+## Error pages
 
-notfound-title = Nem található
-notfound-content = Attól tartok, nem tudom mit keres.
+error-title-404 = Nem találtuk az Ön oldalát
+error-content-404 = Talán a <homepageLink>kezdőlapunk</homepageLink> segít. Ha kérdést szeretne feltenni, csatlakozzon a <matrixLink>Matrix közösségi csevegéshez</matrixLink>, figyelje a webhely problémáit a <githubLink>GitHubon</githubLink>, vagy látogassa meg <discourseLink>a Discourse fórumunkat</discourseLink>.
+error-title-503 = Váratlan leállásokat tapasztalunk
+error-content-503 = Az oldal a lehető leghamarabb újra üzemelni fog. A legfrissebb információkért csatlakozzon a <matrixLink>Matrix közösségi csevegéshez</matrixLink>, vagy látogassa meg a <githubLink>GitHubot</githubLink> vagy a <discourseLink>Discourse fórumunkat</discourseLink>, hogy elküldje és figyelje a webhellyel kapcsolatos problémákat.
+error-code = Hibakód: { $code }
 
 ## Data
 
@@ -490,6 +509,8 @@ data-bundle-button = Adatkészletcsomag letöltése
 data-bundle-description = Common Voice adatok plusz az összes fenti adatkészlet.
 license = Licenc: <licenseLink>{ $license }</licenseLink>
 license-mixed = Vegyes
+data-download-singleword-title = Töltse le az egyszavas célszegmenst
+data-download-singleword-callout = Ez egy konkrét használati esetet célzó szegmens, mely kiejtett számok felismeréséhez, igen / nem észleléshez és hívószó-teszteléshez alkalmas adatokat tartalmaz a <fxLink>Firefox Voice</fxLink> számára.
 review-terms = A Common Voice használatával elfogadja a <termsLink>Jogi feltételeket</termsLink> és az <privacyLink>Adatvédelmi nyilatkozatot</privacyLink>
 terms-agree = Elfogadom
 terms-disagree = Nem fogadom el
@@ -533,7 +554,7 @@ whats-inside = Mi van a Common Voice adatkészletben?
 dataset-description-hours =
     Az adatkészlet minden bejegyzése egy egyéni MP3-ból és egy hozzátartozó szövegfájlból áll. A(z) <b>{ $total }</b> órányi rögzítésben számos felvétel demográfiai metaadatokat is tartalmaz, mint a beszélő kora, neme és akcentusa, melyek segíthetnek a beszédfelismerő motorok pontosságának betanításában.
     
-    Az adatkészlet jelenleg <b>{ $hours }</b> órányi ellenőrzött felvételből áll, <b>{ $languageCount }</b> nyelven, de folyamatosan adunk hozzá további hangokat és nyelveket. Nézze meg a <languagesLink>Nyelvek oldalt</languagesLink> egy nyelv kéréséhez vagy a közreműködés elkezdéséhez.
+    Az adatkészlet jelenleg <b>{ $valid }</b> órányi ellenőrzött felvételből áll, <b>{ $languages }</b> nyelven, de folyamatosan adunk hozzá további hangokat és nyelveket. Nézze meg a <languagesLink>Nyelvek oldalt</languagesLink> egy nyelv kéréséhez vagy a közreműködés elkezdéséhez.
 want-dataset-update = Szeretne értesítést kapni, ha kiadjuk a Common Voice adatkészlet új verzióját? Iratkozzon fel a hírlevelünkre.
 subscribe = Feliratkozás
 get-started-speech = Első lépések a beszédfelismeréssel
@@ -610,14 +631,18 @@ contribute = Közreműködés
 listen = Figyeljen
 skip = Kihagyás
 shortcuts = Gyorsbillentyűk
-clips-with-count = <bold>{ $count }</bold> kllip
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> klip
+       *[other] <bold>{ $count }</bold> klip
+    }
 goal-help-recording = Segítettél a Common Voice-nak elérni a napi rögzítési céljának ({ $goalValue }) <goalPercentage></goalPercentage>-át!
 goal-help-validation = Segítettél a Common Voice-nak elérni a napi ellenőrzési céljának ({ $goalValue }) <goalPercentage></goalPercentage>-át!
 contribute-more = Készen áll még { $count } felvételre?
 record-cta = Felvétel indítása
 record-platform-not-supported = Sajnáljuk, de a platformja jelenleg nem támogatott.
 record-platform-not-supported-desktop = Asztali számítógépekre, letöltheti a legfrissebbet:
-record-platform-not-supported-ios = Az <bold>iOS</bold> felhasználók letölthetik szabad szoftver alkalmazásunkat:
+record-platform-not-supported-ios-non-safari = iOS-en folytassa a Safarival a felvétel engedélyezéséhez…
 record-must-allow-microphone = Engedélyezni kell a mikrofon hozzáférést.
 record-no-mic-found = Nem található mikrofon.
 record-error-too-short = A felvétel túl rövid volt.
@@ -631,6 +656,8 @@ record-again-instruction = Nagyszerű! <recordIcon></recordIcon> A következő k
 record-again-instruction2 = Csak így tovább, vegyen fel újra <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Az utolsó!
 review-tooltip = Ellenőrizze, és ha kell, vegye fel újra a klipeket sorban
+share-clip = Ossza meg a klipjét
+share-common-voice = A Common Voice megosztása
 review-instruction = Ellenőrizze, és ha kell, vegye fel újra a klipeket
 record-submit-tooltip = { $actionType } a beküldéshez, ha kész
 clips-uploaded = Klipek feltöltve
@@ -643,11 +670,17 @@ listen-instruction = { $actionType } a <playIcon></playIcon> ikonra, pontosan ol
 listen-again-instruction = Jó munka! <playIcon></playIcon> Hallgassa meg újra, ha kész
 listen-3rd-time-instruction = 2 kész <playIcon></playIcon>, csak így tovább!
 listen-last-time-instruction = <playIcon></playIcon> Utolsó!
-nothing-to-validate = Még nincs semmit ellenőrizni ezen a nyelven, segítsen feltölteni a sort.
+listen-empty-state = Elfogytak az ellenőrzésre váró klipek ezen a nyelven…
+speak-empty-state = Elfogytak az felvételre váró mondatok ezen a nyelven…
+speak-empty-state-cta = Mondatok hozzáadása
 record-button-label = Rögzítse a hangját
 share-title-new = <bold>Segítsen nekünk</bold> további hangokat találni
 keep-track-profile = Kövesse nyomon az előrehaladását egy profil segítségével
 login-to-get-started = A kezdéshez jelentkezzen be vagy regisztráljon
+target-segment-first-card = Közreműködik az első célszegmensünkben
+target-segment-first-banner = Segítsen a Common Voice első { $locale } célszegmensének létrehozásában
+target-segment-add-voice = Adja a hangját
+target-segment-learn-more = További tudnivalók
 
 ## Reporting
 
@@ -693,6 +726,7 @@ validations =
 
 your-languages = Az Ön nyelvei
 toward-next-goal = A következő cél felé
+goal-reached = Cél elérve
 clips-you-recorded = Az Ön által rögzített klipek
 clips-you-validated = Az Ön által ellenőrzött klipek
 todays-recorded-progress = A mai Common Voice előrehaladás a klipek rögzítésében
@@ -716,6 +750,7 @@ show-ranking = Saját rangsor megjelenítése
 
 get-started-goals = Kezdje el a célok használatát
 create-custom-goal = Egyéni cél létrehozása
+goal-type = Milyen célra vágyik?
 both-speak-and-listen = Mindkettő
 both-speak-and-listen-long = Mindkettő (Beszéd és figyelés)
 daily-goal = Napi cél
@@ -729,13 +764,32 @@ want-to-continue = Biztos, hogy folytatja?
 finish-editing = Előbb befejezi a szerkesztést?
 lose-changes-warning = A lap elhagyása azt jelenti, hogy elveszíti a változásokat
 build-custom-goal = Egyéni cél létrehozása
-help-reach-hours = Segítsen elérni a(z) { NUMBER($hours) } órát { $language } nyelven egy személyes céllal
-help-reach-hours-general = Segítsen a Common Voice-nak elérnie a(z) { NUMBER($hours) } órát egy személyes céllal rendelkező nyelven
+help-reach-hours-pluralized =
+    Segítsen elérni a(z) { NUMBER($hours) ->
+        [one] { $hours } órát
+       *[other] { $hours } órát
+    } { $language } nyelven egy személyes céllal
+help-reach-hours-general-pluralized =
+    Segítsen a Common Voice-nak elérni a(z) { NUMBER($hours) ->
+        [one] { $hours } órát
+       *[other] { $hours } órát
+    } egy nyelven egy személyes céllal!
 set-a-goal = Cél kitűzése
 cant-decide = Nem tud dönteni?
-activity-needed-calculation =
-    { NUMBER($totalHours) } óra akár { NUMBER($periodMonths) } hónap alatt is elérhető,
-    ha { NUMBER($people) } ember napi { NUMBER($clipsPerDay) } klipet rögzít.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } óra
+       *[other] { $totalHours } óra
+    } akár { NUMBER($periodMonths) ->
+        [one] { $periodMonths } hónap
+       *[other] { $periodMonths } hónap
+    } alatt is elérhető, ha { NUMBER($people) ->
+        [one] { $people } ember
+       *[other] { $people } ember
+    } napi { NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } klipet
+       *[other] { $clipsPerDay } klipet
+    } vesz fel.
 how-many-per-day = Nagyszerű! Naponta hány klipet?
 how-many-a-week = Nagyszerű! Hetente hány klipet?
 which-goal-type = Beszélni, figyelni vagy mindkettőt szeretne?
@@ -745,7 +799,11 @@ receiving-emails-info =
 not-receiving-emails-info =
     Jelenleg úgy van beállítva, hogy <bold>NEM</bold> kap e-mailt cél emlékeztetőkkel,
     előrehaladási hírekkel és a Common Voice hírlevéllel
-n-clips = { NUMBER($count) } klip
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } klip
+       *[other] { $count } klip
+    }
 help-share-goal = Segítsen még több hangot találni, ossza meg a célját
 confirm-goal = Cél megerősítése
 goal-interval-weekly = Hetente

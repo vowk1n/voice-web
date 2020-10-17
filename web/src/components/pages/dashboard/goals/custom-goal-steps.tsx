@@ -1,8 +1,8 @@
-import { Localized, withLocalization } from 'fluent-react/compat';
+import { Localized, withLocalization } from '@fluent/react';
 import * as React from 'react';
 import { useState } from 'react';
-import { CustomGoal, CustomGoalParams } from 'common/goals';
-import { UserClient } from 'common/user-clients';
+import { CustomGoal, CustomGoalParams } from 'common';
+import { UserClient } from 'common';
 import URLS from '../../../../urls';
 import { useAccount, useIsSubscribed } from '../../../../hooks/store-hooks';
 import { useRouter } from '../../../../hooks/use-router';
@@ -118,10 +118,14 @@ export default [
           </Localized>
           <Localized
             id={
-              dashboardLocale ? 'help-reach-hours' : 'help-reach-hours-general'
+              dashboardLocale
+                ? 'help-reach-hours-pluralized'
+                : 'help-reach-hours-general-pluralized'
             }
-            $hours={10000}
-            $language={getString(dashboardLocale)}>
+            vars={{
+              hours: 10000,
+              language: getString(dashboardLocale),
+            }}>
             <span className="sub-head" />
           </Localized>
         </div>
@@ -175,7 +179,9 @@ export default [
   ({ closeButtonProps, currentFields, nextButtonProps }) => (
     <>
       <div className="padded">
-        <h2>What kind of goal do you want to build?</h2>
+        <Localized id="goal-type">
+          <h2 />
+        </Localized>
         {currentFields}
       </div>
       <Buttons style={{ marginBottom: 20 }}>
@@ -189,11 +195,13 @@ export default [
             <h4 />
           </Localized>
           <Localized
-            id="activity-needed-calculation"
-            $totalHours={10000}
-            $periodMonths={6}
-            $people={1000}
-            $clipsPerDay={45}>
+            id="activity-needed-calculation-plural"
+            vars={{
+              totalHours: 10000,
+              periodMonths: 6,
+              people: 1000,
+              clipsPerDay: 45,
+            }}>
             <p />
           </Localized>
         </div>
@@ -264,13 +272,13 @@ export default [
                     ? 'receiving-emails-info'
                     : 'not-receiving-emails-info'
                 }
-                bold={<b />}>
+                elems={{ bold: <b /> }}>
                 <p className="subscription-info" />
               </Localized>
               <a
                 className="manage-subscriptions"
                 href={getManageSubscriptionURL(account)}
-                target="__blank"
+                target="_blank"
                 rel="noopener noreferrer">
                 <Localized id="manage-email-subscriptions">
                   <span />
@@ -300,7 +308,9 @@ export default [
               <div className="content">
                 <Localized
                   id="accept-privacy"
-                  privacyLink={<LocaleLink to={URLS.PRIVACY} blank />}>
+                  elems={{
+                    privacyLink: <LocaleLink to={URLS.PRIVACY} blank />,
+                  }}>
                   <span />
                 </Localized>
               </div>
@@ -383,4 +393,4 @@ export default [
       </div>
     );
   }),
-] as (React.ComponentType<CustomGoalStepProps>)[];
+] as React.ComponentType<CustomGoalStepProps>[];

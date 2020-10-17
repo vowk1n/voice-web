@@ -82,7 +82,7 @@ header {
 
     & .login {
         margin: 0 20px;
-        min-width: auto;
+        min-width: max-content;
 
         @media (--md-down) {
             display: none;
@@ -243,6 +243,10 @@ header {
         margin-inline-start: 1rem;
     }
 
+    @media (--lg-only) {
+        margin-inline-end: 0;
+    }
+
     &:hover {
         opacity: 0.8;
     }
@@ -257,6 +261,7 @@ header {
     }
 
     & .divider {
+        padding: 0px;
         margin: 1.5px 0;
         border-inline-end: 1px solid var(--darker-grey);
         border-top: 1px solid var(--darker-grey);
@@ -334,6 +339,7 @@ header {
     transform: translateY(-100vh);
     transition: all var(--transition-duration-slow) var(--easing);
     visibility: hidden;
+    overflow: auto;
 
     &.active {
         display: block;
@@ -341,6 +347,10 @@ header {
         pointer-events: all;
         transition-duration: var(--transition-duration-slow);
         visibility: visible;
+
+        @media (--lg-up) {
+            display: none;
+        }
     }
 
     & .nav-list,

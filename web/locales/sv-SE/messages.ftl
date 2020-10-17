@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Skicka in
 loading = Laddar…
 email-opt-in-info = Jag vill få e-postmeddelanden med påminnelser om mål, mina framstegsuppdateringar och nyhetsbrev om Common Voice.
-email-opt-in-privacy = Genom att ta emot e-postmeddelanden godkänner du Mozillas hantering av denna information som förklaras i Mozillas <privacyLink>sekretesspolicy<privacyLink>.
+email-opt-in-info-title = Gå med i Common Voice e-postlista
+email-opt-in-info-sub-with-challenge = Få e-postmeddelanden som målpåminnelser, framstegsuppdateringar och nyhetsbrev om Common Voice.
+email-opt-in-privacy-v2 = Genom att anmäla dig till att ta emot e-postmeddelanden godkänner du att du är okej med att Mozilla hanterar denna information, som förklaras i Mozillas <privacyLink>sekretesspolicy</privacyLink>.
 indicates-required = * Indikerar obligatoriska fält
 not-available-abbreviation = inte tillgänglig
 
@@ -26,10 +28,12 @@ af = Afrikaans
 am = Amhariska
 an = Aragonesiska
 ar = Arabiska
+arn = Mapudungun
 as = Assamesiska
 ast = Asturiska
 az = Azerbajdzjanska
 ba = Basjkiriska
+be = Vitryska
 bg = Bulgariska
 bn = Bengaliska
 br = Bretonska
@@ -60,10 +64,12 @@ ga-IE = Irländska
 gl = Galiciska
 ha = Hausa
 he = Hebreiska
-hi-IN = Hindi
+hi = Hindi
 hr = Kroatiska
 hsb = Högsorbiska
 hu = Ungerska
+hy-AM = Armeniska
+hyw = Armenisk västerländska
 ia = Interlingua
 id = Indonesiska
 is = Isländska
@@ -71,23 +77,28 @@ it = Italienska
 izh = Ingriska
 ja = Japanska
 ka = Georgiska
+kaa = Karakalpakiska
 kab = Kabyliska
+kbd = Kabardinska
 kk = Kazakstanska
 ko = Koreanska
 kpv = Komi-syrjänska
 ku = Kurdiska
 kw = Korniska
 ky = Kirgiziska
+lg = Luganda
 lij = Liguriska
 lt = Litauiska
 lv = Lettiska
 mdf = Moksha
+mg = Malagassiska
 mhr = Östmariska
 mk = Makedonska
 ml = Malayalam
 mn = Mongoliska
 mrj = Västmariska
 mt = Maltesiska
+my = Burmesiska
 myv = Erzya
 nb-NO = Norska Bokmål
 ne-NP = Nepali
@@ -95,6 +106,7 @@ nl = Nederländska
 nn-NO = Norska, nynorska
 oc = Occitanska
 or = Odia
+pa-IN = Punjabi
 pl = Polska
 pt = Portugisiska
 rm-sursilv = Rätoromanska
@@ -104,6 +116,7 @@ ru = Ryska
 rw = Kinyarwanda
 sah = Sakha
 sc = Sardiska
+scn = Sicilianska
 si = Singalesiska
 sk = Slovakiska
 sl = Slovenska
@@ -116,6 +129,7 @@ ta = Tamilska
 te = Telugu
 tg = Tadzjikiska
 th = Thailändska
+tl = Tagalog
 tr = Turkiska
 tt = Tatariska
 uby = Ubychiska
@@ -123,6 +137,7 @@ udm = Udmurtiska
 uk = Ukrainska
 ur = Urdu
 uz = Uzbekistanska
+vec = Venetianska
 vi = Vietnamesiska
 vot = Votiska
 zh-CN = Kinesiska (Kina)
@@ -223,7 +238,7 @@ whats-public = Vad är offentligt?
 email-not-public = Vi kommer inte göra din e-post offentlig.
 recordings-and-locale-public = Antalet inspelningar och vilka språk du bidrar till kommer att vara offentligt.
 username-optin-public = Du kan välja att göra ditt användarnamn offentligt eller anonymt.
-demographic-deidentified = Om du valt att skicka demografisk data (t.ex. ålder, kön, och språk) anonymiseras den från dina inskickade röstdata och kommer aldrig bli publik på din profil.
+demographic-deidentified-clarity = Valfritt inskickade demografiska data (t.ex. ålder, kön, språk och accent) kommer aldrig att offentliggöras i din profil och kommer inte att länkas till ditt konto i datamängden. Enskilda ljudklipp kommer att associeras med demografiska data i syfte att göra en mer exakt analys - till exempel kan en forskare inrikta sig på en träningsmodell till ett specifikt demografiskt segment.
 username-email-not-demographic = Ditt användarnamn och e-post kommer inte att kopplas till den publicerade datan.
 
 ## Speak & Listen Shortcuts
@@ -310,6 +325,7 @@ thanks-for-account = Tack för att du har bekräftat ditt konto, nu bygger vi di
 why-demographic = Vad innebär det?
 why-demographic-explanation = Anonymiserade användardata som ålder, kön och accent hjälper till att förbättra ljuddata som används för att träna noggrannheten för taligenkänningsmotorer. Ditt användarnamn och e-post kommer aldrig att kopplas till dina inlämnade data, och du kan välja om du vill göra ditt användarnamn offentligt eller anonymt.
 accept-privacy = Jag är okej med att du hanterar denna information som du förklarar i Mozillas <privacyLink>sekretesspolicy</privacyLink>
+accept-privacy-title = Sekretesspolicy
 login-identity = Inloggningsidentitet
 login-signup = Logga in / Registrera dig
 edit = Redigera
@@ -438,11 +454,11 @@ about-partnership =
     
     Vi vill tacka följande personer och organisationer för deras hjälp med projektet:
 about-get-involved = Engagera dig
-about-get-involved-text =
-    Vill du hjälpa till att göra Common Voice ännu bättre?
-    Bra! Ta kontakt via e-post eller på <discourseLink>Discourse</discourseLink>,
-    skicka in återkoppling via <githubLink>GitHub</ githubLink>,
-    eller gå med oss på <slackLink>Slack</slackLink>.
+about-get-involved-text-2 =
+    Vill du göra Common Voice ännu bättre?
+    Bra! Ta kontakt via e-post eller <discourseLink>Discourse</discourseLink>
+    forum, skicka webbplatsfrågor via <githubLink>GitHub</githubLink> eller gå med i
+    <matrixLink>Matrix</matrixLink> communitychatt.
 about-nav-why-common-voice = Varför ?
 about-nav-how-it-works = Hur ?
 about-nav-partners = Partners
@@ -468,10 +484,13 @@ sst-explanation = Tal-till-text (STT)-tekniken konverterar röstdata till text.
 de-identified = Anonymisering
 de-identified-explanation = Processen genom vilken en bidragsgivares profilinformation döljs från sina donerade röstklipp när de är packade för nedladdning som en del av datamängden.
 
-## NotFound
+## Error pages
 
-notfound-title = Hittades inte
-notfound-content = Jag är rädd att jag inte vet vad du letar efter.
+error-title-404 = Vi kunde inte hitta den sidan åt dig
+error-content-404 = Kanske kan vår <homepageLink>hemsida</homepageLink> hjälpa dig? För att ställa en fråga, gå med i <matrixLink>Matrix community chat</matrixLink>, övervaka webbplatsfrågor via <githubLink>GitHub</githubLink> eller besök <discourseLink>våra Discourse-forum</discourseLink>.
+error-title-503 = Vi upplever oväntat driftstopp
+error-content-503 = Webbplatsen kommer att säkerhetskopieras så snart som möjligt. För den senaste informationen, gå med i <matrixLink>Matrix community chat</matrixLink> eller besök <githubLink>GitHub</githubLink> eller <discourseLink>våra Discourse-forum</discourseLink> för att skicka in och övervaka problem med webbplatsupplevelsen.
+error-code = Fel { $code }
 
 ## Data
 
@@ -490,6 +509,8 @@ data-bundle-button = Ladda ner Dataset-paket
 data-bundle-description = Common Voice data plus alla andra röstdatamängder ovan.
 license = Licens: <licenseLink>{ $license }</licenseLink>
 license-mixed = Blandat
+data-download-singleword-title = Ladda ner målsegmentet för ett ord
+data-download-singleword-callout = Detta är ett användningsfallsdrivet segment som innehåller data för att driva taligenkänning, ja/nej-upptäckt och wakeword-testdata för <fxLink>Firefox Voice</fxLink>.
 review-terms = Genom att använda Common Voice godkänner du våra <termsLink>villkor</termsLink> och <privacyLink> sekretesspolicy</privacyLink>
 terms-agree = Jag håller med
 terms-disagree = Jag håller inte med
@@ -510,7 +531,7 @@ datasets-positioning =
     
     Common Voices flerspråkiga datamängd är redan den största offentligt tillgängliga röstdatamängden av sitt slag, men den är inte den enda.
     
-    Titta på den här sidan som referensnav för andra datakällor med öppen källkod och, eftersom Common Voice fortsätter att växa, ett hem för våra uppdateringar.
+    Titta på den här sidan som referensnav för andra datakällor med öppen källkod och eftersom Common Voice fortsätter att växa, ett hem för våra uppdateringar.
 language = Språk
 # File size in gigabytes
 size = Storlek
@@ -610,8 +631,12 @@ contribute = Bidra
 listen = Lyssna
 skip = Hoppa över
 shortcuts = Genvägar
-clips-with-count = <bold>{ $count }</bold> klipp
-goal-help-recording = Du har hjälp Common Voice att nå <goalPercentage></goalPercentage> av vårt dagliga { $goalValue } inspelningsmål!
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count } klipp
+       *[other] <bold>{ $count } klipp
+    }
+goal-help-recording = Du har hjälpt Common Voice att nå <goalPercentage></goalPercentage> av vårt dagliga { $goalValue } inspelningsmål!
 goal-help-validation = Du har hjälp Common Voice att nå <goalPercentage></goalPercentage> av vårt dagliga { $goalValue } valideringsmål!
 contribute-more =
     { $count ->
@@ -621,7 +646,7 @@ contribute-more =
 record-cta = Starta inspelning
 record-platform-not-supported = Vi är ledsna, min din plattform stöds inte för tillfället.
 record-platform-not-supported-desktop = På datorer, kan du ladda ner senaste:
-record-platform-not-supported-ios = Användare av <bold>iOS</bold> kan ladda ner våran gratisapp:
+record-platform-not-supported-ios-non-safari = På iOS fortsätt med Safari för att aktivera inspelning…
 record-must-allow-microphone = Du måste tillåta mikrofon åtkomst.
 record-no-mic-found = Ingen mikrofon kunde hittas.
 record-error-too-short = Inspelningen var för kort.
@@ -635,6 +660,8 @@ record-again-instruction = Bra! <recordIcon></recordIcon> Spela in ditt nästa k
 record-again-instruction2 = Bra jobbat, spela in igen <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Sista!
 review-tooltip = Här kan du kontrollera och återuppta inspelningar
+share-clip = Dela ditt klipp
+share-common-voice = Dela Common Voice
 review-instruction = Om det behövs kan du granska och återuppta inspelningar
 record-submit-tooltip = { $actionType } skicka in när du är redo
 clips-uploaded = Klipp uppladdade
@@ -647,11 +674,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> var meningen uttalad k
 listen-again-instruction = Bra jobbat!<playIcon></playIcon> Lyssna igen när du är redo
 listen-3rd-time-instruction = Två färdiga, <playIcon></playIcon> bra jobbat!
 listen-last-time-instruction = <playIcon></playIcon> Sista!
-nothing-to-validate = Vi har inget att validera på det här språket, hjälp oss att fylla kön.
+listen-empty-state = Vi har slut på klipp för att validera på det här språket...
+speak-empty-state = Vi har slut på meningar att spela in på det här språket...
+speak-empty-state-cta = Bidra med meningar
 record-button-label = Spela in din röst
 share-title-new = <bold>Hjälp oss</bold> hitta mer röster
 keep-track-profile = Håll koll på dina framsteg med en profil
 login-to-get-started = Logga in eller registrera dig för att komma igång
+target-segment-first-card = Du bidrar till vårt första målsegment
+target-segment-first-banner = Hjälp till med att skapa Common Voice första målsegment i { $locale }
+target-segment-add-voice = Lägg till din röst
+target-segment-learn-more = Läs mer
 
 ## Reporting
 
@@ -697,6 +730,7 @@ validations =
 
 your-languages = Dina språk
 toward-next-goal = Till nästa mål
+goal-reached = Målet uppnått
 clips-you-recorded = Klipp du har spelat in
 clips-you-validated = Klipp du har validerat
 todays-recorded-progress = Dagens framsteg på Common Voice för inspelade klipp
@@ -720,6 +754,7 @@ show-ranking = Visa min ranking
 
 get-started-goals = Kom igång med mål
 create-custom-goal = Skapa ett anpassat mål
+goal-type = Vilken typ av mål vill du bygga?
 both-speak-and-listen = Båda
 both-speak-and-listen-long = Båda (Prata och lyssna)
 daily-goal = Dagligt mål
@@ -733,13 +768,32 @@ want-to-continue = Vill du fortsätta?
 finish-editing = Avsluta redigeringen först?
 lose-changes-warning = Om du lämnar nu kommer du att förlora dina förändringar
 build-custom-goal = Bygg ett anpassat mål
-help-reach-hours = Hjälp oss att nå { NUMBER($hours) } timmar för { $language } med ett personligt mål
-help-reach-hours-general = Hjälp Common Voice att nå { NUMBER($hours) } timmar i ett språk med ett personligt mål
+help-reach-hours-pluralized =
+    Hjälp oss nå { NUMBER($hours) ->
+        [one] { $hours } timme
+       *[other] { $hours } timmar
+    } på { $language } med ett personligt mål
+help-reach-hours-general-pluralized =
+    Hjälp Common Voice nå { NUMBER($hours) ->
+        [one] { $hours } timme
+       *[other] { $hours } timmar
+    } på ett språk med ett personligt mål
 set-a-goal = Sätt ett mål
 cant-decide = Kan du inte bestämma?
-activity-needed-calculation =
-    { NUMBER($totalHours) } timmar kan uppnås på drygt { NUMBER($periodMonths) }
-    månader om { NUMBER($people) } personer spelar in { NUMBER($clipsPerDay) } klipp per dag.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } timme
+       *[other] { $totalHours } timmar
+    } kan uppnås på drygt { NUMBER($periodMonths) ->
+        [one] { $periodMonths } månad
+       *[other] { $periodMonths } månader
+    } om { NUMBER($people) ->
+        [one] { $people } person
+       *[other] { $people } personer
+    } spelar in { NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } klipp
+       *[other] { $clipsPerDay } klipp
+    } per dag.
 how-many-per-day = Bra! Hur många klipp per dag?
 how-many-a-week = Bra! Hur många klipp på en vecka?
 which-goal-type = Vill du prata, lyssna eller båda?
@@ -749,7 +803,11 @@ receiving-emails-info =
 not-receiving-emails-info =
     Du är för närvarande inställd på att <bold>INTE</bold> ta emot e-postmeddelanden som målpåminnelser, min
     framstegsuppdateringar och nyhetsbrev om Common Voice
-n-clips = { NUMBER($count) } klipp
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } klipp
+       *[other] { $count } klipp
+    }
 help-share-goal = Hjälp oss att hitta fler röster, dela ditt mål
 confirm-goal = Bekräfta målet
 goal-interval-weekly = Veckovis

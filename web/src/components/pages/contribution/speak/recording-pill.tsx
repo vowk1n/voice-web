@@ -1,8 +1,8 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import { trackRecording } from '../../../../services/tracker';
@@ -13,6 +13,7 @@ import {
   ShareIcon,
   StopIcon,
 } from '../../../ui/icons';
+import { getAudioFormat } from '../../../../utility';
 import { ContributionPillProps } from '../contribution';
 import Pill, { PillStatus } from '../pill';
 import { SentenceRecording } from './sentence-recording';
@@ -21,7 +22,7 @@ import './recording-pill.css';
 
 const { Tooltip } = require('react-tippy');
 
-interface Props extends ContributionPillProps, LocalizationProps {
+interface Props extends ContributionPillProps, WithLocalizationProps {
   children?: React.ReactNode;
   clip: SentenceRecording;
   onRerecord: () => any;
@@ -66,13 +67,10 @@ function RecordingPill({
       )}
 
       {!children && status === 'done' && (
-        <React.Fragment>
-          <audio
-            src={clip.recording.url}
-            preload="auto"
-            onEnded={toggleIsPlaying}
-            ref={audioRef}
-          />
+        <>
+          <audio preload="auto" onEnded={toggleIsPlaying} ref={audioRef}>
+            <source src={clip.recording.url} type={getAudioFormat()} />
+          </audio>
           <Tooltip
             arrow
             open={isPlaying || showSentenceTooltip}
@@ -92,7 +90,7 @@ function RecordingPill({
           {isPlaying ? (
             <div className="placeholder" />
           ) : (
-            <React.Fragment>
+            <>
               <Tooltip arrow title={getString('review-tooltip')}>
                 <button className="redo" type="button" onClick={onRerecord}>
                   <span className="padder">
@@ -100,14 +98,16 @@ function RecordingPill({
                   </span>
                 </button>
               </Tooltip>
-              <button className="share" type="button" onClick={onShare}>
-                <span className="padder">
-                  <ShareIcon />
-                </span>
-              </button>
-            </React.Fragment>
+              <Tooltip arrow title={getString('share-clip')}>
+                <button className="share" type="button" onClick={onShare}>
+                  <span className="padder">
+                    <ShareIcon />
+                  </span>
+                </button>
+              </Tooltip>
+            </>
           )}
-        </React.Fragment>
+        </>
       )}
     </Pill>
   );

@@ -1,6 +1,8 @@
 @import url('../vars.css');
 
 .register-section {
+    overflow-x: hidden;
+
     & .top {
         margin: 0 auto;
         display: flex;
@@ -11,6 +13,7 @@
 
         @media (--md-down) {
             flex-direction: column;
+            align-items: center;
 
             & .cta-container {
                 display: flex;

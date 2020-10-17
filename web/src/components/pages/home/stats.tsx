@@ -1,9 +1,9 @@
 const spline = require('@yr/monotone-cubic-spline');
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useState } from 'react';
 import { connect } from 'react-redux';
@@ -74,11 +74,12 @@ export namespace ClipsStats {
   const TICK_COUNT = 7;
   const CIRCLE_RADIUS = 8;
 
-  function formatSeconds(totalSeconds: number) {
+  function formatSeconds(totalSeconds: number, precise: boolean = false) {
     const seconds = totalSeconds % 60;
     const minutes = Math.floor(totalSeconds / 60) % 60;
     const hours = Math.floor(totalSeconds / 3600);
 
+    if (precise) return `${hours.toLocaleString()}h`;
     if (hours >= 1000) {
       return (hours / 1000).toPrecision(2) + 'k';
     }
@@ -100,8 +101,8 @@ export namespace ClipsStats {
     return timeParts.join(' ') || '0';
   }
 
-  const MetricValue = ({ attribute, children }: any) => (
-    <div className={'metric-value ' + attribute}>
+  const MetricValue = ({ attribute, title, children }: any) => (
+    <div className={'metric-value ' + attribute} title={title}>
       <div className="point">●</div>
       {children}
     </div>
@@ -120,7 +121,13 @@ export namespace ClipsStats {
       <Localized id={labelId}>
         <div className="label" />
       </Localized>
-      <MetricValue attribute={attribute}>
+      <MetricValue
+        attribute={attribute}
+        title={
+          data.length > 0
+            ? formatSeconds(data[data.length - 1][attribute], true)
+            : ''
+        }>
         {data.length > 0
           ? formatSeconds(data[data.length - 1][attribute])
           : '?'}
@@ -159,7 +166,7 @@ export namespace ClipsStats {
       const [x, y] = pointFromDatum(lastIndex, data[lastIndex][attribute]);
 
       return (
-        <React.Fragment>
+        <>
           <path
             d={spline.svgPath(
               spline.points(
@@ -186,12 +193,12 @@ export namespace ClipsStats {
             r={CIRCLE_RADIUS - 2}
             className={'inner ' + attribute}
           />
-        </React.Fragment>
+        </>
       );
     }
   );
 
-  class BareRoot extends React.Component<LocalizationProps & PropsFromState> {
+  class BareRoot extends React.Component<WithLocalizationProps & PropsFromState> {
     state: { data: any[]; hoveredIndex: number } = {
       data: [],
       hoveredIndex: null,
@@ -230,7 +237,7 @@ export namespace ClipsStats {
       const datum = data[hoveredIndex];
       const { date, total, valid } = datum || ({} as any);
       const tooltipContents = datum ? (
-        <React.Fragment>
+        <>
           <b>
             {new Date(date).toLocaleDateString([], {
               day: 'numeric',
@@ -242,7 +249,7 @@ export namespace ClipsStats {
             <MetricValue attribute="total">{formatSeconds(total)}</MetricValue>
             <MetricValue attribute="valid">{formatSeconds(valid)}</MetricValue>
           </div>
-        </React.Fragment>
+        </>
       ) : null;
 
       return (
@@ -295,7 +302,7 @@ export namespace ClipsStats {
               tickCount={TICK_COUNT}
               tickMultipliers={[10, 60, 600, 3600, 36000, 360000]}>
               {state => (
-                <React.Fragment>
+                <>
                   <Path attribute="valid" data={data} {...state} />
                   <Path
                     attribute="total"
@@ -303,7 +310,7 @@ export namespace ClipsStats {
                     {...state}
                     ref={this.pathRef}
                   />
-                </React.Fragment>
+                </>
               )}
             </Plot>
           </Tooltip>

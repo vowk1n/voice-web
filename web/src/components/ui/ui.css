@@ -10,7 +10,7 @@
     width: 44px;
     height: 44px;
     overflow: hidden;
-    background: #f89096;
+    background: var(--gradient-pink);
 
     & > img {
         object-fit: cover;
@@ -44,7 +44,7 @@
     color: var(--white);
     width: 100%;
 
-    @media (--md-up) {
+    @media (--lg-up) {
         width: auto;
         height: auto;
     }
@@ -152,7 +152,7 @@ button.card-action:focus.focus-visible path {
         }
     }
 
-    & input {
+    input {
         position: absolute;
         top: 0;
         left: 0;
@@ -174,7 +174,11 @@ button.card-action:focus.focus-visible path {
         pointer-events: none;
     }
 
-    & input:checked ~ .checkmark {
+    input:checked {
+        background: --var(near-black);
+    }
+
+    input:checked ~ .checkmark {
         display: block;
     }
 }

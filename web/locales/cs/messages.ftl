@@ -9,6 +9,8 @@ email-input =
 submit-form-action = Odeslat
 loading = Načítání…
 email-opt-in-info = Chci dostávat e-maily jako jsou přimínky k nedosaženým cílům, informace o mém postupu nebo novinky o projektu Common Voice.
+email-opt-in-info-title = Připojte se do elektronické konference Common Voice
+email-opt-in-info-sub-with-challenge = Dostávejte e-maily jako jsou připomínky k nedosaženým cílům či vývám, informace o postupu nebo novinky o projektu Common Voice.
 email-opt-in-privacy = Rozhodnutím se přijímat e-maily potvrzujete svůj souhlas se zpracováním Vašich údajů dle <privacyLink>Zásad ochrany osobních údajů<privacyLink> společnosti Mozilla.
 indicates-required = * označuje povinná pole
 not-available-abbreviation = není k dispozici
@@ -26,10 +28,12 @@ af = Afrikánština
 am = Amharština
 an = Aragonština
 ar = Arabština
+arn = Mapudungunština
 as = Ásámština
 ast = Asturština
 az = Ázerbájdžánština
 ba = Baškirština
+be = Běloruština
 bg = Bulharština
 bn = Bengálština
 br = Bretonština
@@ -60,10 +64,12 @@ ga-IE = Irština
 gl = Galicijština
 ha = Hauština
 he = Hebrejština
-hi-IN = Hindština
+hi = Hindština
 hr = Chorvatština
 hsb = Hornosrbština
 hu = Maďarština
+hy-AM = Arménština
+hyw = Západní arménština
 ia = Interlingua
 id = Indonéština
 is = Islandština
@@ -71,23 +77,28 @@ it = Italština
 izh = Ižorština
 ja = Japonština
 ka = Gruzínština
+kaa = Karakalpačtina
 kab = Kabylština
+kbd = Kabardština
 kk = Kazaština
 ko = Korejština
 kpv = Komi-zyrjanština
 ku = Kurdština
 kw = Kornština
 ky = Kyrgyzština
+lg = Lugandština
 lij = Ligurština
 lt = Litevština
 lv = Lotyština
 mdf = Mókša
+mg = Malgaština
 mhr = Lužní Marijština
 mk = Makedonština
 ml = Malajálamština
 mn = Mongolština
 mrj = Horská Marijština
 mt = Maltština
+my = Barmština
 myv = Erzja
 nb-NO = Norština (Bokmål)
 ne-NP = Nepálština
@@ -95,13 +106,17 @@ nl = Nizozemština
 nn-NO = Nynorsk
 oc = Okcitánština
 or = Udijština
+pa-IN = Pandžábština
 pl = Polština
 pt = Portugalština
+rm-sursilv = Rétorománština (sursilvan)
+rm-vallader = Rétorománština (vallader)
 ro = Rumunština
 ru = Ruština
 rw = Rwandština
 sah = Jakutština
 sc = Sardinština
+scn = Sicilština
 si = Sinhalština
 sk = Slovenština
 sl = Slovinština
@@ -114,6 +129,7 @@ ta = Tamilština
 te = Telugština
 tg = Tádžičtina
 th = Thajština
+tl = Tagalština
 tr = Turečtina
 tt = Tatarština
 uby = Ubychština
@@ -121,6 +137,7 @@ udm = Udmurtština
 uk = Ukrajinština
 ur = Urdština
 uz = Uzbečtina
+vec = Benátština
 vi = Vietnamština
 vot = Votština
 zh-CN = Čínština (Čína)
@@ -221,7 +238,7 @@ whats-public = Co vše zveřejňujeme?
 email-not-public = Vaši e-mailovou adresu nezveřejníme.
 recordings-and-locale-public = Zveřejníme, kolik příspěvků a do jakých jazyků jste učinili.
 username-optin-public = Můžete si zvolit, jestli zveřejníme vaše uživatelské jméno.
-demographic-deidentified = Dobrovolně poskytnuté demografické údaje (tj. věk, pohlaví a přízvuk) jsou anonymizovány a nikdy nebudou zveřejněny na vašem profilu.
+demographic-deidentified-clarity = Volitelně nahraná demografická data (např. věk, pohlaví, jazyk nebo přízvuk) nebudou na vašem profilu zveřejněny a nebudou ani spojeny s vaším účtem v datasetu. Jednotlivé nahrávky budou s demografickými daty spojeny za účelem přesnější analýzy, např. aby mohl výzkumný pracovník soustředit učení modelu na konkrétní demografickou skupinu.
 username-email-not-demographic = Vaše uživatelské jméno a e-mail nebudou nijak propojovány s vámi poskytnutými hlasovými daty.
 
 ## Speak & Listen Shortcuts
@@ -309,6 +326,7 @@ thanks-for-account = Děkujeme za potvrzení vašeho účtu, nyní si sestavte s
 why-demographic = Proč na tomhle záleží?
 why-demographic-explanation = Anonymizovaná uživatelská data jako jsou věk, pohlaví a přízvuk pomáhají zlepšovat kvalitu audio dat pro trénování systémů rozpoznávání hlasu. Vaše uživatelské jméno a e-mail nebudou nikdy propojovány s vámi poskytnutými daty. Můžete také zvolit, jestli chcete zveřejnit vaše uživatelské jméno.
 accept-privacy = Souhlasím se zpracováním těchto informací jak je popsáno v zásadách Mozilly pro <privacyLink>ochranu osobních údajů</privacyLink>
+accept-privacy-title = Zásady ochrany osobních údajů
 login-identity = Identita pro přihlášení
 login-signup = Přihlášení / Registrace
 edit = Upravit
@@ -328,8 +346,11 @@ record-voice-wave = NAHRÁT ZÁZNAM HLASU
 retry-voice-wave-recording = OPAKOVAT
 re-record = NAHRÁT ZNOVU
 delete-voice = ODSTRANIT
+recording-voice-wave = Nahrávání
+delete-voice-clip = nebo Smazat hlasový záznam
 ready-to-upload = NAHRÁT
 avatar-clip-fact = Je již dlouho známým faktem, že čtenář bude pouze rozptylován čitelným obsahem stránky při zkoumání jejího rozvržení.
+recreate-voice = Znovu vytvořit Voicewave
 cancel-avatar-clip-recording = ZRUŠIT
 about-avatar-clip-recording = Vytvořte hlasový záznam jako součást vašeho avatara. Ostatní si ho mohou poslechnout po najetí myší.
 browse-file-title = Nahrát obrázek
@@ -426,7 +447,7 @@ about-no-votes-text = Zamítne-li uživatel nahrávku jako nepřesnou, vrací ji
 about-dataset-new = Databáze Common Voice
 about-dataset-new-text = Databáze Common Voice obsahuje stovky tisíc nahrávek pomáhajících vývojářům vytvářet systémy rozpoznávání hlasu.
 about-clip-graveyard = Hřbitov nahrávek
-about-clip-graveyard-text = Hřbitov nahrávak obsahuje všechny nahrávky, které se nedostaly do hlavní databáze Common Voice. Stejně jako hlavní databáze je i hřbitov k dispozici ke stažení.
+about-clip-graveyard-text = Hřbitov nahrávek obsahuje všechny nahrávky, které se nedostaly do hlavní databáze Common Voice. Stejně jako hlavní databáze je i hřbitov k dispozici ke stažení.
 about-partners = Partneři
 about-become-a-partner = Staňte se partnerem
 about-partnership =
@@ -434,11 +455,11 @@ about-partnership =
     
     Rádi bychom poděkovali následujícím lidem a organizacím za jejich pomoc:
 about-get-involved = Zapojte se
-about-get-involved-text =
+about-get-involved-text-2 =
     Chcete pomoci projekt Common Voice dále zlepšovat?
     Skvěle! Spojte se s námi prostřednictvím e-mailu nebo na <discourseLink>Discourse</discourseLink>,
-    odešlete zpětnou vazbu skrz <githubLink>GitHub</githubLink>,
-    nebo se připojte na náš <slackLink>Slack</slackLink>.
+    pošlete nám zpětnou vazbu skrze <githubLink>GitHub</githubLink>,
+    nebo se připojte na náš komunitní chat <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Proč?
 about-nav-how-it-works = Jak?
 about-nav-partners = Partneři
@@ -448,17 +469,21 @@ mycroft-subtitle = Umělá inteligence
 mycroft-description =
     Mycroft je celosvětově první otevřený hlasový asistent.
     Mycroft funguje všude - na stolním počítači, v automobilu, nebo i z Raspberry Pi.
+mycroft-secondary-description = Jedná se o software s otevřeným zdrojovým kódem, který lze volně remixovat, rozšiřovat a vylepšovat. Mycroft lze použít v čemkoli od vědeckého projektu po podnikovou softwarovou aplikaci.
 
 ## Glossary
 
 glossary = Slovník
 localization = Lokalizace
+localization-explanation = Toto je náš postup pro překlad a a adaptaci našeho obsahu pro další národní prostředí (a jazyky).
 sentence-collection = Sbírka vět
 sentence-collection-explanation = Sběr vět ve veřejné doméně, nebo tvorba nových vět ve veřejné doméně.
 hours-recorded-explanation = Počet hlasových nahrávek, které jsme doposud sesbírali.
-hours-validated-explanation = Počet hlasových nahrávek, které byly validovány alespoň dvěma ze tří uživatelů prostřednictvím hlasu pro "Ano". Tyto nahrávky jsou započítávány do postupu k celkovému cíli projektu sesbírat 10 000 hodin záznamů.
+hours-validated-explanation = Počet hlasových nahrávek ověřených alespoň dvěma ze tří uživatelů prostřednictvím hlasu pro "Ano". Tyto nahrávky se započítávají do postupu k celkovému cíli projektu sesbírat 10 000 hodin záznamů.
 sst = Převod řeči na text (STT)
 sst-explanation = Technologie převodu řeči na text (STT) převádí hlasová data na text.
+de-identified = De-identifikováno
+de-identified-explanation = Při tomto procesu je v souborech datasetu ke stažení skryta identita přispěvatele hlasových záznamů.
 
 ## NotFound
 
@@ -497,6 +522,12 @@ review-delete-recordings = Smazat nahrávky
 ## Datasets Page
 
 datasets-headline = Vytváříme otevřenou mnohojazyčnou databázi hlasových záznamů, kterou může kdokoli použít k trénování svých hlasových aplikací.
+datasets-positioning =
+    Věříme, že velké, veřejně dostupné hlasové datové soubory podpoří inovace a zdravou konkurenci firem a technologií pro rozpoznávání řeči pomocí strojového učení.
+    
+    Vícejazyčný dataset Common Voice je již největší veřejně dostupným souborem svého druhu, ale není jediným.
+    
+    Podívejte se na tuto stránku, tento centrální rozcestník, který obsahuje další otevřené soubory, ale i aktualizace a nové verze datasetu Common Voice, který stále roste.
 language = Jazyk
 # File size in gigabytes
 size = Velikost
@@ -516,6 +547,10 @@ download-language = Stáhnout jazyk { $language }
 validated-hours = Ověřené hodiny
 recorded-hours = Nahrané hodiny
 whats-inside = Co je uvnitř datové sady Common Voice?
+dataset-description-hours =
+    Každá položka v datové sadě obsahuje unikátní MP3 soubor a odpovídající textový soubor. Mnoho z <b>{ $total }</b> nahraných hodin také obsahuje demografická metadata jako věk, pohlaví nebo přízvuk, která mohou pomoci vylepšit přesnost nástrojů pro rozpoznávání hlasu.
+    
+    Datová sada nyní obsahuje <b>{ $valid }</b> ověřených hodin v <b>{ $languages }</b> jazycích. Stále přidáváme další hlasy a jazyky. Na <languagesLink>stránce s jazyky</languagesLink> můžete začít přispívat, nebo si vyžádat další jazyk.
 want-dataset-update = Chcete se dozvědět o vydávání nových verzí datasetu projektu Common Voice? Přihlaste se k odběru našeho zpravodaje.
 subscribe = Odebírat
 get-started-speech = Začínáme s rozpoznáváním řeči
@@ -570,7 +605,9 @@ other-language = Ostatní jazyky
 ## Languages Overview
 
 language-section-in-progress = Spouští se
+language-section-in-progress-new-description = Tyto jazyky jsou zatím v komunitním vývoji. Ukazatele informují o tom, jak daleko jazyk pokročil v <localizationGlossaryLink>překladu webu</localizationGlossaryLink> a <sentenceCollectionGlossaryLink>sbírání vět</sentenceCollectionGlossaryLink>.
 language-section-launched = Spuštěno
+language-section-launched-description = V těchto jazycích už byly naše stránky <localizationGlossaryLink>přeloženy</localizationGlossaryLink> a mají i dostatek <sentenceCollectionGlossaryLink>nasbíraných vět</sentenceCollectionGlossaryLink> k tomu, aby bylo možné <speakLink>nahrávat</speakLink> a <listenLink>poslouchat</listenLink> hlasové příspěvky.
 languages-show-more = Zobrazit více
 languages-show-less = Zobrazit méně
 language-meter-in-progress = Postup
@@ -591,8 +628,8 @@ listen = Poslouchejte
 skip = Přeskočit
 shortcuts = Zkratky
 clips-with-count = <bold>{ $count }</bold> nahrávek
-goal-help-recording = Pomohli jste Common Voice dosáhnout <goalPercentage></goalPercentage> našeho denního { $goalValue } cíle nahrávání!
-goal-help-validation = Pomohli jste Common Voice dosáhnout <goalPercentage></goalPercentage> našeho denního { $goalValue } cíle ověřování!
+goal-help-recording = Pomohli jste Common Voice dosáhnout <goalPercentage></goalPercentage> denního cíle { $goalValue } nahrávek!
+goal-help-validation = Pomohli jste Common Voice dosáhnout <goalPercentage></goalPercentage> denního cíle { $goalValue } ověřených nahrávek!
 contribute-more =
     { $count ->
         [one] Jste připraveni udělat ještě { $count }?
@@ -602,7 +639,7 @@ contribute-more =
 record-cta = Spustit nahrávání
 record-platform-not-supported = Je nám líto, ale vaše platforma zatím není podporovaná.
 record-platform-not-supported-desktop = Na počítačích si můžete stáhnout nejnovější:
-record-platform-not-supported-ios = Uživatelé <bold>iOS</bold> si mohou zdarma stáhnout naši aplikaci:
+record-platform-not-supported-ios-non-safari = V systému iOS použijte pro nahrávání prohlížeč Safari…
 record-must-allow-microphone = Musíte povolit přístup k mikrofonu.
 record-no-mic-found = Mikrofon nebyl nalezen.
 record-error-too-short = Nahrávka byla příliš krátká.
@@ -616,8 +653,11 @@ record-again-instruction = Skvělé! <recordIcon></recordIcon> Nahrajte váš da
 record-again-instruction2 = Jen tak dál, pokračujte v nahrávání <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Poslední!
 review-tooltip = Zde zkontrolujte nahrávky a nahrajte je znovu
+share-clip = Sdílejte svou nahrávku
+share-common-voice = Sdílejte Common voice
 review-instruction = Zkontrolujte nahrávky a nahrajte je znovu, pokud to bude potřeba
-clips-uploaded = Nahraných klipů
+record-submit-tooltip = { $actionType } odeslat, až bude připraveno
+clips-uploaded = Nahrávky byly uloženy
 record-abort-title = Nechcete napřed dokončit nahrávání?
 record-abort-text = Když nyní odejdete, přijdete o dosavadní postup
 record-abort-submit = Odeslat nahrávky
@@ -627,9 +667,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> byla věta nahrána p
 listen-again-instruction = Skvělá práce!<playIcon></playIcon> Až budete připraveni, můžete poslouchat znova
 listen-3rd-time-instruction = 2 máte za sebou, jen tak dál! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Poslední!
-nothing-to-validate = V tomto jazyce nemáme nic ke kontrole, pomozte nám naplnit frontu.
+listen-empty-state = Nahrávky ve vašem jazyce, které byste ještě mohli ověřovat, nám už bohužel došly...
+speak-empty-state = Věty, které byste mohli ve vašem jazyce nahrát, nám už bohužel došly...
+speak-empty-state-cta = Přidejte další věty
 record-button-label = Nahrajte svůj hlas
 share-title-new = <bold>Pomozte nám</bold> najít další hlasy
+keep-track-profile = Sledujte svůj pokrok pomocí profilu
+login-to-get-started = Přihlaste se či zaregistrujte a můžete začít
+target-segment-first-card = Přispíváte do prvního cílového segmentu
+target-segment-first-banner = Pomozte dosáhnout prvního cílového segmentu Common Voice v jazyce { $locale }
+target-segment-add-voice = Přidejte svůj hlas
+target-segment-learn-more = Zjistit více
 
 ## Reporting
 
@@ -678,6 +726,7 @@ clips-you-validated = Nahrávky, které jste ověřili
 todays-recorded-progress = Dnešní pokrok Common Voice v zaznamenaných nahrávkách
 todays-validated-progress = Dnešní pokrok Common Voice v ověřených nahrávkách
 stats = Statistiky
+awards = Ocenění
 you = Vy
 everyone = Všichni
 contribution-activity = Přispěvatelská aktivita
@@ -686,10 +735,14 @@ recorded-clips = Zaznamenané nahrávky
 validated-clips = Ověřené nahrávky
 total-approved = Celkem schváleno
 overall-accuracy = Celková přesnost
+set-visibility = Nastavit moji viditelnost
+visibility-explainer = Toto nastavení řídí viditelnost výsledkové tabulky. Pokud bude skrytý, bude váš pokrok soukromý. To znamená, že se váš obrázek, uživatelské jméno a postup nezobrazí v žebříčku. Obnovení výsledkové tabulky trvá zhruba  { $minutes } minut, pak se změny projeví.
+visibility-overlay-note = Poznámka: při nastavení na „viditelné“ lze toto nastavení změnit na stránce <profileLink>s profilem</profileLink>
 show-ranking = Ukázat moje hodnocení
 
 ## Custom Goals
 
+get-started-goals = Začněte s cíli
 create-custom-goal = Vytvořit vlastní cíl
 both-speak-and-listen = Obojí
 both-speak-and-listen-long = Obojí (mluvit i poslouchat)
@@ -724,6 +777,19 @@ n-clips = { NUMBER($count) } záznamů
 help-share-goal = Pomozte nám najít více hlasů, sdílejte své cíle
 confirm-goal = Potvrdit Cíl
 goal-interval-weekly = Týdně
+# $type is one of share-goal-type-*
+share-n-daily-contribution-goal = Sdílejte svůj denní cíl { $count } nahraných klipů pro { $type }
+# $type is one of share-goal-type-*
+share-n-weekly-contribution-goal = Sdílejte svůj týdenní cíl { $count } nahraných klipů pro { $type }
+share-goal-type-speak = Hovořit
+share-goal-type-listen = Poslouchat
+share-goal-type-both = Hovořit a Poslouchat
+# LINK will be replaced with the current URL
+goal-share-text = Právě jsem vytvořil osobní cíl pro darování nahrávek hlasu pro #CommonVoice - připojte se ke mně a pomozte učit stroje, jak mluví skuteční lidé { $link }
+weekly-goal-created = Váš týdenní cíl byl vytvořen
+daily-goal-created = Váš denní cíl byl vytvořen
+track-progress = Sledujte pokrok zde a na stránce statistik.
+return-to-edit-goal = Kdykoli se můžete vrátit a cíle upravit.
 share-goal = Sdílet můj cíl
 
 ## Profile Delete

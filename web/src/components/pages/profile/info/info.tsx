@@ -1,11 +1,11 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useCallback, useEffect, useState } from 'react';
-import { RouteComponentProps, withRouter } from 'react-router';
+import { Redirect, RouteComponentProps, withRouter } from 'react-router';
 import { useAction, useAPI } from '../../../../hooks/store-hooks';
 import { NATIVE_NAMES } from '../../../../services/localization';
 import { trackProfile } from '../../../../services/tracker';
@@ -25,6 +25,7 @@ import {
   LabeledInput,
   LabeledSelect,
 } from '../../../ui/ui';
+import { isEnrolled } from '../../dashboard/challenge/constants';
 
 import './info.css';
 
@@ -37,14 +38,14 @@ const Options = withLocalization(
     getString,
   }: {
     children: { [key: string]: string };
-  } & LocalizationProps) => (
-    <React.Fragment>
+  } & WithLocalizationProps) => (
+    <>
       {Object.entries(children).map(([key, value]) => (
         <option key={key} value={key}>
           {getString(key, null, value)}
         </option>
       ))}
-    </React.Fragment>
+    </>
   )
 );
 
@@ -53,9 +54,9 @@ type Locales = { locale: string; accent: string }[];
 function ProfilePage({
   getString,
   history,
-}: LocalizationProps & RouteComponentProps<any>) {
+}: WithLocalizationProps & RouteComponentProps<any, any, any>) {
   const api = useAPI();
-  const [locale] = useLocale();
+  const [locale, toLocaleRoute] = useLocale();
   const user = useTypedSelector(({ user }) => user);
   const { account, userClients } = user;
 
@@ -94,6 +95,8 @@ function ProfilePage({
   const [termsStatus, setTermsStatus] = useState<null | 'show' | 'agreed'>(
     null
   );
+  const isEnrolledInChallenge =
+    user?.userClients[0]?.enrollment || isEnrolled(account);
 
   useEffect(() => {
     if (user.isFetchingAccount || isInitialized) {
@@ -107,7 +110,7 @@ function ProfilePage({
 
     setUserFields({
       ...userFields,
-      sendEmails: account && Boolean(account.basket_token),
+      sendEmails: !!account?.basket_token,
       visible: 0,
       ...pick(user, 'age', 'username', 'gender'),
       ...(account
@@ -160,21 +163,42 @@ function ProfilePage({
       locales: locales.filter(l => l.locale),
       visible: JSON.parse(visible.toString()),
       client_id: user.userId,
+      enrollment: user.userClients[0].enrollment || {
+        team: null,
+        challenge: null,
+        invite: null,
+      },
     };
+
     addUploads([
       async () => {
-        if (!(user.account && user.account.basket_token) && sendEmails) {
+        await saveAccount(data);
+        if (!user.account?.basket_token && sendEmails) {
           await api.subscribeToNewsletter(user.userClients[0].email);
         }
-        saveAccount(data);
-        setIsSaving(false);
+
         addNotification(getString('profile-form-submit-saved'));
+        setIsSaving(false);
       },
     ]);
   }, [api, getString, locale, locales, termsStatus, user, userFields]);
 
   if (!isInitialized) {
     return null;
+  }
+
+  if (!isSaving && isSubmitted && isEnrolledInChallenge) {
+    return (
+      <Redirect
+        to={{
+          pathname: toLocaleRoute(URLS.DASHBOARD + URLS.CHALLENGE),
+          state: {
+            showOnboardingModal: true,
+            earlyEnroll: window.location.search.includes('achievement=1'),
+          },
+        }}
+      />
+    );
   }
 
   return (
@@ -227,6 +251,9 @@ function ProfilePage({
             <Localized id="visible">
               <option value={1} />
             </Localized>
+            {isEnrolledInChallenge && (
+              <option value={2}>Visible within challenge team</option>
+            )}
           </LabeledSelect>
         </Localized>
 
@@ -310,8 +337,8 @@ function ProfilePage({
 
       <Hr />
 
-      {!(user.account && user.account.basket_token) && (
-        <React.Fragment>
+      {!user.account?.basket_token && (
+        <>
           <div className="signup-section">
             <Tooltip
               arrow
@@ -325,38 +352,56 @@ function ProfilePage({
             <div className="checkboxes">
               <LabeledCheckbox
                 label={
-                  <Localized id="email-opt-in-info">
-                    <span />
-                  </Localized>
+                  <>
+                    <Localized id="email-opt-in-info-title">
+                      <strong />
+                    </Localized>
+                    <Localized id="email-opt-in-info-sub-with-challenge">
+                      <span />
+                    </Localized>
+                  </>
                 }
                 onChange={handleChangeFor('sendEmails')}
                 checked={sendEmails}
               />
 
               {!user.account && !isSubmitted && (
-                <React.Fragment>
+                <>
                   <LabeledCheckbox
                     label={
-                      <Localized
-                        id="accept-privacy"
-                        privacyLink={<LocaleLink to={URLS.PRIVACY} blank />}>
-                        <span />
-                      </Localized>
+                      <>
+                        <Localized id="accept-privacy-title">
+                          <strong />
+                        </Localized>
+                        <Localized
+                          id="accept-privacy"
+                          elems={{privacyLink: <LocaleLink to={URLS.PRIVACY} blank />}}>
+                          <span />
+                        </Localized>
+                      </>
                     }
                     checked={privacyAgreed}
                     onChange={handleChangeFor('privacyAgreed')}
                   />
 
                   <Localized id="read-terms-q">
-                    <LocaleLink to={URLS.TERMS} className="terms" blank />
+                    <LocaleLink
+                      to={
+                        isEnrolledInChallenge
+                          ? URLS.CHALLENGE_TERMS
+                          : URLS.TERMS
+                      }
+                      className="terms"
+                      blank
+                    />
                   </Localized>
-                </React.Fragment>
+                </>
               )}
             </div>
           </div>
 
           <Hr />
-        </React.Fragment>
+        </>
       )}
 
       <Localized id="profile-form-submit-save">

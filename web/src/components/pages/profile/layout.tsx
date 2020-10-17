@@ -1,10 +1,10 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 const pick = require('lodash.pick');
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { UserClient } from 'common/user-clients';
+import { UserClient } from 'common';
 import { User } from '../../../stores/user';
 import StateTree from '../../../stores/tree';
 import URLS from '../../../urls';

@@ -2,7 +2,8 @@
 
 .stats,
 .goals,
-.awards {
+.awards,
+.challenge {
     & header {
         @media (--lg-up) {
             max-width: var(--wide-desktop-width);
@@ -38,15 +39,12 @@
 }
 
 .top-bar {
-    border-bottom: 1px solid var(--darker-grey);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
     @media (--sm-down) {
         margin-right: 20px;
         margin-left: 20px;
-        padding: 20px 20px 0;
+        &.with-challenge {
+            margin: 0;
+        }
     }
 
     @media (--md-up) {
@@ -55,12 +53,28 @@
         padding: 30px 0 0;
     }
 
-    & nav {
+    &,
+    .underlined,
+    .challenge-bar {
         display: flex;
-        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .underlined {
+        flex-grow: 1;
+        border-bottom: 1px solid var(--darker-grey);
+        width: 100%;
+
+        @media (--xs-only) {
+            flex-direction: column;
+        }
+    }
+
+    nav {
+        display: flex;
         align-items: flex-end;
 
-        & a {
+        a {
             margin-inline-end: 25px;
             margin-bottom: -1.5px;
             padding-bottom: 5px;
@@ -72,16 +86,19 @@
             }
         }
 
-        & h2 {
+        h2 {
             font-family: var(--strong-font-family);
             font-size: var(--font-size-lg);
             font-weight: normal;
             display: flex;
             flex-direction: row;
             align-items: center;
+            @media (--xs-down) {
+                font-size: 20px;
+            }
         }
 
-        & .badge {
+        .badge {
             border-radius: 50%;
             margin-left: 10px;
             width: 22px;
@@ -96,10 +113,11 @@
         }
     }
 
-    & .languages {
+    .languages {
         display: flex;
 
         @media (--xs-only) {
+            margin-top: 10px;
             flex-direction: column;
             justify-content: space-between;
         }
@@ -172,5 +190,143 @@
                 background: grey;
             }
         }
+    }
+}
+
+.challenge-bar {
+    padding: 0 20px;
+}
+
+.points {
+    height: 40px;
+    border-radius: 19px;
+    border: solid 1px var(--light-grey);
+    background-color: var(--white);
+    display: flex;
+    line-height: 1.71;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin: 0 10px;
+
+    img {
+        width: 14px;
+        height: 14px;
+    }
+
+    span {
+        margin: 0 auto;
+    }
+
+    .score {
+        margin: 0 10px;
+        font-weight: 600;
+    }
+
+    .label {
+        color: #9b9b9b;
+        margin: 0;
+    }
+
+    .divider {
+        height: 100%;
+        margin: 0 10px 0 20px;
+        width: 1px;
+        background-color: var(--light-grey);
+    }
+}
+
+.language {
+    line-height: 40px;
+    color: #9b9b9b;
+}
+
+.language-text {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.17;
+    letter-spacing: 0.43px;
+    color: var(--black);
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.invite-btn {
+    height: 38px;
+    min-width: auto;
+    max-width: 114px;
+    background-color: #629ff4;
+    border: 0;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    flex-shrink: 0;
+
+    .plus-icon {
+        width: 22px;
+        height: 22px;
+        background-color: var(--white);
+        margin-left: 10px;
+        mask-image: url('../../ui/icons/plus.svg');
+        mask-size: contain;
+    }
+
+    &:hover {
+        border: 1px solid var(--black);
+
+        .plus-icon {
+            background-color: var(--black);
+        }
+    }
+}
+.top-bar.with-challenge nav a.active {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+}
+
+@media (--lg-down) {
+    .top-bar.with-challenge {
+        .challenge-language,
+        .points-text {
+            display: none;
+        }
+    }
+}
+@media (--sm-down) {
+    .top-bar.with-challenge {
+        .challenge-bar {
+            position: absolute;
+            width: auto;
+            right: 0;
+        }
+    }
+}
+
+@media (--xs-down) {
+    .top-bar.with-challenge {
+        flex-direction: column-reverse;
+
+        .challenge-bar {
+            width: 100%;
+            padding: 0;
+            margin: 20px 0;
+            position: unset;
+        }
+
+        .points {
+            margin: 0;
+        }
+        nav {
+            width: 100%;
+            justify-content: space-between;
+            a {
+                margin-right: 0;
+            }
+        }
+    }
+    .challenge-container {
+        padding: 20px 0;
     }
 }

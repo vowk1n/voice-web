@@ -1,6 +1,6 @@
 import * as request from 'request-promise-native';
-import { LanguageStats } from 'common/language-stats';
-import DB, { Sentence } from './model/db';
+import { LanguageStats, Sentence } from 'common';
+import DB from './model/db';
 import { DBClipWithVoters } from './model/db/tables/clip-table';
 import lazyCache from './lazy-cache';
 
@@ -8,38 +8,62 @@ const locales = require('locales/all.json') as string[];
 const contributableLocales = require('locales/contributable.json') as string[];
 
 // based on the latest dataset
-const AVG_CLIP_SECONDS = 4.7;
-const AVG_CLIP_SECONDS_PER_LOCALE: { [locale: string]: number } = {
-  en: 4.36,
-  de: 4.17,
-  fr: 4.1,
-  cy: 4.51,
-  br: 3.02,
-  cv: 4.29,
-  tr: 3.88,
-  tt: 3.68,
-  ky: 4.59,
-  'ga-IE': 3.45,
-  kab: 3.61,
-  ca: 4.54,
-  'zh-TW': 2.94,
-  sl: 3.93,
-  it: 4.85,
-  nl: 3.81,
-  cnh: 3.78,
-  eo: 4.56,
-  et: 6.69,
-  fa: 4.5,
-  eu: 5.08,
-  es: 4.14,
-  'zh-CN': 6.53,
-  mn: 5.46,
-  sah: 5.97,
-  dv: 5.41,
-  rw: 4.63,
-  'sv-SE': 3.05,
-  ru: 5.18,
-};
+const AVG_CLIP_SECONDS = 4.695;
+const AVG_CLIP_SECONDS_PER_LOCALE: { [locale: string]: number } = { en: 4.875,
+  de: 4.88,
+  fr: 4.835,
+  cy: 4.67,
+  br: 2.994,
+  cv: 4.868,
+  tr: 3.905,
+  tt: 3.721,
+  ky: 4.651,
+  'ga-IE': 3.39,
+  kab: 3.311,
+  ca: 5.345,
+  'zh-TW': 3.213,
+  sl: 3.925,
+  it: 5.57,
+  nl: 3.92,
+  cnh: 3.563,
+  eo: 5.517,
+  et: 6.673,
+  fa: 4.051,
+  eu: 5.141,
+  es: 4.924,
+  'zh-CN': 5.608,
+  mn: 5.445,
+  sah: 5.979,
+  dv: 5.464,
+  rw: 5.263,
+  'sv-SE': 3.137,
+  ru: 5.479,
+  id: 3.864,
+  ar: 3.683,
+  ta: 4.171,
+  ia: 4.056,
+  pt: 4.423,
+  lv: 3.391,
+  ja: 4.313,
+  vot: 2.396,
+  ab: 6.645,
+  'zh-HK': 4.822,
+  'rm-sursilv': 5.501,
+  hsb: 6.097,
+  ro: 3.959,
+  'fy-NL': 5.013,
+  cs: 4.014,
+  el: 4.153,
+  'rm-vallader': 5.631,
+  pl: 4.307,
+  as: 5.266,
+  uk: 4.791,
+  mt: 4.72,
+  ka: 5.727,
+  'pa-IN': 4.778,
+  or: 5.105,
+  vi: 4.18 };
+
 const getAvgSecondsPerClip = (locale: string) =>
   AVG_CLIP_SECONDS_PER_LOCALE[locale] || AVG_CLIP_SECONDS;
 
@@ -91,7 +115,7 @@ export default class Model {
     locale: string,
     count: number
   ): Promise<DBClipWithVoters[]> {
-    return this.db.findClipsWithFewVotes(
+    return this.db.findClipsNeedingValidation(
       client_id,
       locale,
       Math.min(count, 50)
@@ -103,7 +127,7 @@ export default class Model {
     locale: string,
     count: number
   ): Promise<Sentence[]> {
-    return this.db.findSentencesWithFewClips(
+    return this.db.findSentencesNeedingClips(
       client_id,
       locale,
       Math.min(count, 50)
@@ -131,7 +155,13 @@ export default class Model {
     this.db.endConnection();
   }
 
-  async saveClip(clipData: any) {
+  async saveClip(clipData: {
+    client_id: string;
+    localeId: number;
+    original_sentence_id: string;
+    path: string;
+    sentence: string;
+  }) {
     await this.db.saveClip(clipData);
   }
 
@@ -196,7 +226,7 @@ export default class Model {
         })),
       };
     },
-    20 * MINUTE
+    DAY
   );
 
   getClipsStats = lazyCache(

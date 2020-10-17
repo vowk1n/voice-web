@@ -1,8 +1,8 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { connect } from 'react-redux';
 const { Tooltip } = require('react-tippy');
@@ -10,10 +10,12 @@ import { Flags } from '../../../stores/flags';
 import { Locale } from '../../../stores/locale';
 import StateTree from '../../../stores/tree';
 import { User } from '../../../stores/user';
+import { Sentence } from 'common';
 import {
   trackListening,
   trackProfile,
   trackRecording,
+  getTrackClass,
 } from '../../../services/tracker';
 import URLS from '../../../urls';
 import { LocaleLink, LocaleNavLink, useLocale } from '../../locale-helpers';
@@ -24,8 +26,9 @@ import {
   KeyboardIcon,
   ShareIcon,
   SkipIcon,
+  ExternalLinkIcon,
 } from '../../ui/icons';
-import { Button, LinkButton } from '../../ui/ui';
+import { Button, StyledLink, LinkButton } from '../../ui/ui';
 import { PrimaryButton } from '../../primary-buttons/primary-buttons';
 import ShareModal from '../../share-modal/share-modal';
 import { ReportButton, ReportModal, ReportModalProps } from './report/report';
@@ -58,6 +61,7 @@ const AccountModal = (props: ModalProps) => {
         <LinkButton
           rounded
           href="/login"
+          className={getTrackClass('fs', `nudge-profile-modal`)}
           onClick={() => {
             sessionStorage.setItem('redirectURL', location.pathname);
             trackProfile('contribution-conversion-modal', locale);
@@ -85,12 +89,12 @@ interface PropsFromState {
   user: User.State;
 }
 
-interface Props extends LocalizationProps, PropsFromState {
+interface Props extends WithLocalizationProps, PropsFromState {
   activeIndex: number;
   errorContent?: any;
   reportModalProps: Omit<ReportModalProps, 'onSubmitted'>;
   instruction: (props: {
-    $actionType: string;
+    vars: { actionType: string };
     children: any;
   }) => React.ReactNode;
   isFirstSubmit?: boolean;
@@ -101,7 +105,7 @@ interface Props extends LocalizationProps, PropsFromState {
   onSubmit?: () => any;
   primaryButtons: React.ReactNode;
   pills: ((props: ContributionPillProps) => React.ReactNode)[];
-  sentences: string[];
+  sentences: Sentence[];
   shortcuts: {
     key: string;
     label: string;
@@ -171,7 +175,7 @@ class ContributionPage extends React.Component<Props, State> {
       isPlaying ? this.wave.play() : this.wave.idle();
     }
 
-    if (isSubmitted && user.account && user.account.skip_submission_feedback) {
+    if (isSubmitted && user.account?.skip_submission_feedback) {
       onReset();
     }
   }
@@ -247,6 +251,7 @@ class ContributionPage extends React.Component<Props, State> {
       event.ctrlKey ||
       event.altKey ||
       event.shiftKey ||
+      event.metaKey ||
       this.state.showReportModal
     ) {
       return;
@@ -344,10 +349,16 @@ class ContributionPage extends React.Component<Props, State> {
 
             <div className="links">
               <Localized id="speak">
-                <LocaleNavLink to={URLS.SPEAK} />
+                <LocaleNavLink
+                  className={getTrackClass('fs', `toggle-speak`)}
+                  to={URLS.SPEAK}
+                />
               </Localized>
               <Localized id="listen">
-                <LocaleNavLink to={URLS.LISTEN} />
+                <LocaleNavLink
+                  className={getTrackClass('fs', `toggle-listen`)}
+                  to={URLS.LISTEN}
+                />
               </Localized>
             </div>
 
@@ -355,9 +366,9 @@ class ContributionPage extends React.Component<Props, State> {
               <div className={'counter ' + (isSubmitted ? 'done' : '')}>
                 {isSubmitted && <CheckIcon />}
                 <Localized
-                  id="clips-with-count"
-                  bold={<b />}
-                  $count={this.renderClipCount()}>
+                  id="clips-with-count-pluralized"
+                  elems={{ bold: <b /> }}
+                  vars={{ count: this.renderClipCount() }}>
                   <span className="text" />
                 </Localized>
               </div>
@@ -365,9 +376,11 @@ class ContributionPage extends React.Component<Props, State> {
               <div />
             )}
             {isSubmitted && (
-              <button className="open-share" onClick={this.toggleShareModal}>
-                <ShareIcon />
-              </button>
+              <Tooltip arrow title={getString('share-common-voice')}>
+                <button className="open-share" onClick={this.toggleShareModal}>
+                  <ShareIcon />
+                </button>
+              </Tooltip>
             )}
           </div>
 
@@ -407,13 +420,13 @@ class ContributionPage extends React.Component<Props, State> {
     ) : (
       errorContent ||
         (this.isLoaded && (
-          <React.Fragment>
+          <>
             <div className="cards-and-pills">
               <div />
 
               <div className="cards-and-instruction">
                 {instruction({
-                  $actionType: getString('action-click'),
+                  vars: { actionType: getString('action-click') },
                   children: <div className="instruction hidden-sm-down" />,
                 }) || <div className="instruction hidden-sm-down" />}
 
@@ -425,21 +438,39 @@ class ContributionPage extends React.Component<Props, State> {
                     const isActive = i === activeSentenceIndex;
                     return (
                       <div
-                        key={sentence}
+                        key={sentence ? sentence.text : i}
                         className={
                           'card card-dimensions ' + (isActive ? '' : 'inactive')
                         }
                         style={{
                           transform: [
                             `scale(${isActive ? 1 : 0.9})`,
-                            `translateX(${(document.dir == 'rtl' ? -1 : 1) *
+                            `translateX(${
+                              (document.dir == 'rtl' ? -1 : 1) *
                               (i - activeSentenceIndex) *
-                              -130}%)`,
+                              -130
+                            }%)`,
                           ].join(' '),
                           opacity: i < activeSentenceIndex ? 0 : 1,
                         }}>
                         <div style={{ margin: 'auto', width: '100%' }}>
-                          {sentence}
+                          {sentence?.text}
+                          {sentence?.taxonomy ? (
+                            <div className="sentence-taxonomy">
+                              <Localized id="target-segment-first-card">
+                                <span className="taxonomy-message" />
+                              </Localized>
+                              <StyledLink
+                                className="taxonomy-link"
+                                blank
+                                href={URLS.TARGET_SEGMENT_INFO}>
+                                <ExternalLinkIcon />
+                                <Localized id="target-segment-learn-more">
+                                  <span />
+                                </Localized>
+                              </StyledLink>
+                            </div>
+                          ) : null}
                         </div>
                       </div>
                     );
@@ -452,9 +483,9 @@ class ContributionPage extends React.Component<Props, State> {
                   {!errorContent && (
                     <div className="counter">
                       <Localized
-                        id="clips-with-count"
-                        bold={<b />}
-                        $count={this.renderClipCount()}>
+                        id="clips-with-count-pluralized"
+                        elems={{ bold: <b /> }}
+                        vars={{ count: this.renderClipCount() }}>
                         <span className="text" />
                       </Localized>
                     </div>
@@ -490,7 +521,7 @@ class ContributionPage extends React.Component<Props, State> {
             </div>
 
             {instruction({
-              $actionType: getString('action-tap'),
+              vars: { actionType: getString('action-tap') },
               children: <div className="instruction hidden-md-up" />,
             }) || <div className="instruction hidden-md-up" />}
 
@@ -521,7 +552,11 @@ class ContributionPage extends React.Component<Props, State> {
                 <Button
                   rounded
                   outline
-                  className="skip"
+                  className={[
+                    'skip',
+                    getTrackClass('fs', `skip-${type}`),
+                    'fs-ignore-rage-clicks',
+                  ].join(' ')}
                   disabled={!this.isLoaded}
                   onClick={onSkip}>
                   <Localized id="skip">
@@ -539,7 +574,10 @@ class ContributionPage extends React.Component<Props, State> {
                     })}>
                     <Localized id="submit-form-action">
                       <PrimaryButton
-                        className="submit"
+                        className={[
+                          'submit',
+                          getTrackClass('fs', `submit-${type}`),
+                        ].join(' ')}
                         disabled={!this.isDone}
                         onClick={onSubmit}
                         type="submit"
@@ -549,7 +587,7 @@ class ContributionPage extends React.Component<Props, State> {
                 )}
               </div>
             </div>
-          </React.Fragment>
+          </>
         ))
     );
   }

@@ -1,6 +1,6 @@
 ## General
 
-yes-receive-emails = Vâng, hãy email cho tôi. Tôi muốn nhận thông báo từ dự án Common Voice.
+yes-receive-emails = Hãy gửi email cho tôi. Tôi muốn được biết các thông tin mới nhất về Dự án Common Voice
 stayintouch = Mozilla chúng tôi đang xây dựng một cộng đồng xoay quanh công nghệ giọng nói. Chúng tôi muốn giữ liên hệ với các cập nhật, các nguồn dữ liệu mới và biết thêm về cách bạn sử dụng dữ liệu này.
 privacy-info = Chúng tôi cam kết sẽ xử lý thông tin của bạn một cách cẩn thận. Tìm hiểu thêm ở <privacyLink>Thông Báo Bảo Mật</privacyLink> của chúng tôi.
 return-to-cv = Trở về Common Voice
@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Gửi
 loading = Đang tải...
 email-opt-in-info = Tôi muốn nhận email như lời nhắc mục tiêu, cập nhật tiến độ và bản tin của tôi về Common Voice.
-email-opt-in-privacy = Bằng cách chọn nhận email, bạn tuyên bố rằng bạn đồng ý với việc Mozilla xử lý thông tin này như được giải thích trong <privacyLink>chính sách bảo mật<privacyLink> của Mozilla.
+email-opt-in-info-title = Tham gia danh sách gửi thư Common Voice
+email-opt-in-info-sub-with-challenge = Nhận email như lời nhắc cho thử thách và mục tiêu, cập nhật tiến độ và bản tin về Common Voice.
+email-opt-in-privacy-v2 = Bằng cách chọn nhận email, bạn tuyên bố rằng bạn đồng ý với việc Mozilla xử lý thông tin này như được giải thích trong <privacyLink>chính sách bảo mật</privacyLink> của Mozilla.
 indicates-required = * Trường được yêu cầu
 not-available-abbreviation = N/A
 
@@ -19,115 +21,128 @@ not-available-abbreviation = N/A
 
 ## Languages
 
-ab = Tiếng Abkhaz
-ace = Tiếng Aceh
-ady = Tiếng Adyghe
-af = Tiếng Nam Phi
-am = Tiếng Amhara
-an = Tiếng Aragon
-ar = Tiếng Ả Rập
-as = Tiếng Assam
-ast = Tiếng Asturia
-az = Tiếng Azerbaijan
-ba = Tiếng Bashkir
-bg = Tiếng Bungari
-bn = Tiếng Bengal
-br = Tiếng Breton
-bxr = Tiếng Buryat
-ca = Tiếng Catalunya
-cak = Tiếng Kaqchikel
-cnh = Tiếng Hakha Chin
-cs = Tiếng Séc
-cv = Tiếng Chuvash
-cy = Tiếng Wales
-da = Tiếng Đan Mạch
-de = Tiếng Đức
-dsb = Tiếng Sorb vùng Hạ
-dv = Tiếng Dhivehi
-el = Tiếng Hi Lạp
-en = Tiếng Anh
-eo = Tiếng Esperanto
-es = Tiếng Tây Ban Nha
-et = Tiếng Estonia
-eu = Tiếng Basque
-fa = Tiếng Ba Tư
-ff = Tiếng Fulah
-fi = Tiếng Phần Lan
-fo = Tiếng Faroe
-fr = Tiếng Pháp
-fy-NL = Tiếng Frisia
-ga-IE = Tiếng Ireland
-gl = Tiếng Galicia
-ha = Tiếng Hausa
-he = Tiếng Do Thái
-hi-IN = Tiếng Hindi
-hr = Tiếng Croatia
-hsb = Tiếng Sorb vùng Thượng
-hu = Tiếng Hungary
-ia = Tiếng Khoa học Quốc tế
-id = Tiếng Indonesia
-is = Tiếng Iceland
-it = Tiếng Ý
-izh = Tiếng Izhorian
-ja = Tiếng Nhật
-ka = Tiếng Gruzia
-kab = Tiếng Kabyle
-kk = Tiếng Kazakh
-ko = Tiếng Hàn
-kpv = Tiếng Komi-Zyria
-ku = Tiếng Kurdish
-kw = Tiếng Cornwall
-ky = Tiếng Kyrgyz
-lij = Tiếng Ligurian
-lt = Tiếng Litva
-lv = Tiếng Latvia
-mdf = Tiếng Moksha
-mhr = Tiếng Mari Đông
-mk = Tiếng Macedonia
-ml = Tiếng Malayalam
-mn = Tiếng Mông Cổ
-mrj = Tiếng Mari Tây
-mt = Tiếng Malta
-myv = Tiếng Erzya
-nb-NO = Tiếng Na Uy Bokmål
-ne-NP = Tiếng Nepal
-nl = Tiếng Hà Lan
-nn-NO = Tiếng Na Uy Nynorsk
-oc = Tiếng Occitan
-or = Tiếng Odia
-pl = Tiếng Ba Lan
-pt = Tiếng Bồ Đào Nha
-rm-sursilv = Tiếng Romansh Sursilva
-rm-vallader = Tiếng Romansh
-ro = Tiếng Rumani
-ru = Tiếng Nga
-rw = Tiếng Kinyarwanda
-sah = Tiếng Sakha
-sc = Tiếng Sardinia
-si = Tiếng Sinhala
-sk = Tiếng Slovakia
-sl = Tiếng Slovenia
-sq = Tiếng Albania
-sr = Tiếng Serbia
-sv-SE = Tiếng Thụy Điển
-sw = Tiếng Swahili
-syr = Tiếng Syriac
-ta = Tiếng Tamil
-te = Tiếng Telugu
-tg = Tiếng Tajik
-th = Tiếng Thái
-tr = Tiếng Thổ Nhĩ Kỳ
-tt = Tiếng Tatar
-uby = Tiếng Ubykh
-udm = Tiếng Udmurt
-uk = Tiếng Ukraina
-ur = Tiếng Urdu
-uz = Tiếng Uzbek
-vi = Tiếng Việt
-vot = Tiếng Votic
-zh-CN = Tiếng Trung (Trung Quốc)
-zh-HK = Tiếng Trung (Hồng Kông)
-zh-TW = Tiếng Trung (Đài Loan)
+ab = Abkhaz
+ace = Aceh
+ady = Adyghe
+af = Nam Phi
+am = Amhara
+an = Aragon
+ar = Ả Rập
+arn = Mapuche
+as = Assam
+ast = Asturias
+az = Azerbaijan
+ba = Bashkir
+be = Belarut
+bg = Bulgaria
+bn = Bengal
+br = Breton
+bxr = Buryat
+ca = Catalunya
+cak = Kaqchikel
+cnh = Hakha Chin
+cs = Séc
+cv = Chuvash
+cy = Wales
+da = Đan Mạch
+de = Đức
+dsb = Hạ Sorb
+dv = Dhivehi
+el = Hy Lạp
+en = Anh
+eo = Quốc tế ngữ
+es = Tây Ban Nha
+et = Estonia
+eu = Basque
+fa = Ba Tư
+ff = Fula
+fi = Phần Lan
+fo = Faroe
+fr = Pháp
+fy-NL = Frisia
+ga-IE = Ireland
+gl = Galicia
+ha = Hausa
+he = Do Thái
+hi = Hindi
+hr = Croatia
+hsb = Thượng Sorb
+hu = Hungary
+hy-AM = Armenia
+hyw = Armenia Tây
+ia = Interlingua
+id = Indo
+is = Iceland
+it = Ý
+izh = Izhorian
+ja = Nhật
+ka = Gruzia
+kaa = Karakalpak
+kab = Kabyle
+kbd = Kabardian
+kk = Kazakh
+ko = Hàn
+kpv = Komi-Zyria
+ku = Kurd
+kw = Cornwall
+ky = Kyrgyz
+lg = Luganda
+lij = Ligurian
+lt = Litva
+lv = Latvia
+mdf = Moksha
+mg = Malagasy
+mhr = Mari Đông
+mk = Macedonia
+ml = Malayalam
+mn = Mông Cổ
+mrj = Mari Tây
+mt = Malta
+my = Miến Điện
+myv = Erzya
+nb-NO = Na Uy Bokmål
+ne-NP = Nepal
+nl = Hà Lan
+nn-NO = Na Uy Nynorsk
+oc = Occitan
+or = Odia
+pa-IN = Punjabi
+pl = Ba Lan
+pt = Bồ Đào Nha
+rm-sursilv = Romansh Sursilva
+rm-vallader = Romansh
+ro = Rumani
+ru = Nga
+rw = Kinyarwanda
+sah = Sakha
+sc = Sardinia
+scn = Sicilian
+si = Sinhala
+sk = Slovakia
+sl = Slovenia
+sq = Albania
+sr = Serbia
+sv-SE = Thụy Điển
+sw = Swahili
+syr = Syriac
+ta = Tamil
+te = Telugu
+tg = Tajik
+th = Thái
+tl = Tagalog
+tr = Thổ Nhĩ Kỳ
+tt = Tatar
+uby = Ubykh
+udm = Udmurt
+uk = Ukraina
+ur = Urdu
+uz = Uzbek
+vec = Venetian
+vi = Việt
+vot = Votic
+zh-CN = Trung (Trung Quốc)
+zh-HK = Trung (Hồng Kông)
+zh-TW = Trung (Đài Loan)
 
 # [/]
 
@@ -217,7 +232,7 @@ whats-public = Có gì được công khai?
 email-not-public = Chúng tôi sẽ không công khai email của bạn.
 recordings-and-locale-public = Số lượng bản ghi và ngôn ngữ bạn đóng góp sẽ được công khai.
 username-optin-public = Bạn có thể chọn đặt tên người dùng của mình ở chế độ công khai hoặc ẩn danh.
-demographic-deidentified = Dữ liệu được gửi tùy chọn (ví dụ: tuổi, giới tính, ngôn ngữ và giọng nói) được xác định lại từ dữ liệu giọng nói đã gửi của bạn và sẽ không bao giờ được công khai trên hồ sơ của bạn.
+demographic-deidentified-clarity = Dữ liệu nhân khẩu học được gửi tùy chọn (ví dụ: tuổi, giới tính, ngôn ngữ và giọng nói) sẽ không bao giờ được công khai trên hồ sơ của bạn và sẽ không được liên kết với tài khoản của bạn trong bộ dữ liệu. Các clip âm thanh riêng lẻ sẽ được liên kết với dữ liệu nhân khẩu học nhằm mục đích phân tích chính xác hơn - ví dụ: nhà nghiên cứu có thể muốn nhắm mục tiêu mô hình đào tạo đến một phân khúc nhân khẩu học cụ thể.
 username-email-not-demographic = Tên người dùng và email của bạn sẽ không được liên kết với dữ liệu được công bố.
 
 ## Speak & Listen Shortcuts
@@ -260,7 +275,7 @@ status-hours =
 # Variables:
 # $goal - number of hours representing the next goal
 status-goal = Mục tiêu tiếp theo: { $goal }
-english = Tiếng Anh
+english = Anh
 
 ## ProfileForm
 
@@ -303,6 +318,7 @@ thanks-for-account = Cảm ơn bạn đã xác nhận tài khoản của mình, 
 why-demographic = Vì sao điều này quan trọng?
 why-demographic-explanation = Dữ liệu người dùng ẩn danh như tuổi, giới tính và giọng vùng miền giúp cải thiện dữ liệu âm thanh được sử dụng để đào tạo sự chính xác của công cụ nhận dạng giọng nói. Tên người dùng và email của bạn sẽ không bao giờ được liên kết với dữ liệu đã gửi của bạn, và bạn có thể chọn đặt tên người dùng của mình ở chế độ công khai hoặc ẩn danh.
 accept-privacy = Tôi đồng ý với việc các bạn xử lý thông tin này khi các bạn giải thích trong <privacyLink>Chính sách bảo mật</privacyLink> của Mozilla
+accept-privacy-title = Chính sách riêng tư
 login-identity = Nhận dạng đăng nhập
 login-signup = Đăng nhập / Đăng ký
 edit = Chỉnh sửa
@@ -431,11 +447,11 @@ about-partnership =
     
     Chúng tôi xin cảm ơn những người và tổ chức sau đây đã giúp đỡ cho dự án:
 about-get-involved = Tham gia đóng góp
-about-get-involved-text =
+about-get-involved-text-2 =
     Bạn muốn giúp làm cho Common Voice trở nên tốt hơn?
-    Tuyệt quá! Hãy liên lạc qua email hoặc trên <discourseLink>Discourse</discourseLink>,
-    gửi phản hồi thông qua <githubLink>GitHub</githubLink>,
-    hoặc tham gia với chúng tôi trên <slackLink>Slack</slackLink>.
+    Tuyệt quá! Hãy liên lạc qua email hoặc diễn đàn <discourseLink>Discourse</discourseLink>,
+    gửi các vấn đề về trang web thông qua <githubLink>GitHub</githubLink>,
+    hoặc tham gia trò chuyện cộng đồng trên <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Tại sao ?
 about-nav-how-it-works = Làm thế nào ?
 about-nav-partners = Đối tác
@@ -461,10 +477,13 @@ sst-explanation = Công nghệ Nhận dạng giọng nói (STT) chuyển đổi 
 de-identified = Không xác định
 de-identified-explanation = Quá trình mà một người đóng góp thông tin hồ sơ cá nhân bị che khuất khỏi các clip thoại được tặng của họ khi được đóng gói để tải xuống như một phần của bộ dữ liệu.
 
-## NotFound
+## Error pages
 
-notfound-title = Không tìm thấy
-notfound-content = Tôi không biết bạn đang tìm gì.
+error-title-404 = Chúng tôi không thể tìm thấy trang đó cho bạn
+error-content-404 = Có lẽ <homepageLink>trang chủ</homepageLink> của chúng tôi sẽ giúp ích? Để đặt câu hỏi, vui lòng tham gia <matrixLink>cộng đồng trò chuyện trên Matrix</matrixLink>, theo dõi các sự cố trang qua <githubLink>GitHub</githubLink> hoặc truy cập <discourseLink>diễn đàn Discourse của chúng tôi</discourseLink>.
+error-title-503 = Đã xảy ra sự cố bất ngờ
+error-content-503 = Các trang web sẽ quay lại càng sớm càng tốt. Để biết thông tin mới nhất, vui lòng tham gia <matrixLink>cộng đồng trò chuyện trên Matrix</matrixLink> hoặc truy cập <githubLink>GitHub</githubLink> hoặc <discourseLink>diễn đàn Discourse của chúng tôi</discourseLink> để gửi và theo dõi các vấn đề về trải nghiệm trang web.
+error-code = Lỗi { $code }
 
 ## Data
 
@@ -483,6 +502,8 @@ data-bundle-button = Tải Gói dữ liệu xuống
 data-bundle-description = Dữ liệu Common Voice cộng với tất cả các bộ dữ liệu giọng nói khác ở trên.
 license = Giấy phép: <licenseLink>{ $license }</licenseLink>
 license-mixed = Xáo trộn
+data-download-singleword-title = Tải xuống phân đoạn mục tiêu từ đơn
+data-download-singleword-callout = Đây là phân đoạn theo trường hợp sử dụng có chứa dữ liệu để tăng khả năng nhận dạng chữ số nói, phát hiện có / không và kiểm tra dữ liệu cho <fxLink>Firefox Voice</fxLink>.
 review-terms = Bằng việc sử dụng Common Voice, bạn đồng ý với <termsLink>Điều khoản</termsLink> và <privacyLink>Thông báo bảo mật</privacyLink> của chúng tôi
 terms-agree = Tôi đồng ý
 terms-disagree = Tôi không đồng ý
@@ -603,7 +624,10 @@ contribute = Đóng góp
 listen = Nghe
 skip = Bỏ qua
 shortcuts = Phím tắt
-clips-with-count = <bold>{ $count }</bold> Clip
+clips-with-count-pluralized =
+    { $count ->
+       *[other] <bold>{ $count }</bold> clip
+    }
 goal-help-recording = Bạn đã giúp cho Common Voice đạt được <goalPercentage></goalPercentage> trong số { $goalValue } mục tiêu ghi âm hàng ngày của chúng tôi!
 goal-help-validation = Bạn đã giúp cho Common Voice đạt được <goalPercentage></goalPercentage> trong số { $goalValue } mục tiêu xác thực hàng ngày của chúng tôi!
 contribute-more =
@@ -613,7 +637,7 @@ contribute-more =
 record-cta = Bắt đầu ghi âm
 record-platform-not-supported = Chúng tôi rất tiếc, nhưng thiết bị của bạn hiện không được hỗ trợ.
 record-platform-not-supported-desktop = Trên máy tính để bàn, bạn có thể tải xuống phiên bản mới nhất:
-record-platform-not-supported-ios = Người dùng <bold>iOS</bold> có thể tải xuống ứng dụng miễn phí của chúng tôi:
+record-platform-not-supported-ios-non-safari = Trên iOS, vui lòng tiếp tục với Safari để cho phép ghi âm…
 record-must-allow-microphone = Bạn cần phải cho phép truy cập micrô.
 record-no-mic-found = Không tìm thấy micrô.
 record-error-too-short = Bản ghi âm quá ngắn
@@ -627,6 +651,8 @@ record-again-instruction = Tuyệt!<recordIcon></recordIcon> Ghi âm clip tiếp
 record-again-instruction2 = Hãy tiếp tục! Ghi âm lại <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Cái cuối cùng!
 review-tooltip = Xem lại và ghi âm lại các clip ở đây khi bạn tiếp tục
+share-clip = Chia sẻ giọng nói của bạn
+share-common-voice = Chia sẻ Common Voice
 review-instruction = Xem lại & quay lại clip nếu cần
 record-submit-tooltip = { $actionType } gửi khi sẵn sàng
 clips-uploaded = Đã tải clip lên
@@ -639,11 +665,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> họ có nói chính x
 listen-again-instruction = Làm tốt lắm!<playIcon></playIcon> Nghe lại khi bạn đã sẵn sàng
 listen-3rd-time-instruction = 2 cái đã xong, cố gắng lên!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Cái cuối cùng!
-nothing-to-validate = Chúng tôi không có gì để xác thực của ngôn ngữ này. Hãy giúp chúng tôi điền nó vào danh sách.
+listen-empty-state = Chúng tôi đã hết clip để xác thực bằng ngôn ngữ này...
+speak-empty-state = Chúng tôi đã hết câu để ghi lại bằng ngôn ngữ này...
+speak-empty-state-cta = Đóng góp câu
 record-button-label = Ghi âm giọng nói của bạn
 share-title-new = <bold>Giúp chúng tôi</bold> tìm thêm giọng nói
 keep-track-profile = Theo dõi tiến trình của bạn với một hồ sơ
 login-to-get-started = Đăng nhập hoặc đăng ký để bắt đầu
+target-segment-first-card = Bạn đang đóng góp cho phân đoạn mục tiêu đầu tiên của chúng tôi
+target-segment-first-banner = Giúp tạo phân đoạn mục tiêu đầu tiên của Common Voice trong { $locale }
+target-segment-add-voice = Thêm giọng nói của bạn
+target-segment-learn-more = Tìm hiểu thêm
 
 ## Reporting
 
@@ -686,6 +718,7 @@ validations =
 
 your-languages = Ngôn ngữ của bạn
 toward-next-goal = Hướng tới mục tiêu tiếp theo
+goal-reached = Đã đạt được mục tiêu
 clips-you-recorded = Clip bạn đã ghi
 clips-you-validated = Clip bạn đã xác thực
 todays-recorded-progress = Tiến trình giọng nói chung hôm nay trên các clip được ghi lại
@@ -709,6 +742,7 @@ show-ranking = Hiển thị hạng của tôi
 
 get-started-goals = Bắt đầu với mục tiêu
 create-custom-goal = Tạo mục tiêu tùy chỉnh
+goal-type = Loại mục tiêu nào bạn muốn xây dựng?
 both-speak-and-listen = Cả hai
 both-speak-and-listen-long = Cả hai (nói và nghe)
 daily-goal = Mục tiêu hàng ngày
@@ -722,13 +756,26 @@ want-to-continue = Bạn có muốn tiếp tục?
 finish-editing = Kết thúc chỉnh sửa trước?
 lose-changes-warning = Rời đi sẽ làm mất những thay đổi của bạn
 build-custom-goal = Xây dựng mục tiêu tùy chỉnh
-help-reach-hours = Trợ giúp đạt { NUMBER($hours) } giờ trong ngôn ngữ { $language } với mục tiêu cá nhân
-help-reach-hours-general = Giúp Common Voice đạt được { NUMBER($hours) } giờ bằng ngôn ngữ với mục tiêu cá nhân
+help-reach-hours-pluralized =
+    Giúp tiếp cận{ NUMBER($hours) ->
+       *[other] { $hours } giờ
+    } trong ngôn ngữ { $language } với mục tiêu cá nhân
+help-reach-hours-general-pluralized =
+    Giúp Common Voice đạt{ NUMBER($hours) ->
+       *[other] { $hours } giờ
+    } trong một ngôn ngữ với mục tiêu cá nhân
 set-a-goal = Đặt một mục tiêu
 cant-decide = Không thể quyết định?
-activity-needed-calculation =
-    { NUMBER($totalHours) } giờ có thể đạt được chỉ trong hơn { NUMBER($periodMonths) }
-    tháng nếu { NUMBER($people) } người ghi { NUMBER($clipsPerDay) } clip mỗi ngày.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+       *[other] { $totalHours } giờ
+    } có thể đạt được chỉ trong hơn { NUMBER($periodMonths) ->
+       *[other] { $periodMonths } tháng
+    } nếu { NUMBER($people) ->
+       *[other] { $people } người
+    } ghi { NUMBER($clipsPerDay) ->
+       *[other] { $clipsPerDay } clip
+    } một ngày.
 how-many-per-day = Tuyệt quá! Có bao nhiêu clip mỗi ngày?
 how-many-a-week = Tuyệt quá! Có bao nhiêu clip một tuần?
 which-goal-type = Bạn có muốn nói, nghe hay cả hai?
@@ -736,7 +783,10 @@ receiving-emails-info =
     Bạn hiện đang được thiết lập để nhận email như lời nhắc mục tiêu, 
     cập nhật tiến độ của tôi và bản tin về Common Voice.
 not-receiving-emails-info = Hiện tại bạn đang được đặt thành <bold>KHÔNG</bold> nhận email như lời nhắc mục tiêu, cập nhật của tôi tiến độ và bản tin về Common Voice
-n-clips = { NUMBER($count) } clip
+n-clips-pluralized =
+    { NUMBER($count) ->
+       *[other] { $count } clip
+    }
 help-share-goal = Hãy giúp chúng tôi tìm thêm tiếng nói, chia sẻ mục tiêu của bạn
 confirm-goal = Xác nhận mục tiêu
 goal-interval-weekly = Hàng tuần

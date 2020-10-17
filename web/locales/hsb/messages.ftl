@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Wotpósłać
 loading = Čita so…
 email-opt-in-info = Bych rady mejlki přijał, kaž na přikład cilowe dopomnjeća, postupowe aktualizacije a powěsćowe listy wo Common Voice.
-email-opt-in-privacy = Jeli chceće e-mejlki dóstać, dyrbiće do wobchadźenja Mozilla z tymi informacijemi zwolić, kotrež so w <privacyLink>prawidłach priwatnosće<privacyLink> Mozilla rozjasnjeja.
+email-opt-in-info-title = Abonujće rozsyłansku lisćinu Common Voice
+email-opt-in-info-sub-with-challenge = Dóstańće mejlki, kaž na přikład wužadanske a cilowe dopomnjeća, postupowe aktualizacije a powěsćowe listy wo Common Voice.
+email-opt-in-privacy-v2 = Jeli chceće e-mejlki dóstać, dyrbiće do wobchadźenja Mozilla z tymi informacijemi zwolić, kotrež so w <privacyLink>prawidłach priwatnosće</privacyLink> Mozilla rozjasnjeja.
 indicates-required = * Woznamjenja trěbne polo
 not-available-abbreviation = Ničo k dispoziciji
 
@@ -26,10 +28,12 @@ af = Afrikanšćina
 am = Amharšćina
 an = Aragonšćina
 ar = Arabšćina
+arn = Mapudungun
 as = Asamšćina
 ast = Asturišćina
 az = Azerbajdźanšćina
 ba = Baškiršćina
+be = Běłorušćina
 bg = Bołharšćina
 bn = Bengalšćina
 br = Bretonšćina
@@ -60,10 +64,12 @@ ga-IE = Iršćina
 gl = Galicišćina
 ha = Hausa
 he = Hebrejšćina
-hi-IN = Hindišćina
+hi = Hindišćina
 hr = Chorwatšćina
 hsb = Hornjoserbšćina
 hu = Madźaršćina
+hy-AM = Armenšćina
+hyw = Zapadoarmenšćina
 ia = Interlingua
 id = Indonešćina
 is = Islandšćina
@@ -71,23 +77,28 @@ it = Italšćina
 izh = Ižoršćina
 ja = Japanšćina
 ka = Georgišćina
+kaa = Karakalpakšćina
 kab = Kabylšćina
+kbd = Kabardinšćina
 kk = Kazachšćina
 ko = Korejšćina
 kpv = Komi-syrjenšćina
 ku = Kurdišćina
 kw = Kornišćina
 ky = Kirgišćina
+lg = Luganda
 lij = Ligurišćina
 lt = Litawšćina
 lv = Letišćina
 mdf = Mokša
+mg = Malagasišćina
 mhr = Łučna marišćina
 mk = Makedonšćina
 ml = Malajalamšćina
 mn = Mongolšćina
 mrj = Hórska marišćina
 mt = Maltašćina
+my = Burmašćina
 myv = Erzya
 nb-NO = Norwegski Bokmål
 ne-NP = Nepalšćina
@@ -95,6 +106,7 @@ nl = Nižozemšćina
 nn-NO = Norwegski Nynorsk
 oc = Okcitanšćina
 or = Odiašćina
+pa-IN = Pundžabšćina
 pl = Pólšćina
 pt = Portugalšćina
 rm-sursilv = Retoromanšćina Sursilvan
@@ -104,6 +116,7 @@ ru = Rušćina
 rw = Kinjarwanda
 sah = Sachašćina
 sc = Sardinšćina
+scn = Sicilšćina
 si = Singalezišćina
 sk = Słowakšćina
 sl = Słowjenšćina
@@ -116,6 +129,7 @@ ta = Tamilšćina
 te = Telugušćina
 tg = Tadźikišćina
 th = Thaišćina
+tl = Tagalog
 tr = Turkowšćina
 tt = Tataršćina
 uby = Ubychišćina
@@ -123,6 +137,7 @@ udm = Udmurtšćina
 uk = Ukrainšćina
 ur = Urdu
 uz = Uzbekšćina
+vec = Wenecianišćina
 vi = Vietnamšćina
 vot = Wotšćina
 zh-CN = Chinšćina (China)
@@ -226,7 +241,7 @@ whats-public = Što je zjawne?
 email-not-public = Wašu e-mejlowu adresu njewozjewimy.
 recordings-and-locale-public = Ličba natočenjow a rěčow, ke kotrymž přinošujeće, budu zjawne.
 username-optin-public = Móžeće swoje wužiwarske mjeno wozjewić abo anonymizować.
-demographic-deidentified = Na přeće wotpósłane demografiske daty (na př. staroba, splah, rěč a akcent) so z wašich wotpósłanych hłosowych datow wotstronja a ženje we wašim profilu njewozjewja.
+demographic-deidentified-clarity = Opcionelnje zapodate demografiske daty (na př. staroba, splah, rěč a akcent) so we wašim profilu ženje njewozjewja a z wašim kontom w datowej sadźbje njezwjazaja. Jednotliwe awdioklipy so z demografiskimi datami za dokładnišu analyzu zwjazaja - slědźer na přikład chce snano treningowy model na wěsty demografiski segment wusměrić.
 username-email-not-demographic = Waše wužiwarske mjeno a e-mejlowa adresa so z wozjewjenymi datami njezwjazujetej.
 
 ## Speak & Listen Shortcuts
@@ -315,6 +330,7 @@ thanks-for-account = Dźakujemy so, zo sće swoje konto wobkrućił, chcemy nět
 why-demographic = Čehodla je to wažne?
 why-demographic-explanation = Anonymizowane wužiwarske daty kaž staroba, splah a akcent pomhaja awdiodaty polěpšić, kotrež so wužiwaja, zo bychu dokładnosć softwary rěčenskeho spóznaća trenowali. Waše wužiwarske mjeno a e-mejlowa adresa so ženje z wašimi pósłanymi datami njezwjazujetej, a móžeće wubrać, hač ma waše wužiwarske mjeno zjawne abo anonymne być.
 accept-privacy = Sym přezjedny, zo so tute informacije wužiwaja, kak so w <privacyLink>prawidłach priwatnosće</privacyLink> Mozilla wujasnja.
+accept-privacy-title = Prawidła priwatnosće
 login-identity = Přizjewjenska identita
 login-signup = Přizjewić/Registrować
 edit = Wobdźěłać
@@ -382,7 +398,7 @@ faq-why-my-lang-q = Čehodla moja rěč hišće njeje?
 faq-why-my-lang-new-a = Mozilla sej wěstu rěč njewudypuje a wěste rěče njepreferuje. Město toho je Common Voice iniciatiwa, kotrež so dospołnje wot zhromadźenstwa doprědka ćěri, ale su trěbne <multilangLink>wjacore kroki, zo by so nowa rěč přidała</multilangLink> a zo by so hromadźenje rěčnych darow započało. Najprjedy dyrbi so websydło Common Voice přełožować, zo bychu čłonojo zhromadźenstwa přistup na nazhonjenja sobuskutkowarjow w swojej rěči měli. Jako přichodne trjebamy wulku zběrku sadow bjez awtorskoprawniskeho škita, kotrež ludźo móža wótře předčitać. Hdyž stej tutej žadani spjelnjenej, so rěč na Common Voice "startuje", zo bychu ludźo móhli swój hłós natočić a dary druhich wobkrućić. Jeli chceće pomhać, nowu rěč startować, wobhladajće sej naš <sentenceCollectorLink>nastroj za hromadźenje sadow</sentenceCollectorLink>, zo byšće započał.
 faq-what-quality-q = Kotra awdiokwalita je trěbna, zo by so hłosowy klip w datowej sadźbje wužiwał?
 faq-what-quality-a = Chcemy, zo datowa sadźba Common Voice awdiokwalitu wotbłyšćuje, kotruž mašina rěčenja do teksta w swobodnej přirodźe słyša, pytamy tuž za wšelakorosću. Nimo wšelakoreho zhromadźenstwa rěčnikow, datowa sadźba z wšelakej awdiokwalitu mašinu rěčenja do teksta wukmani, z rozdźělnymi situacijemi z woprawdźiteho žiwjenja wobchadźeć, wot rozmołwow w pozadku do  awtoweho šuma. Tak dołho kaž waš hłosowy klip je rozumić, dyrbjał dobry dosć za datowu sadźbu być.
-faq-why-10k-hours-q = Čehodla je 10.000 přepruwowanych hodźin na rěč cil za awdionatočenje?
+faq-why-10k-hours-q = Čehodla je 10&#x202f;000 přepruwowanych hodźin na rěč cil za awdionatočenje?
 faq-why-10k-hours-a = To je přibližnje ličba hodźin, kotrež su trěbne, zo by produktiwny system rěčenje do teksta treněrowało.
 faq-how-calc-hours-q = Kak Common Voice hodźiny wobličuje?
 faq-how-calc-hours-a = Trochujemy přerěznu dołhosć kóždeho natočenja a multiplikujemy potom tutu ličbu z cyłkownej ličbu natočenjow přez wšě rěče, zo bychmy hodźiny wuličili.
@@ -440,9 +456,9 @@ about-partnership =
     
     Chcemy so slědowacym ludźom a organizacijam za jich pomoc na projekće dźakować:
 about-get-involved = Čińće sobu
-about-get-involved-text =
+about-get-involved-text-2 =
     Chceće pomhać, Common Voice polěpšić?
-    Wulkotnje! Stajće so z nami přez e-mejl abo na <discourseLink>Discourse</discourseLink>  do zwiska, sćelće swoje komentary přez <githubLink>Github</githubLink> abo wopytajće nas na <slackLink>Slack</slackLink>.
+    Wulkotnje! Stajće so z nami přez e-mejl abo we forumach <discourseLink>Discourse</discourseLink>  do zwiska, sćelće sydłowe problemy přez <githubLink>Github</githubLink> abo wopytajće nas w chaće zhromadźenstwa <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Čehodla?
 about-nav-how-it-works = Kak?
 about-nav-partners = Partnerojo
@@ -462,16 +478,19 @@ localization-explanation = To je naš proces za přełožowanje a přiměrjenje 
 sentence-collection = Zběrka sadow
 sentence-collection-explanation = Hromadźenje powšitkownosći wužitnych sadow abo pisanje nowych powšitkownosći wužitnych sadow.
 hours-recorded-explanation = Ličba dotal nahromadźenych natočenych hodźin.
-hours-validated-explanation = Ličba hodźin hłosoweho natočenja, kotrež su so wot 2 z 3 wužiwarjow z "Haj" wobkrućili. To postup k cyłkownemu cilej 10&thinso;000 hodźin markěruje.
+hours-validated-explanation = Ličba hodźin hłosoweho natočenja, kotrež su so wot 2 z 3 wužiwarjow z "Haj" wobkrućili. To postup k cyłkownemu cilej 10&#x202f;000 hodźin markěruje.
 sst = Rěčenje-do-teksta (STT)
 sst-explanation = Technologije Rěčenje-do-teksta (STT) hłosowe daty to teksta konwertuja.
 de-identified = Anonymizowane
 de-identified-explanation = Proces, přez kotryž so profilowe informacije sobuskutkowarja z jeho darjenych hłosowych klipow zakrywaja, hdyž so za sćehnjenje jako dźěl datoweje sadźby pakuja.
 
-## NotFound
+## Error pages
 
-notfound-title = Njenamakany
-notfound-content = Boju so, njewěm, za čim pytaće.
+error-title-404 = Njemóžachmy tu stronu za was namakać
+error-content-404 = Snano budźe naša <homepageLink>startowa strona</homepageLink> pomhać? Zo byšće prašenje stajił, wobdźělće so na <matrixLink>chaće zhromadźenstwa Matrix</matrixLink>, zdźělće problemy z websydłom přez <githubLink>GitHub</githubLink> abo wopytajće <discourseLink>naše forumy na Discourse</discourseLink>.
+error-title-503 = Mamy njewočakowany čas staća
+error-content-503 = Sydło budźe tak bórze kaž móžno zaso k dispoziciji. Najnowše informacije dóstanjeće w <matrixLink>chaće zhromadźenstwa Matrix</matrixLink>, abo wopytajće <githubLink>GitHub</githubLink> abo <discourseLink>naše forumy na Discourse</discourseLink>, zo byšće problemy ze sydłom zdźělił abo zmylkowe rozprawy čitał.
+error-code = Zmylk { $code }
 
 ## Data
 
@@ -490,6 +509,8 @@ data-bundle-button = Paket datowych sadźbow sćahnyć
 data-bundle-description = Daty Common Voice plus wšě druhe hłosowe datowe sadźby horjeka.
 license = Licenca: <licenseLink>{ $license }</licenseLink>
 license-mixed = Měšany
+data-download-singleword-title = Sćehńće cilowy segment jednotliweho słowa
+data-download-singleword-callout = To je segment, kotryž so přez nałožowanski pad wodźi, kotryž daty wobsahuje, zo by spóznawanje rěčanych cyfrow, haj/ně-wotkrywanje a testowanske daty wakeword za <fxLink>Firefox Voice</fxLink> podpěrał.
 review-terms = Hdyž Common Voice wužiwaće, zwoliće do našich <termsLink>wužiwarskich wuměnjenjow</termsLink> a <privacyLink>zdźělenki priwatnosće</privacyLink>
 terms-agree = Sym přezjedny
 terms-disagree = Njejsym přezjedny
@@ -610,7 +631,13 @@ contribute = Sobu dźěłać
 listen = Słuchać
 skip = Přeskočić
 shortcuts = Skrótšenki
-clips-with-count = <bold>{ $count }</bold> klipow
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> klip
+        [two] <bold>{ $count }</bold> klipaj
+        [few] <bold>{ $count }</bold> klipy
+       *[other] <bold>{ $count }</bold> klipow
+    }
 goal-help-recording = Sće Common Voice pomhał, <goalPercentage></goalPercentage> našeho wšědneho natočenskeho cila { $goalValue } docpěć!
 goal-help-validation = Sće Common Voice pomhał, <goalPercentage></goalPercentage> našeho wšědneho wobkručenskeho  cila { $goalValue } docpěć!
 contribute-more =
@@ -623,7 +650,7 @@ contribute-more =
 record-cta = Natočenje startować
 record-platform-not-supported = Je nam žel, ale waša platforma so tuchwilu njepodpěruje.
 record-platform-not-supported-desktop = Na desktopowych ličakach móžeće najnowšu wersiju sćahnyć:
-record-platform-not-supported-ios = Wužiwarjo <bold>iOS</bold> móža naše darmotne nałoženje sćahnyć:
+record-platform-not-supported-ios-non-safari = Prošu pokročujće na iOS ze Safari, zo byšće natočenje zmóžnił…
 record-must-allow-microphone = Dyrbiće přistup na mikrofon dowolić.
 record-no-mic-found = Žadyn mikrofon namakany.
 record-error-too-short = Natočenje bě překrótke.
@@ -637,6 +664,8 @@ record-again-instruction = Wulkotne! <recordIcon></recordIcon> Natočće swój p
 record-again-instruction2 = Dale tak, <recordIcon></recordIcon> znowa natočić
 record-last-instruction = <recordIcon></recordIcon> Poslednje!
 review-tooltip = Tu móžeće klipy přepruwować a znowa natočić
+share-clip = Waš klip dźělić
+share-common-voice = Common Voice dźělić
 review-instruction = Klipy přepruwować a znowa natočić, jeli trěbne
 record-submit-tooltip = { $actionType } wotpósłać, hdyž sće hotowy
 clips-uploaded = Natočenja nahrate
@@ -649,11 +678,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> je so sada korektnje 
 listen-again-instruction = Wulkotne dźěło! <playIcon></playIcon> Słuchajće znowa, hdyž sće hotowy
 listen-3rd-time-instruction = 2 sčinjenej, <playIcon></playIcon> dale tak!
 listen-last-time-instruction = <playIcon></playIcon> Poslednje!
-nothing-to-validate = Nimamy ničo, kotrež móžemy w tutej rěči přepruwować, prošu pomhajće nam čakanski rynk pjelnić.
+listen-empty-state = Klipy su nam wušli, kotrež so w tutej rěči přepruwuja...
+speak-empty-state = Sady su nam wušli, kotrež so w tutej rěči natočeja...
+speak-empty-state-cta = Sady přinošować
 record-button-label = Nahrajće swój hłós
 share-title-new = <bold>Pomhajće nam</bold>, dalše hłosy namakać
 keep-track-profile = Slědujće swojemu postupej z profilom
 login-to-get-started = Přizjewće so abo registrujće so, zo byšće započał
+target-segment-first-card = Přinošujeće k našemu prěnjemu cilowemu segmentej
+target-segment-first-banner = Pomhajće prěni cilowy segment Common Voice w { $locale } wutworić
+target-segment-add-voice = Přidajće swój hłós
+target-segment-learn-more = Dalše informacije
 
 ## Reporting
 
@@ -705,6 +740,7 @@ validations =
 
 your-languages = Waše rěče
 toward-next-goal = K přichodnemu cilej
+goal-reached = Cil docpěty
 clips-you-recorded = Klipy, kotrež sće natočił
 clips-you-validated = Klipy, kotrež sće přepruwował
 todays-recorded-progress = Dźensniši postup Common Voice za natočene klipy
@@ -728,6 +764,7 @@ show-ranking = Moje městno pokazać
 
 get-started-goals = Započńće z cilemi
 create-custom-goal = Swójski cil wutworić
+goal-type = Kajki cil chceće docpěć?
 both-speak-and-listen = Wobě
 both-speak-and-listen-long = Wobě (rěčenje a słuchanje)
 daily-goal = Dnjowy cil
@@ -741,17 +778,56 @@ want-to-continue = Chceće pokročować?
 finish-editing = Chceće wobdźěłowanje najprjedy dokónčić?
 lose-changes-warning = Hdyž nětko přetorhnjeće, zhubiće swoje změny
 build-custom-goal = Swójski cil wutworić
-help-reach-hours = Pomhajće z wosobinskim cilom { NUMBER($hours) } hodźin w rěči { $language } docpěć
-help-reach-hours-general = Pomhajće Common Voice z wosobinskim cilom { NUMBER($hours) } hodźin w rěči docpěć
+help-reach-hours-pluralized =
+    Pomhajće z wosobinskim cilom{ NUMBER($hours) ->
+        [one] { $hours } hodźinu
+        [two] { $hours } hodźinje
+        [few] { $hours } hodźiny
+       *[other] { $hours } hodźin
+    }w rěči { $language } docpěć
+help-reach-hours-general-pluralized =
+    Pomhajće Common Voice z wosobinskim cilom { NUMBER($hours) ->
+        [one] { $hours } hodźinu
+        [two] { $hours } hodźinje
+        [few] { $hours } hodźiny
+       *[other] { $hours } hodźin
+    }w rěči docpěć
 set-a-goal = Cil stajić
 cant-decide = Njemóžeće so rozsudźić?
-activity-needed-calculation = { NUMBER($totalHours) } hodźin je w trochu wjace hač { NUMBER($periodMonths) } měsacow docpějomne, jeli { NUMBER($people) } ludźi { NUMBER($clipsPerDay) } klipow wob dźeń natoča.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } hodźina je docpějomna
+        [two] { $totalHours } hodźinje stej docpějomnej
+        [few] { $totalHours } hodźiny su docpějomne
+       *[other] { $totalHours } hodźin je docpějomne
+    } za jenož trochu wjace hač { NUMBER($periodMonths) ->
+        [one] { $periodMonths }  měsac,
+        [two] { $periodMonths } měsacaj,
+        [few] { $periodMonths } měsacy,
+       *[other] { $periodMonths } měsacow,
+    } jeli { NUMBER($people) ->
+        [one] { $people } wosoba natoča
+        [two] { $people } wosobje natočetej
+        [few] { $people } wosoby natočeja
+       *[other] { $people } wosobow natoča
+    }{ NUMBER($clipsPerDay) ->
+        [one]  { $clipsPerDay } klip
+        [two]  { $clipsPerDay } klipaj
+        [few]  { $clipsPerDay } klipy
+       *[other]  { $clipsPerDay } klipow
+    } na dźeń.
 how-many-per-day = Wulkotnje! Kelko klipow wob dźeń?
 how-many-a-week = Wulkotnje! Kelko klipow wob tydźeń?
 which-goal-type = Chceće rěčeć, słuchać abo wobě?
 receiving-emails-info = Sće tuchwilu e-mejlki, kaž na přikład cilowe dopomnjeća, postupowe aktualizacije a powěsćowe listy wo Common Voice abonował
 not-receiving-emails-info = Je so runje nastajiło, zo mejlki hižo <bold>NJE</bold>dóstanjeće, kaž na přikład cilowe dopomnjeća, postupowe aktualizacije a powěsćowe listy wo Common Voice wotskazał
-n-clips = { NUMBER($count) } klipow
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } klip
+        [two] { $count } klipaj
+        [few] { $count } klipy
+       *[other] { $count } klipow
+    }
 help-share-goal = Dźělće swój cil, zo byšće nam pomhał, wjace hłosow namakać
 confirm-goal = Cil wobkrućić
 goal-interval-weekly = Kóždy tydźeń

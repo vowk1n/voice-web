@@ -1,10 +1,10 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { SuccessIcon } from '../ui/icons';
 import { TextButton } from '../ui/ui';
 
 export default ({ onRequestClose }: { onRequestClose: () => void }) => (
-  <React.Fragment>
+  <>
     <SuccessIcon className="success" />
 
     <Localized id="request-language-success-title">
@@ -29,5 +29,5 @@ export default ({ onRequestClose }: { onRequestClose: () => void }) => (
 
     <br />
     <br />
-  </React.Fragment>
+  </>
 );

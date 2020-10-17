@@ -2,14 +2,16 @@
 
 yes-receive-emails = Da, vreau să primesc e-mailuri. Aș dori să primesc informații despre proiectul Common Voice.
 stayintouch = La Mozilla construim o comunitate în jurul tehnologiei vocale. Am vrea să te ținem la curent cu noutăți, surse noi de date și să aflăm mai multe despre cum folosești aceste date.
-privacy-info = Promitem că vom gestiona cu atenție datele tale personale. Pentru mai multe informații, citește <privacyLink>Declarația noastră de confidențialitate</privacyLink>.
+privacy-info = Promitem că vom gestiona cu atenție datele tale personale. Pentru mai multe informații, citește <privacyLink>Notificarea noastră privind confidențialitatea</privacyLink>.
 return-to-cv = Întoarce-te la Common Voice
 email-input =
     .label = E-mail
 submit-form-action = Trimite
 loading = Se încarcă…
 email-opt-in-info = Doresc să primesc mesaje pe e-mail, cum ar fi mementouri de obiective, actualizări ale progresului propriu și buletine informative despre Common Voice.
-email-opt-in-privacy = Prin optarea pentru primirea de mesaje pe e-mail, declari că ești de acord ca Mozilla să gestioneze aceste informații conform explicațiilor din <privacyLink>Politica de confidențialitate<privacyLink> Mozilla.
+email-opt-in-info-title = Înscrie-te pe lista de corespondență Common Voice
+email-opt-in-info-sub-with-challenge = Primești mesaje pe e-mail, precum memento-uri de provocări și obiective, actualizări legate de progres și buletine de știri despre Common Voice.
+email-opt-in-privacy-v2 = Dacă optezi să primești mesaje pe e-mail înseamnă că accepți ca Mozilla să gestioneze aceste informații conform informațiilor din <privacyLink>Politica de confidențialitate</privacyLink> Mozilla.
 indicates-required = * Indică un câmp obligatoriu
 not-available-abbreviation = Nu e cazul
 
@@ -26,10 +28,12 @@ af = Afrikaans
 am = Amhară
 an = Aragoneză
 ar = Arabă
+arn = Mapudungun
 as = Assameză
 ast = Asturiană
 az = Azerbaidjană
 ba = Bașkiră
+be = Belarusă
 bg = Bulgară
 bn = Bengali
 br = Bretonă
@@ -60,10 +64,12 @@ ga-IE = Irlandeză
 gl = Galiciană
 ha = Hausa
 he = Ebraică
-hi-IN = Hindi
+hi = Hindi
 hr = Croată
 hsb = Sorbenă de sus
 hu = Maghiară
+hy-AM = Armeană
+hyw = Armeană de vest
 ia = Interlingua
 id = Indoneziană
 is = Islandeză
@@ -71,23 +77,28 @@ it = Italiană
 izh = Izoriană
 ja = Japoneză
 ka = Georgiană
+kaa = Karakalpak
 kab = Kabilă
+kbd = Karbadiană
 kk = Kazahă
 ko = Coreeană
 kpv = Komi-ziriană
 ku = Kurdă
 kw = Cornică
 ky = Kirghiză
+lg = Luganda
 lij = Ligură
 lt = Lituaniană
 lv = Letonă
 mdf = Moksha
+mg = Malgașă
 mhr = Mari de est
 mk = Macedoneană
 ml = Malayalam
 mn = Mongolă
 mrj = Mari de vest
 mt = Malteză
+my = Birmaneză
 myv = Erzya
 nb-NO = Norvegiană Bokmål
 ne-NP = Nepaleză
@@ -95,6 +106,7 @@ nl = Olandeză
 nn-NO = Norvegiană Nynorsk
 oc = Occitană
 or = Odia
+pa-IN = Punjabă
 pl = Poloneză
 pt = Portugheză
 rm-sursilv = Retoromană sursilvană
@@ -104,17 +116,20 @@ ru = Rusă
 rw = Kinyarwanda
 sah = Sakha
 sc = Sardă
+scn = Siciliană
 si = Sinhaleză
 sk = Slovacă
 sl = Slovenă
 sq = Albaneză
 sr = Sârbă
 sv-SE = Suedeză
+sw = Swahili
 syr = Siriacă
 ta = Tamilă
 te = Telugu
 tg = Tadjică
 th = Thailandeză
+tl = Tagalog
 tr = Turcă
 tt = Tătară
 uby = Ubykhă
@@ -122,6 +137,7 @@ udm = Udmurtă
 uk = Ucraineană
 ur = Urdu
 uz = Uzbecă
+vec = Venețiană
 vi = Vietnameză
 vot = Votică
 zh-CN = Chineză (China)
@@ -222,7 +238,7 @@ whats-public = Ce este public?
 email-not-public = Nu îți vom face publică adresa de e-mail.
 recordings-and-locale-public = Numărul de înregistrări și limbile în care vei contribui vor fi publice.
 username-optin-public = Poți alege să îți faci numele de utilizator public sau anonim.
-demographic-deidentified = Informațiile demografice trimise opțional (de ex., vârsta, sexul, limba și accentul) sunt anonimizate din datele voce trimise și nu vor fi niciodată făcute publice în profilul tău.
+demographic-deidentified-clarity = Datele demografice trimise opțional (de ex. vârsta, sexul, limba și accentul) nu vor fi făcute niciodată publice pe profilul tău și nu vor fi legate de contul tău în setul de date. Secvențele audio individuale vor fi asociate cu datele demografice în scopul unei analize mai precise - de exemplu, un cercetător ar putea dori să asocieze un model de instruire cu un anumit segment demografic.
 username-email-not-demographic = Numele de utilizator și adresa de e-mail nu vor fi asociate cu datele publicate.
 
 ## Speak & Listen Shortcuts
@@ -310,6 +326,7 @@ thanks-for-account = Îți mulțumim pentru confirmarea contului. Acum, să îț
 why-demographic = De ce contează?
 why-demographic-explanation = Datele de utilizator anonimizate, precum vârsta, sexul și accentul, ajută la îmbunătățirea datelor audio folosite la antrenarea și ridicarea gradului de acuratețe al motoarelor de recunoaștere vocală. Numele de utilizator și parola nu vor fi niciodată asociate cu datele trimise și poți opta dacă numele tău de utilizator să fie public sau anonim.
 accept-privacy = Sunt de acord să gestionați aceste informații conform explicațiilor din <privacyLink>Politica de confidențialitate</privacyLink> Mozilla
+accept-privacy-title = Politică de confidențialitate
 login-identity = Identitate de autentificare
 login-signup = Autentificare / Înregistrare
 edit = Editează
@@ -322,8 +339,15 @@ skip-submission-note = Obs: Tot va trebui să selectezi Vorbește sau Ascultă p
 off = Dezactivat
 on = Activat
 avatar-clip-title = Dă o voce avatarului tău
+change-your-avatar-clip = Vrei să schimbi secvența vocală?
+recording-in-progress = Înregistrare vocală în curs
+avatar-clip-recorded = Acum avatarul tău include o secvență vocală!
 record-voice-wave = ÎNREGISTREAZĂ O UNDĂ VOCALĂ
+retry-voice-wave-recording = REÎNCEARCĂ
+re-record = ÎNREGISTREAZĂ DIN NOU
+delete-voice = ȘTERGE
 recording-voice-wave = Se înregistrează
+delete-voice-clip = sau   Șterge secvența vocală
 ready-to-upload = Încărcare
 avatar-clip-fact = Este un fapt binecunoscut că cititorilor le va atrage atenția conținutul scris de pe o pagină când se uită la dispunerea în pagină.
 recreate-voice = Recrează unda de voce
@@ -423,10 +447,11 @@ about-partners = Parteneri
 about-become-a-partner = Devino un partener
 about-partnership = Common Voice este un proiect de colaborare și depindem de comunitatea de parteneri și colaboratori ca să construim cel mai mare set de date vocale cu sursă deschisă. Am dori să mulțumim următoarelor persoane și organizații pentru ajutorul acordat în cadrul proiectului:
 about-get-involved = Implică-te
-about-get-involved-text =
+about-get-involved-text-2 =
     Vrei să ajuți la îmbunătățirea Common Voice?
-    Grozav! Ia legătura cu noi prin e-mail sau intră pe <discourseLink>Discourse</discourseLink>,
-    dă-ne feedback prin <githubLink>GitHub</githubLink> sau alătură-te pe <slackLink>Slack</slackLink>.
+    Grozav! Ia legătura prin e-mail sau prin forumurile <discourseLink>Discourse</discourseLink>,
+    raportează problemele site-ului prin <githubLink>GitHub</githubLink> sau intră pe
+    chatul comunității <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = De ce?
 about-nav-how-it-works = Cum?
 about-nav-partners = Parteneri
@@ -452,10 +477,13 @@ sst-explanation = Tehnologiile de recunoaștere vocală (Speech-to-text (STT)) c
 de-identified = Anominizat
 de-identified-explanation = Procesul prin care informațiile de profil ale unui colaborator devin ilizibile în secvențele vocale donate când sunt împachetate pentru descărcare ca parte a setului de date.
 
-## NotFound
+## Error pages
 
-notfound-title = Nu a fost găsit
-notfound-content = Ne pare rău, dar nu știm ce cauți.
+error-title-404 = Nu am găsit pagina pe care o cauți
+error-content-404 = Poate că te ajută <homepageLink>pagina noastră de start</homepageLink>? Pentru a adresa o întrebare, intră pe <matrixLink>chatul comunității Matrix</matrixLink>, monitorizează problemele site-ului prin <githubLink>GitHub</githubLink> sau intră pe <discourseLink>forumurile noastre Discourse</discourseLink>.
+error-title-503 = Ne confruntăm cu opriri neașteptate
+error-content-503 = Site-ul va deveni funcțional cât mai curând posibil. Pentru cele mai noi informații, intră pe <matrixLink>chatul comunității Matrix</matrixLink> sau pe <githubLink>GitHub</githubLink> sau pe <discourseLink>forumurile noastre Discourse</discourseLink> pentru a raporta și monitoriza probleme de utilizare a site-ului.
+error-code = Eroare { $code }
 
 ## Data
 
@@ -474,7 +502,9 @@ data-bundle-button = Descarcă pachetul cu setul de date
 data-bundle-description = Datele Common Voice plus toate celelalte seturi de date de mai sus.
 license = Licență: <licenseLink>{ $license }</licenseLink>
 license-mixed = Mixtă
-review-terms = Folosind Common Voice, ești de acord cu <termsLink>Termenii</termsLink> și <privacyLink>Declarația de confidențialitate</privacyLink>
+data-download-singleword-title = Descarcă segmentul-țintă de cuvinte unice
+data-download-singleword-callout = Este un segment pe bază de cazuri de utilizare, ce conține date pentru recunoașterea vocală a cifrelor, detecție „da/nu” și date de testare de cuvinte de activare pentru <fxLink>Firefox Voice</fxLink>.
+review-terms = Folosind Common Voice, ești de acord cu <termsLink>Termenii</termsLink> și <privacyLink>Notificarea privind confidențialitatea</privacyLink>
 terms-agree = De acord
 terms-disagree = Nu sunt de acord
 review-aborted = Încărcare abandonată. Vrei să-ți ștergi înregistrările?
@@ -513,7 +543,7 @@ confirm-no-identify = <b>Ești de acord</b> să nu încerci să determini identi
 download-language = Descarcă { $language }
 validated-hours = Ore validate
 recorded-hours = Ore înregistrate
-whats-inside = Ce se găsește în setul de date Common Voice?
+whats-inside = Ce conține setul de date Common Voice?
 dataset-description-hours =
     Fiecare intrare din setul de date constă dintr-un MP3 unic și fișierul text corespondent. Multe dintre cele <b>{ $total }</b> de ore înregistrate din setul de date includ și metadate demografice, precum vârstă, sex și accent, care ajută la antrenarea pentru acuratețe a motoarelor de recunoaștere vocală.
     
@@ -594,7 +624,12 @@ contribute = Contribuie
 listen = Ascultă
 skip = Sari peste
 shortcuts = Comenzi rapide
-clips-with-count = <bold><bold>{ $count }</bold> secvențe vocale
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> secvență vocală
+        [few] <bold>{ $count }</bold> secvențe vocale
+       *[other] <bold>{ $count }</bold> de secvențe vocale
+    }
 goal-help-recording = Ai ajutat Common Voice să atingă <goalPercentage></goalPercentage> din obiectivul zilnic de { $goalValue } înregistrări!
 goal-help-validation = Ai ajutat Common Voice să atingă <goalPercentage></goalPercentage> din obiectivul zilnic de { $goalValue } validări!
 contribute-more =
@@ -606,7 +641,7 @@ contribute-more =
 record-cta = Începe înregistrarea
 record-platform-not-supported = Ne pare rău, dar platforma ta nu este suportată momentan.
 record-platform-not-supported-desktop = Pe calculatoare tip desktop, poți descărca cele mai recente:
-record-platform-not-supported-ios = Utilizatorii <bold>iOS</bold> pot descărca aplicația noastră gratuită:
+record-platform-not-supported-ios-non-safari = Pe iOS, continuă cu Safari pentru activarea înregistrării…
 record-must-allow-microphone = Trebuie să permiți accesul la microfon.
 record-no-mic-found = Nu a fost găsit niciun microfon.
 record-error-too-short = Înregistrarea a fost prea scurtă.
@@ -620,6 +655,8 @@ record-again-instruction = Perfect!<recordIcon></recordIcon> Înregistrează urm
 record-again-instruction2 = Ține-o tot așa! Înregistrează din nou <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Ultima!
 review-tooltip = Aici revezi și reînregistrezi secvențe vocale din mers
+share-clip = Partajează videoclipul
+share-common-voice = Partajează Common Voice
 review-instruction = Revezi și reînregistrează secvențe vocale dacă este nevoie
 record-submit-tooltip = { $actionType } trimite când ești gata
 clips-uploaded = Secvențe vocale încărcate
@@ -632,11 +669,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> a pronunțat corect pr
 listen-again-instruction = Ai lucrat bine!<playIcon></playIcon> Ascultă din nou când ești gata
 listen-3rd-time-instruction = Ai terminat 2. Ține-o tot așa!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Ultima!
-nothing-to-validate = Nu avem nimic de validat în această limbă. Ajută-ne să umplem acest gol.
+listen-empty-state = Nu mai avem clipuri de validat în această limbă...
+speak-empty-state = Nu mai avem propoziții de înregistrat în această limbă...
+speak-empty-state-cta = Contribuie cu propoziții
 record-button-label = Înregistrează-ți vocea
 share-title-new = <bold>Ajută-ne</bold> să găsim mai multe voci
 keep-track-profile = Urmărește-ți progresul cu ajutorul unui profil
 login-to-get-started = Autentifică-te sau înregistrează-te pentru a începe
+target-segment-first-card = Contribui la primul nostru segment-țintă
+target-segment-first-banner = Ajută-ne să creăm primul segment-țintă Common Voice în { $locale }
+target-segment-add-voice = Adaugă-ți vocea
+target-segment-learn-more = Află mai multe
 
 ## Reporting
 
@@ -685,6 +728,7 @@ validations =
 
 your-languages = Limbile tale
 toward-next-goal = Spre obiectivul următor
+goal-reached = Obiectiv atins
 clips-you-recorded = Secvențe vocale pe care le-ai înregistrat
 clips-you-validated = Secvențe vocale pe care le-ai validat
 todays-recorded-progress = Progresul de astăzi pe Common Voice pentru secvențe vocale înregistrate
@@ -708,6 +752,7 @@ show-ranking = Afișează ce loc am în clasament
 
 get-started-goals = Introducere în obiective
 create-custom-goal = Creează un obiectiv personalizat
+goal-type = Ce fel de obiectiv vrei să creezi?
 both-speak-and-listen = Ambele
 both-speak-and-listen-long = Ambele (vorbire și ascultare)
 daily-goal = Obiectiv zilnic
@@ -721,17 +766,49 @@ want-to-continue = Vrei să continui?
 finish-editing = Termini mai întâi editarea?
 lose-changes-warning = Dacă ieși acum, vei pierde modificările efectuate
 build-custom-goal = Creează un obiectiv personalizat
-help-reach-hours = Ajută-ne să ajungem la { NUMBER($hours) } de ore în { $language } cu un obiectiv personal
-help-reach-hours-general = Ajută Common Voice să ajungă la { NUMBER($hours) } de ore într-o limbă cu un obiectiv personal
+help-reach-hours-pluralized =
+    Ajută-ne să ajungem la{ NUMBER($hours) ->
+        [one] { $hours } oră
+        [few] { $hours } ore
+       *[other] { $hours } de ore
+    } în { $language }, cu un obiectiv personal
+help-reach-hours-general-pluralized =
+    Ajută Common Voice să ajungă la{ NUMBER($hours) ->
+        [one] { $hours } oră
+        [few] { $hours } ore
+       *[other] { $hours } de ore
+    } într-o limbă, cu un obiectiv personal
 set-a-goal = Stabilește un obiectiv
 cant-decide = Nu te poți decide?
-activity-needed-calculation = { NUMBER($totalHours) } de ore se pot atinge în numai { NUMBER($periodMonths) } (de) luni dacă se înregistrează { NUMBER($clipsPerDay) } (de) secvențe pe zi.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] { $totalHours } oră
+        [few] { $totalHours } ore
+       *[other] { $totalHours } de ore
+    } se poate(pot) atinge în numai{ NUMBER($periodMonths) ->
+        [one] { $periodMonths } lună
+        [few] { $periodMonths } luni
+       *[other] { $periodMonths } de luni
+    } dacă{ NUMBER($people) ->
+        [one] { $people } persoană
+        [few] { $people } persoane
+       *[other] { $people } de persoane
+    } înregistrează{ NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } secvență vocală
+        [few] { $clipsPerDay } secvențe vocale
+       *[other] { $clipsPerDay } de secvențe vocale
+    } pe zi.
 how-many-per-day = Grozav! Câte înregistrări pe zi?
 how-many-a-week = Grozav! Câte înregistrări pe săptămână?
 which-goal-type = Vrei să vorbești, să asculți sau ambele?
 receiving-emails-info = Ai optat ca să primești e-mailuri precum mementouri de obiective, actualizări despre progres și buletine informative despre Common Voice
 not-receiving-emails-info = Ai optat ca să <bold>NU</bold> primești e-mailuri precum mementouri de obiective, actualizări cu progresul înregistrat și buletine informative despre Common Voice
-n-clips = { NUMBER($count) } secvențe
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } secvență vocală
+        [few] { $count } secvențe vocale
+       *[other] { $count } de secvențe vocale
+    }
 help-share-goal = Ajută-ne să găsim mai multe voci; partajează-ți obiectivul
 confirm-goal = Confirmă obiectivul
 goal-interval-weekly = Săptămânal

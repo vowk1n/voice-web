@@ -7,21 +7,15 @@ import { getConfig } from '../config-helper';
 import { AWS } from './aws';
 import Model from './model';
 import getLeaderboard from './model/leaderboard';
+import { earnBonus, hasEarnedBonus } from './model/achievements';
 import * as Basket from './basket';
 import Bucket from './bucket';
-import { ClientParameterError } from './utility';
+import { ClientParameterError, ServerError } from './utility';
 import Awards from './model/awards';
 import { checkGoalsAfterContribution } from './model/goals';
+import { ChallengeToken, challengeTokens } from 'common';
 
 const Transcoder = require('stream-transcoder');
-
-const SALT = '8hd3e8sddFSdfj';
-
-export const hash = (str: string) =>
-  crypto
-    .createHmac('sha256', SALT)
-    .update(str)
-    .digest('hex');
 
 /**
  * Clip - Responsibly for saving and serving clips.
@@ -83,51 +77,84 @@ export default class Clip {
     response: Response
   ) => {
     const id = params.clipId as string;
-    const { isValid } = body;
+    const { isValid, challenge } = body;
 
-    const clip = await this.model.db.findClip(id);
-    if (!clip || !client_id) {
+    if (!id || !client_id) {
+      response.statusMessage = 'save_clip_vote_missing_parameter';
+      response
+        .status(400)
+        .send(`Missing parameter: ${id ? 'client_id' : 'clip_id'}.`);
       throw new ClientParameterError();
     }
 
-    await this.model.db.saveVote(id, client_id, isValid);
-    await Awards.checkProgress(client_id, { id: clip.locale_id });
+    const clip = await this.model.db.findClip(id);
+    if (!clip) {
+      response.statusMessage = 'save_clip_vote_missing_clip';
+      response.status(422).send(`Clip not found: ${id}.`);
+      throw new ServerError();
+    }
 
     const glob = clip.path.replace('.mp3', '');
-    const voteFile = glob + '-by-' + client_id + '.vote';
 
-    await this.s3
-      .putObject({
-        Bucket: getConfig().BUCKET_NAME,
-        Key: voteFile,
-        Body: isValid.toString(),
-      })
-      .promise();
-
-    console.log('clip vote written to s3', voteFile);
-
-    response.json(glob);
-
+    await this.model.db.saveVote(id, client_id, isValid);
+    await Awards.checkProgress(client_id, { id: clip.locale_id });
     await checkGoalsAfterContribution(client_id, { id: clip.locale_id });
+    // move it to the last line and leave a trace here in case of serious performance issues
+    // response.json(ret);
+
     Basket.sync(client_id).catch(e => console.error(e));
+    const ret = challengeTokens.includes(challenge)
+      ? {
+          glob: glob,
+          showFirstContributionToast: await earnBonus('first_contribution', [
+            challenge,
+            client_id,
+          ]),
+          hasEarnedSessionToast: await hasEarnedBonus(
+            'invite_contribute_same_session',
+            client_id,
+            challenge
+          ),
+          showFirstStreakToast: await earnBonus('three_day_streak', [
+            client_id,
+            client_id,
+            challenge,
+          ]),
+          challengeEnded: await this.model.db.hasChallengeEnded(challenge),
+        }
+      : { glob };
+    response.json(ret);
   };
 
   /**
    * Save the request body as an audio file.
+   * TODO: Check for empty or silent clips before uploading.
    */
   saveClip = async (request: Request, response: Response) => {
-    const { client_id, headers, params } = request;
-    const sentence = decodeURIComponent(headers.sentence as string);
-
-    if (!client_id || !sentence) {
+    const { client_id, headers } = request;
+    const sentenceId = headers.sentence_id as string;
+    if (!sentenceId || !client_id) {
+      response.statusMessage = 'save_clip_missing_parameter';
+      response
+        .status(400)
+        .send(
+          `Missing parameter: ${sentenceId ? 'client_id' : 'sentence_id'}.`
+        );
+      console.log(`sent headers: ${JSON.stringify(headers)}`);
       throw new ClientParameterError();
+    }
+
+    const sentence = await this.model.db.findSentence(sentenceId);
+    if (!sentence) {
+      response.statusMessage = 'save_clip_missing_sentence';
+      response.status(422).send(`Sentence not found: ${sentenceId}.`);
+      throw new ServerError();
     }
 
     // Where is our audio clip going to be located?
     const folder = client_id + '/';
-    const filePrefix = hash(sentence);
+    const filePrefix = sentenceId;
     const clipFileName = folder + filePrefix + '.mp3';
-    const sentenceFileName = folder + filePrefix + '.txt';
 
     // if the folder does not exist, we create it
     try {
@@ -158,41 +185,53 @@ export default class Clip {
         transcoder = new Transcoder(request);
       }
 
-      await Promise.all([
-        this.s3
-          .upload({
-            Bucket: getConfig().BUCKET_NAME,
-            Key: clipFileName,
-            Body: transcoder
-              .audioCodec('mp3')
-              .format('mp3')
-              .stream(),
-          })
-          .promise(),
-        this.s3
-          .putObject({
-            Bucket: getConfig().BUCKET_NAME,
-            Key: sentenceFileName,
-            Body: sentence,
-          })
-          .promise(),
-      ]);
+      await this.s3
+        .upload({
+          Bucket: getConfig().BUCKET_NAME,
+          Key: clipFileName,
+          Body: transcoder.audioCodec('mp3').format('mp3').stream(),
+        })
+        .promise();
 
-      console.log('file written to s3', clipFileName);
+      console.log('clip written to s3', clipFileName);
 
       await this.model.saveClip({
         client_id: client_id,
-        locale: params.locale,
-        original_sentence_id: filePrefix,
+        localeId: sentence.locale_id,
+        original_sentence_id: sentenceId,
         path: clipFileName,
-        sentence,
-        sentenceId: headers.sentence_id,
+        sentence: sentence.text,
       });
-      await Awards.checkProgress(client_id, { name: params.locale });
+      await Awards.checkProgress(client_id, { id: sentence.locale_id });
 
-      await checkGoalsAfterContribution(client_id, { name: params.locale });
+      await checkGoalsAfterContribution(client_id, { id: sentence.locale_id });
+
       Basket.sync(client_id).catch(e => console.error(e));
-      response.json(filePrefix);
+
+      const challenge = headers.challenge as ChallengeToken;
+      const ret = challengeTokens.includes(challenge)
+        ? {
+            filePrefix: filePrefix,
+            showFirstContributionToast: await earnBonus('first_contribution', [
+              challenge,
+              client_id,
+            ]),
+            hasEarnedSessionToast: await hasEarnedBonus(
+              'invite_contribute_same_session',
+              client_id,
+              challenge
+            ),
+            // can't simply reduce the number of the calls to DB through streak_days in checkGoalsAfterContribution()
+            // since the the streak_days may start before the time when user set custom_goals, check to win bonus for each contribution
+            showFirstStreakToast: await earnBonus('three_day_streak', [
+              client_id,
+              client_id,
+              challenge,
+            ]),
+            challengeEnded: await this.model.db.hasChallengeEnded(challenge),
+          }
+        : { filePrefix };
+      response.json(ret);
     } catch (error) {
       console.error(error);
       response.statusCode = error.statusCode || 500;
@@ -243,6 +282,7 @@ export default class Clip {
   ) => {
     response.json(
       await getLeaderboard({
+        dashboard: 'stats',
         type: 'clip',
         client_id,
         cursor: query.cursor ? JSON.parse(query.cursor) : null,
@@ -257,6 +297,7 @@ export default class Clip {
   ) => {
     response.json(
       await getLeaderboard({
+        dashboard: 'stats',
         type: 'vote',
         client_id,
         cursor: query.cursor ? JSON.parse(query.cursor) : null,

@@ -1,15 +1,17 @@
 ## General
 
-yes-receive-emails = Oui, envoyez-moi des courriers électroniques. Je souhaite recevoir l’actualité du projet Common Voice.
+yes-receive-emails = Oui, envoyez-moi des courriers électroniques. Je souhaite rester informé·e au sujet du projet Common Voice.
 stayintouch = Chez Mozilla, nous rassemblons une communauté autour des technologies vocales. Nous aimerions rester en contact avec vous pour vous tenir au courant des nouveautés, des nouvelles sources de données et aussi pour découvrir comment vous utilisez ces données.
-privacy-info = Nous vous promettons de prendre soin de vos données. Apprenez-en davantage en consultant notre <privacyLink>Politique de confidentialité</privacyLink>.
+privacy-info = Nous promettons de prendre soin de vos données. Apprenez-en davantage en consultant notre <privacyLink>Politique de confidentialité</privacyLink>.
 return-to-cv = Retourner vers Common Voice
 email-input =
     .label = Adresse électronique
 submit-form-action = Envoyer
 loading = Chargement…
 email-opt-in-info = J’aimerais recevoir des courriels tels que des rappels d’objectifs, des rapports sur mes progrès et les lettres d’information de Common Voice.
-email-opt-in-privacy = En acceptant de recevoir des courriels, vous indiquez accepter que Mozilla gère ces informations, conformément à la <privacyLink>politique de confidentialité<privacyLink> de Mozilla.
+email-opt-in-info-title = Rejoignez la liste de diffusion Common Voice
+email-opt-in-info-sub-with-challenge = Recevez des courriels tels que des défis, des rappels d’objectifs, des rapports d’avancement et des lettres d’information sur Common Voice.
+email-opt-in-privacy-v2 = En acceptant de recevoir des courriels, vous indiquez accepter que Mozilla gère ces informations, conformément à la <privacyLink>politique de confidentialité</privacyLink> de Mozilla.
 indicates-required = * indique un champ obligatoire
 not-available-abbreviation = Non disponible
 
@@ -26,10 +28,12 @@ af = Afrikaans
 am = Amharique
 an = Aragonais
 ar = Arabe
+arn = Mapuche
 as = Assamais
 ast = Asturien
 az = Azerbaïdjanais
 ba = Bashkir
+be = Biélorusse
 bg = Bulgare
 bn = Bengali
 br = Breton
@@ -60,10 +64,12 @@ ga-IE = Irlandais
 gl = Galicien
 ha = Haoussa
 he = Hébreu
-hi-IN = Hindi
+hi = Hindi
 hr = Croate
 hsb = Haut-sorabe
 hu = Hongrois
+hy-AM = Arménien
+hyw = Arménien occidental
 ia = Interlingua
 id = Indonésien
 is = Islandais
@@ -71,23 +77,28 @@ it = Italien
 izh = Ingrien
 ja = Japonais
 ka = Géorgien
+kaa = Karakalpak
 kab = Kabyle
+kbd = Kabarde
 kk = Kazakh
 ko = Coréen
 kpv = Komi-zyriène
 ku = Kurde
 kw = Cornique
 ky = Kirghize
+lg = Luganda
 lij = Ligure
 lt = Lituanien
 lv = Letton
 mdf = Mokcha
+mg = Malgache
 mhr = Mari des prairies
 mk = Macédonien
 ml = Malayalam
 mn = Mongol
 mrj = Mari des montagnes
 mt = Maltais
+my = Birman
 myv = Erzya
 nb-NO = Norvégien bokmål
 ne-NP = Népalais
@@ -95,6 +106,7 @@ nl = Néerlandais
 nn-NO = Norvégien nynorsk
 oc = Occitan
 or = Odia
+pa-IN = Pendjabi
 pl = Polonais
 pt = Portugais
 rm-sursilv = Romanche sursilvan
@@ -104,17 +116,20 @@ ru = Russe
 rw = Kinyarwanda
 sah = Iakoute
 sc = Sarde
+scn = Sicilien
 si = Sinhala
 sk = Slovaque
 sl = Slovène
 sq = Albanais
 sr = Serbe
 sv-SE = Suédois
+sw = Swahili
 syr = Syriaque
 ta = Tamoul
 te = Télougou
 tg = Tadjik
 th = Thaï
+tl = Tagalog
 tr = Turc
 tt = Tatar
 uby = Oubykh
@@ -122,6 +137,7 @@ udm = Oudmourte
 uk = Ukrainien
 ur = Ourdou
 uz = Ouzbek
+vec = Vénitien
 vi = Vietnamien
 vot = Vote
 zh-CN = Chinois (Chine)
@@ -221,7 +237,7 @@ whats-public = Quelles informations sont publiques ?
 email-not-public = Nous ne rendrons pas publique votre adresse électronique.
 recordings-and-locale-public = Le nombre d’enregistrements et les langues dans lesquelles vous contribuez seront publics.
 username-optin-public = Vous pouvez choisir de rendre votre nom d’utilisateur ou d’utilisatrice public ou anonyme
-demographic-deidentified = Les informations démographiques facultatives (p. ex. l’âge, le sexe, la langue et l’accent) sont dissociées de vos enregistrements audio et ne seront jamais affichées publiquement sur votre profil.
+demographic-deidentified-clarity = Les données démographiques éventuellement soumises (par exemple, l’âge, le sexe, la langue et l’accent) ne seront jamais rendues publiques sur votre profil et ne seront pas liées à votre compte dans l’ensemble de données. Des échantillons audio individuels seront associés à des données démographiques à des fins d’analyse plus précise ; par exemple, une chercheuse pourrait vouloir cibler un modèle d’entrainement sur un segment démographique spécifique.
 username-email-not-demographic = Votre nom d’utilisateur ou d’utilisatrice et votre adresse électronique ne seront pas associés aux données publiées.
 
 ## Speak & Listen Shortcuts
@@ -308,6 +324,7 @@ thanks-for-account = Merci d’avoir confirmé votre compte, maintenant créons 
 why-demographic = Pourquoi est-ce important ?
 why-demographic-explanation = Les données utilisateur anonymes comme l’âge, le sexe, et l’accent particulier contribuent à améliorer les données audio utilisées pour entraîner et rendre plus pertinents les moteurs de reconnaissance vocale. Votre nom d’utilisateur et votre adresse courriel ne seront jamais associés aux données que vous communiquez, et vous pouvez choisir entre rendre public votre nom d’utilisateur ou d’utilisatrice et garder l’anonymat.
 accept-privacy = J’accepte que vous utilisiez ces informations conformément à la <privacyLink>Politique de confidentialité</privacyLink> de Mozilla
+accept-privacy-title = Politique de confidentialité
 login-identity = Identité de connexion
 login-signup = Se connecter / S’inscrire
 edit = Modifier
@@ -321,11 +338,19 @@ off = Désactivé
 on = Activé
 avatar-clip-title = Donnez une voix à votre avatar
 change-your-avatar-clip = Voulez-vous changer votre échantillon de voix ?
+recording-in-progress = Enregistrement vocal en cours
+avatar-clip-recorded = Votre avatar comprend maintenant un échantillon de voix !
+record-voice-wave = ENREGISTRER VOTRE PRÉSENTATION
+retry-voice-wave-recording = RÉESSAYER
+re-record = RÉENREGISTRER
+delete-voice = SUPPRIMER
 recording-voice-wave = Enregistrement
+delete-voice-clip = ou Supprimer votre échantillon de voix
 ready-to-upload = ENVOYER
 avatar-clip-fact = C’est un fait établi de longue date qu’un lecteur sera distrait par le contenu lisible d’une page lorsqu’il examinera sa mise en page.
 recreate-voice = Refaire votre présentation
 cancel-avatar-clip-recording = ANNULER
+about-avatar-clip-recording = Enregistrez un extrait vocal pour votre avatar. Les autres personnes pourront écouter votre extrait en passant leur curseur dessus.
 browse-file-title = Envoyer une image
 browse-file = Glissez-déposez ou bien <browseWrap>Parcourez</browseWrap>
 connect-gravatar = Connectez-vous avec Gravatar
@@ -341,7 +366,10 @@ change-email-setings = Modifiez votre adresse de courriel dans les Préférences
 
 faq-title = Questions fréquentes
 faq-what-cv-q = Qu’est-ce que Common Voice ?
-faq-what-cv-a = Les technologies de reconnaissance vocale révolutionnent notre façon d’interagir avec les machines, mais les systèmes disponibles sont chers et propriétaires. Common Voice fait partie des activités de Mozilla qui ont pour but d’améliorer les technologies de reconnaissance vocale et de les rendre plus accessibles à tous et à toutes. Common Voice est une immense base de données d’enregistrements vocaux qui permet à n’importe qui de facilement et rapidement entraîner des applications interagissant avec la voix, potentiellement dans toutes les langues.
+faq-what-cv-a =
+    Les technologies de reconnaissance vocale révolutionnent notre façon d’interagir avec les machines, mais les systèmes disponibles sont chers et propriétaires. Common Voice fait partie des activités de Mozilla qui ont pour but d’améliorer les technologies de reconnaissance vocale et de les rendre plus accessibles à tous et à toutes. Common Voice est une immense base de données d’enregistrements vocaux qui permet à n’importe qui de facilement et rapidement entraîner des applications interagissant avec la voix, potentiellement dans toutes les langues.
+    
+    Nous ne collectons pas seulement des enregistrements de voix dans les langues les plus parlées, mais aussi dans celles qui n’ont qu’un petit nombre de locuteurs. La publication d’un échantillon diversifié de voix permettra aux développeurs, entrepreneurs et communautés de surmonter ce handicap. Outre le jeu de données Common Voice, nous développons également un moteur de reconnaissance vocale libre et open source appelé Deep Speech.
 faq-why-important-q = Pourquoi est-ce important ?
 faq-why-important-a =
     La parole est souvent le moyen le plus naturel de communiquer les uns avec les autres et les technologies vocales apportent ce confort à nos ordinateurs et appareils mobiles. Nous voulons donner aux développeurs et développeuses les moyens de créer des applications de reconnaissance vocale étonnantes, telles que des traducteurs en temps réel et des assistants numériques à commandes vocales. Mais pour le moment, la plupart des données vocales nécessaires à la création de ce type d’applications sont coûteuses et propriétaires. Nous espérons que le jeu de données Common Voice donnera aux développeurs et développeuses ce dont ils ont besoin pour innover et rendre la technologie de la parole disponible dans leur propre langue.
@@ -425,11 +453,11 @@ about-partnership =
     
     Nous voudrions remercier les personnes et organisations suivantes pour leur aide dans le projet :
 about-get-involved = Participer
-about-get-involved-text =
+about-get-involved-text-2 =
     Vous voulez aider à améliorer Common Voice ?
-    Super ! Contactez-nous par courriel ou bien sur <discourseLink>Discourse</discourseLink>,
-    envoyez des commentaires sur <githubLink>GitHub</githubLink>,
-    ou rejoignez-nous sur <slackLink>Slack</slackLink>.
+    Super ! Contactez-nous par courriel ou bien sur les forums <discourseLink>Discourse</discourseLink>,
+    signalez des problèmes sur <githubLink>GitHub</githubLink>,
+    ou rejoignez la discussion communautaire sur <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Pourquoi ?
 about-nav-how-it-works = Comment ?
 about-nav-partners = Partenaires
@@ -477,6 +505,8 @@ data-bundle-button = Télécharger un lot de jeux de données
 data-bundle-description = Données Common Voice ainsi que tous les autres jeux de données ci-dessus.
 license = Licence : <licenseLink>{ $license }</licenseLink>
 license-mixed = Mixte
+data-download-singleword-title = Télécharger le segment cible de mot unique
+data-download-singleword-callout = Il s’agit d’un segment ciblé sur des cas d’utilisation contenant des données pour alimenter la reconnaissance des chiffres parlés, la détection oui/non et les données de test de mots de réveil pour <fxLink>Firefox Voice</fxLink>.
 review-terms = En utilisant Common Voice, vous acceptez nos <termsLink>Conditions d’utilisation</termsLink> et notre <privacyLink>Politique de confidentialité</privacyLink>
 terms-agree = J’accepte
 terms-disagree = Je refuse
@@ -597,14 +627,18 @@ contribute = Contribuer
 listen = Écouter
 skip = Passer
 shortcuts = Raccourcis
-clips-with-count = <bold>{ $count }</bold> extraits
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> extrait
+       *[other] <bold>{ $count }</bold> extraits
+    }
 goal-help-recording = Grâce à vous, Common Voice a atteint <goalPercentage></goalPercentage> de son objectif quotidien de { $goalValue } enregistrements !
 goal-help-validation = Grâce à vous, Common Voice a atteint <goalPercentage></goalPercentage> de son objectif quotidien de { $goalValue } validations !
-contribute-more = Prêt à en faire { $count } de plus ?
+contribute-more = Prêt·e à en faire { $count } de plus ?
 record-cta = Commencer l’enregistrement
 record-platform-not-supported = Nous sommes désolés, mais votre plateforme n’est pas encore prise en charge.
 record-platform-not-supported-desktop = Pour les ordinateurs de bureau, vous pouvez télécharger le plus récent :
-record-platform-not-supported-ios = Les utilisateurs <bold>iOS</bold> peuvent télécharger notre application gratuite :
+record-platform-not-supported-ios-non-safari = Sous iOS, veuillez continuer avec Safari pour activer l’enregistrement…
 record-must-allow-microphone = Vous devez autoriser l’accès au microphone.
 record-no-mic-found = Aucun microphone trouvé.
 record-error-too-short = L’enregistrement est trop court.
@@ -618,8 +652,10 @@ record-again-instruction = Formidable ! <recordIcon></recordIcon> Enregistrez v
 record-again-instruction2 = Continuez comme ça et enregistrez-en un de plus.
 record-last-instruction = <recordIcon></recordIcon> C’est le dernier !
 review-tooltip = Vérifier et réenregistrer au besoin
+share-clip = Partager votre enregistrement
+share-common-voice = Partager Common Voice
 review-instruction = Vérifiez et réenregistrez si nécessaire
-record-submit-tooltip = { $actionType } envoyer lorsque vous êtes prêt
+record-submit-tooltip = { $actionType } envoyer lorsque vous êtes prêt·e
 clips-uploaded = Clips mis en ligne
 record-abort-title = D’abord finir d’enregistrer ?
 record-abort-text = Quitter maintenant vous fera perdre votre progression
@@ -627,14 +663,20 @@ record-abort-submit = Envoyer les enregistrements
 record-abort-continue = Finir d’enregistrer
 record-abort-delete = Quitter et supprimer tous mes enregistrements
 listen-instruction = { $actionType } <playIcon></playIcon>, la phrase a-t-elle été correctement prononcée ?
-listen-again-instruction = Excellent travail ! <playIcon></playIcon> Écoutez à nouveau lorsque vous êtes prêt
+listen-again-instruction = Excellent travail ! <playIcon></playIcon> Écoutez à nouveau lorsque vous êtes prêt·e
 listen-3rd-time-instruction = Plus que deux <playIcon></playIcon>, continuez !
 listen-last-time-instruction = <playIcon></playIcon> C’est le dernier !
-nothing-to-validate = Nous n’avons rien à valider dans cette langue, aidez-nous à ajouter quelques enregistrements dans la file d’attente.
+listen-empty-state = Nous n’avons plus d’échantillons à valider dans cette langue…
+speak-empty-state = Nous n’avons plus de phrases à enregistrer dans cette langue…
+speak-empty-state-cta = Proposer des phrases
 record-button-label = Enregistrer votre voix
 share-title-new = <bold>Aidez-nous</bold> à trouver de nouvelles voix
 keep-track-profile = Mesurez votre progression en créant un profil
 login-to-get-started = Connectez-vous ou inscrivez-vous pour commencer
+target-segment-first-card = Vous contribuez à notre premier segment cible
+target-segment-first-banner = Aidez à créer le premier segment cible de Common Voice en { $locale }
+target-segment-add-voice = Donner de votre voix
+target-segment-learn-more = En savoir plus
 
 ## Reporting
 
@@ -703,6 +745,7 @@ show-ranking = Afficher mon classement
 
 get-started-goals = Créez vos objectifs
 create-custom-goal = Créer un objectif personnalisé
+goal-type = Quel type d’objectif souhaitez-vous définir ?
 both-speak-and-listen = Faire les deux
 both-speak-and-listen-long = Les deux (parler et écouter)
 daily-goal = Objectif quotidien
@@ -716,17 +759,42 @@ want-to-continue = Voulez-vous continuer ?
 finish-editing = Terminer d’abord les modifications ?
 lose-changes-warning = Si vous quittez maintenant, vous perdrez vos modifications
 build-custom-goal = Définissez un objectif personnalisé
-help-reach-hours = Aidez à atteindre { NUMBER($hours) } heures en { $language } avec un objectif personnel
-help-reach-hours-general = Aidez Common Voice à atteindre { NUMBER($hours) } heures dans une langue avec un objectif personnel
+help-reach-hours-pluralized =
+    Aidez à atteindre{ NUMBER($hours) ->
+        [one] { $hours } heure
+       *[other] { $hours } heures
+    }en { $language } avec un objectif personnel
+help-reach-hours-general-pluralized =
+    Aidez Common Voice à atteindre{ NUMBER($hours) ->
+        [one] { $hours } heure
+       *[other] { $hours } heures
+    }dans une langue avec un objectif personnel
 set-a-goal = Fixer un objectif
 cant-decide = Vous ne pouvez pas décider ?
-activity-needed-calculation = Un objectif de { NUMBER($totalHours) } heures peut être atteint en { NUMBER($periodMonths) } mois si { NUMBER($people) } personnes enregistrent { NUMBER($clipsPerDay) } échantillons par jour.
+activity-needed-calculation-plural =
+    { NUMBER($totalHours) ->
+        [one] Un objectif d’une heure
+       *[other] Un objectif  de { $totalHours } heures
+    }peut être atteint en un peu plus{ NUMBER($periodMonths) ->
+        [one] d’un mois
+       *[other] de { $periodMonths } mois
+    }si{ NUMBER($people) ->
+        [one] une personne enregistre
+       *[other] { $people } personnes enregistrent
+    }{ NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } échantillon
+       *[other] { $clipsPerDay } échantillons
+    }par jour.
 how-many-per-day = Génial ! Combien d’échantillons par jour ?
 how-many-a-week = Génial ! Combien d’échantillons par semaine ?
 which-goal-type = Voulez-vous parler, écouter ou faire les deux ?
 receiving-emails-info = Vous allez recevoir des courriels tels que des rappels d’objectifs, des rapports sur vos progrès et les lettres d’information de Common Voice.
 not-receiving-emails-info = Vous n’allez <bold>PAS</bold> recevoir des courriels tels que des rappels d’objectifs, des rapports sur vos progrès et les lettres d’information de Common Voice.
-n-clips = { NUMBER($count) } échantillons
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } échantillon
+       *[other] { $count } échantillons
+    }
 help-share-goal = Aidez-nous à trouver plus de voix, partagez votre objectif
 confirm-goal = Confirmer l’objectif
 goal-interval-weekly = Hebdomadaire

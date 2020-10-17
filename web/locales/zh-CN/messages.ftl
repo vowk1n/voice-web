@@ -9,7 +9,9 @@ email-input =
 submit-form-action = 提交
 loading = 加载中…
 email-opt-in-info = 我希望收到诸如目标提醒、我的进度更新与 Common Voice 的相关新闻通讯。
-email-opt-in-privacy = 若同意接收邮件，即代表您同意依照 Mozilla 的<privacyLink>隐私政策</privacyLink>所描述的方式处理这些信息。
+email-opt-in-info-title = 加入 Common Voice 邮件列表
+email-opt-in-info-sub-with-challenge = 接收诸如挑战、目标提醒、进度更新与 Common Voice 的相关新闻通讯。
+email-opt-in-privacy-v2 = 若同意接收邮件，即代表您同意依照 Mozilla 的<privacyLink>隐私政策</privacyLink>所描述的方式处理这些信息。
 indicates-required = * 表示必填字段
 not-available-abbreviation = 不可用
 
@@ -26,10 +28,12 @@ af = 南非语
 am = 阿姆哈拉语
 an = 阿拉贡语
 ar = 阿拉伯语
+arn = 马普丹冈语
 as = 阿萨姆语
 ast = 阿斯图里亚斯语
 az = 阿塞拜疆语
 ba = 巴什基尔语
+be = 白俄罗斯语
 bg = 保加利亚语
 bn = 孟加拉语
 br = 布列塔尼语
@@ -60,10 +64,12 @@ ga-IE = 爱尔兰语
 gl = 加利西亚语
 ha = 豪萨语
 he = 希伯莱语
-hi-IN = 印地语
+hi = 印地语
 hr = 克罗地亚语
 hsb = 上索布语
 hu = 匈牙利语
+hy-AM = 亚美尼亚语
+hyw = 西亚美尼亚语
 ia = 国际语
 id = 印度尼西亚语
 is = 冰岛语
@@ -71,23 +77,28 @@ it = 意大利语
 izh = 英格里亚语
 ja = 日语
 ka = 格鲁吉亚语
+kaa = 卡拉卡尔帕克语
 kab = 卡拜尔语
+kbd = 卡巴尔达语
 kk = 哈萨克语
 ko = 韩语
 kpv = 科米-齐良语
 ku = 库尔德语
 kw = 康沃尔语
 ky = 吉尔吉斯语
+lg = 卢干达语
 lij = 利古里亚语
 lt = 立陶宛语
 lv = 拉脱维亚语
 mdf = 莫克沙语
+mg = 马尔加什语
 mhr = 草原马里语
 mk = 马其顿语
 ml = 马拉雅拉姆语
 mn = 蒙古语
 mrj = 山地马里语
 mt = 马耳他语
+my = 缅甸语
 myv = 厄尔兹亚语
 nb-NO = 书面挪威语
 ne-NP = 尼泊尔语
@@ -95,6 +106,7 @@ nl = 荷兰语
 nn-NO = 新挪威语
 oc = 欧西坦语
 or = 奥里亚语
+pa-IN = 旁遮普语
 pl = 波兰语
 pt = 葡萄牙语
 rm-sursilv = 罗曼什语（苏斯勒万）
@@ -104,6 +116,7 @@ ru = 俄语
 rw = 卢旺达语
 sah = 萨哈语
 sc = 萨丁尼亚语
+scn = 西西里语
 si = 僧伽罗语
 sk = 斯洛伐克语
 sl = 斯洛文尼亚语
@@ -116,6 +129,7 @@ ta = 泰米尔语
 te = 泰卢固语
 tg = 塔吉克语
 th = 泰语
+tl = 塔加洛语
 tr = 土耳其语
 tt = 鞑靼语
 uby = 尤比克语
@@ -123,6 +137,7 @@ udm = 乌德穆尔特语
 uk = 乌克兰语
 ur = 乌尔都语
 uz = 乌兹别克语
+vec = 威尼斯语
 vi = 越南语
 vot = 沃提克语
 zh-CN = 汉语（中国大陆）
@@ -158,10 +173,10 @@ logout = 退出登录
 home-title = Common Voice 项目是 Mozilla 发起的倡议，旨在帮助教会机器真人的说话方式。
 home-cta = 有话在此大声说！
 wall-of-text-start = 语音是自然的、有人性的。这也是为什么我们希望为机器建立可用的语音技术。但要创造一个语音系统，需要大量的语音数据。
-wall-of-text-more-mobile = 大部分由大公司持有的数据，并未开放给公众使用。我们认为这会扼杀创新，因而推出了 Common Voice 项目，让语音识别技术的大门对每个人开放。
+wall-of-text-more-mobile = 大部分由行业巨头持有的数据，并未开放给公众使用。我们认为这会扼杀创新，因而推出了 Common Voice 项目，让语音识别技术的大门对每个人开放。
 wall-of-text-more-desktop = 现在，您可以贡献出您的声音，帮助我们建立一个开源的语音数据库，任何人都可以使用它来为设备和网络制作创新的应用程序。<lineBreak></lineBreak> 只要朗读一段文字，即可帮助机器了解人们如何说话。您也可以复查其他贡献者的工作以提高质量。就这么简单!
 wall-of-text-first = 语音是自然的、有人性的。这也是为什么我们希望为机器建立可用的语音技术。但要创造一个语音系统，开发者需要大量的语音数据。
-wall-of-text-second = 大部分由大公司持有的数据，并未开放给公众使用。我们认为这会扼杀创新，因而推出了 Common Voice 项目，让语音识别技术的大门对每个人开放而无障碍。
+wall-of-text-second = 大部分由行业巨头持有的数据，并未开放给公众使用。我们认为这会扼杀创新，因而推出了 Common Voice 项目，让语音识别技术的大门对每个人开放而无障碍。
 show-wall-of-text = 详细了解
 help-us-title = 帮助我们验证语句！
 help-us-explain = 请点击播放，听一听，然后告诉我们：他们正确说出了下面的句子吗？
@@ -217,7 +232,7 @@ whats-public = 有哪些资料会公开？
 email-not-public = 我们不会公开您的邮件地址。
 recordings-and-locale-public = 您贡献的录音数量，以及贡献的语言将会是公开的。
 username-optin-public = 您可以选择公开用户名或保持匿名。
-demographic-deidentified = 非必要提交的人口统计数据（例如年龄、性别、语言、口音）将会在您提交的语音数据中进行去识别化，并且永远不会在您的个人资料中公开。
+demographic-deidentified-clarity = 可选提交的人口统计数据（例如年龄、性别、语言、口音）不会在您的个人资料上公开，也不会在数据集里与您的账户关联。每个音频片段只会为了能做更精准的分析，而与您的人口统计数据关联。比如，研究者可能想要针对特定人群而细分化训练模型。
 username-email-not-demographic = 您的用户名与邮件地址不会与发布的数据相关联。
 
 ## Speak & Listen Shortcuts
@@ -303,6 +318,7 @@ thanks-for-account = 感谢您确认账户信息，接下来请提供您的个�
 why-demographic = 为什么这很重要？
 why-demographic-explanation = 匿名的用户数据，如年龄、性别、口音等，帮助改进用于训练语音识别引擎准确性的音频数据。您的用户名和电子邮件永远不会与您提交的数据相关联，并且您可以选择将您的用户名设为公开或匿名。
 accept-privacy = 我同意依照 Mozilla 的<privacyLink>隐私政策</privacyLink>所描述的方式处理这些信息
+accept-privacy-title = 隐私政策
 login-identity = 登录身份
 login-signup = 登录 / 注册
 edit = 编辑
@@ -428,11 +444,11 @@ about-partnership =
     
     我们要感谢以下人员和组织对项目的帮助：
 about-get-involved = 参与进来
-about-get-involved-text =
+about-get-involved-text-2 =
     想要帮忙使 Common Voice 变得更好吗？
-    太好了！请发送电子邮件与我们联系，也可以到 <discourseLink>Discourse</discourseLink> 留言、
-    通过 <githubLink>GitHub</githubLink> 提交反馈意见、
-    也可以加入我们的 <slackLink>Slack</slackLink>。
+    太好了！请发送电子邮件与我们联系，也可以到 <discourseLink>Discourse</discourseLink> 论坛留言、
+    通过 <githubLink>GitHub</githubLink> 反馈网站问题、
+    也可以加入我们的 <matrixLink>Matrix</matrixLink> 社区群组。
 about-nav-why-common-voice = 为什么？
 about-nav-how-it-works = 怎么做？
 about-nav-partners = 合作伙伴
@@ -456,10 +472,13 @@ sst-explanation = 语音转文字（STT）技术将语音数据转换为文字�
 de-identified = 去识别化
 de-identified-explanation = 在打包下载数据集时，贡献者的个人信息会从其所贡献的语音片段隐藏的过程。
 
-## NotFound
+## Error pages
 
-notfound-title = 未找到
-notfound-content = 很抱歉，找不到您想找的东西。
+error-title-404 = 我们找不到你要查看的页面
+error-content-404 = 也许回到我们的<homepageLink>主页</homepageLink>会有所帮助？若要询问问题，可以加入<matrixLink>Matrix 社区聊天频道</matrixLink>、关注 <githubLink>GitHub</githubLink> 上的网站问题反馈，或到<discourseLink>我们的 Discourse 论坛</discourseLink>让我们知道。
+error-title-503 = 发生了意外的宕机
+error-content-503 = 网站将尽快恢复正常。请到我们的 <matrixLink>Matrix 社区聊天频道</matrixLink>、<githubLink>GitHub</githubLink> 上的网站问题反馈，或到 <discourseLink>Discourse 论坛</discourseLink>向我们反馈，获取最新信息。
+error-code = { $code } 错误
 
 ## Data
 
@@ -478,6 +497,8 @@ data-bundle-button = 批量下载数据集
 data-bundle-description = Common Voice 数据加上所有其他的语音数据集。
 license = 许可协议：<licenseLink>{ $license }</licenseLink>
 license-mixed = 混合
+data-download-singleword-title = 下载单词目标句段
+data-download-singleword-callout = 这是一系列以用例为驱动的句段集，其中包含用于 Firefox Voice 进行语音数字识别、检测是/否、唤醒词等功能的测试数据。
 review-terms = 使用 Common Voice 即代表您同意我们的<termsLink>条款</termsLink>和<privacyLink>隐私声明</privacyLink>
 terms-agree = 我同意
 terms-disagree = 我不同意
@@ -510,7 +531,7 @@ number-of-voices = 录音人数
 splits = 分割
 email-to-download = 输入电子邮件地址进行下载
 why-email = <b>为什么需要电子邮件地址?</b>未来我们可能会联系您，提供数据集的相关更新信息。 邮件地址可作为我们联系您的方式。
-confirm-size = 您将下载 <size>{ $size }GB</size> 的文件
+confirm-size = 您将下载 <b>{ $size }</b> 的文件
 size-gigabyte = GB
 size-megabyte = MB
 confirm-no-identify = <b>您同意</b>不试图去确定 Common Voice 数据集中任何说话者的身份
@@ -598,14 +619,18 @@ contribute = 参与贡献
 listen = 聆听
 skip = 跳过
 shortcuts = 快捷方式
-clips-with-count = <bold>{ $count }</bold> 个片段
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> 个片段
+       *[other] <bold>{ $count }</bold> 个片段
+    }
 goal-help-recording = 您已帮助 Common Voice 达成 <goalPercentage></goalPercentage> 的每日 { $goalValue } 录音目标！
 goal-help-validation = 您已帮助 Common Voice 达成 <goalPercentage></goalPercentage> 的每日 { $goalValue } 验证目标！
-contribute-more = 准备好再录 { $count } 条了吗？
+contribute-more = 准备好再来 { $count } 条了吗？
 record-cta = 开始录音
 record-platform-not-supported = 很抱歉，尚不支持您的平台。
 record-platform-not-supported-desktop = 您可以在桌面电脑上下载最新内容：
-record-platform-not-supported-ios = <bold>iOS</bold> 用户可以下载我们的免费应用程序：
+record-platform-not-supported-ios-non-safari = iOS 用户，请使用 Safari 以继续录制…
 record-must-allow-microphone = 您必须允许访问麦克风。
 record-no-mic-found = 未找到麦克风
 record-error-too-short = 这份录音太短了。
@@ -619,6 +644,8 @@ record-again-instruction = 太棒了！<recordIcon></recordIcon> 来录制下一
 record-again-instruction2 = 继续加油，再录一次 <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> 最后一个！
 review-tooltip = 在此确认或重新录制片段
+share-clip = 分享您的录音片段
+share-common-voice = 分享 Common Voice
 review-instruction = 确认录音内容，有需要的话可以重录
 record-submit-tooltip = { $actionType } 确认无误即可提交
 clips-uploaded = 片段已上传
@@ -631,11 +658,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> 他们是否准确地�
 listen-again-instruction = 做得好！<playIcon></playIcon> 准备好就可以再听一遍
 listen-3rd-time-instruction = 完成两条了 <playIcon></playIcon>，继续加油！
 listen-last-time-instruction = <playIcon></playIcon> 最后一个了！
-nothing-to-validate = 我们没有这个语言可供验证的录音，请帮助我们多录一些。
+listen-empty-state = 我们已经没有这种语言的片段可以验证了…
+speak-empty-state = 我们已经没有这种语言的文本可以录音了…
+speak-empty-state-cta = 贡献语句
 record-button-label = 录下您的声音
 share-title-new = <bold>请帮助我们</bold>找到更多声音
 keep-track-profile = 创建账户跟踪个人贡献进度
 login-to-get-started = 请完成登录或注册，即可开始使用
+target-segment-first-card = 您为我们的第一段目标细分录音作出了贡献
+target-segment-first-banner = 帮助在 Common Voice 创建 { $locale } 的第一段目标细分语音
+target-segment-add-voice = 添加您的声音
+target-segment-learn-more = 详细了解
 
 ## Reporting
 
@@ -678,6 +711,7 @@ validations =
 
 your-languages = 您的语言
 toward-next-goal = 距离下一个目标
+goal-reached = 目标达成
 clips-you-recorded = 您录制的片段
 clips-you-validated = 您验证的片段
 todays-recorded-progress = 今日 Common Voice 已录片段进度
@@ -701,6 +735,7 @@ show-ranking = 显示我的排名
 
 get-started-goals = 从设定目标开始
 create-custom-goal = 创建自定义目标
+goal-type = 您想要达到怎样的目标？
 both-speak-and-listen = 两者
 both-speak-and-listen-long = 两者（说与听）
 daily-goal = 每日目标
@@ -714,17 +749,36 @@ want-to-continue = 是否继续？
 finish-editing = 要先完成编辑吗？
 lose-changes-warning = 若现在离开，将丢失所有更改
 build-custom-goal = 建立自定义目标
-help-reach-hours = 设定个人目标，助力 { $language } 的片段达到 { NUMBER($hours) } 小时
-help-reach-hours-general = 设定个人目标，助力 Common Voice 的片段达到 { NUMBER($hours) } 小时
+help-reach-hours-pluralized =
+    助力{ $language }的片段达到{ NUMBER($hours) ->
+       *[other] { $hours } 小时
+    }的个人目标
+help-reach-hours-general-pluralized =
+    助力 Common Voice 的任一语言达到{ NUMBER($hours) ->
+       *[other] { $hours } 小时
+    }的个人目标
 set-a-goal = 设定目标
 cant-decide = 无法决定？
-activity-needed-calculation = 若有 { NUMBER($people) } 人每天录制 { NUMBER($clipsPerDay) } 片段，就可在 { NUMBER($periodMonths) } 个月后达到 { NUMBER($totalHours) } 小时的目標。
+activity-needed-calculation-plural =
+    若有 { NUMBER($people) ->
+       *[other] { $people } 个人
+    }每天录下 { NUMBER($clipsPerDay) ->
+       *[other] { $clipsPerDay } 个片段
+    }，就可以在 { NUMBER($periodMonths) ->
+       *[other] { $periodMonths } 个月
+    }内达成{ NUMBER($totalHours) ->
+       *[other] { $totalHours } 小时
+    }录音片段的目标。
 how-many-per-day = 好的，每天要贡献几个片段？
 how-many-a-week = 好的，每周要贡献几个片段？
 which-goal-type = 想要录音、聆听确认，还是两者都要？
 receiving-emails-info = 您当前已设为接收目标提醒、我的进度更新、Common Voice 新闻通讯等邮件
 not-receiving-emails-info = 您当前已设为<bold>拒绝</bold>接收诸如目标提醒、我的进度更新与 Common Voice 的相关新闻通讯。
-n-clips = { NUMBER($count) } 个片段
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } 个片段
+       *[other] { $count } 个片段
+    }
 help-share-goal = 帮助我们找到更多人献声，分享您的目标
 confirm-goal = 确认目标
 goal-interval-weekly = 每周

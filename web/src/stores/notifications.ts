@@ -6,10 +6,12 @@ export namespace Notifications {
     | {
         kind: 'pill';
         type: NotificationType;
+        score?: number;
       }
-    | { kind: 'banner'; actionProps: any });
+    | { kind: 'banner'; bannerProps: { storageKey?: string; links: any[] } }
+  );
 
-  type NotificationType = 'success' | 'error';
+  type NotificationType = 'success' | 'error' | 'achievement';
 
   export type State = Notification[];
 
@@ -37,9 +39,19 @@ export namespace Notifications {
       type: ActionType.ADD,
       notification: { id: ++id, kind: 'pill', content, type },
     }),
-    addBanner: (content: any, actionProps: any) => ({
+
+    // TODO: separate banners from notifications
+    addBanner: (content: any, bannerProps: any) => ({
       type: ActionType.ADD,
-      notification: { id: ++id, kind: 'banner', content, actionProps },
+      notification: { id: ++id, kind: 'banner', content, bannerProps },
+    }),
+    addAchievement: (
+      score: number,
+      text: string,
+      type: NotificationType = 'achievement'
+    ) => ({
+      type: ActionType.ADD,
+      notification: { id: ++id, kind: 'pill', score, content: text, type },
     }),
     remove: (id: number) => ({
       type: ActionType.REMOVE,

@@ -1,6 +1,4 @@
-import { isNativeIOS } from '../../../../utility';
-
-const AUDIO_TYPE = 'audio/ogg; codecs=opus';
+import { getAudioFormat } from '../../../../utility';
 
 interface BlobEvent extends Event {
   data: Blob;
@@ -23,20 +21,22 @@ export default class AudioWeb {
   audioContext: AudioContext;
   recorder: any;
   chunks: any[];
-  last: AudioInfo;
-  lastRecordingData: Blob;
-  lastRecordingUrl: string;
   frequencyBins: Uint8Array;
   volumeCallback: Function;
   jsNode: any;
+  recorderListeners: {
+    start: Function | null;
+    dataavailable: Function | null;
+    stop: Function | null;
+  };
 
   constructor() {
-    // Make sure we are in the right context before we allow instantiation.
-    if (isNativeIOS()) {
-      throw new Error('cannot use web audio in iOS app');
-    }
-
-    this.visualize = this.visualize.bind(this);
+    this.recorderListeners = {
+      start: null,
+      dataavailable: null,
+      stop: null,
+    };
+    this.analyze = this.analyze.bind(this);
   }
 
   private isReady(): boolean {
@@ -44,7 +44,7 @@ export default class AudioWeb {
   }
 
   private getMicrophone(): Promise<MediaStream> {
-    return new Promise(function(res: Function, rej: Function) {
+    return new Promise(function (res: Function, rej: Function) {
       function deny(error: MediaStreamError) {
         rej(
           ({
@@ -57,7 +57,7 @@ export default class AudioWeb {
         res(stream);
       }
 
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      if (navigator.mediaDevices?.getUserMedia) {
         navigator.mediaDevices
           .getUserMedia({ audio: true })
           .then(resolve, deny);
@@ -77,7 +77,7 @@ export default class AudioWeb {
   // Check all the browser prefixes for microhpone support.
   isMicrophoneSupported() {
     return (
-      (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) ||
+      navigator.mediaDevices?.getUserMedia ||
       navigator.getUserMedia ||
       navigator.webkitGetUserMedia ||
       navigator.mozGetUserMedia
@@ -86,32 +86,17 @@ export default class AudioWeb {
 
   // Check if audio recording is supported
   isAudioRecordingSupported() {
-    return typeof MediaRecorder !== 'undefined';
+    return (
+      typeof window.MediaRecorder !== 'undefined' &&
+      !window.MediaRecorder.notSupported
+    );
   }
 
-  private visualize() {
+  private analyze() {
     this.analyzerNode.getByteFrequencyData(this.frequencyBins);
 
-    let sum = 0;
-    for (var i = 0; i < this.frequencyBins.length; i++) {
-      sum += this.frequencyBins[i];
-    }
-
-    let average = sum / this.frequencyBins.length;
-
     if (this.volumeCallback) {
-      this.volumeCallback(average);
-    }
-  }
-
-  private startVisualize() {
-    this.jsNode.onaudioprocess = this.visualize;
-  }
-
-  private stopVisualize() {
-    this.jsNode.onaudioprocess = undefined;
-    if (this.volumeCallback) {
-      this.volumeCallback(100);
+      this.volumeCallback(Math.max(...this.frequencyBins));
     }
   }
 
@@ -135,11 +120,12 @@ export default class AudioWeb {
     const microphone = await this.getMicrophone();
 
     this.microphone = microphone;
-    var audioContext = new AudioContext();
-    var sourceNode = audioContext.createMediaStreamSource(microphone);
-    var volumeNode = audioContext.createGain();
-    var analyzerNode = audioContext.createAnalyser();
-    var outputNode = audioContext.createMediaStreamDestination();
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+    const sourceNode = audioContext.createMediaStreamSource(microphone);
+    const volumeNode = audioContext.createGain();
+    const analyzerNode = audioContext.createAnalyser();
+    const outputNode = audioContext.createMediaStreamDestination();
 
     // Make sure we're doing mono everywhere.
     sourceNode.channelCount = 1;
@@ -153,23 +139,23 @@ export default class AudioWeb {
     analyzerNode.connect(outputNode);
 
     // and set up the recorder.
-    this.recorder = new MediaRecorder(outputNode.stream);
+    this.recorder = new window.MediaRecorder(outputNode.stream);
 
     // Set up the analyzer node, and allocate an array for its data
     // FFT size 64 gives us 32 bins. But those bins hold frequencies up to
-    // 22kHz or more, and we only care about visualizing lower frequencies
-    // which is where most human voice lies, so we use fewer bins
+    // 22kHz or more, and we only care about lower frequencies which is where
+    // most human voice lies, so we use fewer bins.
     analyzerNode.fftSize = 128;
     analyzerNode.smoothingTimeConstant = 0.96;
     this.frequencyBins = new Uint8Array(analyzerNode.frequencyBinCount);
 
-    // Setup audio visualizer.
+    // Setup jsNode for audio analysis callbacks.
+    // TODO: `createScriptProcessor` is deprecated, and is a heavy solution for
+    //       what it’s doing (checking recording volume). It should be replaced
+    //       with something lighter, or AudioWorklets once they become more
+    //       widely adopted.
     this.jsNode = audioContext.createScriptProcessor(256, 1, 1);
     this.jsNode.connect(audioContext.destination);
-
-    // Another audio node used by the beep() function
-    var beeperVolume = audioContext.createGain();
-    beeperVolume.connect(audioContext.destination);
 
     this.analyzerNode = analyzerNode;
     this.audioContext = audioContext;
@@ -183,40 +169,52 @@ export default class AudioWeb {
 
     return new Promise<void>((res: Function, rej: Function) => {
       this.chunks = [];
-      this.recorder.ondataavailable = (e: BlobEvent) => {
+      // Remove the old listeners.
+      this.recorder.removeEventListener('start', this.recorderListeners.start);
+      this.recorder.removeEventListener(
+        'dataavailable',
+        this.recorderListeners.dataavailable
+      );
+
+      // Update the stored listeners.
+      this.recorderListeners.start = (e: Event) => res();
+      this.recorderListeners.dataavailable = (e: BlobEvent) => {
         this.chunks.push(e.data);
       };
 
-      this.recorder.onstart = (e: Event) => {
-        this.clear();
-        res();
-      };
+      // Add the new listeners.
+      this.recorder.addEventListener('start', this.recorderListeners.start);
+      this.recorder.addEventListener(
+        'dataavailable',
+        this.recorderListeners.dataavailable
+      );
 
+      // Finally, start it up.
       // We want to be able to record up to 60s of audio in a single blob.
       // Without this argument to start(), Chrome will call dataavailable
       // very frequently.
-      this.startVisualize();
+      this.jsNode.onaudioprocess = this.analyze;
       this.recorder.start(20000);
     });
   }
 
   stop(): Promise<AudioInfo> {
     if (!this.isReady()) {
-      console.error('Cannot stop audio before microhphone is ready.');
+      console.error('Cannot stop audio before microphone is ready.');
       return Promise.reject();
     }
 
     return new Promise((res: Function, rej: Function) => {
-      this.stopVisualize();
-
-      this.recorder.onstop = (e: Event) => {
-        let blob = new Blob(this.chunks, { type: AUDIO_TYPE });
-        this.last = {
+      this.jsNode.onaudioprocess = undefined;
+      this.recorder.removeEventListener('stop', this.recorderListeners.stop);
+      this.recorderListeners.stop = (e: Event) => {
+        let blob = new Blob(this.chunks, { type: getAudioFormat() });
+        res({
           url: URL.createObjectURL(blob),
           blob: blob,
-        };
-        res(this.last);
+        });
       };
+      this.recorder.addEventListener('stop', this.recorderListeners.stop);
       this.recorder.stop();
     });
   }
@@ -228,14 +226,5 @@ export default class AudioWeb {
       }
     }
     this.microphone = null;
-  }
-
-  clear() {
-    if (this.lastRecordingUrl) {
-      URL.revokeObjectURL(this.lastRecordingUrl);
-    }
-
-    this.lastRecordingData = null;
-    this.lastRecordingUrl = null;
   }
 }

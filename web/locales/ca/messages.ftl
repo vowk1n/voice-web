@@ -9,7 +9,9 @@ email-input =
 submit-form-action = Envia
 loading = S'està carregant…
 email-opt-in-info = M'agradaria rebre correus electrònics com ara recordatoris d’objectius, actualitzacions del meu progrés i butlletins de notícies sobre el Common Voice.
-email-opt-in-privacy = En optar per rebre correus electrònics, accepteu que Mozilla gestioni aquesta informació en els termes descrits en la seva <privacyLink>política de privadesa</privacyLink>.
+email-opt-in-info-title = Uniu-vos a la llista de correu del Common Voice
+email-opt-in-info-sub-with-challenge = Rebreu correus com ara recordatoris d'objectius i reptes, actualitzacions del progrés i butlletins sobre el Common voice.
+email-opt-in-privacy-v2 = En optar per rebre correus electrònics, accepteu que Mozilla gestioni aquesta informació en els termes descrits en la seva <privacyLink>política de privadesa</privacyLink>.
 indicates-required = * Indica un camp necessari
 not-available-abbreviation = N/D
 
@@ -26,10 +28,12 @@ af = afrikaans
 am = amhàric
 an = aragonès
 ar = àrab
+arn = mapudungun
 as = assamès
 ast = asturià
 az = àzeri
 ba = baixkir
+be = bielorús
 bg = búlgar
 bn = bengalí
 br = bretó
@@ -60,10 +64,12 @@ ga-IE = irlandès
 gl = gallec
 ha = haussa
 he = hebreu
-hi-IN = hindi
+hi = hindi
 hr = croat
 hsb = alt sòrab
 hu = hongarès
+hy-AM = armeni
+hyw = armeni occidental
 ia = interlingua
 id = indonesi
 is = islandès
@@ -71,23 +77,28 @@ it = italià
 izh = ingrià
 ja = japonès
 ka = georgià
+kaa = karakalpak
 kab = cabilenc
+kbd = kabardí
 kk = kazakh
 ko = coreà
 kpv = komi
 ku = kurd
 kw = còrnic
 ky = kirguís
+lg = ganda
 lij = lígur
 lt = lituà
 lv = letó
 mdf = mokxa
+mg = malgaix
 mhr = mari oriental
 mk = macedònic
 ml = malaiàlam
 mn = mongol
 mrj = mari occidental
 mt = maltès
+my = birmà
 myv = mordovià erza
 nb-NO = Bokmål noruec
 ne-NP = nepalès
@@ -95,6 +106,7 @@ nl = neerlandès
 nn-NO = noruec nynorsk
 oc = occità
 or = oriya
+pa-IN = panjabi
 pl = polonès
 pt = portuguès
 rm-sursilv = romanx (sobreselvà)
@@ -104,17 +116,20 @@ ru = rus
 rw = ruandès
 sah = iacut
 sc = sard
+scn = sicilià
 si = singalès
 sk = eslovac
 sl = eslovè
 sq = albanès
 sr = serbi
 sv-SE = suec
+sw = suahili
 syr = siríac
 ta = tamil
 te = telugu
 tg = tadjik
 th = tailandès
+tl = tagal
 tr = turc
 tt = tàtar
 uby = ubikh
@@ -122,6 +137,7 @@ udm = udmurt
 uk = ucraïnès
 ur = urdú
 uz = uzbek
+vec = vènet
 vi = vietnamita
 vot = vòtic
 zh-CN = xinès (Xina)
@@ -219,7 +235,7 @@ whats-public = Què és públic?
 email-not-public = No farem pública la vostra adreça electrònica.
 recordings-and-locale-public = El nombre d'enregistraments i les llengües en què heu col·laborat seran públics.
 username-optin-public = Podeu triar si voleu que el vostre nom d'usuari sigui públic o anònim.
-demographic-deidentified = Les dades demogràfiques proporcionades opcionalment (per exemple, edat, sexe, llengua i accent) s'anonimitzen de les dades de veu que envieu i mai no es faran públiques en el vostre perfil.
+demographic-deidentified-clarity = Les dades demogràfiques enviades opcionalment (per exemple, edat, sexe, llengua i variant) no es faran mai públiques en el vostre perfil i no s’enllaçaran amb el vostre compte en el conjunt de dades. De forma individual, els talls de veu s’associaran a les dades demogràfiques amb la finalitat d’anàlisis més precises.  Per exemple, un investigador pot voler orientar un model d’entrenament a un segment demogràfic específic.
 username-email-not-demographic = El vostre nom d'usuari i adreça electrònica no estaran associats amb les dades publicades.
 
 ## Speak & Listen Shortcuts
@@ -306,6 +322,7 @@ thanks-for-account = Gràcies per confirmar el compte. Ara crearem el vostre per
 why-demographic = Per què és important?
 why-demographic-explanation = Les dades d'usuari anònimes com l'edat, el sexe i l'accent ajuden a millorar les dades d'àudio utilitzades per entrenar la precisió dels motors de reconeixement de veu. Les dades que envieu no estaran mai associades amb cap nom d'usuari ni adreça electrònica, i podeu triar si voleu que el vostre nom d'usuari sigui públic o anònim.
 accept-privacy = Accepto que gestioneu aquesta informació en els termes descrits en la <privacyLink>política de privadesa</privacyLink> de Mozilla
+accept-privacy-title = Política de privadesa
 login-identity = Identitat d'inici de sessió
 login-signup = Inici de sessió / Registre
 edit = Edita
@@ -318,8 +335,15 @@ skip-submission-note = Nota: Igualment haureu de seleccionar entre Parla o Escol
 off = Desactivat
 on = Activat
 avatar-clip-title = Doneu veu al vostre avatar
+change-your-avatar-clip = Voleu canviar el vostre tall de veu?
+recording-in-progress = Enregistrament de veu en curs
+avatar-clip-recorded = El vostre avatar ara inclou un tall de veu!
 record-voice-wave = ENREGISTRA UN TALL DE VEU PERSONAL
+retry-voice-wave-recording = TORNA-HI
+re-record = TORNA A ENREGISTRAR
+delete-voice = SUPRIMEIX
 recording-voice-wave = Enregistrament
+delete-voice-clip = o suprimiu el tall de veu
 ready-to-upload = Puja
 avatar-clip-fact = És un fet ben conegut que un lector es pot distreure del contingut que ha de llegir d'una pàgina en mirar-ne el disseny.
 recreate-voice = Torna a crear un tall de veu personal
@@ -360,7 +384,7 @@ faq-what-cv-and-deepspeech-a = El conjunt de dades del Common Voice complementa 
 faq-is-goal-assistant-q = L'objectiu del Common Voice és construir un assistent de veu?
 faq-is-goal-assistant-a = L'objectiu del conjunt de dades del Common Voice és permetre que qualsevol persona del món pugui crear aplicacions de reconeixement de veu, de reconeixement de parlants o qualsevol altre tipus d'aplicació que requereixi dades de veu. Un assistent de veu és només un dels molts tipus d'aplicacions que podeu crear utilitzant el conjunt de dades.
 faq-do-want-native-q = No sóc parlant nadiu i parlo amb accent. Voleu la meva veu igualment?
-faq-do-want-native-a = Sí, volem la teva veu en particular! Part de l'objectiu del Common Voice és obtenir tants accents diferents com sigui possible perquè els serveis de reconeixement de veu funcionin igual de bé per a tothom. Això significa que els donatius de parlants no nadius són particularment importants.
+faq-do-want-native-a = Sí, volem la vostra veu en especial! Part de l'objectiu del Common Voice és obtenir tants accents diferents com sigui possible perquè els serveis de reconeixement de veu funcionin igual de bé per a tothom. Això significa que les donacions de parlants no nadius són particularment importants.
 faq-why-different-speakers-q = Per què calen tants parlants diferents per a cada llengua?
 faq-why-different-speakers-a =
     La majoria de bases de dades de veu s'entrenen amb una sobrerepresentació  d'alguna característica demogràfica, això genera resultats amb biaix de <articleLink>gènere masculí i classe mitjana</articleLink>. Els accents i dialectes que habitualment són infrarepresentats en els conjunts de dades d'entrenament s'associen típicament amb persones que ja són marginades. Moltes màquines també tenen dificultat per entendre veus femenines.
@@ -427,11 +451,9 @@ about-partnership =
     
     Volem agrair les persones i organitzacions següents per la seva ajuda en el projecte:
 about-get-involved = Col·laboreu-hi
-about-get-involved-text =
+about-get-involved-text-2 =
     Voleu ajudar a millorar el Common Voice?
-    Genial! Poseu-vos en contacte per correu electrònic o pel <discourseLink>Discourse</discourseLink>,
-    envieu comentaris mitjançant el <githubLink>GitHub</githubLink>
-    o uniu-vos al nostre <slackLink>Slack</slackLink>.
+    Genial! Poseu-vos en contacte per correu electrònic o pels fòrums del <discourseLink>Discourse</discourseLink>, notifiqueu problemes en el <githubLink>GitHub</githubLink> o uniu-vos al nostre xat de la comunitat en el <matrixLink>Matrix</matrixLink>
 about-nav-why-common-voice = Per què?
 about-nav-how-it-works = Com?
 about-nav-partners = Socis
@@ -479,6 +501,8 @@ data-bundle-button = Baixa el paquet del conjunt de dades
 data-bundle-description = Dades del Common Voice més tots els conjunts de dades de veu anteriors.
 license = Llicència: <licenseLink>{ $license }</licenseLink>
 license-mixed = Mixta
+data-download-singleword-title = Baixeu el segment específic amb paraules individuals
+data-download-singleword-callout = Es tracta d'un segment basat en casos d'ús que conté dades per al reconeixement de dígits parlats, detecció de «sí/no» i dades de proves de paraules d'activació per al <fxLink> Firefox Voice </fxLink>.
 review-terms = En usar Common Voice, accepteu les <termsLink>condicions d'ús</termsLink> i l'<privacyLink>avís de privadesa</privacyLink>
 terms-agree = D'acord
 terms-disagree = No hi estic d'acord
@@ -599,7 +623,11 @@ contribute = Col·laboreu‑hi
 listen = Escolta
 skip = Omet
 shortcuts = Dreceres
-clips-with-count = <bold>{ $count }</bold> talls
+clips-with-count-pluralized =
+    { $count ->
+        [one] <bold>{ $count }</bold> tall
+       *[other] <bold>{ $count }</bold> talls
+    }
 goal-help-recording = Heu ajudat el Common Voice a assolir el <goalPercentage></goalPercentage> de l'objectiu diari de { $goalValue } enregistraments!
 goal-help-validation = Heu ajudat el Common Voice a assolir el <goalPercentage></goalPercentage> de l'objectiu diari de { $goalValue } validacions!
 contribute-more =
@@ -610,7 +638,7 @@ contribute-more =
 record-cta = Enregistreu
 record-platform-not-supported = Malauradament, la vostra plataforma no és compatible actualment.
 record-platform-not-supported-desktop = En ordinadors d'escriptori, podeu baixar l'últim:
-record-platform-not-supported-ios = Els usuaris de l'<bold>iOS</bold> poden baixar la nostra aplicació gratuïta:
+record-platform-not-supported-ios-non-safari = En l'iOS, continueu amb el Safari per a activar l'enregistrament…
 record-must-allow-microphone = Cal que permeteu l'accés al micròfon.
 record-no-mic-found = No s'ha trobat cap micròfon.
 record-error-too-short = L'enregistrament és massa curt.
@@ -624,6 +652,8 @@ record-again-instruction = Molt bé! <recordIcon></recordIcon> Enregistreu un al
 record-again-instruction2 = Seguiu així! Enregistreu-ne un altre <recordIcon></recordIcon>
 record-last-instruction = <checkIcon></checkIcon> L'últim!
 review-tooltip = Reviseu i torneu a enregistrar talls des d'aquí mateix
+share-clip = Compartiu el vostre tall de veu
+share-common-voice = Compartiu el Common Voice
 review-instruction = Reviseu els talls i, si cal, torneu-los a enregistrar
 record-submit-tooltip = { $actionType } Envia quan hàgiu enllestit
 clips-uploaded = Talls pujats
@@ -636,11 +666,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> Han pronunciat la fra
 listen-again-instruction = Bona feina! <playIcon></playIcon> Escolteu una altra vegada quan estigueu a punt
 listen-3rd-time-instruction = 2 menys! Mantingueu el ritme! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon> L'últim!
-nothing-to-validate = No hi ha res per validar en aquesta llengua. Ajudeu-nos a enregistrar-ne més per omplir la cua.
+listen-empty-state = No hi ha cap més tall per validar en aquesta llengua...
+speak-empty-state = No hi ha cap més frase per enregistrar en aquesta llengua...
+speak-empty-state-cta = Aporteu frases
 record-button-label = Enregistreu la vostra veu
 share-title-new = <bold>Ajudeu-nos</bold> a trobar més veus
 keep-track-profile = Feu seguiment del vostre progrés amb un perfil
 login-to-get-started = Inicieu sessió o creeu un compte per començar
+target-segment-first-card = Col·laboreu en assolir la primera part de l'objectiu
+target-segment-first-banner = Ajudeu a assolir la primera part de l'objectiu del Common Voice en { $locale }
+target-segment-add-voice = Afegiu la vostra veu
+target-segment-learn-more = Més informació
 
 ## Reporting
 
@@ -709,6 +745,7 @@ show-ranking = Mostra la meva classificació
 
 get-started-goals = Introducció als objectius
 create-custom-goal = Creeu un objectiu personalitzat
+goal-type = Quin tipus d'objectiu voleu crear?
 both-speak-and-listen = Ambdós
 both-speak-and-listen-long = Ambdós (Parla i Escolta)
 daily-goal = Objectiu diari
@@ -722,17 +759,43 @@ want-to-continue = Voleu continuar?
 finish-editing = Voleu acabar d'editar?
 lose-changes-warning = Si ho deixeu ara, es perdran tots els canvis
 build-custom-goal = Crea un objectiu personalitzat
-help-reach-hours = Ajudeu a arribar a { NUMBER($hours) } hores en { $language } amb un objectiu personal
-help-reach-hours-general = Ajudeu al Common Voice a arribar a { NUMBER($hours) } hores en una llengua amb un objectiu personal
+help-reach-hours-pluralized =
+    Ajudeu a arribar a { NUMBER($hours) ->
+        [one] { $hours } hora
+       *[other] { $hours } hores
+    }en { $language } amb un objectiu personal
+help-reach-hours-general-pluralized =
+    Ajudeu al Common Voice a arribar a{ NUMBER($hours) ->
+        [one] { $hours } hora
+       *[other] { $hours } hores
+    }en una llengua amb un objectiu personal
 set-a-goal = Defineix un objectiu
 cant-decide = No sabeu què fer?
-activity-needed-calculation = Si { NUMBER($people) } persones enregistren { NUMBER($clipsPerDay) } talls per dia, es pot arribar a { NUMBER($totalHours) } hores en poc més de { NUMBER($periodMonths) } mesos.
+activity-needed-calculation-plural =
+    Si { NUMBER($people) ->
+        [one] { $people } persona enregistra
+       *[other] { $people } persones enregistren
+    } { NUMBER($clipsPerDay) ->
+        [one] { $clipsPerDay } tall
+       *[other] { $clipsPerDay } talls
+    } per dia, es pot arribar a { NUMBER($totalHours) ->
+        [one] { $totalHours } hora
+       *[other] { $totalHours } hores
+    } en poc més { NUMBER($periodMonths) ->
+        [one] d'{ $periodMonths } mes
+        [11] d'{ $periodMonths } mesos
+       *[other] de { $periodMonths } mesos
+    }
 how-many-per-day = Genial! Quants talls per dia?
 how-many-a-week = Genial! Quants talls per setmana?
 which-goal-type = Genial! Voleu parlar, escoltar o totes dues coses?
 receiving-emails-info = Actualment teniu configurat rebre correus electrònics, com ara recordatoris d’objectius, actualitzacions del vostre progrés i butlletins de notícies sobre el Common Voice.
 not-receiving-emails-info = Actualment <bold>NO</bold> rebeu correus electrònics com ara recordatoris dels objectius, actualitzacions del progrés personal o notícies sobre el Common Voice
-n-clips = { NUMBER($count) } talls
+n-clips-pluralized =
+    { NUMBER($count) ->
+        [one] { $count } tall
+       *[other] { $count } talls
+    }
 help-share-goal = Ajudeu-nos a trobar més veus, compartiu el vostre objectiu
 confirm-goal = Confirmo l'objectiu
 goal-interval-weekly = Setmanal

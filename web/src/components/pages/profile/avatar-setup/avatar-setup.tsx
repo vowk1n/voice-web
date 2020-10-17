@@ -1,8 +1,8 @@
 import {
   Localized,
-  LocalizationProps,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import API from '../../../../services/api';
@@ -24,9 +24,8 @@ import {
 } from '../../../ui/icons';
 import { Button } from '../../../ui/ui';
 import { Voice, PlayButton } from '../../../primary-buttons/primary-buttons';
-import AudioIOS from '../../contribution/speak/audio-ios';
 import AudioWeb, { AudioError } from '../../contribution/speak/audio-web';
-import { isFirefoxFocus, isNativeIOS, isProduction } from '../../../../utility';
+import { isProduction } from '../../../../utility';
 import { Suspense, lazy } from 'react';
 const Lottie = lazy(() => import('react-lottie'));
 const animationData = require('../../../layout/data.json');
@@ -42,10 +41,7 @@ function resizeImage(file: File, maxSize: number): Promise<Blob> {
       dataURI.split(',')[0].indexOf('base64') >= 0
         ? atob(dataURI.split(',')[1])
         : unescape(dataURI.split(',')[1]);
-    const mime = dataURI
-      .split(',')[0]
-      .split(':')[1]
-      .split(';')[0];
+    const mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
     const max = bytes.length;
     const ia = new Uint8Array(max);
     for (var i = 0; i < max; i++) ia[i] = bytes.charCodeAt(i);
@@ -75,7 +71,7 @@ function resizeImage(file: File, maxSize: number): Promise<Blob> {
   };
 
   return new Promise((ok, no) => {
-    if (!file.type.match(/image.*/)) {
+    if (!file || !file.type.match(/image.*/)) {
       no(new Error('Not an image'));
       return;
     }
@@ -100,7 +96,7 @@ interface PropsFromDispatch {
   addUpload: typeof Uploads.actions.add;
 }
 
-interface Props extends LocalizationProps, PropsFromState, PropsFromDispatch {}
+interface Props extends WithLocalizationProps, PropsFromState, PropsFromDispatch {}
 
 interface State {
   isSaving: boolean;
@@ -123,7 +119,7 @@ class AvatarSetup extends React.Component<Props, State> {
     avatarClipUrl: null,
   };
 
-  audio: AudioWeb | AudioIOS;
+  audio: AudioWeb;
   isUnsupportedPlatform = false;
   maxVolume = 0;
   recordingStartTime = 0;
@@ -132,13 +128,12 @@ class AvatarSetup extends React.Component<Props, State> {
   audioRef = React.createRef<HTMLAudioElement>();
 
   async componentDidMount() {
-    this.audio = isNativeIOS() ? new AudioIOS() : new AudioWeb();
+    this.audio = new AudioWeb();
     this.audio.setVolumeCallback(this.updateVolume.bind(this));
 
     if (
       !this.audio.isMicrophoneSupported() ||
-      !this.audio.isAudioRecordingSupported() ||
-      isFirefoxFocus()
+      !this.audio.isAudioRecordingSupported()
     ) {
       this.isUnsupportedPlatform = true;
     }
@@ -158,7 +153,7 @@ class AvatarSetup extends React.Component<Props, State> {
   async saveFileAvatar(files: FileList) {
     const { addNotification, api, getString, locale, refreshUser } = this.props;
     this.setState({ isSaving: true });
-    const image = await resizeImage(files.item(0), 80);
+    const image = await resizeImage(files.item(0), 200);
     const { error } = await api.saveAvatar('file', image);
     if (['too_large'].includes(error)) {
       addNotification(getString('file' + error));
@@ -451,64 +446,61 @@ class AvatarSetup extends React.Component<Props, State> {
               )}
             </div>
             {/* ALL buttons, first page delete and re-record buttons */}
-            {clipStatus === 'notStarted' &&
-              (hasClip && (
-                <div>
-                  <div className="but">
-                    <div>
-                      <Button
-                        outline
-                        rounded
-                        className="primary-3 rerecord-but"
-                        onClick={this.updateAvatarClip}>
-                        <MicIcon />
-                        <Localized id="re-record">
-                          <span />
-                        </Localized>
-                      </Button>
-                    </div>
-                    <div>
-                      <Button
-                        outline
-                        rounded
-                        className="primary-2 delete-but"
-                        onClick={this.deleteAvatarClip.bind(this)}>
-                        <TrashIcon />
-                        <Localized id="delete-voice">
-                          <span />
-                        </Localized>
-                      </Button>
-                    </div>
+            {clipStatus === 'notStarted' && hasClip && (
+              <div>
+                <div className="but">
+                  <div>
+                    <Button
+                      outline
+                      rounded
+                      className="primary-3 rerecord-but"
+                      onClick={this.updateAvatarClip}>
+                      <MicIcon />
+                      <Localized id="re-record">
+                        <span />
+                      </Localized>
+                    </Button>
+                  </div>
+                  <div>
+                    <Button
+                      outline
+                      rounded
+                      className="primary-2 delete-but"
+                      onClick={this.deleteAvatarClip.bind(this)}>
+                      <TrashIcon />
+                      <Localized id="delete-voice">
+                        <span />
+                      </Localized>
+                    </Button>
                   </div>
                 </div>
-              ))}
+              </div>
+            )}
 
-            {clipStatus === 'notStarted' &&
-              (!hasClip && (
-                <Button
-                  outline
-                  rounded
-                  className="primary rerecord-but"
-                  onClick={this.counter}>
-                  <MicIcon />
-                  <Localized id="record-voice-wave">
-                    <span />
-                  </Localized>
-                </Button>
-              ))}
-            {clipStatus === 'starting' &&
-              (!hasClip && (
-                <Button
-                  outline
-                  rounded
-                  className="primary cancel-but"
-                  onClick={this.cancelRecording}>
-                  <CrossIcon />
-                  <Localized id="cancel-avatar-clip-recording">
-                    <span />
-                  </Localized>
-                </Button>
-              ))}
+            {clipStatus === 'notStarted' && !hasClip && (
+              <Button
+                outline
+                rounded
+                className="primary rerecord-but"
+                onClick={this.counter}>
+                <MicIcon />
+                <Localized id="record-voice-wave">
+                  <span />
+                </Localized>
+              </Button>
+            )}
+            {clipStatus === 'starting' && !hasClip && (
+              <Button
+                outline
+                rounded
+                className="primary cancel-but"
+                onClick={this.cancelRecording}>
+                <CrossIcon />
+                <Localized id="cancel-avatar-clip-recording">
+                  <span />
+                </Localized>
+              </Button>
+            )}
             {clipStatus === 'started' && (
               <Button
                 outline
@@ -588,7 +580,7 @@ class AvatarSetup extends React.Component<Props, State> {
                 </Localized>
                 <Localized
                   id="browse-file"
-                  browseWrap={<span className="browse" />}>
+                  elems={{browseWrap: <span className="browse" />}}>
                   <span className="upload-label" />
                 </Localized>
                 <input

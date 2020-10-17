@@ -249,16 +249,16 @@
         font-style: normal;
         font-weight: 600;
         text-align: center;
-        color: #4a4a4a;
+        color: var(--near-black);
     }
 
     .counter-animation {
         border: 2px solid;
         border-radius: 50%;
-        border-right-color: #f89096;
+        border-right-color: var(--gradient-pink);
         border-left-color: white;
-        border-top-color: #f89096;
-        border-bottom-color: #f89096;
+        border-top-color: var(--gradient-pink);
+        border-bottom-color: var(--gradient-pink);
         width: 95%;
         height: 70px;
         @media only screen and (max-width: 414px) {

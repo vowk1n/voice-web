@@ -1,4 +1,4 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { useState } from 'react';
 import { useAPI } from '../../hooks/store-hooks';
@@ -53,6 +53,7 @@ export default function SubscribeNewsletter() {
             <input
               className={email.length > 0 ? 'has-value' : ''}
               type="email"
+              name="email"
               value={email}
               onChange={event => {
                 setEmail(event.target.value);
@@ -86,7 +87,7 @@ export default function SubscribeNewsletter() {
         label={
           <Localized
             id="accept-privacy"
-            privacyLink={<LocaleLink to={URLS.PRIVACY} blank />}>
+            elems={{privacyLink: <LocaleLink to={URLS.PRIVACY} blank />}}>
             <span />
           </Localized>
         }

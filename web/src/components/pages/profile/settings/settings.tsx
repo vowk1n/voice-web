@@ -1,12 +1,12 @@
 import {
-  LocalizationProps,
   Localized,
   withLocalization,
-} from 'fluent-react/compat';
+  WithLocalizationProps,
+} from '@fluent/react';
 import * as React from 'react';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { UserClient } from 'common/user-clients';
+import { UserClient } from 'common';
 import { Notifications } from '../../../../stores/notifications';
 import StateTree from '../../../../stores/tree';
 import { User } from '../../../../stores/user';
@@ -55,7 +55,10 @@ interface PropsFromDispatch {
   saveAccount: any;
 }
 
-interface Props extends LocalizationProps, PropsFromState, PropsFromDispatch {}
+interface Props
+  extends WithLocalizationProps,
+    PropsFromState,
+    PropsFromDispatch {}
 
 function Settings(props: Props) {
   const { account, addNotification, getString, saveAccount } = props;
@@ -106,7 +109,7 @@ function Settings(props: Props) {
             <a
               className="manage-subscriptions"
               href={getManageSubscriptionURL(account)}
-              target="__blank"
+              target="_blank"
               rel="noopener noreferrer">
               <Localized id="manage-subscriptions">
                 <span />
@@ -133,7 +136,9 @@ function Settings(props: Props) {
               <div>
                 <Localized
                   id="email-opt-in-privacy"
-                  privacyLink={<LocaleLink to={URLS.PRIVACY} blank />}>
+                  elems={{
+                    privacyLink: <LocaleLink to={URLS.PRIVACY} blank />,
+                  }}>
                   <div />
                 </Localized>
                 <br />
@@ -172,12 +177,12 @@ function Settings(props: Props) {
         <div className="images">
           <img
             className="hidden-sm-down"
-            src={require('./submission-screenshot-lg.png')}
+            src={require('./submission-screenshot-lg.jpg')}
             alt="Submission Success Screenshot"
           />
           <img
             className="hidden-md-up"
-            src={require('./submission-screenshot-xs.png')}
+            src={require('./submission-screenshot-xs.jpg')}
             alt="Submission Success Screenshot"
           />
         </div>

@@ -1,5 +1,9 @@
 node_modules
 config.json
+newrelic_agent.log
+maintenance/index.html
+common/index.ts
+common/js/
 web/dist/
 web/index.html
 server/js/
@@ -10,6 +14,7 @@ xcuserdata/
 .DS_Store
 .vscode/
 ZZidea
+
 
 # Nubis
 nubis/librarian-puppet.tar.gz

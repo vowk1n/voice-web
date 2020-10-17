@@ -1,6 +1,7 @@
-import { AllGoals } from 'common/goals';
+import { AllGoals } from 'common';
 import { getLocaleId } from './db';
 import { getMySQLInstance } from './db/mysql';
+import { earnBonus } from './achievements';
 
 const STREAK_THRESHOLDS = [1, 3, 5, 10, 15];
 
@@ -18,17 +19,16 @@ const daysBetween = (date1: Date, date2: Date) =>
   Math.floor((date1.getTime() - date2.getTime()) / ONE_DAY);
 
 const formatDate = (date: Date) =>
-  date
-    .toISOString()
-    .slice(0, 19)
-    .replace('T', ' ');
+  date.toISOString().slice(0, 19).replace('T', ' ');
 
 async function hasComputedGoals(client_id: string) {
-  const [[client]] = await db.query(
+  const [
+    [client],
+  ] = await db.query(
     'SELECT has_computed_goals FROM user_clients WHERE client_id = ?',
     [client_id]
   );
-  return Boolean(client.has_computed_goals);
+  return Boolean(client?.has_computed_goals);
 }
 
 export async function computeGoals(client_id: string): Promise<any> {
@@ -254,7 +254,7 @@ export async function checkGoalsAfterContribution(
     ),
     db.query(
       `
-        SELECT 
+        SELECT
           (
            SELECT COUNT(*)
            FROM clips

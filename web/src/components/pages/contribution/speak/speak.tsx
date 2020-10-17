@@ -1,31 +1,37 @@
 import {
-  LocalizationProps,
   Localized,
+  WithLocalizationProps,
   withLocalization,
-} from 'fluent-react/compat';
+} from '@fluent/react';
 import * as React from 'react';
+import BalanceText from 'react-balance-text';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
 const NavigationPrompt = require('react-router-navigation-prompt').default;
 import { Locale } from '../../../../stores/locale';
 import { Notifications } from '../../../../stores/notifications';
 import { Sentences } from '../../../../stores/sentences';
+import { Sentence as SentenceType } from 'common';
 import StateTree from '../../../../stores/tree';
 import { Uploads } from '../../../../stores/uploads';
 import { User } from '../../../../stores/user';
 import API from '../../../../services/api';
-import { trackRecording } from '../../../../services/tracker';
+import { trackRecording, getTrackClass } from '../../../../services/tracker';
 import URLS from '../../../../urls';
-import {
-  localeConnector,
-  LocaleLink,
-  LocalePropsFromState,
-} from '../../../locale-helpers';
+import { localeConnector, LocalePropsFromState } from '../../../locale-helpers';
 import Modal, { ModalButtons } from '../../../modal/modal';
 import TermsModal from '../../../terms-modal';
-import { CheckIcon, FontIcon, MicIcon, StopIcon } from '../../../ui/icons';
-import { Button, TextButton } from '../../../ui/ui';
-import { getItunesURL, isFirefoxFocus, isNativeIOS } from '../../../../utility';
+import {
+  CheckIcon,
+  MicIcon,
+  StopIcon,
+  ArrowRight,
+  FirefoxColor,
+  ChromeColor,
+  SafariColor,
+} from '../../../ui/icons';
+import { Button, TextButton, LinkButton } from '../../../ui/ui';
+import { isIOS, isMobileSafari } from '../../../../utility';
 import ContributionPage, {
   ContributionPillProps,
   SET_COUNT,
@@ -34,16 +40,16 @@ import {
   RecordButton,
   RecordingStatus,
 } from '../../../primary-buttons/primary-buttons';
-import AudioIOS from './audio-ios';
 import AudioWeb, { AudioError, AudioInfo } from './audio-web';
 import RecordingPill from './recording-pill';
 import { SentenceRecording } from './sentence-recording';
 
 import './speak.css';
 
-const MIN_RECORDING_MS = 1000;
+const MIN_RECORDING_MS = 1500;
+const MIN_RECORDING_MS_BENCHMARK = 500;
 const MAX_RECORDING_MS = 10000;
-const MIN_VOLUME = 1;
+const MIN_VOLUME = 8; // Range: [0, 255].
 
 enum RecordingError {
   TOO_SHORT = 'TOO_SHORT',
@@ -52,43 +58,77 @@ enum RecordingError {
 }
 
 const UnsupportedInfo = () => (
-  <div className="unsupported">
-    <Localized id="record-platform-not-supported">
-      <h2 />
-    </Localized>
-    <p key="desktop">
-      <Localized id="record-platform-not-supported-desktop">
+  <div className="empty-container">
+    <div className="error-card card-dimensions unsupported">
+      {isIOS() && !isMobileSafari() ? (
+        <>
+          <BalanceText>
+            <Localized id="record-platform-not-supported-ios-non-safari" />
+          </BalanceText>
+          <SafariColor />
+        </>
+      ) : (
+        <>
+          <BalanceText>
+            <Localized id="record-platform-not-supported" />
+          </BalanceText>
+          <p className="desktop">
+            <Localized id="record-platform-not-supported-desktop">
+              <BalanceText />
+            </Localized>
+          </p>
+          <div>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.firefox.com/"
+              title="Firefox">
+              <FirefoxColor />
+            </a>{' '}
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.google.com/chrome"
+              title="Chrome">
+              <ChromeColor />
+            </a>
+          </div>
+        </>
+      )}
+    </div>
+  </div>
+);
+
+const NoSentencesAvailable = () => (
+  <div className="empty-container">
+    <div className="error-card card-dimensions no-sentences-available">
+      <Localized id="speak-empty-state">
         <span />
       </Localized>
-      <a target="_blank" href="https://www.firefox.com/">
-        <FontIcon type="firefox" />
-        Firefox
-      </a>{' '}
-      <a target="_blank" href="https://www.google.com/chrome">
-        <FontIcon type="chrome" />
-        Chrome
-      </a>
-    </p>
-    <p key="ios">
-      <Localized id="record-platform-not-supported-ios" bold={<b />}>
-        <span />
-      </Localized>
-    </p>
-    <a target="_blank" href={getItunesURL()}>
-      <img src={require('./appstore.svg')} />
-    </a>
+      <LinkButton
+        rounded
+        blank
+        href="https://common-voice.github.io/sentence-collector/">
+        <ArrowRight className="speak-sc-icon" />{' '}
+        <Localized id="speak-empty-state-cta">
+          <span />
+        </Localized>
+      </LinkButton>
+    </div>
   </div>
 );
 
 interface PropsFromState {
   api: API;
   locale: Locale.State;
-  sentences: Sentences.Sentence[];
+  sentences: SentenceType[];
   user: User.State;
+  isLoading: boolean;
 }
 
 interface PropsFromDispatch {
   addUploads: typeof Uploads.actions.add;
+  addAchievement: typeof Notifications.actions.addAchievement;
   addNotification: typeof Notifications.actions.addPill;
   removeSentences: typeof Sentences.actions.remove;
   tallyRecording: typeof User.actions.tallyRecording;
@@ -98,10 +138,10 @@ interface PropsFromDispatch {
 
 interface Props
   extends LocalePropsFromState,
-    LocalizationProps,
+    WithLocalizationProps,
     PropsFromState,
     PropsFromDispatch,
-    RouteComponentProps<any> {}
+    RouteComponentProps<any, any, any> {}
 
 interface State {
   clips: SentenceRecording[];
@@ -126,9 +166,9 @@ const initialState: State = {
 class SpeakPage extends React.Component<Props, State> {
   state: State = initialState;
 
-  audio: AudioWeb | AudioIOS;
+  audio: AudioWeb;
   isUnsupportedPlatform = false;
-  maxVolume = 0;
+  maxVolume = -1;
   recordingStartTime = 0;
   recordingStopTime = 0;
 
@@ -144,7 +184,7 @@ class SpeakPage extends React.Component<Props, State> {
         clips: state.clips.map(clip =>
           clip.sentence
             ? clip
-            : { recording: null, sentence: unusedSentences.pop() || null }
+            : { recording: null, sentence: unusedSentences.shift() || null }
         ),
       };
     }
@@ -161,7 +201,7 @@ class SpeakPage extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.audio = isNativeIOS() ? new AudioIOS() : new AudioWeb();
+    this.audio = new AudioWeb();
     this.audio.setVolumeCallback(this.updateVolume.bind(this));
 
     document.addEventListener('visibilitychange', this.releaseMicrophone);
@@ -169,8 +209,7 @@ class SpeakPage extends React.Component<Props, State> {
 
     if (
       !this.audio.isMicrophoneSupported() ||
-      !this.audio.isAudioRecordingSupported() ||
-      isFirefoxFocus()
+      !this.audio.isAudioRecordingSupported()
     ) {
       this.isUnsupportedPlatform = true;
     }
@@ -213,10 +252,10 @@ class SpeakPage extends React.Component<Props, State> {
   };
 
   private getRecordingIndex() {
-    const { rerecordIndex } = this.state;
-    return rerecordIndex === null
-      ? this.state.clips.findIndex(({ recording }) => !recording)
-      : rerecordIndex;
+    return (
+      this.state.rerecordIndex ??
+      this.state.clips.findIndex(({ recording }) => !recording)
+    );
   }
 
   private releaseMicrophone = () => {
@@ -236,13 +275,13 @@ class SpeakPage extends React.Component<Props, State> {
       return this.setState({ error });
     }
 
-    const { clips } = this.state;
-    this.setState({
-      clips: clips.map(({ recording, sentence }, i) => ({
-        recording: i === this.getRecordingIndex() ? info : recording,
-        sentence,
-      })),
-      rerecordIndex: null,
+    this.setState(({ clips }) => {
+      const newClips = [...clips];
+      newClips[this.getRecordingIndex()].recording = info;
+      return {
+        clips: newClips,
+        rerecordIndex: null,
+      };
     });
 
     trackRecording('record', this.props.locale);
@@ -250,22 +289,28 @@ class SpeakPage extends React.Component<Props, State> {
 
   private getRecordingError = (): RecordingError => {
     const length = this.recordingStopTime - this.recordingStartTime;
-    if (length < MIN_RECORDING_MS) {
+    const currentSentence = this.state.clips[this.getRecordingIndex()].sentence;
+    const minClipLength =
+      currentSentence.taxonomy === 'Benchmark'
+        ? MIN_RECORDING_MS_BENCHMARK
+        : MIN_RECORDING_MS;
+
+    if (length < minClipLength) {
       return RecordingError.TOO_SHORT;
     }
     if (length > MAX_RECORDING_MS) {
       return RecordingError.TOO_LONG;
     }
-    if (this.maxVolume < MIN_VOLUME) {
+    // If updateVolume was never called, we assume there’s a problem with the
+    // AnalyserNode and skip this error.
+    if (this.maxVolume !== -1 && this.maxVolume < MIN_VOLUME) {
       return RecordingError.TOO_QUIET;
     }
     return null;
   };
 
   private updateVolume = (volume: number) => {
-    // For some reason, volume is always exactly 100 at the end of the
-    // recording, even if it is silent; so ignore that.
-    if (volume !== 100 && volume > this.maxVolume) {
+    if (volume > this.maxVolume) {
       this.maxVolume = volume;
     }
   };
@@ -305,11 +350,10 @@ class SpeakPage extends React.Component<Props, State> {
   private startRecording = async () => {
     try {
       await this.audio.start();
-      this.maxVolume = 0;
+      this.maxVolume = -1; // Initialize to -1 in case updateVolume is never called.
       this.recordingStartTime = Date.now();
       this.recordingStopTime = 0;
       this.setState({
-        // showSubmitSuccess: false,
         recordingStatus: 'recording',
         error: null,
       });
@@ -321,6 +365,9 @@ class SpeakPage extends React.Component<Props, State> {
   };
 
   private saveRecording = () => {
+    // We noticed that some people hit the Stop button too early, cutting off
+    // the recording prematurely. To compensate, we add a short buffer to the
+    // end of each recording (issue #1648).
     const RECORD_STOP_DELAY = 500;
     setTimeout(async () => {
       const info = await this.audio.stop();
@@ -344,23 +391,25 @@ class SpeakPage extends React.Component<Props, State> {
   };
 
   private handleSkip = async () => {
-    const { api, removeSentences, sentences } = this.props;
-    const { clips } = this.state;
+    const { api, removeSentences } = this.props;
     await this.discardRecording();
     const current = this.getRecordingIndex();
-    const { id } = clips[current].sentence;
+    const id = this.state.clips[current]?.sentence?.id;
     removeSentences([id]);
-    this.setState({
-      clips: clips.map((clip, i) =>
-        current === i ? { recording: null, sentence: null } : clip
-      ),
-      error: null,
+    this.setState(({ clips }) => {
+      const newClips = [...clips];
+      newClips[current] = { recording: null, sentence: null };
+      if (clips[current]?.recording?.url) URL.revokeObjectURL(clips[current].recording.url);
+      return {
+        clips: newClips,
+        error: null,
+      };
     });
-    await api.skipSentence(id);
   };
 
   private upload = (hasAgreed: boolean = false) => {
     const {
+      addAchievement,
       addNotification,
       addUploads,
       api,
@@ -387,7 +436,47 @@ class SpeakPage extends React.Component<Props, State> {
         let retries = 3;
         while (retries) {
           try {
-            await api.uploadClip(recording.blob, sentence.id, sentence.text);
+            const {
+              showFirstContributionToast = false,
+              hasEarnedSessionToast = false,
+              showFirstStreakToast = false,
+              challengeEnded = true,
+            } = await api.uploadClip(recording.blob, sentence.id);
+            URL.revokeObjectURL(recording.url);
+            sessionStorage.setItem(
+              'challengeEnded',
+              JSON.stringify(challengeEnded)
+            );
+            sessionStorage.setItem('hasContributed', 'true');
+            if (showFirstContributionToast) {
+              addAchievement(
+                50,
+                "You're on your way! Congrats on your first contribution.",
+                'success'
+              );
+            }
+            if (showFirstStreakToast) {
+              addAchievement(
+                50,
+                'You completed a three-day streak! Keep it up.',
+                'success'
+              );
+            }
+            if (
+              !JSON.parse(sessionStorage.getItem('challengeEnded')) &&
+              JSON.parse(sessionStorage.getItem('hasShared')) &&
+              !hasEarnedSessionToast
+            ) {
+              addAchievement(
+                50,
+                "You're on a roll! You sent an invite and contributed in the same session.",
+                'success'
+              );
+              sessionStorage.removeItem('hasShared');
+              // Tell back-end user get unexpected achievement: invite + contribute in the same session
+              // Each user can only get once.
+              api.setInviteContributeAchievement();
+            }
             if (!user.account) {
               tallyRecording();
             }
@@ -412,12 +501,12 @@ class SpeakPage extends React.Component<Props, State> {
         trackRecording('submit', locale);
         refreshUser();
         addNotification(
-          <React.Fragment>
+          <>
             <CheckIcon />{' '}
             <Localized id="clips-uploaded">
               <span />
             </Localized>
-          </React.Fragment>
+          </>
         );
       },
     ]);
@@ -439,6 +528,21 @@ class SpeakPage extends React.Component<Props, State> {
       showPrivacyModal: false,
       showDiscardModal: !this.state.showDiscardModal,
     });
+  };
+
+  private displayError = () => {
+    return (
+      this.isUnsupportedPlatform ||
+      (!this.props.isLoading && this.state.clips.length == 0)
+    );
+  };
+
+  private returnSpeakError = () => {
+    return this.isUnsupportedPlatform ? (
+      <UnsupportedInfo />
+    ) : (
+      <NoSentencesAvailable />
+    );
   };
 
   private resetAndGoHome = () => {
@@ -464,8 +568,9 @@ class SpeakPage extends React.Component<Props, State> {
       showDiscardModal,
     } = this.state;
     const recordingIndex = this.getRecordingIndex();
+
     return (
-      <React.Fragment>
+      <>
         <NavigationPrompt
           when={clips.filter(clip => clip.recording).length > 0}>
           {({ onConfirm, onCancel }: any) => (
@@ -481,17 +586,26 @@ class SpeakPage extends React.Component<Props, State> {
                   <Button
                     outline
                     rounded
+                    className={getTrackClass('fs', 'exit-submit-clips')}
                     onClick={() => {
                       if (this.upload()) onConfirm();
                     }}
                   />
                 </Localized>
                 <Localized id="record-abort-continue">
-                  <Button outline rounded onClick={onCancel} />
+                  <Button
+                    outline
+                    rounded
+                    className={getTrackClass('fs', 'exit-continue-recording')}
+                    onClick={onCancel}
+                  />
                 </Localized>
               </ModalButtons>
               <Localized id="record-abort-delete">
-                <TextButton onClick={onConfirm} />
+                <TextButton
+                  className={getTrackClass('fs', 'exit-delete-clips')}
+                  onClick={onConfirm}
+                />
               </Localized>
             </Modal>
           )}
@@ -514,7 +628,7 @@ class SpeakPage extends React.Component<Props, State> {
         )}
         <ContributionPage
           activeIndex={recordingIndex}
-          errorContent={this.isUnsupportedPlatform && <UnsupportedInfo />}
+          errorContent={this.displayError() && this.returnSpeakError()}
           instruction={props =>
             error ? (
               <div className="error">
@@ -543,8 +657,10 @@ class SpeakPage extends React.Component<Props, State> {
                         recordingIndex
                       ] || 'record-again-instruction2'
                 }
-                recordIcon={<MicIcon />}
-                stopIcon={<StopIcon />}
+                elems={{
+                  recordIcon: <MicIcon />,
+                  stopIcon: <StopIcon />,
+                }}
                 {...props}
               />
             )
@@ -557,6 +673,7 @@ class SpeakPage extends React.Component<Props, State> {
           onSubmit={() => this.upload()}
           primaryButtons={
             <RecordButton
+              trackClass="speak-record"
               status={recordingStatus}
               onClick={this.handleRecordClick}
             />
@@ -588,9 +705,12 @@ class SpeakPage extends React.Component<Props, State> {
               'difficult-pronounce',
             ],
             kind: 'sentence',
-            id: recordingIndex == -1 ? null : clips[recordingIndex].sentence.id,
+            id:
+              recordingIndex == -1 || !clips[recordingIndex].sentence
+                ? null
+                : clips[recordingIndex].sentence.id,
           }}
-          sentences={clips.map(({ sentence }) => sentence && sentence.text)}
+          sentences={clips.map(({ sentence }) => sentence)}
           shortcuts={[
             {
               key: 'shortcut-record-toggle',
@@ -605,22 +725,26 @@ class SpeakPage extends React.Component<Props, State> {
           ]}
           type="speak"
         />
-      </React.Fragment>
+      </>
     );
   }
 }
 
 const mapStateToProps = (state: StateTree) => {
+  const { sentences, isLoading } = Sentences.selectors.localeSentences(state);
+
   return {
     api: state.api,
     locale: state.locale,
-    sentences: Sentences.selectors.localeSentences(state),
+    sentences,
     user: state.user,
+    isLoading,
   };
 };
 
 const mapDispatchToProps = {
   addNotification: Notifications.actions.addPill,
+  addAchievement: Notifications.actions.addAchievement,
   addUploads: Uploads.actions.add,
   removeSentences: Sentences.actions.remove,
   tallyRecording: User.actions.tallyRecording,

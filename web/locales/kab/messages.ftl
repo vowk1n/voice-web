@@ -1,15 +1,16 @@
 ## General
 
-yes-receive-emails = Ih, ceyyeɛ-iyi-d imaylen. Bɣiɣ ad yi-d-ttawḍen yisallen ɣef usenfaṛ n Commen Voice.
-stayintouch = Nekkni deg Mozilla, nbennu tarbaɛt itezzin ɣef tetiknulujit n taɣect. Nebɣa ad neqqim akked umaynut d yileqman, iɣbula n yisefka imaynuten daɣen ad nsel ugar ɣef wamek ara ttwasqedcen isefka-agi.
-privacy-info = Ad neḍmen d akken ad neḥrez talɣut-nwen. Ɣeṛ ugar n yisallen deg <privacyLink>tsertit-nneɣ tabaḍnit</privacyLink>.
-return-to-cv = Uɣal ar Common Voice
+yes-receive-emails = Ih, ceyyeɛ-iyi-d imaylen. Bɣiɣ ad yi-d-ttawḍen yisallen ɣef usenfar n Commen Voice.
+stayintouch = Nekkni deg Mozilla, nbennu tarbaɛt i itezzin ɣef tetiknulujit n taɣect. Nebɣa ad neqqim akked umaynut d yileqman, iɣbula n yisefka imaynuten daɣen ad nsell ugar ɣef wamek ara ttwasqedcen isefka-agi.
+privacy-info = Ad neḍmen aḥraz n talɣut-nwen. Ɣer ugar n yisallen deg <privacyLink>tsertit-nneɣ tabaḍnit</privacyLink>.
+return-to-cv = Uɣal ɣer Common Voice
 email-input =
     .label = Imayl
 submit-form-action = Azen
 loading = Asali…
-email-opt-in-info = Bɣiɣ ad d-ṭṭfeɣ imaylen am ismektiyen n yiswan, aswir-iw n umecwar n ileqman akked uɣmis ɣef Common Voice.
-email-opt-in-privacy = Ma tferneḍ armas n yimaylen, ad tqebleḍ d akken Mozilla ad tesseqdec talɣut-a akken i tettwasegza deg <privacyLink>Tasertit Tabaḍnit <privacyLink> n Mozilla.
+email-opt-in-info = Bɣiɣ ad d-ṭṭfeɣ imaylen am yismektiyen n yiswan, aswir-iw n umecwar n yileqman akked uɣmis ɣef Common Voice.
+email-opt-in-info-title = Jerred deg tebdert n unermes Common Voice
+email-opt-in-info-sub-with-challenge = Ṭṭef imaylen am iznan n timzizliyin akked usmekti n iswiyen, tilḥin deg umahel akked isallen ɣef Common Voice.
 indicates-required = * Yemmal-d urti ilaqen
 not-available-abbreviation = N/A
 
@@ -26,10 +27,12 @@ af = Tafrikant
 am = Tamharikt
 an = Taṛagunit
 ar = Taεrabt
+arn = Tamapudungunt
 as = Tasamizt
 ast = Tasturit
 az = Tazerbiǧanit
 ba = Tabackirit
+be = Tabilarusit
 bg = Tabulgarit
 bn = Tabengalit
 br = Tabrutunt
@@ -60,10 +63,12 @@ ga-IE = Tirlandit
 gl = Tagalisit
 ha = Tahawsit
 he = Taɛebrit
-hi-IN = Tahendit
+hi = Tahendit
 hr = Takarwasit
 hsb = Sorbyan, Tameqqrant
 hu = Tahungaṛit
+hy-AM = Taṛminit
+hyw = Taṛminit tutrimt
 ia = Tutlayt tagraɣlant
 id = Tandunizit
 is = Taṣlandit
@@ -71,23 +76,28 @@ it = Taṭelyanit
 izh = Tizhuryant
 ja = Tajapunit
 ka = Tajyuṛjit
+kaa = Karakalpak
 kab = Taqbaylit
+kbd = Takabardyant
 kk = Takazaxt
 ko = Takurit
 kpv = Takumt Zyrian
 ku = Takurdit
 kw = Takuṛnikt
 ky = Takirgizt
+lg = Luganda
 lij = Taliguriant
 lt = Talitwaynit
 lv = Talitunit
 mdf = Mukca
+mg = Tamalgact
 mhr = Tamarit n uzaɣar
 mk = Tamasidunit
 ml = Tamalayalamit
 mn = Tamungult
 mrj = Tamarit n udrar
 mt = Tamalṭit
+my = Taburmisit
 myv = Erzya
 nb-NO = Tanuṛvijt Bokmål
 ne-NP = Tanipalit
@@ -95,6 +105,7 @@ nl = Tahulandit
 nn-NO = Tanuṛvijt Nynorsk
 oc = Tuksitant
 or = Odia
+pa-IN = Tapenǧabit
 pl = Tapulunit
 pt = Tapuṛṭugit
 rm-sursilv = Rumanc Sursilvan
@@ -104,6 +115,7 @@ ru = Tarusit
 rw = Takinyaṛwandit
 sah = Tasaxit
 sc = Tasardinit
+scn = Tasisiliyant
 si = Tasinhalit
 sk = Tasluvakt
 sl = Tasluvinit
@@ -116,6 +128,7 @@ ta = Taṭamilit
 te = Tatelgut
 tg = Tatajikt
 th = Taṭaylant
+tl = Tagalugt
 tr = Taṭurkit
 tt = Taṭaṭarit
 uby = Tubyixt
@@ -123,6 +136,7 @@ udm = Tudmurt
 uk = Takrinit
 ur = Urdu
 uz = Tuzbikt
+vec = Taviṭnamit
 vi = Tavyiṭnamit
 vot = Tavutikt
 zh-CN = Tacinwat (Cinwa)
@@ -220,7 +234,7 @@ whats-public = D acu-tt telɣut tazayezt?
 email-not-public = Ur nettara ara imayl d azayez.
 recordings-and-locale-public = Amḍan n yikalasen akked tutlayin anida tettekkaḍ ad d-banen.
 username-optin-public = Tzemreḍ ad tferneḍ isem-ik n useqdac ma ad yili d azayez neɣ d abadni.
-demographic-deidentified = Talɣut tadimugrafit tafrayant (amedya: awtay, tuzuft, tutlayt akked ususru) ad tettwaqqen ɣer ikalasen-ik daɣen ur d-ttwaskanen ara i yimdanen ɣef umaɣnu-ik.
+demographic-deidentified-clarity = Isefka n tedimugrafit i d-yettwaznen s lxetyaṛ (md. awtay, tuzuft, tutlayt, akken ususru) ur ǧǧin ad ttwaseknen s wudem azayaz, daɣen ad ttwacudden ɣer umiḍan-ik deg tegrumma n yisefka. Ikalasen imeslawen i yiman-nsen ad ttwaqqnen d yisefka n tedimugrafit i wugar n tseddi n tesleḍt - amedya, amnadi izmer ad yebɣu taneɣruft n usluɣmu n kra n yimdanen kan.
 username-email-not-demographic = Isem-ik n useqdac akked tansa-ik imayl ur d-ttwaqqanen ara ɣer yisefka-ik izuyaz.
 
 ## Speak & Listen Shortcuts
@@ -307,6 +321,7 @@ thanks-for-account = Tanemmirt ɣimi tsentmeḍ amiḍan-ik, tura rnu kra n tal�
 why-demographic = Ayɣer aya isεa azal?
 why-demographic-explanation = Talɣut tusligt am laεmer, tuzuft, akked tmeslayt ad aɣ-d-mudden afus akken senqed isefka n umesli deg imesdayen n uεqal aɣectan. Isem-ik n useqdac akked imayl-inek werǧin ad ddun akked isefka ad ittwaznen, tzemreḍ daɣen ad terreḍ isem-inek n useqdec d aziraz neɣ d uslig.
 accept-privacy = Qebleɣ akken ad tesqedcem talɣut inu am akken yella deg <privacyLink>tsertit n tbaḍnit</privacyLink> n Mozilla.
+accept-privacy-title = Tasertit n tbaḍnit
 login-identity = Tinekkit n tuqna
 login-signup = Kcem / Jerred
 edit = Ẓreg
@@ -432,11 +447,11 @@ about-partnership =
     
     Ad nesnemmer meṛṛa imdanen akked tuddsiwin-a ɣef tallelt deg usenfaṛ:
 about-get-involved = Ttekki
-about-get-involved-text =
-    Tabɣiḍ ad tesnerniḍ Common Voice ?
-    Igerrez! Nermes-aɣ-d s yimayl neɣ deg <discourseLink>Discourse</discourseLink>,
-    azen-d iwenniten deg <githubLink>GitHub</githubLink>,
-    neɣ ddu-d yid-neɣ deg <slackLink>Slack</slackLink>.
+about-get-involved-text-2 =
+    Tebɣiḍ ad d-tefkkeḍ afus n tallelt deg uqaεed n Common Voice?
+    Igerrez! Nermes-aɣ-d s imayl neɣ afurum<discourseLink>Discourse</discourseLink>
+    Azen-d uguren ɣer useɣwen <githubLink>GitHub</githubLink>, neɣ ddu ɣer
+    udiwenni n timseɣwent<matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Acuɣer?
 about-nav-how-it-works = Amek?
 about-nav-partners = Imendiden
@@ -454,7 +469,7 @@ glossary = Amawal
 localization = Asideg
 localization-explanation = D akala-nneɣ i tsuqilt akked uṣeggem n ugbur i ddeqs n tutlayin.
 sentence-collection = Alqaḍ n tefyar
-sentence-collection-explanation = Lqeḍ-d tifyar n taɣult tazayezt, neɣ aru tifyar tmayutin ara yilin deg taɣult tazayezt.
+sentence-collection-explanation = Lqeḍ-d tifyar n taɣult tazayezt, neɣ aru tifyar timayutin ara yilin deg taɣult tazayezt.
 hours-recorded-explanation = Amḍan n yisragen n usukles n taɣect i d-nelqeḍ akka ar tura.
 hours-validated-explanation = Amḍan n yisragen n usekles n taɣect i yettwaqeblen xarṣum sɣur sin neɣ kraḍ n yiseqdacen i yefrnen "Ih". Ayagi yemmal-d asfari n yiswi n 10 000 n yisragen n usenfaṛ.
 sst = Aɛqal n taɣect (STT)
@@ -462,10 +477,10 @@ sst-explanation = Titiknulujiyin n uɛqal n taɣect (STT) ad selketen taɣect ɣ
 de-identified = Kkes timagit
 de-identified-explanation = D akala ara yeǧǧen asimgired gar telɣut tudmawant n yimttekkiyen akked tukkisin deg uheggi n tegrumma n yisefka.
 
-## NotFound
+## Error pages
 
-notfound-title = Ulac-it
-notfound-content = Ahat ur tezriḍ ara d acu i γef tettnadiḍ.
+error-title-404 = Ur nezmir ara ad ak•am-d-naf asebter-nni
+error-code = Tuccḍa { $code }
 
 ## Data
 
@@ -484,6 +499,8 @@ data-bundle-button = Sider-d aqettun n tagrumma n yisefka
 data-bundle-description = Isefka Common Voice akked tigrummiwin meṛṛa n yisefka-nniḍen ddaw-a.
 license = Turagt: <licenseLink>{ $license }</licenseLink>
 license-mixed = Uxliḍ
+data-download-singleword-title = Sider aḥric iswi Single Word
+data-download-singleword-callout = Wagi d aḥric i nettnadi ɣef kra n useqdec i igebren isefka i usečči n uɛqal n taɣect s yizwilen yettwanṭaqen, aɛqal n ih/uhu akked isefka n usekyed n wawalen n usaki i <fxLink>Firefox Voice</fxLink>.
 review-terms = S useqdec n Common Voice, ad tqebleḍ tiwtilin-nneγ <termsLink> akked <privacyLink>tasertit-nneγ n tbaḍnit </privacyLink>
 terms-agree = Qebleɣ
 terms-disagree = Ur qbileɣ ara
@@ -604,7 +621,6 @@ contribute = Ttekki
 listen = Timesliwt
 skip = Suref
 shortcuts = Inegzumen
-clips-with-count = <bold>{ $count }</bold> Ikalasen
 goal-help-recording = Tmuddeḍ-d afus akken Common Voice ad yaweḍ <goalPercentage></goalPercentage> seg iswi-ines n usekles n wass { $goalValue }!
 goal-help-validation = Tmuddeḍ-d afus akken  Common Voice ad yaweḍ <goalPercentage></goalPercentage> seg iswi-ines n usentem n wass { $goalValue }!
 contribute-more =
@@ -615,20 +631,22 @@ contribute-more =
 record-cta = Bdu asekles
 record-platform-not-supported = Suref-aɣ, anagraw-ik ur yettwasefrak ara akka tura.
 record-platform-not-supported-desktop = I yiselkimen n tnrait, tzemreḍ ad tessidreḍ imaynuten:
-record-platform-not-supported-ios = Iseqdsacen n <bold>iOS</bold> zemren ad sidren asnaɣ-nneɣ n baṭel :
+record-platform-not-supported-ios-non-safari = Deg iOS ttxil kemmel s Safari akken ad tremdeḍ asekles…
 record-must-allow-microphone = Ilaq ad tsirgeḍ anekcum i usawaḍ.
 record-no-mic-found = Ulac asawaḍ.
 record-error-too-short = Meẓẓi mliḥ usekles-nni.
-record-error-too-long = Meqqeṛ mliḥ usekles-nni.
+record-error-too-long = Meqqer mliḥ usekles-nni.
 record-error-too-quiet = Ixuṣṣ mliḥ ṣṣut n usekles-nni.
 record-cancel = Sefsex asekles
-record-instruction = { $actionType } <recordIcon></recordIcon> sakin ɣer-d tafyirt s cwiṭ n leɛyaḍ
+record-instruction = ɣef { $actionType } <recordIcon></recordIcon> sakin ɣer-d tafyirt s cwiṭ n leɛyaḍ
 record-stop-instruction = { $actionType } <stopIcon></stopIcon> ticki yemmed.
 record-three-more-instruction = Rnu ugar n kraḍ!
 record-again-instruction = Ayyuz! <recordIcon></recordIcon> Sekles tukkist i d-iteddun.
 record-again-instruction2 = Kemmel akken, sekles tikelt-nniḍen <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> D aneggaru!
 review-tooltip = Cegger & ales asekles dagi ticki teddiḍ
+share-clip = Bḍu akalas-ik
+share-common-voice = Bḍu Common Voice7
 review-instruction = Cegger & ales asekles ma tesriḍ
 record-submit-tooltip = { $actionType } azen ticki theggaḍ
 clips-uploaded = Tuṭṭfiwin ulint
@@ -641,11 +659,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> ɣran-d akken iwata t
 listen-again-instruction = Igarrez uxeddim! <playIcon></playIcon> Sell-as tikelt-nniḍen ticki theggaḍ
 listen-3rd-time-instruction = 2 d akesser <playIcon></playIcon> , kemmel ar zdat!
 listen-last-time-instruction = <playIcon></playIcon> d aneggaru!
-nothing-to-validate = Ula kra ara nsentem deg tutlayt-a, mudd-aɣ-d afus ad neččaṛ adras.
+listen-empty-state = Ur nesɛi ara tukkisin ara nsenqed deg tutlayt-a...
+speak-empty-state = Ur nesɛi ara tifyar ara nsekles deg tutlayt-a...
+speak-empty-state-cta = Sumer-d tifyar
 record-button-label = Sekles taɣect-ik
 share-title-new = <bold>Mudd-aɣ-d afus</bold> ad d-naf tuɣac timaynutin
 keep-track-profile = rnu amaɣnu akken ad twaliḍ ayen txedmed
 login-to-get-started = Kcem neɣ jerred akken ad tebduḍ
+target-segment-first-card = Tettekkaḍ deg taggayt-nneɣ tasaḍast tamezwarut
+target-segment-first-banner = Mudd tallalt i tmerna n taggayt tasaḍast tamezwarut n Common Voice deg { $locale }
+target-segment-add-voice = Rnu taɣect-ik.m
+target-segment-learn-more = Issin ugar
 
 ## Reporting
 
@@ -727,11 +751,8 @@ want-to-continue = Tebɣiḍ ad tkemleḍ?
 finish-editing = Ar d-tefakeḍ deg tazwara tazrigt?
 lose-changes-warning = Ma teffɣeḍ tura ad ruḥen ibeddilen-ik
 build-custom-goal = Bnu iswi udmawan
-help-reach-hours = Mudd afus ad tawḍeḍ { NUMBER($hours) } n yisragen deg { $language } s yiswi udmawan
-help-reach-hours-general = Mudd afus i Common Voice ad yaweḍ { NUMBER($hours) } n yisragen deg tutlayt s yiswi udmawan
 set-a-goal = Sbadu iswi
 cant-decide = Ur tezmireḍ ara tferneḍ?
-activity-needed-calculation = { NUMBER($totalHours) } n yisragen i tzemred ad tawḍeḍ deg { NUMBER($periodMonths) } n wagguren ma yella { NUMBER($people) } n yimdanen skelsen { NUMBER($clipsPerDay) } n tefyar deg wass.
 how-many-per-day = Igerrez! Acḥal n tukkisin deg wass?
 how-many-a-week = Igerrez! Acḥal n tukkisin di ddurt?
 which-goal-type = Tebɣiḍ ad tmeslayeḍ,  ad tesleḍ neɣ di sin?
@@ -739,7 +760,6 @@ receiving-emails-info =
     Aql-ak tura theggaḍ ad tremseḍ imaylen n yismektiyen n yiswi,
     ileqman n usfari-iw akked tebratin n yisallen ɣef Common Voice
 not-receiving-emails-info = Aql-ak tura terriḍ  <bold>UHU</bold>  i urmas n yimaylen i yismektiyen n yiswan, ileqman n usfari-iw akked tebrat n yisallen ɣef Common Voice.
-n-clips = { NUMBER($count) } n tukkisin
 help-share-goal = Mudd-aɣ-d afus ad d-naf ugar n tuɣac, bḍu iswi-ik
 confirm-goal = Sentem iswi
 goal-interval-weekly = Yal ddurt

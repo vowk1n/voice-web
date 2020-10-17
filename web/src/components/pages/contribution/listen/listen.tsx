@@ -1,10 +1,12 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { trackListening } from '../../../../services/tracker';
+import { Clip as ClipType } from 'common';
+import { trackListening, getTrackClass } from '../../../../services/tracker';
 import { Clips } from '../../../../stores/clips';
 import { Locale } from '../../../../stores/locale';
 import StateTree from '../../../../stores/tree';
+import API from '../../../../services/api';
 import URLS from '../../../../urls';
 import {
   CheckIcon,
@@ -20,10 +22,12 @@ import ContributionPage, {
   ContributionPillProps,
   SET_COUNT,
 } from '../contribution';
+import { Notifications } from '../../../../stores/notifications';
 import { PlayButton } from '../../../primary-buttons/primary-buttons';
 import Pill from '../pill';
 
 import './listen.css';
+import { User } from '@sentry/types';
 
 const VOTE_NO_PLAY_MS = 3000; // Threshold when to allow voting no
 
@@ -31,7 +35,12 @@ const VoteButton = ({
   kind,
   ...props
 }: { kind: 'yes' | 'no' } & React.ButtonHTMLAttributes<any>) => (
-  <button type="button" className={['vote-button', kind].join(' ')} {...props}>
+  <button
+    type="button"
+    className={['vote-button', kind, getTrackClass('fs', `vote-${kind}`)].join(
+      ' '
+    )}
+    {...props}>
     {kind === 'yes' && <ThumbsUpIcon />}
     {kind === 'no' && <ThumbsDownIcon />}
     <Localized id={'vote-' + kind}>
@@ -41,20 +50,26 @@ const VoteButton = ({
 );
 
 interface PropsFromState {
-  clips: Clips.Clip[];
+  api: API;
+  clips: ClipType[];
   isLoading: boolean;
   locale: Locale.State;
+  showFirstContributionToast: boolean;
+  hasEarnedSessionToast: boolean;
+  showFirstStreakToast: boolean;
+  challengeEnded: boolean;
 }
 
 interface PropsFromDispatch {
   removeClip: typeof Clips.actions.remove;
   vote: typeof Clips.actions.vote;
+  addAchievement: typeof Notifications.actions.addAchievement;
 }
 
 interface Props extends PropsFromState, PropsFromDispatch {}
 
 interface State {
-  clips: (Clips.Clip & { isValid?: boolean })[];
+  clips: (ClipType & { isValid?: boolean })[];
   hasPlayed: boolean;
   hasPlayedSome: boolean;
   isPlaying: boolean;
@@ -128,10 +143,52 @@ class ListenPage extends React.Component<Props, State> {
 
   private vote = (isValid: boolean) => {
     const { clips } = this.state;
+
+    const {
+      showFirstContributionToast,
+      hasEarnedSessionToast,
+      addAchievement,
+      api,
+      showFirstStreakToast,
+      challengeEnded,
+    } = this.props;
     const clipIndex = this.getClipIndex();
 
     this.stop();
     this.props.vote(isValid, this.state.clips[this.getClipIndex()].id);
+
+    sessionStorage.setItem('challengeEnded', JSON.stringify(challengeEnded));
+    sessionStorage.setItem('hasContributed', 'true');
+
+    if (showFirstContributionToast) {
+      addAchievement(
+        50,
+        "You're on your way! Congrats on your first contribution.",
+        'success'
+      );
+    }
+    if (showFirstStreakToast) {
+      addAchievement(
+        50,
+        'You completed a three-day streak! Keep it up.',
+        'success'
+      );
+    }
+    if (
+      !JSON.parse(sessionStorage.getItem('challengeEnded')) &&
+      JSON.parse(sessionStorage.getItem('hasShared')) &&
+      !hasEarnedSessionToast
+    ) {
+      addAchievement(
+        50,
+        "You're on a roll! You sent an invite and contributed in the same session.",
+        'success'
+      );
+      sessionStorage.removeItem('hasShared');
+      // Tell back-end user get unexpected achievement: invite + contribute in the same session
+      // Each user can only get once.
+      api.setInviteContributeAchievement();
+    }
     this.setState({
       hasPlayed: false,
       hasPlayedSome: false,
@@ -189,7 +246,7 @@ class ListenPage extends React.Component<Props, State> {
     const clipIndex = this.getClipIndex();
     const activeClip = clips[clipIndex];
     return (
-      <React.Fragment>
+      <>
         <audio
           {...(activeClip && { src: activeClip.audioSrc })}
           preload="auto"
@@ -203,7 +260,7 @@ class ListenPage extends React.Component<Props, State> {
             (clips.length === 0 || !activeClip) && (
               <div className="empty-container">
                 <div className="error-card card-dimensions">
-                  <Localized id="nothing-to-validate">
+                  <Localized id="listen-empty-state">
                     <span />
                   </Localized>
                   <LinkButton
@@ -234,7 +291,7 @@ class ListenPage extends React.Component<Props, State> {
                         'listen-3rd-time-instruction',
                       ][clipIndex] || 'listen-again-instruction'
                 }
-                playIcon={<OldPlayIcon />}
+                elems={{playIcon: <OldPlayIcon />}}
                 {...props}
               />
             )
@@ -244,19 +301,23 @@ class ListenPage extends React.Component<Props, State> {
           onReset={this.reset}
           onSkip={this.handleSkip}
           primaryButtons={
-            <React.Fragment>
+            <>
               <VoteButton
                 kind="yes"
                 onClick={this.voteYes}
                 disabled={!hasPlayed}
               />
-              <PlayButton isPlaying={isPlaying} onClick={this.play} />
+              <PlayButton
+                isPlaying={isPlaying}
+                onClick={this.play}
+                trackClass="play-clip"
+              />
               <VoteButton
                 kind="no"
                 onClick={this.voteNo}
                 disabled={!hasPlayed && !hasPlayedSome}
               />
-            </React.Fragment>
+            </>
           }
           pills={clips.map(
             ({ isValid }, i) => (props: ContributionPillProps) => {
@@ -310,16 +371,29 @@ class ListenPage extends React.Component<Props, State> {
           ]}
           type="listen"
         />
-      </React.Fragment>
+      </>
     );
   }
 }
 
 const mapStateToProps = (state: StateTree) => {
-  const { clips, isLoading } = Clips.selectors.localeClips(state);
+  const {
+    clips,
+    isLoading,
+    showFirstContributionToast,
+    hasEarnedSessionToast,
+    showFirstStreakToast,
+    challengeEnded,
+  } = Clips.selectors.localeClips(state);
+  const { api } = state;
   return {
     clips,
     isLoading,
+    showFirstContributionToast,
+    hasEarnedSessionToast,
+    showFirstStreakToast,
+    challengeEnded,
+    api,
     locale: state.locale,
   };
 };
@@ -327,6 +401,7 @@ const mapStateToProps = (state: StateTree) => {
 const mapDispatchToProps = {
   removeClip: Clips.actions.remove,
   vote: Clips.actions.vote,
+  addAchievement: Notifications.actions.addAchievement,
 };
 
 export default connect<PropsFromState, any>(

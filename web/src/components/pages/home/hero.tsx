@@ -1,7 +1,7 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { DAILY_GOAL } from '../../../constants';
+import { DAILY_GOALS } from '../../../constants';
 import API from '../../../services/api';
 import { trackHome } from '../../../services/tracker';
 import { Locale } from '../../../stores/locale';
@@ -116,10 +116,13 @@ class Hero extends React.Component<
           </div>
         </div>
         <div className="column cta">
-          <PrimaryLink onClick={() => trackHome(type, locale)} />
+          <PrimaryLink
+            trackClass={`${type}-from-home`}
+            onClick={() => trackHome(type, locale)}
+          />
           <div {...this.getToggleableProps(1, 'line ' + type)} />
           <div {...this.getToggleableProps(2)}>
-            <Localized id="help-reach-goal" $goal={DAILY_GOAL[type]}>
+            <Localized id="help-reach-goal" vars={{goal: DAILY_GOALS[type][0]}}>
               <div className="cta-message" />
             </Localized>
           </div>
@@ -132,7 +135,7 @@ class Hero extends React.Component<
             <span className="current">{count === null ? '?' : count}</span>
             <span className="total">
               {' / '}
-              {DAILY_GOAL[type]}
+              {DAILY_GOALS[type][0]}
             </span>
           </span>
           <p>

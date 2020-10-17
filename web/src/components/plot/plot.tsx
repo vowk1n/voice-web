@@ -9,12 +9,7 @@ export const PLOT_PADDING = 13;
 import './plot.css';
 
 export type PlotProps = {
-  children: (
-    state: {
-      max: number;
-      width: number;
-    }
-  ) => React.ReactNode;
+  children: (state: { max: number; width: number }) => React.ReactNode;
   data: any[];
   formatNumber: (n: number) => string;
   max: number;
@@ -148,9 +143,10 @@ export const BarPlot = ({
           hour: '2-digit',
           minute: '2-digit',
         })
-        .replace(' AM', '')
-        .replace(' PM', '');
-      return window.innerWidth < 450 ? timeString.split(':')[0] : timeString;
+        .replace(':00 ', '')
+        .replace(/\./g, '');
+
+      return timeString;
     }}
     tickCount={TICK_COUNT}
     tickMultipliers={[5, 10, 100, 1000]}>
@@ -163,7 +159,7 @@ export const BarPlot = ({
         (i * (width - PLOT_PADDING - TEXT_OFFSET)) / BAR_COUNT;
 
       return (
-        <React.Fragment>
+        <>
           {Array.from({ length: BAR_COUNT }).map((_, i) => (
             <rect
               key={i}
@@ -195,7 +191,7 @@ export const BarPlot = ({
               />
             );
           })}
-        </React.Fragment>
+        </>
       );
     }}
   </Plot>

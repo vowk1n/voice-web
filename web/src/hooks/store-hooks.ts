@@ -15,6 +15,10 @@ export function useAPI() {
   return useTypedSelector(({ api }) => api);
 }
 
+export function useNotifications() {
+  return useTypedSelector(({ notifications }) => notifications);
+}
+
 export function useIsSubscribed() {
   const account = useAccount();
   const [isSubscribed, setIsSubscribed] = useState<boolean>(null);
@@ -33,4 +37,18 @@ export function useIsSubscribed() {
   }, [account.basket_token]);
 
   return isSubscribed;
+}
+
+export function useStickyState(defaultValue: any, key: string) {
+  const [value, setValue] = useState(() => {
+    const stickyValue = window.localStorage.getItem(key);
+
+    return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
 }

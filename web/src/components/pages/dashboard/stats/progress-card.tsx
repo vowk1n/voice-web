@@ -1,7 +1,7 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { DAILY_GOAL } from '../../../../constants';
+import { DAILY_GOALS } from '../../../../constants';
 import { useAccount, useAPI } from '../../../../hooks/store-hooks';
 import { trackDashboard } from '../../../../services/tracker';
 import URLS from '../../../../urls';
@@ -30,7 +30,7 @@ export default function ProgressCard({
   type,
 }: Props) {
   const [globalLocale] = useLocale();
-  const { custom_goals: customGoals } = useAccount();
+  const { custom_goals: customGoals } = useAccount() || {};
   let api = useAPI();
   const [overallCurrent, setOverallCurrent] = useState(null);
 
@@ -50,9 +50,9 @@ export default function ProgressCard({
     fetchAndSetOverallCount();
   }, []);
 
-  const overallGoal = DAILY_GOAL[type];
+  const overallGoal = DAILY_GOALS[type][0];
   const isSpeak = type == 'speak';
-  const customGoal = customGoals.find(g => g.locale == locale);
+  const customGoal = customGoals?.find(g => g.locale == locale);
   const currentCustomGoal = customGoal ? customGoal.current[type] : undefined;
   const hasCustomGoalForThis = currentCustomGoal !== undefined;
   const goalsPath = URLS.DASHBOARD + (locale ? '/' + locale : '') + URLS.GOALS;
@@ -87,7 +87,12 @@ export default function ProgressCard({
             <LocaleLink className="custom-goal-link" to={goalsPath}>
               <CircleProgress value={currentCustomGoal / customGoal.amount} />
               <div className="custom-goal-text">
-                <Localized id="toward-next-goal">
+                <Localized
+                  id={
+                    currentCustomGoal / customGoal.amount < 1
+                      ? 'toward-next-goal'
+                      : 'goal-reached'
+                  }>
                   <span />
                 </Localized>
               </div>
@@ -95,11 +100,7 @@ export default function ProgressCard({
           ) : (
             !customGoal && (
               <Localized id="create-custom-goal">
-                <LinkButton
-                  className="custom-goal-button"
-                  rounded
-                  to={goalsPath}
-                />
+                <LinkButton rounded to={goalsPath} />
               </Localized>
             )
           )}
@@ -129,7 +130,7 @@ export default function ProgressCard({
           }>
           <div className="description" />
         </Localized>
-        <Localized id="help-reach-goal" $goal={overallGoal}>
+        <Localized id="help-reach-goal" vars={{ goal: overallGoal }}>
           <LinkButton
             rounded
             outline

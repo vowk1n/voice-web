@@ -1,21 +1,25 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { GlobeIcon, MicIcon, PlayOutlineIcon } from '../../ui/icons';
 import Dots from './dots';
 
 import './circle-stats.css';
 
-const CircleStat = ({
+export const CircleStat = ({
   className,
   label,
   value,
   icon,
+  dotBackground,
+  dotColor,
+  dotSpace,
+  dotWidth,
   ...props
-}: { label: string; value: number; icon: React.ReactNode } & React.HTMLProps<
+}: { label: string; value: number; dotBackground?: string, dotColor?: string, dotSpace?: number, dotWidth?: number, icon: React.ReactNode } & React.HTMLProps<
   HTMLDivElement
 >) => (
   <div className={'circle-stat ' + (className || '')} {...props}>
-    <Dots style={{ width: 70 }} />
+    <Dots {...{backgroundColor: dotBackground, color: dotColor, space: dotSpace}} style={{ width: dotWidth ? dotWidth : 70 }} />
     <div className="text">
       <Localized id={label}>
         <div className="label" />

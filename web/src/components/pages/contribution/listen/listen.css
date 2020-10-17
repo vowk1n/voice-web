@@ -95,6 +95,10 @@
             }
         }
 
+        path {
+            fill: var(--near-black);
+        }
+
         &:hover,
         &:active {
             color: var(--white);
@@ -111,8 +115,10 @@
             box-shadow: var(--vote-button-box-shadow)
                 color-mod(var(--grey) alpha(80%));
 
-            & path {
-                fill: var(--near-black);
+            &:hover {
+                path {
+                    fill: var(--near-black);
+                }
             }
         }
 
@@ -121,6 +127,20 @@
 
             @media (--md-up) {
                 margin-inline-end: 23px;
+            }
+        }
+    }
+
+    .error-card {
+        .record-instead {
+            display: inline-flex;
+
+            & svg {
+                margin-inline-end: 10px;
+            }
+
+            & path {
+                fill: var(--white);
             }
         }
     }

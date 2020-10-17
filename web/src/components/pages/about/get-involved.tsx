@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import {
   GitHubLink,
   DiscourseLink,
   ContactLink,
-  SlackLink,
+  MatrixLink,
 } from '../../shared/links';
 import {
   GithubIconCode,
   DiscourseIconCode,
-  SlackIcon,
+  MatrixIcon,
   ContactIconCode,
-  ArrowLeft,
 } from '../../ui/icons';
-import { Button } from '../../ui/ui';
 
 import './get-involved.css';
 
@@ -22,8 +20,9 @@ const GetInvolved: React.ComponentType = () => {
     <>
       <img
         className="wave-footer"
-        src={require('./images/wave-footer@3x.png')}
-        alt="Wave"
+        src={require('../images/wave-footer@3x.png')}
+        alt=""
+        role="presentation"
       />
 
       {/*<div className="become-partner">
@@ -47,19 +46,21 @@ const GetInvolved: React.ComponentType = () => {
         </Localized>
 
         <Localized
-          id="about-get-involved-text"
-          discourseLink={<DiscourseLink />}
-          githubLink={<GitHubLink />}
-          slackLink={<SlackLink />}>
+          id="about-get-involved-text-2"
+          elems={{
+            discourseLink: <DiscourseLink />,
+            githubLink: <GitHubLink />,
+            matrixLink: <MatrixLink />,
+          }}>
           <p />
         </Localized>
 
         <div className="get-involved-icons">
           {[
+            [ContactLink, ContactIconCode],
             [DiscourseLink, DiscourseIconCode],
             [GitHubLink, GithubIconCode],
-            [SlackLink, SlackIcon],
-            [ContactLink, ContactIconCode],
+            [MatrixLink, MatrixIcon],
           ].map(([LinkComponent, IconComponent]: [any, any], index: number) => (
             <LinkComponent
               key={`get-involved-icon-${index}`}

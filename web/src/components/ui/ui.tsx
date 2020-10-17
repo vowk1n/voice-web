@@ -1,12 +1,20 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { HTMLProps, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LocaleLink } from '../locale-helpers';
 import { CheckIcon } from './icons';
 
-export const Avatar = ({ url }: { url?: string }) => (
-  <div className="avatar-wrap">
+export const Avatar = ({
+  className,
+  url,
+  style,
+}: {
+  url?: string;
+  className?: string;
+  style?: object;
+}) => (
+  <div className={`avatar-wrap ${className ? className : ''}`} style={style}>
     {url ? (
       <img src={url} />
     ) : (
@@ -101,6 +109,7 @@ export const LabeledInput = React.forwardRef(({ type, ...props }: any, ref) => (
     component="input"
     ref={ref}
     type={type || 'text'}
+    name={type}
     {...props}
   />
 ));
@@ -158,7 +167,8 @@ export const StyledLink = ({
   ...props
 }: (
   | React.HTMLProps<HTMLAnchorElement>
-  | React.ComponentProps<typeof LocaleLink>) & { blank?: boolean }) => {
+  | React.ComponentProps<typeof LocaleLink>
+) & { blank?: boolean }) => {
   const Component = props.href ? 'a' : LocaleLink;
   return (
     <Component

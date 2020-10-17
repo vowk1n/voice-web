@@ -15,7 +15,9 @@ export function track(
     | 'Global'
     | 'Nav'
     | 'Landing'
-    | 'voice-avatar',
+    | 'Challenge'
+    | 'voice-avatar'
+    | 'Error',
   action: string,
   locale?: string
 ) {
@@ -37,7 +39,7 @@ export function trackGlobal(
     | 'discourse'
     | 'contact'
     | 'footer-newsletter'
-    | 'slack',
+    | 'matrix',
   locale: string
 ) {
   track('Global', action, locale);
@@ -149,4 +151,24 @@ export function trackDashboard(
 
 export function trackLanding(action: 'speak' | 'profile' | 'about') {
   track('Landing', action);
+}
+
+export function trackChallenge(
+  action:
+    | 'dashboard-view'
+    | 'modal-invite'
+    | 'modal-onboarding'
+    | 'modal-welcome'
+) {
+  track('Challenge', action);
+}
+
+// Error pages send the full previous route as a third argument, which is
+// typically reserved for locale.
+export function trackError(action: '404' | '503', route: string) {
+  track('Error', action, route);
+}
+
+export function getTrackClass(service: 'amp' | 'fs', name: string) {
+  return `track-${service}-${name}`;
 }

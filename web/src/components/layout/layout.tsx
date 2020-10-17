@@ -1,27 +1,24 @@
-import { Localized } from 'fluent-react/compat';
+import { Localized } from '@fluent/react';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { RouteComponentProps, withRouter } from 'react-router';
+import { RouteComponentProps, Redirect, withRouter } from 'react-router';
+import * as FullStory from '@fullstory/browser';
 import { LOCALES, NATIVE_NAMES } from '../../services/localization';
-import { trackGlobal } from '../../services/tracker';
+import { trackGlobal, getTrackClass } from '../../services/tracker';
 import StateTree from '../../stores/tree';
 import { User } from '../../stores/user';
 import { Locale } from '../../stores/locale';
 import URLS from '../../urls';
-import {
-  getItunesURL,
-  isIOS,
-  isNativeIOS,
-  isSafari,
-  replacePathLocale,
-} from '../../utility';
-import { LocaleLink, LocaleNavLink } from '../locale-helpers';
+import { isProduction, replacePathLocale } from '../../utility';
+import { LocaleLink, LocaleNavLink, isContributable } from '../locale-helpers';
 import {
   CogIcon,
   DashboardIcon,
   MenuIcon,
   MicIcon,
   OldPlayIcon,
+  TargetIcon,
+  ExternalLinkIcon,
 } from '../ui/icons';
 import { Avatar, LabeledSelect, LinkButton } from '../ui/ui';
 import Content from './content';
@@ -31,7 +28,19 @@ import Logo from './logo';
 import Nav from './nav';
 import UserMenu from './user-menu';
 import * as cx from 'classnames';
-import { isStaging } from '../../utility';
+import WelcomeModal from '../welcome-modal/welcome-modal';
+import {
+  ChallengeTeamToken,
+  challengeTeamTokens,
+  ChallengeToken,
+  challengeTokens,
+  FeatureType,
+  FeatureToken,
+  features,
+} from 'common';
+import API from '../../services/api';
+import NotificationBanner from './../notification-banner/notification-banner';
+import { Notifications } from '../../stores/notifications';
 
 const LOCALES_WITH_NAMES = LOCALES.map(code => [
   code,
@@ -41,6 +50,7 @@ const LOCALES_WITH_NAMES = LOCALES.map(code => [
 interface PropsFromState {
   locale: Locale.State;
   user: User.State;
+  api: API;
 }
 
 interface PropsFromDispatch {
@@ -50,14 +60,82 @@ interface PropsFromDispatch {
 interface LayoutProps
   extends PropsFromState,
     PropsFromDispatch,
-    RouteComponentProps<any> {}
+    RouteComponentProps<any, any, any> {}
 
 interface LayoutState {
+  challengeTeamToken: ChallengeTeamToken;
+  challengeToken: ChallengeToken;
   isMenuVisible: boolean;
   hasScrolled: boolean;
   hasScrolledDown: boolean;
   showStagingBanner: boolean;
+  showWelcomeModal: boolean;
+  featureStorageKey?: string;
 }
+
+const SegmentBanner = ({
+  locale,
+  featureStorageKey,
+}: {
+  locale: string;
+  featureStorageKey: string;
+}) => {
+  const notification: Notifications.Notification = {
+    id: 99,
+    kind: 'banner',
+    content: (
+      <>
+        <Localized
+          id="target-segment-first-banner"
+          vars={{ locale: NATIVE_NAMES[locale] }}
+        />
+      </>
+    ),
+    bannerProps: {
+      storageKey: featureStorageKey,
+      links: [
+        {
+          to: URLS.SPEAK,
+          className: 'cta',
+          persistAfterClick: true,
+          children: (
+            <>
+              <TargetIcon />
+              <Localized
+                key="target-segment-add-voice"
+                id="target-segment-add-voice">
+                <div />
+              </Localized>
+            </>
+          ),
+        },
+        {
+          href:
+            locale === 'es'
+              ? URLS.TARGET_SEGMENT_INFO_ES
+              : URLS.TARGET_SEGMENT_INFO,
+          blank: true,
+          persistAfterClick: true,
+          className: 'cta external',
+          children: (
+            <>
+              <ExternalLinkIcon />
+              <Localized
+                key="target-segment-learn-more"
+                id="target-segment-learn-more">
+                <div />
+              </Localized>
+            </>
+          ),
+        },
+      ],
+    },
+  };
+
+  return (
+    <NotificationBanner key="target-segment" notification={notification} />
+  );
+};
 
 class Layout extends React.PureComponent<LayoutProps, LayoutState> {
   private header: HTMLElement;
@@ -65,15 +143,37 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
   private installApp: HTMLElement;
 
   state: LayoutState = {
+    challengeTeamToken: undefined,
+    challengeToken: undefined,
     isMenuVisible: false,
     hasScrolled: false,
     hasScrolledDown: false,
-    showStagingBanner: isStaging(),
+    showStagingBanner: !isProduction(),
+    showWelcomeModal: false,
+    featureStorageKey: null,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    const { locale, api, user } = this.props;
     this.scroller.addEventListener('scroll', this.handleScroll);
     this.visitHash();
+
+    const challengeTeamToken = this.getTeamToken();
+    const challengeToken = this.getChallengeToken();
+
+    this.setState({
+      challengeTeamToken: challengeTeamToken,
+      challengeToken: challengeToken,
+      showWelcomeModal:
+        challengeTeamToken !== undefined && challengeToken !== undefined,
+      featureStorageKey: await this.getFeatureKey(locale),
+    });
+
+    try {
+      FullStory.setUserVars({ isLoggedIn: !!user.account });
+    } catch (e) {
+      // do nothing if FullStory not initialized (see app.tsx)
+    }
   }
 
   componentDidUpdate(nextProps: LayoutProps, nextState: LayoutState) {
@@ -82,7 +182,10 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
 
       // Immediately scrolling up after page change has no effect.
       setTimeout(() => {
-        this.scroller.scrollTop = 0;
+        if (this.scroller) {
+          this.scroller.scrollTop = 0;
+        }
+
         if (location.hash) {
           this.visitHash();
         } else {
@@ -108,22 +211,6 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
     }
   }
 
-  /**
-   * If the iOS app is installed, open it. Otherwise, open the App Store.
-   */
-  private openInApp = () => {
-    // TODO: Enable custom protocol when we publish an ios app update.
-    // window.location.href = 'commonvoice://';
-
-    window.location.href = getItunesURL();
-  };
-
-  private closeOpenInApp = (evt: React.MouseEvent<HTMLElement>) => {
-    evt.stopPropagation();
-    evt.preventDefault();
-    this.installApp.classList.add('hide');
-  };
-
   lastScrollTop: number;
   private handleScroll = () => {
     const { scrollTop } = this.scroller;
@@ -142,45 +229,93 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
     const { setLocale, history } = this.props;
     trackGlobal('change-language', locale);
     setLocale(locale);
+    this.setState({
+      featureStorageKey: await this.getFeatureKey(locale),
+    });
     history.push(replacePathLocale(history.location.pathname, locale));
   };
+
+  private getChallengeToken = () => {
+    return challengeTokens.find(challengeToken =>
+      this.props.location.search.includes(`challenge=${challengeToken}`)
+    );
+  };
+
+  private getTeamToken = () => {
+    return challengeTeamTokens.find(challengeTeamToken =>
+      this.props.location.search.includes(`team=${challengeTeamToken}`)
+    );
+  };
+
+  private async getFeatureKey(locale: string) {
+    let feature = null;
+
+    if (isContributable(locale)) {
+      feature = await this.props.api.getFeatureFlag(
+        'singleword_benchmark',
+        locale
+      );
+    }
+
+    return feature ? feature.storageKey : null;
+  }
 
   render() {
     const { locale, location, user } = this.props;
     const {
+      challengeTeamToken,
+      challengeToken,
       hasScrolled,
       hasScrolledDown,
       isMenuVisible,
       showStagingBanner,
+      showWelcomeModal,
+      featureStorageKey,
     } = this.state;
     const isBuildingProfile = location.pathname.includes(URLS.PROFILE_INFO);
 
-    const pathParts = location.pathname.split('/');
+    const pathParts = location.pathname
+      .replace(/(404|503)/g, 'error-page')
+      .split('/');
     const className = cx(pathParts[2] ? pathParts.slice(2).join(' ') : 'home', {
       'staging-banner-is-visible': showStagingBanner,
     });
 
+    const alreadyEnrolled =
+      this.state.showWelcomeModal && user.account?.enrollment?.challenge;
+    const redirectURL = URLS.DASHBOARD + URLS.CHALLENGE;
+
     return (
       <div id="main" className={className}>
-        {isIOS() && !isNativeIOS() && !isSafari() && (
-          <div
-            id="install-app"
-            onClick={this.openInApp}
-            ref={div => {
-              this.installApp = div as HTMLElement;
-            }}>
-            Open in App
-            <a onClick={this.closeOpenInApp}>X</a>
-          </div>
+        {alreadyEnrolled && <Redirect to={redirectURL} />}
+        {showWelcomeModal && !alreadyEnrolled && (
+          <WelcomeModal
+            onRequestClose={() => {
+              this.setState({ showWelcomeModal: false });
+            }}
+            challengeToken={challengeToken}
+            teamToken={challengeTeamToken}
+          />
         )}
+        {featureStorageKey &&
+          localStorage.getItem(featureStorageKey) !== 'true' && (
+            <SegmentBanner
+              locale={locale}
+              featureStorageKey={featureStorageKey}
+            />
+          )}
         {showStagingBanner && (
           <div className="staging-banner">
             You're on the staging server. Voice data is not collected here.{' '}
-            <a href="https://voice.mozilla.org" target="_blank">
+            <a
+              href={URLS.HTTP_ROOT}
+              target="_blank"
+              rel="noopener noreferrer">
               Don't waste your breath.
             </a>{' '}
             <a
-              href="https://github.com/mozilla/voice-web/issues/new"
+              href={`${URLS.GITHUB_ROOT}/issues/new`}
+              rel="noopener noreferrer"
               target="_blank">
               Feel free to report issues.
             </a>{' '}
@@ -237,7 +372,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
             this.scroller = div as HTMLElement;
           }}>
           <div id="scrollee">
-            <Content />
+            <Content location={location} />
             <Footer />
           </div>
         </div>
@@ -280,7 +415,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
                 </div>
               )}
               {!isBuildingProfile && (
-                <React.Fragment>
+                <>
                   {user.account ? (
                     <Localized id="logout">
                       <LinkButton rounded href="/logout" />
@@ -290,7 +425,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
                       <LinkButton rounded href="/login" />
                     </Localized>
                   )}
-                </React.Fragment>
+                </>
               )}
             </div>
           </Nav>
@@ -303,7 +438,11 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
     const { user } = this.props;
     return (
       <LocaleLink
-        className="tallies"
+        className={[
+          'tallies',
+          getTrackClass('fs', 'menubar-cta'),
+          user.account ? getTrackClass('fs', 'logged-in') : '',
+        ].join(' ')}
         to={user.account ? URLS.DASHBOARD : URLS.SPEAK}>
         <div className="record-tally">
           <MicIcon />
@@ -324,6 +463,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
 const mapStateToProps = (state: StateTree) => ({
   locale: state.locale,
   user: state.user,
+  api: state.api,
 });
 
 const mapDispatchToProps = {
